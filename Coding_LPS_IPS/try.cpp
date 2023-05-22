@@ -73,16 +73,13 @@ void modifiedMergeSort(int arr[], int left, int right)
     {
         if (right - left + 1 <= 3)
         {
-            // Apply insertion sort for subarrays of length 3 or less
             insertionSort(arr, left, right);
         }
         else
         {
             int mid = left + (right - left) / 2;
-
             modifiedMergeSort(arr, left, mid);
             modifiedMergeSort(arr, mid + 1, right);
-
             merge(arr, left, mid, right);
         }
     }
@@ -90,20 +87,15 @@ void modifiedMergeSort(int arr[], int left, int right)
 
 int main()
 {
-    // Read the number of elements
-    int n;
-    std::cout << "Enter the number of elements: ";
-    std::cin >> n;
 
-    // Read the elements
+    int n;
+    cin >> n;
     int arr[n];
-    std::cout << "Enter the elements:\n";
     for (int i = 0; i < n; ++i)
     {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
-    // Perform modified merge sort
     modifiedMergeSort(arr, 0, n - 1);
 
     // Print the sorted array

@@ -88,30 +88,23 @@ int main()
 
 */
 
+// In the ‘merge-sort’ algorithm, an array of size n, is divided till we get n arrays of size 1. Modify the merge-sort algorithm in such a way that division is not carried out on any subarray of length 4. That is, the minimum length of all the subarrays should be 3 and for the subarray of length 3, apply any constant-time sorting algorithm. Write the code for the modified algorithm.
+/*
 #include <iostream>
 using namespace std;
 
-void bubbleSort(float A[])
+void insertionSort(float arr[], int left, int right)
 {
-    float temp;
-    int n = sizeof(A) / sizeof(A[0]);
-    for (int i = 0; i < n - 1; ++i)
+    for (int i = left + 1; i <= right; ++i)
     {
-        bool swapped = false;
-        for (int j = 0; j < n - i - 1; ++j)
+        float key = arr[i];
+        int j = i - 1;
+        while (j >= left && arr[j] > key)
         {
-            if (A[j] > A[j + 1])
-            {
-                temp = A[j];
-                A[j] = A[j + 1];
-                A[j + 1] = temp;
-                swapped = true;
-            }
+            arr[j + 1] = arr[j];
+            --j;
         }
-        if (!swapped)
-        {
-            break;
-        }
+        arr[j + 1] = key;
     }
 }
 
@@ -172,7 +165,7 @@ void modifiedMergeSort(float arr[], int left, int right)
     {
         if (right - left + 1 <= 3)
         {
-            bubbleSort(arr);
+            insertionSort(arr, left, right);
         }
         else
         {
@@ -209,3 +202,4 @@ int main()
 
     return 0;
 }
+*/
