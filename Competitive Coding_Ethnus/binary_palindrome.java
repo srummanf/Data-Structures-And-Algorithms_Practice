@@ -38,3 +38,33 @@ public class binary_palindrome {
         System.out.println(nthPalindrome(n));
     }
 }
+
+
+
+int nthPalindrome(int n){
+    int l;
+    while(count<n)
+    {
+        l++
+        count += Math.pow(n,(l-1)/2);))
+    }
+    count -= Math.pow(n,(l-1)/2);
+    ele =n-count-1;
+    ans==1<<l-1 | ele<<l/2;
+    ans=ans|revbin(ans,l);
+}
+
+
+revbin(int n, int l){
+    f=n-1,, len=0;
+    rev=0;
+    while(f>1)
+    {
+        ifn&&(1<<f)!=0
+        rev=rev|(1<<l);
+        if(n&&(1<<l)!=0)
+        rev=rev|(1<<f);
+        f--; len++;
+    }
+    retrev;
+}

@@ -1,4 +1,4 @@
-// Chinese Reaminder Theorem
+// Chinese Remainder Theorem
 
 import java.io.*;
 import java.util.*;
