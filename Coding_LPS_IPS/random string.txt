@@ -1,0 +1,15 @@
+import random
+import string
+
+def generate_random_string(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
+
+# Generate two random strings
+random_str1 = generate_random_string(10)
+random_str2 = generate_random_string(15)
+
+# Write the random strings to the same file, separated by a newline character
+with open("random_strings.txt", "w") as file:
+    file.write(random_str1 + "\n" + random_str2)
