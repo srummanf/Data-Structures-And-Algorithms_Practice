@@ -2,7 +2,11 @@
 
 import random
 
-n = 10
+
+n =  10
+
+   
+ 
 
 with open("random_" + str(n) + ".txt", "w") as fp:
     fp.write(str(n) + "\n")
