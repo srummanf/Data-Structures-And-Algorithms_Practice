@@ -20,7 +20,7 @@ void lcs_length(string x, string y, vector<vector<int> >&c, vector<vector<char> 
             else if(c[i-1][j]>=c[i][j-1])
             {
                 c[i][j] = c[i-1][j];
-                b[i][j] = 'u';
+                b[i][j] = 'u';  
             }
             else
             {
