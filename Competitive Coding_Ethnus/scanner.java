@@ -6,6 +6,7 @@ public class scanner {
         Scanner sc = new Scanner(str);
         sc.useDelimiter("/");
         System.out.println("---Result---");
+        System.out.println("---Result---");
         while (sc.hasNext()) {
             System.out.println(sc.next());
         }
