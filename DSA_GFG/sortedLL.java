@@ -1,10 +1,12 @@
 // Sorted Insert in a Singly Linked List
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class sortedLL {
     Node head;
 
+    // LinkedList
     class Node {
         int data;
         Node next;
@@ -15,6 +17,7 @@ public class sortedLL {
         }
     }
 
+    // Function to enter the values in sorted order
     void sortedInsert(Node new_node) {
         Node current;
 
@@ -33,6 +36,7 @@ public class sortedLL {
         }
     }
 
+    // Function to create a node
     Node newNode(int data) {
         Node x = new Node(data);
         return x;
@@ -49,20 +53,19 @@ public class sortedLL {
     public static void main(String args[]) {
         sortedLL llist = new sortedLL();
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Enter the number of elements: ");
         int n = scanner.nextInt();
-        
+
         for (int i = 0; i < n; i++) {
             System.out.print("Enter element " + (i + 1) + ": ");
             int data = scanner.nextInt();
             Node new_node = llist.newNode(data);
             llist.sortedInsert(new_node);
         }
-        
+
         System.out.println("Created Linked List");
         llist.printList();
-        
-        scanner.close();
+
     }
 }
