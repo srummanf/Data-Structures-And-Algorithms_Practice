@@ -53,6 +53,18 @@ public class code1 {
     }
   }
 
+  public static void DFS(ArrayList<Edge> graph[], int curr, boolean visited[]) {
+    System.out.print(curr + " ");
+    visited[curr] = true;
+
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      if (visited[e.dest] == false) {
+        DFS(graph, e.dest, visited);
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int V = 4;
     ArrayList<Edge> graph[] = new ArrayList[V];
@@ -64,11 +76,17 @@ public class code1 {
       Edge e = graph[2].get(i);
       System.out.println(e.src + " --> " + e.dest + " with weight " + e.weight);
     }
-    boolean visited[] = new boolean[V];
+
+    boolean visited1[] = new boolean[V];
     for (int i = 0; i < V; i++) {
-      if (visited[i] == false) {
-        BFS(graph, V, visited, i);
+      if (visited1[i] == false) {
+        BFS(graph, V, visited1, i);
       }
     }
+
+    System.out.println();
+    boolean visited2[] = new boolean[V];
+    DFS(graph, 0, visited2);
   }
 }
+           
