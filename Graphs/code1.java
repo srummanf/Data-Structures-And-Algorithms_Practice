@@ -69,6 +69,28 @@ public class code1 {
     }
   }
 
+  // -------------------------------------- Source to Destination : all POths ----------------------------------------------------------------
+  public static void printAllPath(
+    ArrayList<Edge> graph[],
+    boolean visited[],
+    int curr,
+    String path,
+    int tar
+  ) {
+    if(curr == tar){
+      System.out.println(path);
+      return;
+    }
+    for(int i=0;i<graph[curr].size();i++) {{
+      Edge e = graph[curr].get(i);
+      if(visited[e.dest] == false){
+        visited[e.dest] = true;
+        printAllPath(graph, visited, e.dest, path + e.dest, tar);
+        visited[e.dest] = false;
+      }
+    }
+  }
+
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
