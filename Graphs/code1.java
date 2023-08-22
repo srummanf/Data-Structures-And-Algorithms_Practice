@@ -2,6 +2,7 @@ import java.util.*;
 
 public class code1 {
 
+  // -------------------------------------- Graph Data Structure Creation ----------------------------------------------------------------
   static class Edge {
 
     int src, dest, weight;
@@ -13,6 +14,7 @@ public class code1 {
     }
   }
 
+  // -------------------------------------- Graph Creation ----------------------------------------------------------------
   public static void createGraph(ArrayList<Edge> graph[]) {
     for (int i = 0; i < graph.length; i++) {
       graph[i] = new ArrayList<Edge>();
@@ -31,6 +33,7 @@ public class code1 {
     graph[3].add(new Edge(3, 2, -1));
   }
 
+  // -------------------------------------- Breadth First Search BFS ----------------------------------------------------------------
   public static void BFS(
     ArrayList<Edge> graph[],
     int V,
@@ -53,6 +56,7 @@ public class code1 {
     }
   }
 
+  // -------------------------------------- Depth First Search DFS ----------------------------------------------------------------
   public static void DFS(ArrayList<Edge> graph[], int curr, boolean visited[]) {
     System.out.print(curr + " ");
     visited[curr] = true;
@@ -65,6 +69,7 @@ public class code1 {
     }
   }
 
+  // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
     ArrayList<Edge> graph[] = new ArrayList[V];
@@ -89,4 +94,3 @@ public class code1 {
     DFS(graph, 0, visited2);
   }
 }
-           
