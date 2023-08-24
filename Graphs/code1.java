@@ -93,7 +93,7 @@ public class code1 {
     }
   }
 
-  // -------------------------------------- Cycle Detection ----------------------------------------------------------------
+  // -------------------------------------- Cycle Detection for Directed Graph ----------------------------------------------------------------
 
   // Condition : in DFS stack , if we get the node which is already in the stack then cycle is present
 
@@ -120,6 +120,9 @@ public class code1 {
 
     return false;
   }
+
+  // -------------------------------------- Cycle Detection for Undirected Graph ----------------------------------------------------------------
+  
 
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
