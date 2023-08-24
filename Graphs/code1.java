@@ -151,7 +151,11 @@ public class code1 {
     boolean rec[] = new boolean[V];
     for (int i = 0; i < V; i++) {
       if (!vis[i]) {
-        System.out.println(isCycleDetected(graph, vis, 0, rec));
+        boolean isCycle = isCycleDetected(graph, vis, 0, rec);
+        if (isCycle) {
+          System.out.println("Cycle is present");
+          break;
+        }
       }
     }
   }
