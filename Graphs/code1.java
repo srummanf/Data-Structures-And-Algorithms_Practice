@@ -69,7 +69,7 @@ public class code1 {
     }
   }
 
-  // -------------------------------------- Source to Destination : all POths ----------------------------------------------------------------
+  // -------------------------------------- Source to Destination : all Paths ----------------------------------------------------------------
   public static void printAllPath(
     ArrayList<Edge> graph[],
     boolean visited[],
