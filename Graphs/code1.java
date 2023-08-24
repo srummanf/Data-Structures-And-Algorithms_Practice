@@ -147,8 +147,12 @@ public class code1 {
 
     printAllPath(graph, new boolean[V], 0, "0", 5);
 
-    System.out.println(
-      isCycleDetected(graph, new boolean[V], 0, new boolean[V])
-    );
+    boolean vis[] = new boolean[V];
+    boolean rec[] = new boolean[V];
+    for (int i = 0; i < V; i++) {
+      if (!vis[i]) {
+        System.out.println(isCycleDetected(graph, vis, 0, rec));
+      }
+    }
   }
 }
