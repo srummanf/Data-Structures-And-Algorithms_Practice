@@ -121,8 +121,10 @@ public class code1 {
     return false;
   }
 
+  // -------------------------------------- Topological Sort : DAG Directed Acyclic Graph
+  // It is the linear order of V such that every directed edge  u-> v, the vertex u comes before v in the order ----------------------------------------------------------------
+
   // -------------------------------------- Cycle Detection for Undirected Graph ----------------------------------------------------------------
-  
 
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
