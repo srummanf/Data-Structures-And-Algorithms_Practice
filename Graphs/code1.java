@@ -69,7 +69,7 @@ public class code1 {
     }
   }
 
-  // -------------------------------------- Source to Destination : all Paths ----------------------------------------------------------------
+  // -------------------------------------- Source to Destination : all Paths  O{V*V}----------------------------------------------------------------
   public static void printAllPath(
     ArrayList<Edge> graph[],
     boolean visited[],
@@ -77,16 +77,18 @@ public class code1 {
     String path,
     int tar
   ) {
-    if(curr == tar){
+    if (curr == tar) {
       System.out.println(path);
       return;
     }
-    for(int i=0;i<graph[curr].size();i++) {{
-      Edge e = graph[curr].get(i);
-      if(visited[e.dest] == false){
-        visited[e.dest] = true;
-        printAllPath(graph, visited, e.dest, path + e.dest, tar);
-        visited[e.dest] = false;
+    for (int i = 0; i < graph[curr].size(); i++) {
+      {
+        Edge e = graph[curr].get(i);
+        if (visited[e.dest] == false) {
+          visited[e.dest] = true;
+          printAllPath(graph, visited, e.dest, path + e.dest, tar);
+          visited[e.dest] = false;
+        }
       }
     }
   }
@@ -114,5 +116,7 @@ public class code1 {
     System.out.println();
     boolean visited2[] = new boolean[V];
     DFS(graph, 0, visited2);
+
+    printAllPath(graph, new boolean[V], 0, "0", 5);
   }
 }
