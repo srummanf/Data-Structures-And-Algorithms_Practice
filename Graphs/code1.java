@@ -93,6 +93,34 @@ public class code1 {
     }
   }
 
+  // -------------------------------------- Cycle Detection ----------------------------------------------------------------
+
+  // Condition : in DFS stack , if we get the node which is already in the stack then cycle is present
+
+  public static boolean isCycleDetected(
+    ArrayList<Edge> graph[],
+    boolean vis[],
+    int curr,
+    boolean recstack[]
+  ) {
+    vis[curr] = true;
+    recstack[curr] = true;
+
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      if (recstack[e.dest]) {
+        return true;
+      } else if (!vis[e.dest]) {
+        if (isCycleDetected(graph, vis, e.dest, recstack)) {
+          return true;
+        }
+      }
+    }
+    recstack[curr] = false;
+
+    return false;
+  }
+
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
@@ -118,5 +146,9 @@ public class code1 {
     DFS(graph, 0, visited2);
 
     printAllPath(graph, new boolean[V], 0, "0", 5);
+
+    System.out.println(
+      isCycleDetected(graph, new boolean[V], 0, new boolean[V])
+    );
   }
 }
