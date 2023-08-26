@@ -122,7 +122,40 @@ public class code1 {
   }
 
   // -------------------------------------- Topological Sort : DAG Directed Acyclic Graph
-  // It is the linear order of V such that every directed edge  u-> v, the vertex u comes before v in the order ----------------------------------------------------------------
+  // It is the linear order of V such that every directed edge  u-> v, the vertex u comes before v in the order
+  // we use DFS ----------------------------------------------------------------
+
+  public static void topologicalSortUtil(
+    ArrayList<Edge> graph[],
+    int curr,
+    boolean vis[],
+    Stack<Integer> st
+  ) {
+    vis[curr] = true;
+
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      if (!vis[e.dest]) {
+        topologicalSortUtil(graph, e.dest, vis, st);
+      }
+    }
+    st.push(curr);
+  }
+
+  public static void topSort(ArrayList<Edge> graph[], int V) {
+    boolean vis[] = new boolean[V];
+    Stack<Integer> st = new Stack<>();
+
+    for (int i = 0; i < V; i++) {
+      if (!vis[i]) {
+        topologicalSortUtil(graph, i, vis, st);
+      }
+    }
+
+    while (!st.isEmpty()) {
+      System.out.print(st.pop() + " ");
+    }
+  }
 
   // -------------------------------------- Cycle Detection for Undirected Graph ----------------------------------------------------------------
 
@@ -163,5 +196,6 @@ public class code1 {
         }
       }
     }
+    topSort(graph, V);
   }
 }
