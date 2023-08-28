@@ -158,8 +158,27 @@ public class code1 {
   }
 
   // -------------------------------------- Cycle Detection for Undirected Graph ----------------------------------------------------------------
+  public static boolean isCycleUndirectedGraph(
+    ArrayList<Edge> graph[],
+    boolean vis[],
+    int curr,
+    int par
+  ) {
+    vis[curr] = true;
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      if (vis[e.dest] && e.dest != par) {
+        // System.out.println("Cycle is present");
+        return true;
+      } else if (!vis[e.dest]) {
+        isCycleUndirectedGraph(graph, vis, e.dest, curr){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 
-  
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
@@ -198,5 +217,6 @@ public class code1 {
       }
     }
     topSort(graph, V);
+    System.out.println(isCycleUndirectedGraph(graph, new boolean[V], V, V));
   }
 }
