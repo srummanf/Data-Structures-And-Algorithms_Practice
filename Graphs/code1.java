@@ -165,6 +165,7 @@ public class code1 {
     int par
   ) {
     vis[curr] = true;
+
     for (int i = 0; i < graph[curr].size(); i++) {
       Edge e = graph[curr].get(i);
       if (vis[e.dest] && e.dest != par) {
@@ -210,7 +211,7 @@ public class code1 {
 
       while(!pq.isEmpty()){
         Pair curr = pq.remove();
-        if(vis[curr.node]){
+        if(!vis[curr.node]){
           vis[curr.node] = true;
 
           for (int i = 0; i < graph[curr.node].size(); i++) {
@@ -269,7 +270,7 @@ public class code1 {
       }
     }
     topSort(graph, V);
-    // System.out.println(isCycleUndirectedGraph(graph, new boolean[V], V, V));
+    System.out.println(isCycleUndirectedGraph(graph, new boolean[V], 0, -1));
     System.out.println("Dj \n");
     dijkstra(graph, 0, V);
   }
