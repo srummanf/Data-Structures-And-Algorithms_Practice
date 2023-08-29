@@ -171,7 +171,7 @@ public class code1 {
         // System.out.println("Cycle is present");
         return true;
       } else if (!vis[e.dest]) {
-        isCycleUndirectedGraph(graph, vis, e.dest, curr){
+        if (isCycleUndirectedGraph(graph, vis, e.dest, curr)) {
           return true;
         }
       }
@@ -179,6 +179,58 @@ public class code1 {
     return false;
   }
 
+  // -------------------------------------- Shortest Path Algo - Dijkstra's Algo - Shortest distance between source to all the vertices ----------------------------------------------------------------
+
+    public static class Pair implements Comparable<Pair>{
+      int node;
+      int dist;
+
+      public Pair(int n, int d){
+        this.node = n;
+        this.dist = d;
+      }
+
+      @Override
+      public int compareTo(Pair p2){
+        return this.dist - p2.dist; //ascending order  -- for descending order, p2.dist - this.dist
+      }
+    }
+
+    public static void dijkstra(ArrayList<Edge> graph[], int src, int V){
+      PriorityQueue<Pair> pq = new PriorityQueue<>();
+      int dist[] = new int[V];
+      for (int i = 0; i < V; i++) {
+        if(i!=src){
+          dist[i] = Integer.MAX_VALUE;
+        }
+      }
+      boolean vis[] = new boolean[V];
+
+      pq.add(new Pair(0, 0));
+
+      while(!pq.isEmpty()){
+        Pair curr = pq.remove();
+        if(vis[curr.node]){
+          vis[curr.node] = true;
+
+          for (int i = 0; i < graph[curr.node].size(); i++) {
+            Edge e = graph[curr.node].get(i);
+            int u = e.src;
+            int v = e.dest;
+            if(dist[v] > dist[u] + e.weight){ // Relaxation Condition
+              dist[v] = dist[u] + e.weight;
+              pq.add(new Pair(v, dist[v]));
+            }
+
+          }
+        }
+        for (int i = 0; i < V; i++) {
+          System.out.print(dist[i] + " ");
+        }
+        System.out.println();
+      }
+
+    }
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
@@ -217,6 +269,8 @@ public class code1 {
       }
     }
     topSort(graph, V);
-    System.out.println(isCycleUndirectedGraph(graph, new boolean[V], V, V));
+    // System.out.println(isCycleUndirectedGraph(graph, new boolean[V], V, V));
+    System.out.println("Dj \n");
+    dijkstra(graph, 0, V);
   }
 }
