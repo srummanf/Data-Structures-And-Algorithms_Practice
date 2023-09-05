@@ -257,6 +257,22 @@ public class code1 {
       }
     }
 
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < graph[i].size(); j++) {
+          Edge e = graph[i].get(j);
+          int u = e.src;
+          int v = e.dest;
+          if (
+            (dist[v] > dist[u] + e.weight) && (dist[u] != Integer.MAX_VALUE)
+          ) { // Relaxation Condition
+            System.out.println("Negative Cycle is present");
+          }
+        }
+      }
+
+
+
+
     for (int i = 0; i < dist.length; i++) {
       System.out.print(dist[i] + " ");
     }
