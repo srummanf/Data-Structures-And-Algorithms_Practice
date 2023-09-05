@@ -180,58 +180,89 @@ public class code1 {
     return false;
   }
 
-  // -------------------------------------- Shortest Path Algo - Dijkstra's Algo - Shortest distance between source to all the vertices ----------------------------------------------------------------
+  // -------------------------------------- Shortest Path Algo - Dijkstra's Algo - Shortest distance between source to all the vertices - Greedy ----------------------------------------------------------------
 
-    public static class Pair implements Comparable<Pair>{
-      int node;
-      int dist;
+  public static class Pair implements Comparable<Pair> {
 
-      public Pair(int n, int d){
-        this.node = n;
-        this.dist = d;
-      }
+    int node;
+    int dist;
 
-      @Override
-      public int compareTo(Pair p2){
-        return this.dist - p2.dist; //ascending order  -- for descending order, p2.dist - this.dist
-      }
+    public Pair(int n, int d) {
+      this.node = n;
+      this.dist = d;
     }
 
-    public static void dijkstra(ArrayList<Edge> graph[], int src, int V){
-      PriorityQueue<Pair> pq = new PriorityQueue<>();
-      int dist[] = new int[V];
-      for (int i = 0; i < V; i++) {
-        if(i!=src){
-          dist[i] = Integer.MAX_VALUE;
-        }
+    @Override
+    public int compareTo(Pair p2) {
+      return this.dist - p2.dist; //ascending order  -- for descending order, p2.dist - this.dist
+    }
+  }
+
+  public static void dijkstra(ArrayList<Edge> graph[], int src, int V) {
+    PriorityQueue<Pair> pq = new PriorityQueue<>();
+    int dist[] = new int[V];
+    for (int i = 0; i < V; i++) {
+      if (i != src) {
+        dist[i] = Integer.MAX_VALUE;
       }
-      boolean vis[] = new boolean[V];
+    }
+    boolean vis[] = new boolean[V];
 
-      pq.add(new Pair(0, 0));
+    pq.add(new Pair(0, 0));
 
-      while(!pq.isEmpty()){
-        Pair curr = pq.remove();
-        if(!vis[curr.node]){
-          vis[curr.node] = true;
+    while (!pq.isEmpty()) {
+      Pair curr = pq.remove();
+      if (!vis[curr.node]) {
+        vis[curr.node] = true;
 
-          for (int i = 0; i < graph[curr.node].size(); i++) {
-            Edge e = graph[curr.node].get(i);
-            int u = e.src;
-            int v = e.dest;
-            if(dist[v] > dist[u] + e.weight){ // Relaxation Condition
-              dist[v] = dist[u] + e.weight;
-              pq.add(new Pair(v, dist[v]));
-            }
-
+        for (int i = 0; i < graph[curr.node].size(); i++) {
+          Edge e = graph[curr.node].get(i);
+          int u = e.src;
+          int v = e.dest;
+          if (dist[v] > dist[u] + e.weight) { // Relaxation Condition
+            dist[v] = dist[u] + e.weight;
+            pq.add(new Pair(v, dist[v]));
           }
         }
-        for (int i = 0; i < V; i++) {
-          System.out.print(dist[i] + " ");
-        }
-        System.out.println();
       }
-
+      for (int i = 0; i < V; i++) {
+        System.out.print(dist[i] + " ");
+      }
+      System.out.println();
     }
+  }
+
+  // -------------------------------------- Shortest Path Algo - Bellman Ford Algo - Shortest distance between source to all the vertices - DP -Use it for +/- weights ----------------------------------------------------------------
+
+  public static void BellmanFord(ArrayList<Edge> graph[], int src, int V) {
+    int dist[] = new int[V];
+    for (int i = 0; i < V; i++) {
+      if (i != src) {
+        dist[i] = Integer.MAX_VALUE;
+      }
+    }
+    for (int k = 0; k < V - 1; k++) { //O(V)
+      //O(E)
+      for (int i = 0; i < V; i++) {
+        for (int j = 0; j < graph[i].size(); j++) {
+          Edge e = graph[i].get(j);
+          int u = e.src;
+          int v = e.dest;
+          if (
+            (dist[v] > dist[u] + e.weight) && (dist[u] != Integer.MAX_VALUE)
+          ) { // Relaxation Condition
+            dist[v] = dist[u] + e.weight;
+          }
+        }
+      }
+    }
+
+    for (int i = 0; i < dist.length; i++) {
+      System.out.print(dist[i] + " ");
+    }
+    System.out.println();
+  }
+
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
@@ -273,5 +304,7 @@ public class code1 {
     System.out.println(isCycleUndirectedGraph(graph, new boolean[V], 0, -1));
     System.out.println("Dj \n");
     dijkstra(graph, 0, V);
+    System.out.println("Bellman \n");
+    BellmanFord(graph, 0, V);
   }
 }
