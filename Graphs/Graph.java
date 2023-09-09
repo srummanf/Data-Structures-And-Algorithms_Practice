@@ -303,6 +303,45 @@ public class Graph {
 
   // -------------------------------------- Strong Connected Component - Kosaraju's Algorithm ----------------------------------------------------------------
 
+  // Get Nodes in stack in Topological order ----> Transpose the graph (Reverse the edges )------> Run DFS on the Transpose graph
+
+  // O(V + E)
+
+  public static void KosarajuAlgo(ArrayList<Edge> graph[], int V) {
+    // Step 1
+    Stack<Integer> s = new Stack<>();
+    boolean vis[] = new boolean[V];
+    for (int i = 0; i < V; i++) {
+      if (!vis[i]) {
+        topologicalSortUtil(graph, i, vis, s);
+      }
+    }
+
+    //Step 2
+    ArrayList<Edge> transpose[] = new ArrayList[V];
+    for (int i = 0; i < V; i++) {
+      vis[i] = false;
+      transpose[i] = new ArrayList<Edge>();
+    }
+    for (int i = 0; i < V; i++) {
+      for (int j = 0; j < graph[i].size(); j++) {
+        Edge e = graph[i].get(j);
+        transpose[e.dest].add(new Edge(e.dest, e.src, e.weight));
+      }
+    }
+
+    // Step 3
+    while (!s.isEmpty()) {
+      int curr = s.pop();
+      if (!vis[curr]) {
+        DFS(transpose, curr, vis);
+        System.out.println();
+      }
+
+      
+    }
+  }
+
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
@@ -347,5 +386,6 @@ public class Graph {
     System.out.println("Bellman \n");
     BellmanFord(graph, 0, V);
     primsAlgo(graph, V);
+    KosarajuAlgo(graph, V);
   }
 }
