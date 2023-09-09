@@ -301,6 +301,8 @@ public class Graph {
     System.out.println("The minimum cost using Prim's Algo is " + mstCost);
   }
 
+  // -------------------------------------- Strong Connected Component - Kosaraju's Algorithm ----------------------------------------------------------------
+
   // -------------------------------------- Main function ----------------------------------------------------------------
   public static void main(String[] args) {
     int V = 4;
