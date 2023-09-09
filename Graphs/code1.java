@@ -258,25 +258,47 @@ public class code1 {
     }
 
     for (int i = 0; i < V; i++) {
-        for (int j = 0; j < graph[i].size(); j++) {
-          Edge e = graph[i].get(j);
-          int u = e.src;
-          int v = e.dest;
-          if (
-            (dist[v] > dist[u] + e.weight) && (dist[u] != Integer.MAX_VALUE)
-          ) { // Relaxation Condition
-            System.out.println("Negative Cycle is present");
-          }
+      for (int j = 0; j < graph[i].size(); j++) {
+        Edge e = graph[i].get(j);
+        int u = e.src;
+        int v = e.dest;
+        if ((dist[v] > dist[u] + e.weight) && (dist[u] != Integer.MAX_VALUE)) { // Relaxation Condition
+          System.out.println("Negative Cycle is present");
         }
       }
-
-
-
+    }
 
     for (int i = 0; i < dist.length; i++) {
       System.out.print(dist[i] + " ");
     }
     System.out.println();
+  }
+
+  // -------------------------------------- Prims Algorithm ----------------------------------------------------------------
+  public static void primsAlgo(ArrayList<Edge> graph[], int V) {
+    PriorityQueue<Pair> pq = new PriorityQueue<>();
+    boolean vis[] = new boolean[V];
+    pq.add(new Pair(0, 0));
+
+    int mstCost = 0;
+
+    while (!pq.isEmpty()) {
+      Pair curr = pq.remove();
+      if (!vis[curr.node]) {
+        vis[curr.node] = true;
+        mstCost += curr.dist;
+
+        for (int i = 0; i < graph[curr.node].size(); i++) {
+          Edge e = graph[curr.node].get(i);
+          int u = e.src;
+          int v = e.dest;
+          if (!vis[v]) {
+            pq.add(new Pair(v, e.weight));
+          }
+        }
+      }
+    }
+    System.out.println("The minimum cost using Prim's Algo is " + mstCost);
   }
 
   // -------------------------------------- Main function ----------------------------------------------------------------
