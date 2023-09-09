@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class code1 {
+public class Graph {
 
   // -------------------------------------- Graph Data Structure Creation ----------------------------------------------------------------
   static class Edge {
@@ -276,14 +276,14 @@ public class code1 {
 
   // -------------------------------------- Prims Algorithm ----------------------------------------------------------------
   public static void primsAlgo(ArrayList<Edge> graph[], int V) {
-    PriorityQueue<Pair> pq = new PriorityQueue<>();
+    PriorityQueue<Pair> pq2 = new PriorityQueue<>();
     boolean vis[] = new boolean[V];
-    pq.add(new Pair(0, 0));
+    pq2.add(new Pair(0, 0));
 
     int mstCost = 0;
 
-    while (!pq.isEmpty()) {
-      Pair curr = pq.remove();
+    while (!pq2.isEmpty()) {
+      Pair curr = pq2.remove();
       if (!vis[curr.node]) {
         vis[curr.node] = true;
         mstCost += curr.dist;
@@ -293,7 +293,7 @@ public class code1 {
           int u = e.src;
           int v = e.dest;
           if (!vis[v]) {
-            pq.add(new Pair(v, e.weight));
+            pq2.add(new Pair(v, e.weight));
           }
         }
       }
@@ -344,5 +344,6 @@ public class code1 {
     dijkstra(graph, 0, V);
     System.out.println("Bellman \n");
     BellmanFord(graph, 0, V);
+    primsAlgo(graph, V);
   }
 }
