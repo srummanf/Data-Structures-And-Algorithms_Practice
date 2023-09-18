@@ -36,6 +36,7 @@ class SubsetSum {
     Collections.sort(ans);
     for (int i = 0; i < ans.size(); i++) {
       System.out.print(ans.get(i) + " ");
+      System.out.println();
     }
   }
 }
