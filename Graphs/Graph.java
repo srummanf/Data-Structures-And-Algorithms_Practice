@@ -337,8 +337,52 @@ public class Graph {
         DFS(transpose, curr, vis);
         System.out.println();
       }
+    }
+  }
 
-      
+  // -------------------------------------- Bridge in Graphs ----------------------------------------------------------------
+  // -------------------------------------- Tarjan's Algorithm ----------------------------------------------------------------
+
+  public static void dfs_tarjan(
+    ArrayList<Edge> graph[],
+    int curr,
+    boolean vis[],
+    int dt[],
+    int low[],
+    int time,
+    int par
+  ) {
+    vis[curr] = true;
+    dt[curr] = low[curr] = ++time;
+
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      if (e.dest == par) {
+        continue;
+      } else if (!vis[e.dest]) {
+        dfs_tarjan(graph, e.dest, vis, dt, low, time, curr);
+        low[curr] = Math.min(low[curr], low[e.dest]);
+        if (low[e.dest] > dt[curr]) {
+          System.out.println(
+            "Bridge is present between " + curr + " ---->" + e.dest
+          );
+        }
+      } else {
+        low[curr] = Math.min(low[curr], dt[e.dest]);
+      }
+    }
+  }
+
+  public static void getBridge(ArrayList<Edge> graph[], int V) {
+    int dt[] = new int[V];
+    int low[] = new int[V];
+    int time = 0;
+    boolean vis[] = new boolean[V];
+
+    for (int i = 0; i < V; i++) {
+      if (!vis[i]) {
+        dfs_tarjan(graph, i, vis, dt, low, time, -1);
+      }
     }
   }
 
@@ -387,5 +431,6 @@ public class Graph {
     BellmanFord(graph, 0, V);
     primsAlgo(graph, V);
     KosarajuAlgo(graph, V);
+    getBridge(graph, V);
   }
 }
