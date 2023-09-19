@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Graph {
 
-  // -------------------------------------- Graph Data Structure Creation ----------------------------------------------------------------
+  // -------------------------------------- Graph Data Structure Creation -----------------------------------------------------------------------------------------------
   static class Edge {
 
     int src, dest, weight;
@@ -14,7 +14,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Graph Creation ----------------------------------------------------------------
+  // -------------------------------------- Graph Creation ----------------------------------------------------------------------------------------------------------
   public static void createGraph(ArrayList<Edge> graph[]) {
     for (int i = 0; i < graph.length; i++) {
       graph[i] = new ArrayList<Edge>();
@@ -33,7 +33,7 @@ public class Graph {
     graph[3].add(new Edge(3, 2, -1));
   }
 
-  // -------------------------------------- Breadth First Search BFS ----------------------------------------------------------------
+  // -------------------------------------- Breadth First Search BFS -------------------------------------------------------------------------------------------------------
   public static void BFS(
     ArrayList<Edge> graph[],
     int V,
@@ -56,7 +56,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Depth First Search DFS ----------------------------------------------------------------
+  // -------------------------------------- Depth First Search DFS ----------------------------------------------------------------------------------------------------
   public static void DFS(ArrayList<Edge> graph[], int curr, boolean visited[]) {
     System.out.print(curr + " ");
     visited[curr] = true;
@@ -93,7 +93,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Cycle Detection for Directed Graph ----------------------------------------------------------------
+  // -------------------------------------- Cycle Detection for Directed Graph ---------------------------------------------------------------------------------------
 
   // Condition : in DFS stack , if we get the node which is already in the stack then cycle is present
 
@@ -121,9 +121,9 @@ public class Graph {
     return false;
   }
 
-  // -------------------------------------- Topological Sort : DAG Directed Acyclic Graph
+  // -------------------------------------- Topological Sort : DAG Directed Acyclic Graph ------------------------------------------------------------------------------------------------
   // It is the linear order of V such that every directed edge  u-> v, the vertex u comes before v in the order
-  // we use DFS ----------------------------------------------------------------
+  // we use DFS 
 
   public static void topologicalSortUtil(
     ArrayList<Edge> graph[],
@@ -157,7 +157,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Cycle Detection for Undirected Graph ----------------------------------------------------------------
+  // -------------------------------------- Cycle Detection for Undirected Graph -----------------------------------------------------------------------------------
   public static boolean isCycleUndirectedGraph(
     ArrayList<Edge> graph[],
     boolean vis[],
@@ -232,7 +232,8 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Shortest Path Algo - Bellman Ford Algo - Shortest distance between source to all the vertices - DP -Use it for +/- weights ----------------------------------------------------------------
+  // -------------------------------------- Shortest Path Algo - Bellman Ford Algo ------------------------------------------------------------------------------------
+  //  Shortest distance between source to all the vertices - DP -Use it for +/- weights ----------------------------------------------------------------
 
   public static void BellmanFord(ArrayList<Edge> graph[], int src, int V) {
     int dist[] = new int[V];
@@ -274,7 +275,7 @@ public class Graph {
     System.out.println();
   }
 
-  // -------------------------------------- Prims Algorithm ----------------------------------------------------------------
+  // -------------------------------------- Prims Algorithm ----------------------------------------------------------------------------------------------------------------
   public static void primsAlgo(ArrayList<Edge> graph[], int V) {
     PriorityQueue<Pair> pq2 = new PriorityQueue<>();
     boolean vis[] = new boolean[V];
@@ -340,8 +341,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Bridge in Graphs ----------------------------------------------------------------
-  // -------------------------------------- Tarjan's Algorithm ----------------------------------------------------------------
+  // -------------------------------------- Bridge in Graphs - Tarjan's Algorithm ----------------------------------------------------------------------------------------------------
 
   public static void dfs_tarjan(
     ArrayList<Edge> graph[],
@@ -382,6 +382,66 @@ public class Graph {
     for (int i = 0; i < V; i++) {
       if (!vis[i]) {
         dfs_tarjan(graph, i, vis, dt, low, time, -1);
+      }
+    }
+  }
+
+  // -------------------------------------- Articulation Point: A Node which on removal disconnects the graph ----------------------------------------------------------------
+  // Eg: Finding vulnerablities in CN
+  // O(V+E)
+
+  public static void articulationPoint(
+    ArrayList<Edge> graph[],
+    int curr,
+    int par,
+    int dt[],
+    int low[],
+    boolean vis[],
+    int time,
+    boolean ap[]
+  ) {
+    vis[curr] = true;
+    dt[curr] = low[curr] = ++time;
+    int children = 0;
+
+    for (int i = 0; i < graph[curr].size(); i++) {
+      Edge e = graph[curr].get(i);
+      int neigh = e.dest;
+
+      if (par == neigh) {
+        continue;
+      } else if (vis[neigh]) {
+        low[curr] = Math.min(low[curr], dt[neigh]);
+      } else {
+        articulationPoint(graph, neigh, curr, dt, low, vis, time, ap);
+        low[curr] = Math.min(low[curr], low[neigh]);
+        if (dt[curr] <= low[neigh] && par != -1) {
+          ap[curr] = true;
+        }
+        children++;
+      }
+    }
+
+    if (par == -1 && children > 1) {
+      ap[curr] = true;
+    }
+  }
+
+  public static void getAP(ArrayList<Edge> graph[], int V) {
+    int dt[] = new int[V];
+    int low[] = new int[V];
+    int time = 0;
+    boolean vis[] = new boolean[V];
+    boolean ap[] = new boolean[V];
+
+    for (int i = 0; i < V; i++) {
+      if (!vis[i]) {
+        articulationPoint(graph, i, -1, dt, low, vis, time, ap);
+      }
+    }
+    for (int i = 0; i < V; i++) {
+      if (ap[i]) {
+        System.out.println("Articulation Point is " + i);
       }
     }
   }
@@ -429,8 +489,13 @@ public class Graph {
     dijkstra(graph, 0, V);
     System.out.println("Bellman \n");
     BellmanFord(graph, 0, V);
+
     primsAlgo(graph, V);
+
     KosarajuAlgo(graph, V);
+
     getBridge(graph, V);
+
+    getAP(graph, V);
   }
 }
