@@ -1,3 +1,4 @@
+package LinkedList;
 // Sorted Insert in a Singly Linked List
 
 import java.util.LinkedList;

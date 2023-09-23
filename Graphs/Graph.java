@@ -123,7 +123,7 @@ public class Graph {
 
   // -------------------------------------- Topological Sort : DAG Directed Acyclic Graph ------------------------------------------------------------------------------------------------
   // It is the linear order of V such that every directed edge  u-> v, the vertex u comes before v in the order
-  // we use DFS 
+  // we use DFS
 
   public static void topologicalSortUtil(
     ArrayList<Edge> graph[],

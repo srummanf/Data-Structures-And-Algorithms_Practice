@@ -1,3 +1,4 @@
+package Arrays;
 // Microsoft Interview Experience Set 128 | (On-Campus for Internship)
 
 // Given an array A of size m and another array B of size n. Return the product of maximum of A and minimum of B. (2 marks)
