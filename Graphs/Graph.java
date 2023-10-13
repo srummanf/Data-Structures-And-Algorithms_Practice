@@ -21,7 +21,7 @@ public class Graph {
     }
 
     graph[0].add(new Edge(0, 2, 2));
-
+ 
     graph[1].add(new Edge(1, 2, 10));
     graph[1].add(new Edge(1, 3, 0));
 
@@ -56,7 +56,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Depth First Search DFS ----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------------------------- Depth First Search DFS ----------------------------------------------------------------------------------------------------
   public static void DFS(ArrayList<Edge> graph[], int curr, boolean visited[]) {
     System.out.print(curr + " ");
     visited[curr] = true;
@@ -69,7 +69,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Source to Destination : all Paths  O{V*V}----------------------------------------------------------------
+  // ----------------------------------------------------------- Source to Destination : all Paths  O{V*V}----------------------------------------------------------------
   public static void printAllPath(
     ArrayList<Edge> graph[],
     boolean visited[],
@@ -93,7 +93,7 @@ public class Graph {
     }
   }
 
-  // -------------------------------------- Cycle Detection for Directed Graph ---------------------------------------------------------------------------------------
+  // ----------------------------------------------------------- Cycle Detection for Directed Graph ---------------------------------------------------------------------------------------
 
   // Condition : in DFS stack , if we get the node which is already in the stack then cycle is present
 
