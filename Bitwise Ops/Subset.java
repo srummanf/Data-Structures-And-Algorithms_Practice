@@ -5,12 +5,14 @@ class Subset {
     void printSubset(String str[]) {
         int n = str.length;
         int powSize = (int) Math.pow(2, n);
-        for (int counter = 0; counter < powSize; counter++) {
+        for (int counter = 1; counter < powSize; counter++) {
+            System.out.print("{");
             for (int j = 0; j < n; j++) {
                 if ((counter & (1 << j)) != 0) {
                     System.out.print(str[j]);
                 }
             }
+            System.out.print("}");
             System.out.println();
         }
     }
