@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Learn {
 
   static class Node {
@@ -44,13 +46,82 @@ public class Learn {
     }
   }
 
+  public static Node delete(Node root, int val) {
+    if (root.data > val) {
+      root.left = delete(root.left, val);
+    } else if (root.data < val) {
+      root.right = delete(root.right, val);
+    } else {
+      //root.dat == val
+
+      //leaf node
+      if (root.left == null && root.right == null) return null;
+      //one child
+      else if (root.left == null) return root.right; else if (
+        root.right == null
+      ) return root.left;
+      //two child
+      else {
+        Node IS = inOrderSuccessor(root.right);
+        root.data = IS.data;
+        root.right = delete(root.right, IS.data);
+      }
+    }
+    return root;
+  }
+
+  public static Node inOrderSuccessor(Node root) {
+    while (root.left != null) {
+      root = root.left;
+    }
+    return root;
+  }
+
+  // -----------------------------------PRINT IN RANGE : BST --------------------------------------------------------------------------
+
+  public static void printInRange(Node root, int k1, int k2) {
+    if (root == null) return;
+    if (root.data >= k1 && root.data <= k2) {
+      printInRange(root.left, k1, k2);
+      System.out.print(root.data + " ");
+      printInRange(root.right, k1, k2);
+    } else if (root.data >= k2) {
+      printInRange(root.left, k1, k2);
+    } else {
+      printInRange(root.right, k1, k2);
+    }
+  }
+
+  // -----------------------------------Root to Leaf Path --------------------------------------------------------------------------
+
+  public static void printRootToLeaf(Node root, ArrayList<Integer> path) {
+    if (root == null) return;
+
+    path.add(root.data);
+    if (root.left == null && root.right == null) {
+      System.out.println(path.toString());
+    } else {
+      printRootToLeaf(root.left, path);
+      printRootToLeaf(root.right, path);
+    }
+    path.remove(path.size() - 1);
+  }
+
   public static void main(String[] args) {
-    int val[] = { 5, 1, 3, 4, 2, 7 };
+    int val[] = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
     Node root = null;
     for (int x : val) {
       root = insert(root, x);
     }
     inorder(root);
     System.out.println(search(root, 7));
+
+    // root = delete(root, 3);
+    // inorder(root);
+    System.out.println();
+    printInRange(root, 3, 10);
+
+    ArrayList<Integer> path = new ArrayList<>();
+    printRootToLeaf(root, path);
   }
 }
