@@ -48,13 +48,14 @@ public class PrintingSubSequencesWhoseSumIsK {
 
     ArrayList<Integer> al = new ArrayList<>();
     ArrayList<Integer> length = new ArrayList<>();
-    al.add(1);
     al.add(2);
     al.add(3);
+    al.add(3);
     al.add(4);
-    al.add(5);
+    al.add(6);
+    al.add(7);
 
-    p.printSum(al, al.size(), 5, length);
+    p.printSum(al, al.size(), 12, length);
     System.out.println(length);
   }
 }
