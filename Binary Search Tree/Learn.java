@@ -35,6 +35,8 @@ public class Learn {
     inorder(root.right);
   }
 
+  // ----------------------------------- SEARCH --------------------------------------------------------------------------
+
   public static boolean search(Node root, int key) {
     if (root == null) return false;
     if (root.data > key) {
@@ -45,6 +47,8 @@ public class Learn {
       return search(root.right, key);
     }
   }
+
+  // ----------------------------------- DELETE NODE --------------------------------------------------------------------------
 
   public static Node delete(Node root, int val) {
     if (root.data > val) {
@@ -77,7 +81,7 @@ public class Learn {
     return root;
   }
 
-  // -----------------------------------PRINT IN RANGE : BST --------------------------------------------------------------------------
+  // ----------------------------------- PRINT IN RANGE (between k1 and k2) : BST : Level Order --------------------------------------------------------------------------
 
   public static void printInRange(Node root, int k1, int k2) {
     if (root == null) return;
@@ -92,11 +96,10 @@ public class Learn {
     }
   }
 
-  // -----------------------------------Root to Leaf Path --------------------------------------------------------------------------
+  // ----------------------------------- Root to Leaf Path --------------------------------------------------------------------------
 
   public static void printRootToLeaf(Node root, ArrayList<Integer> path) {
     if (root == null) return;
-
     path.add(root.data);
     if (root.left == null && root.right == null) {
       System.out.println(path.toString());
@@ -106,6 +109,8 @@ public class Learn {
     }
     path.remove(path.size() - 1);
   }
+
+  // --------------------------------------- MAIN Function --------------------------------------------------------------------------
 
   public static void main(String[] args) {
     int val[] = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
@@ -118,8 +123,8 @@ public class Learn {
 
     // root = delete(root, 3);
     // inorder(root);
-    System.out.println();
-    printInRange(root, 3, 10);
+    // System.out.println();
+    // printInRange(root, 3, 10);
 
     ArrayList<Integer> path = new ArrayList<>();
     printRootToLeaf(root, path);

@@ -23,3 +23,12 @@ class Subset {
         obj.printSubset(str);
     }
 }
+
+
+// CONVERT STRING TO ARRAYS OF CHARACTERS
+// String input = "YourStringHere";
+// String[] stringArray = new String[input.length()];
+
+// for (int i = 0; i < input.length(); i++) {
+//     stringArray[i] = String.valueOf(input.charAt(i));
+// }

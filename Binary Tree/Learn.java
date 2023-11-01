@@ -71,7 +71,6 @@ public class Learn {
     return 1 + Math.max(height(root.left), height(root.right));
   }
 
-
   static class TreeInfo {
 
     int height;
@@ -82,6 +81,9 @@ public class Learn {
       this.diameter = d;
     }
   }
+
+    // ---------------- get Tree Info --------------------------------------------------------------------------------------------------------------------------------
+
 
   public static TreeInfo getTreeInfo(Node root) {
     if (root == null) return new TreeInfo(0, 0);
@@ -95,26 +97,32 @@ public class Learn {
     return new TreeInfo(height, diameter);
   }
 
+  // ---------------- isIdentical --------------------------------------------------------------------------------------------------------------------------------
 
-
-
-  public boolean isIdentical(Node root, Node subroot){
-    if(root == null && subroot == null) return true;
-    if(root == null || subroot == null) return false;
-    if(root.data == subroot.data){
-        return isIdentical(root.left, subroot.left) && isIdentical(root.right, subroot.right);
+  public boolean isIdentical(Node root, Node subroot) {
+    if (root == null && subroot == null) return true;
+    if (root == null || subroot == null) return false;
+    if (root.data == subroot.data) {
+      return (
+        isIdentical(root.left, subroot.left) &&
+        isIdentical(root.right, subroot.right)
+      );
     }
     return false;
   }
 
-  public boolean isSubTree(Node root, Node subroot){
-    if(subroot == null) return true;
-    if(root == null) return false;
-    if(root.data == subroot.data) {
-        if(isIdentical(root, subroot)) return true;
+  // ---------------- isSubTree --------------------------------------------------------------------------------------------------------------------------------
+
+  public boolean isSubTree(Node root, Node subroot) {
+    if (subroot == null) return true;
+    if (root == null) return false;
+    if (root.data == subroot.data) {
+      if (isIdentical(root, subroot)) return true;
     }
     return isSubTree(root.left, subroot) || isSubTree(root.right, subroot);
   }
+
+  // ----------------------------------------------------------------Main Method------------------------------------------------------------
 
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };

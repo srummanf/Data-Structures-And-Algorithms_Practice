@@ -18,3 +18,4 @@ import java.util.*;
         System.out.println(c.countDistinct(arr, n));
     }
 }
+
