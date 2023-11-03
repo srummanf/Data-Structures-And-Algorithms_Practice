@@ -33,7 +33,7 @@ class Learn {
       size++;
       arr[size - 1] = x;
 
-      for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i];) {
+      for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i];i++) {
         int temp = arr[i];
         arr[i] = arr[parent(i)];
         arr[parent(i)] = temp;
@@ -96,9 +96,14 @@ class Learn {
     MinHeap h = new MinHeap(11);
     h.insert(3);
     h.insert(2);
-    h.deleteKey(0);
+    // h.deleteKey(1);
     h.insert(15);
     h.insert(20);
+    h.insert(25);
+    h.insert(30);
+    h.insert(35);
+    h.insert(40);
+    System.out.println(Arrays.toString(h.arr));
     System.out.println(h.extractMin());
     h.decreaseKey(2, 1);
     System.out.println(h.extractMin());
