@@ -38,7 +38,7 @@ Read 3 from the stream and push it to the stack. s = [1,2,3].
 
 import java.util.*;
 
-public class Test {
+public class ArrayStackOps {
 
   public List<String> buildArray(int[] target, int n) {
     ArrayList<String> ans = new ArrayList<>();
@@ -97,7 +97,7 @@ public class Test {
   }
 
   public static void main(String[] args) {
-    Test t = new Test();
+    ArrayStackOps t = new ArrayStackOps();
     int[] target = { 1, 3 };
     int n = 3;
     System.out.println(t.buildArray(target, n));
