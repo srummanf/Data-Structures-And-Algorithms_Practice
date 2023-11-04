@@ -43,7 +43,7 @@
 
 import java.util.*;
 
-class Grid {
+class Maze {
 
   public static int recursion(int i, int j) {
     if (i == 0 && j == 0) return 1;
