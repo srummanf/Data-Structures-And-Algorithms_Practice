@@ -1,0 +1,1 @@
+if (sum == targetSum) return new int[] { minWindowSize, sum };
