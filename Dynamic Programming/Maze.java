@@ -66,9 +66,15 @@ class Maze {
     int dp[][] = new int[i + 1][j + 1];
     for (int k = 0; k <= i; k++) {
       for (int l = 0; l <= j; l++) {
-        if (k == 0 && l == 0) dp[k][l] = 1; else if (k == 0) dp[k][l] =
-          dp[k][l - 1]; else if (l == 0) dp[k][l] =
-          dp[k - 1][l]; else dp[k][l] = dp[k - 1][l] + dp[k][l - 1];
+        if (k == 0 && l == 0) {
+          dp[k][l] = 1;
+        } else if (k == 0) {
+          dp[k][l] = dp[k][l - 1];
+        } else if (l == 0) {
+          dp[k][l] = dp[k - 1][l];
+        } else {
+          dp[k][l] = dp[k - 1][l] + dp[k][l - 1];
+        }
       }
     }
     return (dp[i][j]);
@@ -86,7 +92,6 @@ class Maze {
     return (dp[j]);
   }
 
-
   public static void main(String[] args) {
     int m = 3;
     int n = 3;
@@ -100,6 +105,5 @@ class Maze {
     System.out.println(topdown(m - 1, n - 1, dp));
     System.out.println(bottomup(m - 1, n - 1));
     System.out.println(bottomup_optimized(m - 1, n - 1));
-    
   }
 }
