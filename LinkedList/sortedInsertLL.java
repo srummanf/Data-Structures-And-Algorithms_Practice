@@ -1,10 +1,7 @@
-package LinkedList;
-// Sorted Insert in a Singly Linked List
-
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class sortedLL {
+public class sortedInsertLL {
     Node head;
 
     // LinkedList
@@ -52,7 +49,7 @@ public class sortedLL {
     }
 
     public static void main(String args[]) {
-        sortedLL llist = new sortedLL();
+        sortedInsertLL llist = new sortedInsertLL();
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the number of elements: ");
