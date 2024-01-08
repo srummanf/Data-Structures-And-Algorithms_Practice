@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
-public class Learn {
+import javax.swing.tree.TreeNode;
 
+public class Learn {
+int sumRange = 0;
   static class Node {
 
     int data;
@@ -49,7 +51,7 @@ public class Learn {
   }
 
   // ----------------------------------- DELETE NODE --------------------------------------------------------------------------
-
+  
   public static Node delete(Node root, int val) {
     if (root.data > val) {
       root.left = delete(root.left, val);
@@ -95,6 +97,22 @@ public class Learn {
       printInRange(root.right, k1, k2);
     }
   }
+  // ----------------------------------- RANGE SUM OF BST --------------------------------------------------------------------------
+public int rangeSumBST(TreeNode root, int k1, int k2) {
+        if (root == null) return 0;
+    if (root.data >= k1 && root.data <= k2) {
+        sumRange = sumRange + root.data;
+      rangeSumBST(root.left, k1, k2);
+      System.out.print(root.data + " ");
+      rangeSumBST(root.right, k1, k2);
+    } else if (root.data >= k2) {
+      rangeSumBST(root.left, k1, k2);
+    } else {
+      rangeSumBST(root.right, k1, k2);
+    }
+    return sumRange;
+    }
+
 
   // ----------------------------------- Root to Leaf Path --------------------------------------------------------------------------
 
