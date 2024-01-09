@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.HashSet;
 
  class CountDistinctElements {
     int countDistinct(int arr[], int n) {

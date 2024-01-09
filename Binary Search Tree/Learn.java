@@ -58,7 +58,7 @@ int sumRange = 0;
     } else if (root.data < val) {
       root.right = delete(root.right, val);
     } else {
-      //root.dat == val
+      //root.data == val
 
       //leaf node
       if (root.left == null && root.right == null) return null;
@@ -98,7 +98,7 @@ int sumRange = 0;
     }
   }
   // ----------------------------------- RANGE SUM OF BST --------------------------------------------------------------------------
-public int rangeSumBST(TreeNode root, int k1, int k2) {
+public int rangeSumBST(Node root, int k1, int k2) {
         if (root == null) return 0;
     if (root.data >= k1 && root.data <= k2) {
         sumRange = sumRange + root.data;
@@ -112,6 +112,22 @@ public int rangeSumBST(TreeNode root, int k1, int k2) {
     }
     return sumRange;
     }
+
+//     class Solution {
+//     public int rangeSumBST(TreeNode root, int low, int high) {
+//         if (root == null) {
+//             return 0;
+//         }
+//         if (low <= root.val && root.val <= high) {
+//             return root.val + rangeSumBST(root.left, low, high)
+//                 + rangeSumBST(root.right, low, high);
+//         } else if (root.val < low) {
+//             return rangeSumBST(root.right, low, high);
+//         } else {
+//             return rangeSumBST(root.left, low, high);
+//         }
+//     }
+// }
 
 
   // ----------------------------------- Root to Leaf Path --------------------------------------------------------------------------

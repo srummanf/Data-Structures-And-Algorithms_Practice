@@ -8,6 +8,7 @@ public class CountDistinctElementsInEachWindow {
       m.put(arr[i], m.getOrDefault(arr[i], 0) + 1);
     }
     System.out.print(m.size() + " ");
+    System.out.println(m);
     for (int i = k; i < n; i++) {
       m.put(arr[i - k], m.get(arr[i - k]) - 1);
 

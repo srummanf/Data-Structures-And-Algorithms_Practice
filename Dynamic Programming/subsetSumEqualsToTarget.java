@@ -1,7 +1,7 @@
 // Recursive solutione
 // boolean f(int ind, int target, int arr[]){
 //     if(target==0) return true;
-//     if(ind==0) return arr[0]==target; --> This will return true if array[0] equal to target
+//     if(ind==0) return arr[0]= =target; --> This will return true if array[0] equal to target
 
 //     boolean nottake = f(ind-1, target, arr);
 //     boolean take = false;
