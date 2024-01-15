@@ -2,7 +2,7 @@
 
 /**
  * Definition for singly-linked list.
- * class ListNode {
+ * static class ListNode {
  *     int val;
  *     ListNode next;
  *     ListNode(int x) {
