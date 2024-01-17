@@ -8,6 +8,7 @@ public class FrequencyOfArrayElements {
         }
         for(Map.Entry<Integer, Integer> e : m.entrySet()){
             System.out.println(e.getKey() + " " + e.getValue());
+            
         }
     }
     public static void main(String args[]) {
