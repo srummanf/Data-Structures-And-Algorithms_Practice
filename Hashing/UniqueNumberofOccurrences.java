@@ -52,7 +52,7 @@ public class UniqueNumberofOccurrences {
         }
       
         // Create a hashset containing all the values (occurrence counts) from the countMap.
-        Set<Integer> occurrenceSet = new HashSet<>(countMap.values());
+        HashSet<Integer> occurrenceSet = new HashSet<>(countMap.values());
       
         // If the size of the set (unique occurrences) is the same as the size of the map (unique numbers),
         // it means that all occurrence counts are unique and we return true. Otherwise, return false.
