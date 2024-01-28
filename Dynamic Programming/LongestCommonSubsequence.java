@@ -37,7 +37,18 @@ public class LongestCommonSubsequence {
   }
 
   // Tabulation Solution
-  
+  int LCS_tabulation(String s1, String s2, int i1, int i2, int[][] dp){
+    for(int i=0; i<=i1; i++){
+        for(int j=0; j<=i2; j++){
+            if(i==0 || j==0) dp[i][j] = 0;
+            else {
+                if(s1.charAt(i-1) == s2.charAt(j-1)) dp[i][j] = 1 + dp[i-1][j-1];
+                else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+    return dp[i1][i2];
+  }
 
   public static void main(String[] args) {
     LongestCommonSubsequence ob = new LongestCommonSubsequence();

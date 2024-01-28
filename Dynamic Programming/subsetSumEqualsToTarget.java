@@ -12,6 +12,7 @@
 //     return take || nottake;
 // }
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class subsetSumEqualsToTarget {
@@ -92,10 +93,35 @@ public class subsetSumEqualsToTarget {
     return fTab(dp2, arr, k);
   }
 
+  // Bitwise Ops
+  public static int findWays(int num[], int tar) {
+    // Write your code here.
+    int ans = 0;
+    int sum = 0;
+    int n = num.length;
+    ArrayList<Integer> arr = new ArrayList<>();
+    int powSize = (int) Math.pow(2, n);
+    for (int counter = 0; counter < powSize; counter++) {
+      for (int j = 0; j < n; j++) {
+        if ((counter & (1 << j)) != 0) {
+          // System.out.print(num[j]);
+          sum += num[j];
+        }
+      }
+      if (sum == tar) {
+        ans++;
+      }
+      sum = 0;
+      // System.out.println();
+    }
+    return ans;
+  }
+
   public static void main(String[] args) {
-    int arr[] = {1, 2, 3, 4, 5};
+    int arr[] = { 1, 2, 3, 4, 5 };
     int n = arr.length;
-    int k = 16;
+    int k = 9;
     System.out.println(subsetSumToK(n, k, arr));
+    System.out.println(findWays(arr,k));
   }
 }
