@@ -1,3 +1,5 @@
+// A great question on Resource Allocation and Priority Queue
+
 import java.util.*;
 
 // https://leetcode.com/problems/meeting-rooms-iii/
@@ -64,5 +66,11 @@ public class MeetingRoomsIII {
 
         // Return the room id with the highest booking count
         return mostBookedRoom;
+    }
+
+    public static void main(String[] args) {
+        MeetingRoomsIII meetingRoomsIII = new MeetingRoomsIII();
+        int[][] meetings = { { 1, 3 }, { 2, 4 }, { 3, 5 }, { 4, 6 }, { 5, 7 } };
+        System.out.println(meetingRoomsIII.mostBooked(2, meetings));
     }
 }

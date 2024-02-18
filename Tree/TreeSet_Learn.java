@@ -1,3 +1,5 @@
+// Like PriorityQueue, TreeSet is also a collection class that stores elements in a sorted order.
+
 import java.util.*;
 
 public class TreeSet_Learn {
@@ -22,9 +24,9 @@ public class TreeSet_Learn {
         //HeadSet returns the elements which are less than the specified element
         //TailSet returns the elements which are greater than the specified element
         //SubSet returns the elements which are in between the specified elements
-        System.out.println("Chava" + tset.headSet(2));
-        System.out.println("Chava" + tset.tailSet(55));
-        System.out.println("Chava" + tset.subSet(1,5));
+        System.out.println("Chava Headset" + tset.headSet(2));
+        System.out.println("Chava Tailset" + tset.tailSet(55));
+        System.out.println("Chava Subset" + tset.subSet(1,5));
         //Iterating through the TreeSet
         Iterator<Integer> it = tset.iterator();
 
