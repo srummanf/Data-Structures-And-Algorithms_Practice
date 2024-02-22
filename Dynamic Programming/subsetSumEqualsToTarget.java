@@ -1,3 +1,5 @@
+// DP  17
+
 // Recursive solutione
 // boolean f(int ind, int target, int arr[]){
 //     if(target==0) return true;
@@ -18,8 +20,10 @@ import java.util.Arrays;
 public class subsetSumEqualsToTarget {
 
   boolean f(int ind, int target, int arr[]) {
-    if (target == 0) return true;
-    if (ind == 0) return arr[0] == target;
+    if (target == 0)
+      return true;
+    if (ind == 0)
+      return arr[0] == target;
 
     boolean nottake = f(ind - 1, target, arr);
     boolean take = false;
@@ -34,22 +38,28 @@ public class subsetSumEqualsToTarget {
 
   public static boolean f(int ind, int target, int[] arr, int[][] dp) {
     // If the target sum is achieved, return true
-    if (target == 0) return true;
+    if (target == 0)
+      return true;
 
-    // If we have considered all elements but haven't reached the target, return false
-    if (ind == 0) return arr[0] == target;
+    // If we have considered all elements but haven't reached the target, return
+    // false
+    if (ind == 0)
+      return arr[0] == target;
 
     // If the result for this subproblem has already been calculated, return it
-    if (dp[ind][target] != -1) return dp[ind][target] == 0 ? false : true;
+    if (dp[ind][target] != -1)
+      return dp[ind][target] == 0 ? false : true;
 
     // Try not taking the current element
     boolean notTaken = f(ind - 1, target, arr, dp);
 
     // Try taking the current element if it doesn't exceed the target
     boolean taken = false;
-    if (arr[ind] <= target) taken = f(ind - 1, target - arr[ind], arr, dp);
+    if (arr[ind] <= target)
+      taken = f(ind - 1, target - arr[ind], arr, dp);
 
-    // Store the result in the DP table and return whether either option was successful
+    // Store the result in the DP table and return whether either option was
+    // successful
     dp[ind][target] = notTaken || taken ? 1 : 0;
     return notTaken || taken;
   }
@@ -59,22 +69,29 @@ public class subsetSumEqualsToTarget {
     int n = arr.length;
 
     // If the target is 0, we can always achieve it
-    for (int i = 0; i < n; i++) dp[i][0] = 1;
+    for (int i = 0; i < n; i++)
+      dp[i][0] = 1;
 
-    // If we have only one element, we can achieve the target if the element is equal to it
-    if (arr[0] <= target) dp[0][arr[0]] = 1;
+    // If we have only one element, we can achieve the target if the element is
+    // equal to it
+    if (arr[0] <= target)
+      dp[0][arr[0]] = 1;
 
     // Consider all elements and target sums
     for (int i = 1; i < n; i++) {
       for (int j = 1; j <= target; j++) {
-        // If we can achieve the current target sum without the current element, we can achieve
+        // If we can achieve the current target sum without the current element, we can
+        // achieve
         // it with the current element as well
-        if (dp[i - 1][j] == 1) dp[i][j] = 1;
+        if (dp[i - 1][j] == 1)
+          dp[i][j] = 1;
 
-        // If the current element is less than the target, we can achieve the current target by
+        // If the current element is less than the target, we can achieve the current
+        // target by
         // either including or excluding the current element
         if (arr[i] <= j) {
-          if (dp[i - 1][j - arr[i]] == 1) dp[i][j] = 1;
+          if (dp[i - 1][j - arr[i]] == 1)
+            dp[i][j] = 1;
         }
       }
     }
@@ -87,8 +104,10 @@ public class subsetSumEqualsToTarget {
     // Write your code here.
     int dp[][] = new int[n][k + 1];
     int dp2[][] = new int[n][k + 1];
-    for (int row[] : dp) Arrays.fill(row, -1);
-    for (int row[] : dp2) Arrays.fill(row, -1);
+    for (int row[] : dp)
+      Arrays.fill(row, -1);
+    for (int row[] : dp2)
+      Arrays.fill(row, -1);
     // return f(n - 1, k, arr, dp);
     return fTab(dp2, arr, k);
   }
@@ -122,6 +141,6 @@ public class subsetSumEqualsToTarget {
     int n = arr.length;
     int k = 9;
     System.out.println(subsetSumToK(n, k, arr));
-    System.out.println(findWays(arr,k));
+    System.out.println(findWays(arr, k));
   }
 }
