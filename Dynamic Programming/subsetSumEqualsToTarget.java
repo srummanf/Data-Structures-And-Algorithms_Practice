@@ -77,7 +77,7 @@ public class subsetSumEqualsToTarget {
     if (arr[0] <= target)
       dp[0][arr[0]] = 1;
 
-    // Consider all elements and target sums
+    // Consider all elements an  d target sums
     for (int i = 1; i < n; i++) {
       for (int j = 1; j <= target; j++) {
         // If we can achieve the current target sum without the current element, we can
