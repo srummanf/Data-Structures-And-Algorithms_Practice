@@ -1,72 +1,76 @@
 import java.util.*;
+import java.io.*;
 
-class node {
+class Node {
     int data;
-    node next;
+    Node next;
 
-    public node(int val) {
-        data = val;
-        next = null;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
     }
-}
-
-class LinkedList {
-    node head, temp;
-
-    public LinkedList() {
-        head = temp = null;
-    }
-
-    public void insert(int val) {
-        node newnode = new node(val);
-        if (head == null)
-            head = temp = newnode;
-        else {
-            // temp = head;
-            // while(temp.next!=null)
-            // temp = temp.next;
-
-            temp.next = newnode;
-            temp = newnode;
-        }
-    }
-
-    public void display() {
-        temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-    }
-
 }
 
 public class EvenOddNodeSegregation {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int val = sc.nextInt();
-        LinkedList ll = new LinkedList();
-        while (val != -1) {
-            ll.insert(val);
-            val = sc.nextInt();
-        }
-        // ll.display();
+        Node prev, head, newNode;
 
-        LinkedList ll2 = new LinkedList();
-        node temp2 = ll.head;
-        while (temp2 != null) {
-            if (temp2.data % 2 != 0)
-                ll2.insert(temp2.data);
+        prev = new Node(-1);
+        head = null;
 
-            temp2 = temp2.next;
+        Scanner scanner = new Scanner(System.in);
+        int i = 0, j = 1, ele = 0;
+        while (i < j) {
+            ele = scanner.nextInt();
+            if (ele != -1) {
+                newNode = new Node(ele);
+                if (head == null)
+                    head = newNode;
+                else
+                    prev.next = newNode;
+                prev = newNode;
+                j++;
+            } else
+                break;
         }
-        temp2 = ll.head;
-        while (temp2 != null) {
-            if (temp2.data % 2 == 0)
-                ll2.insert(temp2.data);
 
-            temp2 = temp2.next;
+        Node slow = head;
+        Node fast = head;
+
+        // Find the middle of the linked list
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        ll2.display();
+
+        // Reverse the second half of the linked list
+        Node prevNode = null;
+        Node currentNode = slow;
+        Node nextNode;
+        while (currentNode != null) {
+            nextNode = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
+        }
+
+        int palindrome = 1;
+        // Compare the first half with the reversed second half
+        Node firstHalf = head;
+        Node secondHalf = prevNode;
+        while (secondHalf != null) {
+            if (firstHalf.data != secondHalf.data) {
+                palindrome = 0;
+                break;
+            } // Not a palindrome
+
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
+        }
+        if (palindrome == 1)
+            System.out.println("true");
+        else
+            System.out.println("false");
     }
 }
+
