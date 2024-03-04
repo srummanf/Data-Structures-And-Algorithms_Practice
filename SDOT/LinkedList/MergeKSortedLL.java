@@ -1,11 +1,13 @@
+package SDOT.LinkedList;
 import java.util.PriorityQueue;
-
-import SDOT.LinkedList.MergeKSortedLL;
 
 /**
  * You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
 Merge all the linked-lists into one sorted linked-list and return it.
+
+Intuition : To use PQ to arrange the retreived datas of LL and make a new LL and return it. Space complexity is O(n) and time complexity is O(nlogn)
+
 
  
 
