@@ -2,12 +2,12 @@ import java.util.*;
 
 class Node {
   int data;
+  Node next;
 
   Node(int data) {
     this.data = data;
   }
 
-  Node next;
 }
 
 class MergeSortedLL {

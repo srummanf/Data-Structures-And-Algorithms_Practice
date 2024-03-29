@@ -3,7 +3,12 @@ import java.util.*;
 public class Learn_PQ {
 
   public static void main(String[] args) {
+    //Min Heap
     PriorityQueue<Integer> pq = new PriorityQueue<>();
+    /**
+     * Max Heap
+     PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+     */
     pq.offer(4);
     pq.offer(2);
     pq.offer(1);

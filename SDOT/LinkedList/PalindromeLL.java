@@ -17,12 +17,16 @@ class ListNode {
 }
 public class PalindromeLL {
     public boolean isPalindrome(ListNode head) {
-        int length = 0;
         ListNode current = head;
+        
+        // Length of the Linked List
+        int length = 0;
         while (current != null) {
             length++;
             current = current.next;
         }
+
+
         int[] arr = new int[length];
         current = head;
         int index = 0;
