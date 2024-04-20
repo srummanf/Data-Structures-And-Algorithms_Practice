@@ -1,5 +1,9 @@
+// The groups will be in rectangle shape ONLY !
 class Solution {
+    // Global Variables
     int bottom_i, bottom_j;
+
+    // DFS Code . We will traverse either right or down
     public void dfs(int[][] land, int i, int j){
         if(i==land.length || j==land[0].length || land[i][j]==0 ) return;
         land[i][j] = 0;
@@ -8,12 +12,14 @@ class Solution {
         dfs(land, i, j+1);
         dfs(land, i+1, j);
     }
+
     public int[][] findFarmland(int[][] land) {
         List<List<Integer>> ll = new ArrayList<>();
          for(int i=0; i<land.length; i++){
             for(int j=0; j<land[0].length; j++){
                 if(land[i][j]==1){
                     List<Integer> l = new ArrayList<>();
+                    // Since we got a 1 we will mark the beginning
                     l.add(i);
                     l.add(j);
 
@@ -21,8 +27,11 @@ class Solution {
                     
                     l.add(bottom_i);
                     l.add(bottom_j);
+
+                    // We have to re-initialize for the next group (if found)
                     bottom_i=0;
                     bottom_j=0;
+
                     ll.add(l);
                 }
             }
