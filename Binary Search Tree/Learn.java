@@ -149,7 +149,7 @@ public int rangeSumBST(Node root, int k1, int k2) {
   public static void main(String[] args) {
     int val[] = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
     Node root = null;
-    for (int x : val) {
+    for (int x :  val) {
       root = insert(root, x);
     }
     inorder(root);
