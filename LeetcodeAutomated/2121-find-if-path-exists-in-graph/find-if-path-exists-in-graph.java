@@ -1,4 +1,4 @@
-class Solution {
+ class Solution {
     /**
      * Recursive helper function to check if a path exists between two vertices.
      *
