@@ -1,4 +1,4 @@
-/**
+/** KnapSack : Maximise profit based on constraints
  *  3  2  4
  * 30 40 60
  * 0  1  2
