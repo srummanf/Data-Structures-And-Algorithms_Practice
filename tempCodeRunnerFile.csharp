@@ -1,0 +1,41 @@
+public class KnapsackProblem {
+    static int[][] dp; // Memoization array to store subproblem results
+
+    public static void main(String[] args) {
+        int W = 11; // Maximum weight capacity
+        int[] wt = {1, 2, 4, 5}; // Weight array
+        int[] val = {5, 4, 8, 6}; // Value array
+        int n = wt.length;
+
+        dp = new int[n + 1][W + 1]; // Initialize memoization array with -1
+
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= W; j++) {
+                dp[i][j] = -1;
+            }
+        }
+
+        int maxProfit = recursion(n, W, wt, val);
+        System.out.println("Maximum profit: " + maxProfit);
+    }
+
+    static int recursion(int ind, int W, int[] wt, int[] val) {
+        if (ind == 0) { // Base case: If there are no items left
+            if (wt[ind] <= W) return val[ind]; // If the weight of the item is less than or equal to the remaining weight capacity
+            else return 0; // If the weight of the item exceeds the remaining weight capacity
+        }
+
+        if (dp[ind][W] != -1) { // If the subproblem has been solved before
+            return dp[ind][W]; // Return the stored value
+        }
+
+        int nottake = recursion(ind - 1, W, wt, val); // Recursive call for not taking the current item
+        int take = Integer.MIN_VALUE; // Initialize take with a minimum value
+        if (wt[ind] <= W) { // If the weight of the current item is less than or equal to the remaining weight capacity
+            take = val[ind] + recursion(ind - 1, W - wt[ind], wt, val); // Recursive call for taking the current item
+        }
+
+        dp[ind][W] = Math.max(take, nottake); // Store the maximum value of take and nottake in the memoization array
+        return dp[ind][W]; // Return the maximum value
+    }
+}
