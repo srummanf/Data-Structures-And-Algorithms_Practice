@@ -2,11 +2,8 @@ class Solution {
     public int[][] merge(int[][] arr) {
         int n = arr.length; // size of the array
         // sort the given intervals:
-        Arrays.sort(arr, new Comparator<int[]>() {
-            public int compare(int[] a, int[] b) {
-                return a[0] - b[0];
-            }
-        });
+        Arrays.sort(arr, (a, b) -> Integer.compare(a[0], b[0]));
+
 
         List<List<Integer>> ans = new ArrayList<>();
 
