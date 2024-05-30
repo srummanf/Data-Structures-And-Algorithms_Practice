@@ -1,1 +1,4 @@
-System.out.println(DP_topdown(wt.length - 1, W, wt, val, dp));
+DP_bottomup( t, arr, dp) == (int) Math.pow(10, 9)
+        ? -1
+        : DP_bottomup( t, arr, dp)
+    );
