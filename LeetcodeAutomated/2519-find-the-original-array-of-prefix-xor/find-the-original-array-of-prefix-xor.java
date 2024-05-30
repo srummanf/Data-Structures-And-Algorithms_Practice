@@ -9,7 +9,6 @@ class Solution {
             ans.add(x);
         }
         System.out.println(ans);
-        // return pref;
         int pos = 0;
         int[] sol = new int[n];
         for(int j : ans){
