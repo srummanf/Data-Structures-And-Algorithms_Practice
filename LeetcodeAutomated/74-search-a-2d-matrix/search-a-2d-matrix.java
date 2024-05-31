@@ -1,7 +1,5 @@
 class Solution {
     public static int binarySearch(int array[][], int x, int low, int high, int xr) {
-
-        // Repeat until the pointers low and high meet each other
         while (low <= high) {
             int mid = low + (high - low) / 2;
 
@@ -22,7 +20,8 @@ class Solution {
         int r = matrix.length;
         int c = matrix[0].length;
 
-        if(r==1 && c==1) return matrix[0][0]==target;
+        if (r == 1 && c == 1)
+            return matrix[0][0] == target;
 
         int xr = 0;
         while (xr < r) {
@@ -32,7 +31,8 @@ class Solution {
                 xr++;
             }
         }
-        if(xr==r) return false;
+        if (xr == r)
+            return false;
 
         int high = c - 1;
 
