@@ -1,20 +1,19 @@
 class Solution {
-    public int[] singleNumber(int[] nums) {
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for(int i : nums){
-            hm.put(i, hm.getOrDefault(i, 0)+1);
+    public int[] singleNumber(int[] arr) {
+        int xor = 0;
+        for (int i = 0; i < arr.length; i++) {
+            xor ^= arr[i];
         }
-        ArrayList<Integer> al = new ArrayList<>();
-        for(int i : hm.keySet()){
-            if(hm.get(i) == 1){
-                al.add(i);
+        int rightmostsetbit = (xor & (xor - 1)) ^ xor;
+        // Concept of bucket
+        int b1 = 0, b2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] & rightmostsetbit) != 0) {
+                b1 ^= arr[i];
+            } else {
+                b2 ^= arr[i];
             }
         }
-        int ans[] = new int[2];
-        int x=0;
-        for(int i : al){
-            ans[x++] = i;
-        }
-        return ans;
+        return new int[] { b1, b2 };
     }
 }
