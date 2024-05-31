@@ -8,7 +8,7 @@ public class MissingRepeating {
 
     //Find the repeating and missing number:
     for (int i = 1; i <= n; i++) {
-      //Count the occurrences:
+      //Count the occurrences: 
       int cnt = 0;
       for (int j = 0; j < n; j++) {
         if (a[j] == i) cnt++;
