@@ -9,9 +9,9 @@
  * if(wt[ind] <= W) take = val[ind] + f(ind-1, W-wt[ind])
  * return max(take, nottake)
  */
-import java.util.*;
+import java.util.Arrays;
 
-public class KnapSack {
+public class dp_19_KnapSack {
 
   static int recursion(int ind, int W, int[] wt, int[] val) {
     if (ind == 0) {

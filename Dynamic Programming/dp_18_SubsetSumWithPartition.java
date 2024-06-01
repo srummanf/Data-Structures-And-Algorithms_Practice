@@ -37,7 +37,7 @@ public class dp_18_SubsetSumWithPartition {
     if (s == 0) return 1;
     if (ind == 0) {
       if (s == 0 && arr[0] == 0) return 2;
-      if (s == 0 || s == arr[0]) return 1;
+      if (s == arr[0]) return 1;
       return 0;
     }
     int notpick = 0 + f(ind - 1, s, arr);
@@ -75,7 +75,7 @@ public class dp_18_SubsetSumWithPartition {
       System.out.println(0);
       return;
     }
-    
+
     System.out.println(f(arr.length - 1, (d + tsum) / 2, arr));
     int[][] dp = new int[arr.length][(d + tsum) / 2 + 1];
     for (int[] row : dp) {

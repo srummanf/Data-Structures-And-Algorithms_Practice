@@ -12,11 +12,15 @@
  * else return 9999999////1e9;}
  */
 
-public class MinCoins {
+public class dp_20_MinCoins {
 
   static int recursion(int ind, int t, int[] arr) {
     if (ind == 0) {
-      if (t % arr[0] == 0) return t / arr[0]; else return (int) Math.pow(10, 9);
+      if (t % arr[0] == 0) {
+        return t / arr[0];
+      } else {
+        return (int) Math.pow(10, 9);
+      }
     }
     int nottake = recursion(ind - 1, t, arr);
     int take = (int) Math.pow(10, 9);
@@ -76,7 +80,7 @@ public class MinCoins {
   }
 
   public static void main(String[] args) {
-    int[] arr = { 1, 2, 5};
+    int[] arr = { 1, 2, 5 };
     int t = 11;
     int[][] dp = new int[arr.length][t + 1];
     for (int row[] : dp) java.util.Arrays.fill(row, -1);
@@ -93,10 +97,9 @@ public class MinCoins {
     );
 
     System.out.println(
-      DP_bottomup( t, arr, dp) == (int) Math.pow(10, 9)
+      DP_bottomup(t, arr, dp) == (int) Math.pow(10, 9)
         ? -1
-        : DP_bottomup( t, arr, dp)
+        : DP_bottomup(t, arr, dp)
     );
-    
   }
 }

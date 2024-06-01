@@ -2,9 +2,10 @@
 
 // https://leetcode.com/problems/longest-string-chain/description/
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
-public class LongestStringSequence {
+public class dp_45_LongestStringSequence {
 
     // Arranging the array based on ascending length of the string length
     public static String[] sortStringsByLength(String[] inputArray) {

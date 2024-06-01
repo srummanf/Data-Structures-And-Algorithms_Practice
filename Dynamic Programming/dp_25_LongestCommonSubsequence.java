@@ -9,9 +9,9 @@
 // else
 // return max(f(i1-1, i2), f(i1, i2-1))
 
-import java.util.*;
+import java.util.Arrays;
 
-public class LongestCommonSubsequence {
+public class dp_25_LongestCommonSubsequence {
 
   // Recursive Solution
   int LCS_recursion(String s1, String s2, int i1, int i2) {
@@ -51,7 +51,7 @@ public class LongestCommonSubsequence {
   }
 
   public static void main(String[] args) {
-    LongestCommonSubsequence ob = new LongestCommonSubsequence();
+    dp_25_LongestCommonSubsequence ob = new dp_25_LongestCommonSubsequence();
     String s1 = "aggtab";
     String s2 = "gxtxayb";
 

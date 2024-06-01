@@ -3,7 +3,7 @@
  * Recurrence
  * f(ind, s){
  * if(ind == 0) return arr[0] == s ? 1:0;
- *
+ *if (s == 0) return 1;
  * int notpick = 0 + f(ind-1, s);
  * int pick = 0;
  * if(a[ind] <= s){
@@ -19,7 +19,7 @@ public class dp_17_CountSubSetSumEqualToK {
   public static int f(int ind, int s, int[] arr) {
     if (s == 0) return 1;
     if (ind == 0) return arr[0] == s ? 1 : 0;
-    int notpick = 0 + f(ind - 1, s, arr);
+    int notpick = f(ind - 1, s, arr);
     int pick = 0;
     if (arr[ind] <= s) {
       pick = f(ind - 1, s - arr[ind], arr);

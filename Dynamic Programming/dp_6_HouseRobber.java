@@ -2,7 +2,7 @@
 
 // Similar to prev questiom, [MaxSumOfNonAdjElem.java], only difference is that the array is circular now || First and Last elements are adjacent
 
-import java.util.*;
+import java.util.Arrays;
 
 class dp_6_HouseRobber {
 
@@ -39,7 +39,7 @@ class dp_6_HouseRobber {
     int a[] = { 5, 5, 10, 100, 10, 5 };
 
     int DP1[] = new int[a.length];
-    int DP2[] = new int[a.length];
+    int DP2[] = new int[a.length]; 
     Arrays.fill(DP1, -1);
     Arrays.fill(DP2, -1);
 
