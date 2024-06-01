@@ -1,8 +1,8 @@
 /** DP 9. Unique Paths 2 | DP on Grid with Maze Obstacles : https://www.youtube.com/watch?v=TmhpgXScLyY&t=97s */
 
-import java.util.*;
+import java.util.Arrays;
 
-class MazeWithObstacle {
+class dp_9_MazeWithObstacle {
 
   public static int recursion(int i, int j, int maze[][]) {
     if (i >= 0 && j >= 0 && maze[i][j] == -1) return 0;

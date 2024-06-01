@@ -1,22 +1,5 @@
 import java.util.Arrays;
-
-/**
- * Triangle - Fixed starting point, variable ending point
- * Find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
- * DP 11
- * https://www.youtube.com/watch?v=SrP-PiLSYC0&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=12
- * 
- * Refer this for space optimization: https://takeuforward.org/data-structure/minimum-path-sum-in-triangular-grid-dp-11/
- *
- Recurrence:
- if(i==n-1) return a[n-1][j];
- d=a[i][j] + f(i+1,j);
- dg=a[i][j] + f(i+1,j+1);
-
- return min(d,dg)
- */
-import java.util.Arrays;
-public class Triangle {
+public class dp_11_Triangle {
 
     int recursion(int[][] a, int i, int j) {
         int n = a.length;
@@ -52,7 +35,7 @@ public class Triangle {
 
 
     public static void main(String[] args) {
-        Triangle t = new Triangle();
+        dp_11_Triangle t = new dp_11_Triangle();
         int[][] a = {{2},{3,4},{6,5,7},{4,1,8,3}};
         int n = a.length;
         int dp[][] = new int[n][n];

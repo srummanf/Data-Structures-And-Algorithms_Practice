@@ -13,9 +13,7 @@
  * 4 2 1
  */
 
-import java.util.*;
-
-class MinPathSum {
+class dp_10_MinPathSum {
 
   public static int recursion(int i, int j, int[][] maze) {
     if (i == 0 && j == 0) return maze[i][j];

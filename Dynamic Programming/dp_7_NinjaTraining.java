@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class NinjaTraining {
+class dp_7_NinjaTraining {
 
   // -------------------------------------------------------------- RECURSION --------------------------------------------------------------
   
@@ -127,7 +127,7 @@ class NinjaTraining {
   // ---------------------------------------------------------------- MAIN FUNCTION --------------------------------------------------------------
   
   public static void main(String[] args) {
-    NinjaTraining h = new NinjaTraining();
+    dp_7_NinjaTraining h = new dp_7_NinjaTraining();
     int a[][] = { { 1, 2, 3 }, { 10, 11, 12 }, { 100, 101, 102 } };
     int[][] points = { { 10, 40, 70 }, { 20, 50, 80 }, { 30, 60, 90 } };
     int nn = points.length;

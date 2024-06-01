@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class MaxSumOfNonAdjElem {
+class dp_4_MaxSumOfNonAdjElem {
 
   // RECURSIVE SOL
   // f(ind, DP){
@@ -67,7 +67,7 @@ class MaxSumOfNonAdjElem {
     for (int i = 0; i < n; i++) {
       DP[i] = -1;
     }
-    MaxSumOfNonAdjElem m = new MaxSumOfNonAdjElem();
+    dp_4_MaxSumOfNonAdjElem m = new dp_4_MaxSumOfNonAdjElem();
     System.out.println(m.topDownMemo(n - 1, a, DP));
     System.out.println(m.bottomUpTabu(a));
     System.out.println(m.bottomUpTabuSpaceOptimised(a));

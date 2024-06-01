@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class FrogJump {
+class dp_3_FrogJump {
 
   float left, right;
 

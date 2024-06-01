@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SubSetArrayWithMinDiff {
+public class dp_16_SubSetArrayWithMinDiff {
 
   public static int fTab(int[][] dp, int[] arr, int target) {
     int n = arr.length;

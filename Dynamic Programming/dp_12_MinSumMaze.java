@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MinSumMaze {
+public class dp_12_MinSumMaze {
 
   static int getMaxUtil(int i, int j, int m, int[][] matrix, int[][] dp) {
     // Base Conditions
@@ -81,7 +81,7 @@ public class MinSumMaze {
 
     public static void main(String[] args) {
         int[][] matrix = { { 2, 1, 3 }, { 6, 5, 4 }, { 7, 8, 9 } };
-        MinSumMaze obj = new MinSumMaze();
+        dp_12_MinSumMaze obj = new dp_12_MinSumMaze();
         System.out.println(obj.minFallingPathSum(matrix));
         System.out.println(obj.spaceOptimalSol(matrix));
     }

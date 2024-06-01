@@ -4,7 +4,7 @@
 
 import java.util.*;
 
-class HouseRobber {
+class dp_6_HouseRobber {
 
   int topDownMemo(int ind, int a[], int DP[]) {
     if (ind == 0) return a[0];
@@ -35,7 +35,7 @@ class HouseRobber {
   }
 
   public static void main(String[] args) {
-    HouseRobber h = new HouseRobber();
+    dp_6_HouseRobber h = new dp_6_HouseRobber();
     int a[] = { 5, 5, 10, 100, 10, 5 };
 
     int DP1[] = new int[a.length];

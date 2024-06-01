@@ -17,7 +17,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class subsetSumEqualsToTarget_14 {
+public class dp_14_subsetSumEqualsToTarget_14 {
 
   boolean f(int ind, int target, int arr[]) {
     if (target == 0) return true;

@@ -41,9 +41,7 @@
  *
  */
 
-import java.util.*;
-
-class Maze {
+class dp_8_Maze {
 
   public static int recursion(int i, int j) {
     if (i == 0 && j == 0) return 1;
