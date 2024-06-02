@@ -10,8 +10,8 @@ public class SetMatOne {
     int m
   ) {
     // Sets to store the indices of rows and columns to be marked
-    HashSet<Integer> hsr = new HashSet<>();
-    HashSet<Integer> hsc = new HashSet<>();
+    Hash Set<Integer> hsr = new HashSet<>();
+    Hash Set<Integer> hsc = new HashSet<>();
 
     // First pass: Identify the rows and columns to be marked
     for (int i = 0; i < n; i++) {
