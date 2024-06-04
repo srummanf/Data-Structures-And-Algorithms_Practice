@@ -68,14 +68,14 @@ Hence answer is ‘71’.
 // -----------------------------------------------------------------------------------------------
 
 /**
-  * First Intuition
+  * ---Intuition---
 
     int maxPages = max(books[]) ---> max val in books array
     int sumPages = sum(books[]) ---> sum of all pages in books array
 
     if m > n, return -1
 
-    for(hh i = maxPages to SumPages):
+    for(int i = maxPages to SumPages):
         if isPossible(books, i) == m:
             return i
 
@@ -142,11 +142,13 @@ public class BookAllocation {
   public int PossibleNumberOfStudents(int[] books, int maxPages) {
     int students = 0;
     int pages = 0;
-    for (int i = 0; i < books.length; i++) if (
-      pages + books[i] <= maxPages
-    ) pages += books[i]; else {
-      students++;
-      pages = books[i];
+    for (int i = 0; i < books.length; i++) {
+      if (pages + books[i] <= maxPages) {
+        pages += books[i];
+      } else {
+        students++;
+        pages = books[i];
+      }
     }
     return students;
   }
