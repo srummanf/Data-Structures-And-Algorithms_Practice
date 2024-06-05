@@ -42,7 +42,7 @@ Sample Input 2 :
 7 -2 -2 2 5  
 Sample Output 2 :
 1
-2
+2 
  */
 
 
