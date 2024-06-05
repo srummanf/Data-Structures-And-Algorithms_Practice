@@ -33,12 +33,4 @@ class Solution {
         return ans;
     }
 
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        String[] words1 = {"bella", "label", "roller"};
-        System.out.println(sol.commonChars(words1)); // Output: ["e", "l", "l"]
-
-        String[] words2 = {"cool", "lock", "cook"};
-        System.out.println(sol.commonChars(words2)); // Output: ["c", "o"]
-    }
 }
