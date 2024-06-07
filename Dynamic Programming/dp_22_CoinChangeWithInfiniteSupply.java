@@ -4,7 +4,7 @@ import java.util.Arrays;
  * dp22_CoinChangeWithInfiniteSupply
  * f(idx, amt) means ways to make amt using coins[0..idx]
  */
-public class dp22_CoinChangeWithInfiniteSupply {
+public class dp_22_CoinChangeWithInfiniteSupply {
 
   public int f(int idx, int amt, int[] coins, int[][] dp) {
     if (idx == 0) {
@@ -45,7 +45,7 @@ public class dp22_CoinChangeWithInfiniteSupply {
   }
 
   public static void main(String[] args) {
-    dp22_CoinChangeWithInfiniteSupply obj = new dp22_CoinChangeWithInfiniteSupply();
+    dp_22_CoinChangeWithInfiniteSupply obj = new dp_22_CoinChangeWithInfiniteSupply();
     int[] coins = { 1, 2, 3 };
     int amount = 4;
     System.out.println(obj.change(amount, coins));

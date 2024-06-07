@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class dp23_Unbounded_KnapSack {
+public class dp_23_Unbounded_KnapSack {
 
   public static int recurrence(
     int idx,
