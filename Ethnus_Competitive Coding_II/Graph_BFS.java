@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Graph_BFS {
+
   private int V;
   private LinkedList<Integer> adj[];
 
@@ -8,8 +9,7 @@ public class Graph_BFS {
   Graph_BFS(int v) {
     V = v;
     adj = new LinkedList[v];
-    for (int i = 0; i < v; ++i)
-      adj[i] = new LinkedList();
+    for (int i = 0; i < v; ++i) adj[i] = new LinkedList();
   }
 
   // Add edges to the graph
@@ -43,7 +43,7 @@ public class Graph_BFS {
 
     visited[s] = true;
     queue.add(s);
-    
+
     while (!queue.isEmpty()) {
       s = queue.poll();
       System.out.print(s + " ");
@@ -66,7 +66,9 @@ public class Graph_BFS {
     g.addEdge(2, 3);
     g.addEdge(3, 3);
 
-    System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+    System.out.println(
+      "Following is Breadth First Traversal " + "(starting from vertex 2)"
+    );
 
     g.BFS(2);
   }
