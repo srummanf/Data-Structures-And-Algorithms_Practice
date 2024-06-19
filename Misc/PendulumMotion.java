@@ -1,9 +1,4 @@
-/**The code you provided is indeed similar to the motion of a pendulum, specifically describing its oscillatory behavior. Here's a detailed explanation and visualization of what this code snippet does:
-
-```java
-
-```
-
+/**
 ### Explanation:
 
 1. **Modulo Operation:**
