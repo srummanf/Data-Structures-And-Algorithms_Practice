@@ -4,7 +4,7 @@ class Solution {
         int n = strs.length;
         int mini = Integer.MAX_VALUE;
         Arrays.sort(strs);
-        mini = Math.min(strs[0].length(), strs[n-1].length());
+        mini = (strs[0].length());
         int i = 0;
         while(i<mini){
             if(strs[0].charAt(i) == strs[n-1].charAt(i)){
