@@ -1,33 +1,39 @@
+import java.util.*;
+
 class Solution {
-  public List<List<Integer>> getAncestors(int n, int[][] edges) {
-    List<List<Integer>> ans = new ArrayList<>();
-    List<Integer>[] graph = new List[n];
-
-    for (int i = 0; i < n; ++i) {
-      ans.add(new ArrayList<>());
-      graph[i] = new ArrayList<>();
+    public void DFS(int ancestor, Map<Integer, List<Integer>> adj, int currNode, List<List<Integer>> result) {
+        for (int ngbr : adj.getOrDefault(currNode, new ArrayList<>())) {
+            if (result.get(ngbr).isEmpty() || result.get(ngbr).get(result.get(ngbr).size() - 1) != ancestor) {
+                result.get(ngbr).add(ancestor);
+                DFS(ancestor, adj, ngbr, result);
+            }
+        }
     }
 
-    for (int[] edge : edges) {
-      final int u = edge[0];
-      final int v = edge[1];
-      graph[u].add(v);
+    public List<List<Integer>> getAncestors(int n, int[][] edges) {
+        List<List<Integer>> result = new ArrayList<>();
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            result.add(new ArrayList<>());
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            adj.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
+        }
+
+        for (int i = 0; i < n; i++) {
+            DFS(i, adj, i, result);
+        }
+
+        for (List<Integer> ancestors : result) {
+            Collections.sort(ancestors);
+        }
+
+        return result;
     }
 
-    for (int i = 0; i < n; ++i)
-      dfs(graph, i, i, new boolean[n], ans);
 
-    return ans;
-  }
-
-  private void dfs(List<Integer>[] graph, int u, int ancestor, boolean[] seen,
-                   List<List<Integer>> ans) {
-    seen[u] = true;
-    for (final int v : graph[u]) {
-      if (seen[v])
-        continue;
-      ans.get(v).add(ancestor);
-      dfs(graph, v, ancestor, seen, ans);
-    }
-  }
 }
