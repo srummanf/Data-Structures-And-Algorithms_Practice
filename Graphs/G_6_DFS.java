@@ -33,6 +33,7 @@ class G_6_DFS {
     return dfs;
   }
 
+// TC --> O(Nodes)+O(2*Edges)
   private static void dfs_recursive(
     int node,
     ArrayList<ArrayList<Integer>> adjLs,
