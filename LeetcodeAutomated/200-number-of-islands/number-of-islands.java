@@ -29,7 +29,6 @@ class Solution {
 
         vis[i][j] = true;
 
-        // Move up, down, left, right
         dfs(grid, vis, i + 1, j);
         dfs(grid, vis, i - 1, j);
         dfs(grid, vis, i, j + 1);
