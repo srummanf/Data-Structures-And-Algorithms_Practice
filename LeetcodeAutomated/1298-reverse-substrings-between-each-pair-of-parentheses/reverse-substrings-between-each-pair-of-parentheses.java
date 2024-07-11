@@ -1,15 +1,6 @@
 import java.util.Stack;
 
 class Solution {
-    public String reverse(String s) {
-        int len = s.length();
-        String ans = "";
-        for (int i = len - 1; i >= 0; i--) {
-            ans += s.charAt(i);
-        }
-        return ans;
-    }
-
     public String reverseParentheses(String s) {
         Stack<Integer> st = new Stack<>();
         char[] arr = s.toCharArray();
