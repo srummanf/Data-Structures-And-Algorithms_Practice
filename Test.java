@@ -1,35 +1,25 @@
 import java.util.*;
 
-public class Test {
-
-  public int eliminateMaximum(int[] dist, int[] speed) {
-        int n = dist.length;
-        ArrayList<Double> time = new ArrayList<>();
-        for(int i=0; i<n;i++){
-            time.add((double)dist[i]/speed[i]);
-        }
-        Collections.sort(time);
-
-        int count=1;
-        int time_passed=1;
-
-        for(int i=1; i<n;i++){
-            if((time.get(i)-time_passed) <= 0){
-                return count;
-            }
-            count++;
-            time_passed +=1;
-        }
-
-
-        return count;
-        
+class Main {
+  public static String sortString(String str) {
+        char []arr = str.toCharArray();
+        Arrays.sort(arr);
+        return String.valueOf(arr);
     }
 
-  public static void main(String[] args) {
-    Test t = new Test();
-    int dist[] = {3,5,7,4,5};
-    int speed[] = {2,3,6,3,2};
-    System.out.println(t.eliminateMaximum(dist, speed));
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    String a = sc.next();
+    String b = sc.next();
+    int mini = Integer.MAX_VALUE;
+    int n = a.length();
+    for(int i=0; i<n; i++){
+      for(int j=i; j<n; j++>){
+        String temp = a.substring(i,j+1);
+        if(sortString(temp).equals(sortString(b)));{
+          mini = Math.min(mini, temp.length());
+        }
+      }
+    }
   }
 }
