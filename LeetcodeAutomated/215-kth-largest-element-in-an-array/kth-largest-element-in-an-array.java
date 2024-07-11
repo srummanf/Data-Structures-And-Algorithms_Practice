@@ -5,7 +5,7 @@ class Solution {
             pq.offer(i);
         }
         for(int i=1; i<k; i++){
-            int a = pq.poll();
+            pq.poll();
         }
         return pq.poll();
     }
