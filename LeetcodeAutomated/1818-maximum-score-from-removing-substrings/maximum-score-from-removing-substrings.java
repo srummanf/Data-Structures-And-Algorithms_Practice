@@ -1,5 +1,5 @@
 class Solution {
-   int points = 0;
+    int points = 0;
 
     public int maximumGain(String s, int x, int y) {
         if (x >= y) {
@@ -13,7 +13,7 @@ class Solution {
     }
 
     public String remove1(String s, int x) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         int length = s.length();
         int index = 0;
         for (int i = 0; i < length; i++) {
@@ -31,7 +31,7 @@ class Solution {
     }
 
     public String remove2(String s, int y) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         int length = s.length();
         int index = 0;
         for (int i = 0; i < length; i++) {
