@@ -1,4 +1,3 @@
-import java.util.*;
 
 class FloorDivisionby2powerk {
     int div(int n, int k){
