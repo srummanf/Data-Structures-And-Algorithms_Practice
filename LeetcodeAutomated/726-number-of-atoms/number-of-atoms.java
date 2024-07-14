@@ -5,8 +5,10 @@ class Solution {
         Stack<Map<String, Integer>> stack = new Stack<>();
         stack.push(new HashMap<>());
         int n = formula.length();
-        for (int i = 0; i < n; ) {
+        
+        for (int i = 0; i < n;) {
             char ch = formula.charAt(i);
+            
             if (ch == '(') {
                 stack.push(new HashMap<>());
                 i++;
@@ -29,14 +31,18 @@ class Solution {
                 stack.peek().put(name, stack.peek().getOrDefault(name, 0) + multiplicity);
             }
         }
+        
         Map<String, Integer> result = stack.pop();
-        TreeMap<String, Integer> sortedResult = new TreeMap<>(result);
+        List<String> keys = new ArrayList<>(result.keySet());
+        Collections.sort(keys);
+        
         StringBuilder sb = new StringBuilder();
-        for (String key : sortedResult.keySet()) {
+        for (String key : keys) {
             sb.append(key);
-            int count = sortedResult.get(key);
+            int count = result.get(key);
             if (count > 1) sb.append(count);
         }
+        
         return sb.toString();
     }
 }
