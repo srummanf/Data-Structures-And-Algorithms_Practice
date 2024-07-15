@@ -1,9 +1,11 @@
+// https://www.geeksforgeeks.org/minimize-moves-to-sort-array-in-non-decreasing-order-by-breaking-elements-in-two-parts/
+
 // Java code to implement the approach
 
 import java.lang.*;
 import java.util.*;
 
-class Test {
+class GFG {
 
   // Function to count the minimum
   // number of splits
@@ -24,7 +26,7 @@ class Test {
 
   // Driver code
   public static void main(String[] args) {
-    int arr[] = { 5, 6, 5, 7, 9 };
+    int arr[] = { 3, 2, 4 };
     int N = arr.length;
 
     int minSplit = minimumSplits(arr, N);

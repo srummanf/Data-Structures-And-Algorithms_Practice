@@ -11,7 +11,7 @@ Let’s say the list of intervals is: [[1,3], [5,7], [8,12]] and we need to inse
 
 import java.util.*;
 
-public class MergeOverlappingSubproblem {
+public class MergeOverlappingInterval {
 
   public static ArrayList<ArrayList<Integer>> insertInterval(
     ArrayList<ArrayList<Integer>> arr,

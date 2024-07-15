@@ -25,22 +25,14 @@ Explanation: First, we reverse the substring "oc", then "etco", and finally, the
 import java.util.Stack;
 
 class ReverseStringInParenthesis {
-    public String reverse(String s) {
-        int len = s.length();
-        String ans = "";
-        for (int i = len - 1; i >= 0; i--) {
-            ans += s.charAt(i);
-        }
-        return ans;
-    }
-
+    
     public String reverseParentheses(String s) {
         Stack<Integer> st = new Stack<>();
         char[] arr = s.toCharArray();
         
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == '(') {
-                st.push(i);
+                st.push(i); // push the indices of the characters in the stack
             } else if (arr[i] == ')') {
                 int open = st.pop();
                 reverse(arr, open + 1, i - 1);

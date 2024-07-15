@@ -1,4 +1,3 @@
-
 class Knuth_Morris_Pratt_Algo_PatternMatching {
 
   public static void Patternsearch(String str, String pat) {

@@ -14,3 +14,10 @@
 
 - When trying to maintain some frequency
 - Trying to avoid duplicates
+
+
+---
+
+Google - Segment Tree, BitManip, Range Function
+
+PhonePe - Graph, DP
