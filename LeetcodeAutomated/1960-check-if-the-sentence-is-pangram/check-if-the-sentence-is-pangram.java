@@ -1,16 +1,28 @@
+// class Solution {
+//     public boolean checkIfPangram(String sentence) {
+//         int[] alphabets = new int[26];
+//         for(char ch : sentence.toCharArray()){
+//             alphabets[ch-97]++;
+//         }
+//         for(int i : alphabets){
+//             if(i==0) return false;
+//         }
+//         return true;  
+//     }
+// }
+
+
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
     public boolean checkIfPangram(String sentence) {
-        int[] alphabets = new int[26];
-        StringBuilder alpha = new StringBuilder("abcdefghijklmnopqrstuvwzyz");
-        for(char ch : sentence.toCharArray()){
-            alphabets[ch-97]++;
+        Set<Character> uniqueChars = new HashSet<>();
+        for (char ch : sentence.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                uniqueChars.add(Character.toLowerCase(ch));
+            }
         }
-        for(int i : alphabets){
-            if(i==0) return false;
-        }
-
-        return true;
-
-        
+        return uniqueChars.size() == 26;
     }
 }
