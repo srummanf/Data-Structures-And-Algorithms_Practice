@@ -1,31 +1,32 @@
 import java.util.Arrays;
 
 public class Solution {
+    public int f(int idx, int[] nums, int[] dp) {
+        if (idx < 0)
+            return 0;
+        if (dp[idx] != -1)
+            return dp[idx];
+        int take = nums[idx] + f(idx - 2, nums, dp);
+        int nottake = f(idx - 1, nums, dp);
+
+        return dp[idx] = Math.max(take, nottake);
+    }
+
     public int rob(int[] nums) {
         if (nums.length == 1) return nums[0];
         if (nums.length == 2) return Math.max(nums[0], nums[1]);
 
-        // Case 1: Rob houses from 0 to n-2 (exclude last house)
-        int max1 = robLinear(Arrays.copyOfRange(nums, 0, nums.length - 1));
-        // Case 2: Rob houses from 1 to n-1 (exclude first house)
-        int max2 = robLinear(Arrays.copyOfRange(nums, 1, nums.length));
+        int[] part1 = Arrays.copyOfRange(nums, 0, nums.length - 1);
+        int[] part2 = Arrays.copyOfRange(nums, 1, nums.length);
 
-        return Math.max(max1, max2);
-    }
+        int n1 = part1.length;
+        int[] dp1 = new int[n1];
+        Arrays.fill(dp1, -1);
 
-    private int robLinear(int[] nums) {
-        if (nums.length == 0) return 0;
-        if (nums.length == 1) return nums[0];
-        
-        int prev1 = 0; // Represents robbing i-2 houses
-        int prev2 = 0; // Represents robbing i-1 houses
-        
-        for (int num : nums) {
-            int temp = prev1;
-            prev1 = Math.max(prev1, prev2 + num);
-            prev2 = temp;
-        }
-        
-        return prev1;
+        int n2 = part2.length;
+        int[] dp2 = new int[n2];
+        Arrays.fill(dp2, -1);
+
+        return Math.max(f(n1 - 1, part1, dp1), f(n2 - 1, part2, dp2));
     }
 }
