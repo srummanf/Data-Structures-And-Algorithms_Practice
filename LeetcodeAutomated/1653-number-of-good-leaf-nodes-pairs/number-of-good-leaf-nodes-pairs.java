@@ -109,20 +109,5 @@ public class Solution {
         return countPairsHelper(root, distance, leafDistances);
     }
 
-    public static void main(String[] args) {
-        // Example usage:
-        Solution solution = new Solution();
-
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
-
-        int distance = 3;
-        int goodPairs = solution.countPairs(root, distance);
-        System.out.println("Number of good leaf node pairs: " + goodPairs); // Expected output depends on the tree structure and distance
-    }
+   
 }
