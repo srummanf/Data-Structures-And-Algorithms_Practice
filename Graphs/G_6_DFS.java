@@ -33,7 +33,7 @@ class G_6_DFS {
     return dfs;
   }
 
-// TC --> O(Nodes)+O(2*Edges)
+  // TC --> O(Nodes)+O(2*Edges)
   private static void dfs_recursive(
     int node,
     ArrayList<ArrayList<Integer>> adjLs,
@@ -71,7 +71,7 @@ class G_6_DFS {
       System.out.print(ans.get(i) + " ");
     }
 
-System.out.println("");
+    System.out.println("");
     int vis[] = new int[5];
     sl.dfs_recursive(0, adj, vis);
   }
