@@ -10,7 +10,9 @@
 //Using Segment Tree
 //T.C : O(q*log(n))
 //S.C : O(4*n)
-class Solution {
+
+// Build Segment Tree , Update Segment Tree, Query Segment Tree
+class Learn {
 
   void buildSegmentTree(int i, int l, int r, int[] segmentTree, int[] arr) {
     if (l == r) {
