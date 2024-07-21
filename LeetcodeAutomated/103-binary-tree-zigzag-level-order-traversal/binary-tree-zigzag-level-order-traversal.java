@@ -45,30 +45,30 @@ class Solution {
 
    
 
-    private static TreeNode createTree(String[] input) {
-        if (input.length == 0 || input[0].equals("null")) {
-            return null;
-        }
+    // private static TreeNode createTree(String[] input) {
+    //     if (input.length == 0 || input[0].equals("null")) {
+    //         return null;
+    //     }
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        TreeNode root = new TreeNode(Integer.parseInt(input[0]));
-        queue.offer(root);
+    //     Queue<TreeNode> queue = new LinkedList<>();
+    //     TreeNode root = new TreeNode(Integer.parseInt(input[0]));
+    //     queue.offer(root);
 
-        int i = 1;
-        while (!queue.isEmpty() && i < input.length) {
-            TreeNode curr = queue.poll();
-            if (!input[i].equals("N")) {
-                curr.left = new TreeNode(Integer.parseInt(input[i]));
-                queue.offer(curr.left);
-            }
-            i++;
-            if (i < input.length && !input[i].equals("N")) {
-                curr.right = new TreeNode(Integer.parseInt(input[i]));
-                queue.offer(curr.right);
-            }
-            i++;
-        }
+    //     int i = 1;
+    //     while (!queue.isEmpty() && i < input.length) {
+    //         TreeNode curr = queue.poll();
+    //         if (!input[i].equals("N")) {
+    //             curr.left = new TreeNode(Integer.parseInt(input[i]));
+    //             queue.offer(curr.left);
+    //         }
+    //         i++;
+    //         if (i < input.length && !input[i].equals("N")) {
+    //             curr.right = new TreeNode(Integer.parseInt(input[i]));
+    //             queue.offer(curr.right);
+    //         }
+    //         i++;
+    //     }
 
-        return root;
-    }
+    //     return root;
+    // }
 }
