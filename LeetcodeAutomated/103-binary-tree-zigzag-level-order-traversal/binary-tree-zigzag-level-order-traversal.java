@@ -14,61 +14,25 @@
  * }
  */
 class Solution {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (root == null) return result;
+    private void traverse(TreeNode node, int level, List<List<Integer>> result) {
+        if (node == null) return;
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        boolean reverse = false;
-
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            List<Integer> level = new ArrayList<>();
-
-            for (int i = 0; i < size; i++) {
-                TreeNode current = queue.poll();
-                if (reverse) {
-                    level.add(0, current.val);
-                } else {
-                    level.add(current.val);
-                }
-                if (current.left != null) queue.offer(current.left);
-                if (current.right != null) queue.offer(current.right);
-            }
-            result.add(level);
-            reverse = !reverse;
+        if (result.size() <= level) {
+            result.add(new ArrayList<>());
         }
 
+        if (level % 2 == 0) {
+            result.get(level).add(node.val);
+        } else {
+            result.get(level).add(0, node.val);
+        }
+
+        traverse(node.left, level + 1, result);
+        traverse(node.right, level + 1, result);
+    }
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        traverse(root, 0, result);
         return result;
     }
-
-   
-
-    // private static TreeNode createTree(String[] input) {
-    //     if (input.length == 0 || input[0].equals("null")) {
-    //         return null;
-    //     }
-
-    //     Queue<TreeNode> queue = new LinkedList<>();
-    //     TreeNode root = new TreeNode(Integer.parseInt(input[0]));
-    //     queue.offer(root);
-
-    //     int i = 1;
-    //     while (!queue.isEmpty() && i < input.length) {
-    //         TreeNode curr = queue.poll();
-    //         if (!input[i].equals("N")) {
-    //             curr.left = new TreeNode(Integer.parseInt(input[i]));
-    //             queue.offer(curr.left);
-    //         }
-    //         i++;
-    //         if (i < input.length && !input[i].equals("N")) {
-    //             curr.right = new TreeNode(Integer.parseInt(input[i]));
-    //             queue.offer(curr.right);
-    //         }
-    //         i++;
-    //     }
-
-    //     return root;
-    // }
 }
