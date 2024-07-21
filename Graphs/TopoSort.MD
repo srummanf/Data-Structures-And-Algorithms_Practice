@@ -1,4 +1,3 @@
-
 ### Kahns Algo - Topo Sort using BFS
 
 Concise step definition for Kahn's Algorithm (Topological Sorting using BFS):
@@ -13,9 +12,7 @@ Concise step definition for Kahn's Algorithm (Topological Sorting using BFS):
 
 This condensed version covers the essential steps needed for Kahn's Algorithm.
 
-
-
-### When to use Topo Sort
+### When to use Topo Sort - Sort all nodes in order of their finishing time
 
 Topological sorting is a powerful algorithm used in various scenarios where you need to order tasks or items based on their dependencies. Below are some LeetCode problems and intuitive use cases for topological sorting:
 

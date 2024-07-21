@@ -9,7 +9,7 @@ Sure! Let's review the important concepts, traversal methods, and some prominent
 
 ### Traversal Methods
 
-1. **In-order Traversal (Left, Root, Right)**:
+1. **In-order Traversal (Left, Root, Right)**: DFS
 
    ```java
    void inOrder(TreeNode root) {
@@ -19,7 +19,7 @@ Sure! Let's review the important concepts, traversal methods, and some prominent
        inOrder(root.right);
    }
    ```
-2. **Pre-order Traversal (Root, Left, Right)**:
+2. **Pre-order Traversal (Root, Left, Right)**: DFS
 
    ```java
    void preOrder(TreeNode root) {
@@ -29,7 +29,7 @@ Sure! Let's review the important concepts, traversal methods, and some prominent
        preOrder(root.right);
    }
    ```
-3. **Post-order Traversal (Left, Right, Root)**:
+3. **Post-order Traversal (Left, Right, Root)**: DFS
 
    ```java
    void postOrder(TreeNode root) {

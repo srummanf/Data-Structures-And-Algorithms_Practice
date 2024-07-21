@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HeightOfTree {
+public class L14_HeightOfTree {
 
   public class TreeNode {
 
