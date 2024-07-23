@@ -813,7 +813,6 @@ To prevent deadlocks, ensure that at least one of the necessary conditions canno
 - **Fork Command**: Efficient for creating new processes by duplicating the existing process, but involves system overhead.
 - **Multithreading**: Allows multiple threads within a process to run concurrently, with different models offering trade-offs in terms of overhead and CPU utilization.
 
-
 # Memory Hierarchy
 
 **Memory Hierarchy Requirements:**
@@ -942,7 +941,6 @@ To prevent deadlocks, ensure that at least one of the necessary conditions canno
 - Each entry maps a virtual address to the physical address of the page stored.
 - Reduces the number of entries compared to traditional page tables.
 
-
 # Virtual Memory
 
 #### Pure Demand Paging
@@ -1026,8 +1024,6 @@ To prevent deadlocks, ensure that at least one of the necessary conditions canno
 - **C-LOOK**:
   - Similar to C-SCAN but only goes to the last request and then jumps to the beginning.
   - Provides uniform wait times and better response times.
-
-
 
 ## File Allocation Methods
 
@@ -1160,8 +1156,6 @@ To prevent deadlocks, ensure that at least one of the necessary conditions canno
   2. **Access Lists for Objects**: Object-centric ACLs.
   3. **Capability Lists for Domains**: Subject-centric capability lists.
   4. **Lock-Key Mechanism**: Keys to unlock objects.
-
-
 
 # Formulas
 
