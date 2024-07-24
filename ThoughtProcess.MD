@@ -6,6 +6,8 @@
 4. Best time to buy/sell stocks
 5. Counting length of string -- Instead of creating string and returning the length, just make a counter variable and add the counter whenever we need to make a change
 6. Subset
+7. Whenever you are trying to delete a value from any DS, instead of deleting the value -- just ignore the position
+8. 
 
 ## SLIDING WINDOW, TWO POINTERS
 
@@ -25,6 +27,8 @@
 - Trying to avoid duplicates
 
 ---
+
+## Prefix Sum
 
 Google - Segment Tree, BitManip, Range Function
 

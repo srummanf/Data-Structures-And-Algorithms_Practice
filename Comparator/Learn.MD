@@ -1,4 +1,3 @@
-
 Certainly! Here's a table summarizing the different sorting methods using lambda expressions:
 
 | **Use Case**                                              | **Sorting Criterion**                                                      | **Code**                                                                                                 |
@@ -12,6 +11,14 @@ Certainly! Here's a table summarizing the different sorting methods using lambda
 | **PriorityQueue (Frequency Ascending, Value Descending)** | Frequency in ascending order, value in descending order if frequencies are equal | `pq = new PriorityQueue<>((a, b) -> a.get(0).equals(b.get(0)) ? b.get(1) - a.get(1) : a.get(0) - b.get(0));` |
 
 ### Ascending Order
+
+Thank you for providing that comprehensive table. I'll add the comparator we discussed earlier to this table in a similar format:
+
+| Use Case                                  | Sorting Criterion                                                                                | Code                                                                                                                                           |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sort by Mapped Value, then Original Index | First by mapped value (ascending), then by original index (ascending) if mapped values are equal | `Collections.sort(mappedList, (a, b) -> { if (a[0] != b[0]) { return Integer.compare(a[0], b[0]); } return Integer.compare(a[1], b[1]); });` |
+
+This new entry fits well with the existing table, providing another example of a more complex comparator that sorts based on multiple criteria. Would you like me to explain how this comparator relates to or differs from the others in the table?
 
 1. **Sort by an Integer Field:**
 
