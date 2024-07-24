@@ -1,4 +1,3 @@
-Here's a generalized skeleton of a backtracking algorithm in Markdown format:
 
 ```java
 

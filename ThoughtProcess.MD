@@ -7,7 +7,7 @@
 5. Counting length of string -- Instead of creating string and returning the length, just make a counter variable and add the counter whenever we need to make a change
 6. Subset
 7. Whenever you are trying to delete a value from any DS, instead of deleting the value -- just ignore the position
-8. 
+8. returnnewArrayList<>(ans); pass ans as any DS
 
 ## SLIDING WINDOW, TWO POINTERS
 
