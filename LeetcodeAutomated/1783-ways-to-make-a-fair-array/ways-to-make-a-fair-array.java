@@ -26,38 +26,43 @@
 
 class Solution {
     public int waysToMakeFair(int[] nums) {
-        int oddprefix[]=new int[nums.length];
-        int evenprefix[]=new int[nums.length];
-        int odd=0;int even=0;
-        for(int i=0;i<nums.length;i++){
-            if(i%2==0){
-                even+=nums[i];
-                oddprefix[i]=odd;
-                evenprefix[i]=even;                     
-            }
-            else{
-                odd+=nums[i];
-                oddprefix[i]=odd;
-                evenprefix[i]=even;
+        int evenSum = 0; // Total sum of elements at even indices
+        int oddSum = 0;  // Total sum of elements at odd indices
+
+        int n = nums.length;
+
+        // Calculate the initial sum of even and odd indexed numbers
+        for (int i = 0; i < n; ++i) {
+            if (i % 2 == 0) {
+                evenSum += nums[i];
+            } else {
+                oddSum += nums[i];
             }
         }
-        int count=0;
-        for(int i=0;i<nums.length;i++){
-            if(i%2!=0){
-                int newodd=oddprefix[i]-nums[i]+even-evenprefix[i];
-                int neweven=evenprefix[i]+odd-oddprefix[i];
-                if(newodd==neweven){
-                    count++;
+
+        int tempEvenSum = 0; // Running sum of even indices up to the current index
+        int tempOddSum = 0;  // Running sum of odd indices up to the current index
+        int fairCount = 0;
+
+        // Iterate over each element to check if removing it makes the array fair
+        for (int i = 0; i < n; ++i) {
+            if (i % 2 == 0) {
+                // Check if removing nums[i] makes the remaining evenSum and oddSum equal
+                if (tempOddSum + (evenSum - tempEvenSum - nums[i]) == tempEvenSum + (oddSum - tempOddSum)) {
+                    fairCount++;
                 }
-            }
-            else{
-               int neweven=evenprefix[i]-nums[i]+odd-oddprefix[i];
-                int newodd=oddprefix[i]+even-evenprefix[i];
-                if(newodd==neweven){
-                    count++;
-                } 
+                // Update the temporary even sum
+                tempEvenSum += nums[i];
+            } else {
+                // Check if removing nums[i] makes the remaining evenSum and oddSum equal
+                if (tempOddSum + (evenSum - tempEvenSum) == (oddSum - tempOddSum - nums[i]) + tempEvenSum) {
+                    fairCount++;
+                }
+                // Update the temporary odd sum
+                tempOddSum += nums[i];
             }
         }
-      return count;
+
+        return fairCount; // Return the number of ways to make the array fair
     }
 }
