@@ -145,14 +145,12 @@ A simplified, four-layer model.
 
 ## Network Criteria
 
-- **Delivery & Accuracy**:
-  - Data must reach the correct destination without errors.
-- **Performance**:
-  - Measured by transit time, response time, number of users, transmission medium, hardware capabilities, and software efficiency.
-- **Reliability**:
-  - Frequency of failure and time to recover from failures.
-- **Security**:
-  - Protects data from unauthorized access and damage.
+| **Aspect**              | **Description**                                                                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Delivery & Accuracy** | Data must reach the correct destination without errors.                                                                        |
+| **Performance**         | Measured by transit time, response time, number of users, transmission medium, hardware capabilities, and software efficiency. |
+| **Reliability**         | Frequency of failure and time to recover from failures.                                                                        |
+| **Security**            | Protects data from unauthorized access and damage.                                                                             |
 
 ## Types of Connections
 
@@ -191,7 +189,7 @@ A simplified, four-layer model.
 
 ---
 
-# Network Models
+# Chapter 2 : Network Models
 
 ## OSI Model
 
@@ -209,6 +207,8 @@ A simplified, four-layer model.
 - **Physical Layer**: Direct communication.
 - **Higher Layers**: Data passes through layers, adding information at each layer.
 
+    ![1721838957215](image/CN/1721838957215.png)
+
 ## Physical Layer
 
 1. **Bit Representation**: Encodes bits into electrical/optical signals.
@@ -216,6 +216,8 @@ A simplified, four-layer model.
 3. **Line Configuration**: Connection of devices to media.
 4. **Topology**: Physical arrangement of network.
 5. **Transmission Mode**: Simplex, half-duplex, full-duplex.
+
+    ![1721839930385](image/CN/1721839930385.png)
 
 ## Data Link Layer
 
@@ -225,10 +227,14 @@ A simplified, four-layer model.
 4. **Flow Control**: Prevents receiver overload.
 5. **Error Control**: Detects and retransmits damaged frames.
 
+    ![1721839975510](image/CN/1721839975510.png)                                    ![1721839985506](image/CN/1721839985506.png)
+
 ## Network Layer
 
 1. **Logical Addressing**: Adds logical addresses to packets.
 2. **Routing**: Routes packets across multiple networks.
+
+![1721840030958](image/CN/1721840030958.png)
 
 ## Transport Layer
 
