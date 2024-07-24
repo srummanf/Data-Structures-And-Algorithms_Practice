@@ -207,7 +207,7 @@ A simplified, four-layer model.
 - **Physical Layer**: Direct communication.
 - **Higher Layers**: Data passes through layers, adding information at each layer.
 
-    ![1721838957215](image/CN/1721838957215.png)
+  ![1721838957215](image/CN/1721838957215.png)
 
 ## Physical Layer
 
@@ -217,7 +217,7 @@ A simplified, four-layer model.
 4. **Topology**: Physical arrangement of network.
 5. **Transmission Mode**: Simplex, half-duplex, full-duplex.
 
-    ![1721839930385](image/CN/1721839930385.png)
+   ![1721839930385](image/CN/1721839930385.png)
 
 ## Data Link Layer
 
@@ -227,7 +227,7 @@ A simplified, four-layer model.
 4. **Flow Control**: Prevents receiver overload.
 5. **Error Control**: Detects and retransmits damaged frames.
 
-    ![1721839975510](image/CN/1721839975510.png)                                    ![1721839985506](image/CN/1721839985506.png)
+   ![1721839975510](image/CN/1721839975510.png)                                    ![1721839985506](image/CN/1721839985506.png)
 
 ## Network Layer
 
@@ -244,6 +244,10 @@ A simplified, four-layer model.
 4. **Flow Control**: End-to-end flow control.
 5. **Error Control**: End-to-end error control.
 
+![1721840179546](image/CN/1721840179546.png)
+
+![1721840192744](image/CN/1721840192744.png)
+
 ## Session Layer
 
 - **Dialog Control**: Manages dialogs (half/full-duplex).
@@ -255,6 +259,8 @@ A simplified, four-layer model.
 2. **Encryption**: Ensures privacy.
 3. **Compression**: Reduces data size.
 
+![1721840212873](image/CN/1721840212873.png)
+
 ## Application Layer
 
 - **User Interface**: Accesses network services.
@@ -263,10 +269,11 @@ A simplified, four-layer model.
   - **File Transfer, Access, and Management**: Manages remote files.
   - **Mail Services**: Email forwarding/storage.
   - **Directory Services**: Distributed database access.
+- ![1721840230794](image/CN/1721840230794.png)
 
 ---
 
-# Transmission Media
+# Chapter 3 : Transmission Media and Switching
 
 ## Guided Media
 
@@ -276,39 +283,57 @@ A simplified, four-layer model.
 
 ## Unguided Media: Wireless
 
-1. **Ground Propagation**: Low-frequency waves.
-2. **Sky Propagation**: High-frequency waves reflected by ionosphere.
-3. **Line of Sight**: Very high-frequency direct signals.
-4. **Radio Waves**: Omnidirectional, penetrate walls.
-5. **Microwaves**: Unidirectional, cannot penetrate walls.
-6. **Infrared**: Short-range communication.
+| **Propagation Type**   | **Description**                         |
+| ---------------------------- | --------------------------------------------- |
+| **Ground Propagation** | Low-frequency waves.                          |
+| **Sky Propagation**    | High-frequency waves reflected by ionosphere. |
+| **Line of Sight**      | Very high-frequency direct signals.           |
+| **Radio Waves**        | Omnidirectional, penetrate walls.             |
+| **Microwaves**         | Unidirectional, cannot penetrate walls.       |
+| **Infrared**           | Short-range communication.                    |
 
 ---
 
-# Switching
-
 ## Circuit Switching
 
+- Switching is the technique by which nodes control or switch data to transmit it between specific points on a network
 - **Method**: Establishes dedicated path.
-- **Multiplexing**: TDM and FDM.
+- **Multiplexing**: TDM - Time Division Multiplexing and FDM - Frequency Division Multiplexing.
+
+![1721840393139](image/CN/1721840393139.png)
 
 ## Packet Switching
 
 1. **Datagram Network**: No resource allocation, first-come, first-served.
 2. **Virtual Network**: Combines circuit and datagram features.
 
+## Advantages and Disadvantages of Circuit Switching:
+
+| **Category**      | **Details**                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| **Advantages**    | - A committed transmission channel is established, guaranteeing data rate.          |
+|                         | - No delay in data flow due to the dedicated transmission path.                     |
+|                         | - No header is required.                                                            |
+|                         | - Reordering of data cannot happen.                                                 |
+| **Disadvantages** | - Long time required to establish a connection.                                     |
+|                         | - More bandwidth needed for setting up dedicated channels.                          |
+|                         | - Cannot transmit other data if the channel is free as the connection is dedicated. |
+|                         | - Outdated, not commonly used nowadays.                                             |
+
 ---
 
-# ISDN (Integrated Services Digital Network)
+## ISDN (Integrated Services Digital Network)
 
-1. **Definition**: Digital transmission set of protocols.
+1. **Definition**: A set of protocols for establishing and breaking circuit switched connections, and for advanced call features for the user.
 2. **Development**: 1980s-1990s.
 3. **Channels**: B-channels for data, D-channels for control.
 4. **Interfaces**: BRI (home/small enterprise) and PRI (large installations).
 5. **Speed**: BRI up to 128 kbps, PRI up to 1.544 Mbps (NA) / 2.048 Mbps (Europe).
 6. **Usage**: Early internet access, declined with broadband.
 
-# Data Link Layer Sublayers
+![1721840544072](image/CN/1721840544072.png)
+
+# Chapter 4 : Medium Access Sublayers
 
 ### Two Sublayers
 
@@ -335,11 +360,61 @@ A simplified, four-layer model.
 - **Propagation Delay**:
 
   - Time it takes for a bit to travel from point A to point B in the transmission media.
-  - \( TP = \frac{\text{Distance}}{\text{Propagation speed}} \)
+  - \( TP = Distance/Propagation \)
 - **Transmission Delay (TT)**:
 
   - Time required for a sender to put the bits in a packet on the line one by one.
-  - \( TT = \frac{\text{Packet length} (L)}{\text{Transmission rate or Bandwidth} (B)} = \frac{L}{B} \)
+  - \( TT = Packet length/Transmission rate or Bandwidth )
+- ![1721840796838](image/CN/1721840796838.png)
+
+## Summary
+
+### Data-Link Layer in Networking
+
+The Data-Link Layer is responsible for the reliable transfer of data between devices on the same network. It ensures that data is sent correctly and efficiently. This layer is divided into two parts:
+
+1. **Logical Link Control (LLC) (TOP)**
+2. **Media Access Control (MAC) (BOTTOM)**
+
+#### 1. **Media Access Control (MAC)**
+
+**What It Does:**
+
+- **Access Method:** Determines how devices on a network share and access the network medium (e.g., wires or airwaves). For example, it specifies rules for how multiple devices can use the same Ethernet cable without interfering with each other.
+- **Addressing:** Handles addressing so that data sent across the network reaches the correct device. Each device has a unique MAC address.
+
+**Think of it like this:**
+
+- If you’re in a classroom with a shared whiteboard, the MAC layer is like the rulebook for who gets to write on the board and when. It also makes sure that each person’s writing is identified correctly.
+
+#### 2. **Logical Link Control (LLC)**
+
+**What It Does:**
+
+- **Flow Control:** Manages the rate at which data is sent to ensure that the receiving device isn't overwhelmed.
+- **Error Control:** Detects and corrects errors that may occur during data transmission.
+- **Framing Duties:** Helps in organizing data into frames (packets) so that it can be correctly understood by the receiving device.
+
+**Think of it like this:**
+
+- Using the same classroom example, the LLC layer is like a teacher who ensures that everyone is writing neatly and correctly on the whiteboard, checking for mistakes, and making sure that everyone writes at a pace that’s manageable.
+
+### Framing
+
+**What It Is:**
+
+- **Framing:** The process of packaging data into frames or packets for transmission. Both the MAC and LLC layers are involved in this process.
+
+**Think of it like this:**
+
+- Imagine you’re sending a letter. The framing process is like putting the letter into an envelope and addressing it. The MAC layer decides who the envelope is addressed to, while the LLC layer makes sure the letter is written correctly and fits neatly into the envelope.
+
+### Summary
+
+- **MAC Layer (BOTTOM):** Deals with how devices access the network and their unique addresses.
+- **LLC Layer (TOP):** Manages how data is sent and received, checking for errors and ensuring data flows smoothly.
+
+By dividing these tasks, the Data-Link Layer ensures that data is transmitted reliably and efficiently across the network.
 
 ## Random Access
 
@@ -360,11 +435,49 @@ A simplified, four-layer model.
   - Developed at the University of Hawaii around 1970.
   - Designed for a radio LAN but applicable to any shared medium.
   - Each station sends a frame whenever it has one, leading to possible collisions.
-  - Vulnerable time for collision is \( 2 \times \text{frame transmission time} (Tfr) \).
+  - Vulnerable time for collision is ![1721841082223](image/CN/1721841082223.png)
+  - ![1721841184213](image/CN/1721841184213.png)
+  - ![1721841281365](image/CN/1721841281365.png)
 - **Collision Handling**:
 
   - Stations wait a random back-off time \( (T_B) \) after a time-out before resending frames to avoid collisions.
   - After a maximum number of retransmission attempts \( (K_{max}) \), stations must give up and try later.
+- ### Throughput in Pure ALOHA
+
+  **Definition:**
+  Throughput in Pure ALOHA is the fraction of the total available bandwidth that is effectively used for successful data transmission. Pure ALOHA is a simple network protocol where data collisions can occur due to simultaneous transmissions by multiple devices. The throughput measures how efficiently the network is used despite these collisions.
+
+  **Formula:**
+
+| **Metric**         | **Description**                      |
+| ------------------------ | ------------------------------------------ |
+| **Throughput (S)** | The fraction of successful transmissions.  |
+| **Formula**        | ![1721841452220](image/CN/1721841452220.png) |
+
+- **\( S \):** Throughput
+- **\( G \):** Average number of frames generated by the system in one frame time
+- **\( e \):** Base of the natural logarithm (approximately 2.718)
+
+### Summary
+
+- **Pure ALOHA Throughput Formula:** ![1721841403145](image/CN/1721841403145.png)
+- **Optimal Throughput:** The maximum throughput for Pure ALOHA is ![1721841427258](image/CN/1721841427258.png) or approximately 18.4% when \( G = 0.5 \).
+
+### Sample Numerical
+
+![1721841650731](image/CN/1721841650731.png)
+
+| **Frame Generation Rate** | **Frame Transmission Time (T\_fr)** | **Traffic Intensity (G)** | **Throughput Formula (S = G × e^(-2G))** | **Throughput (S)** | **Number of Frames Successfully Transmitted** |
+| ------------------------------- | ----------------------------------------- | ------------------------------- | ----------------------------------------------- | ------------------------ | --------------------------------------------------- |
+| **1000 frames/second**    | 1 ms                                      | \( G = 1000 * 0.001 = 1 \)      | \( S = 1 * e^{-2 \times 1} \)                  | 0.135 (13.5%)            | 135                                                 |
+| **500 frames/second**     | 1 ms                                      | \( G = 500 * 0.001 = 0.5 \)    | \( S = 0.5 * e^{-2 \times 0.5} \)               | 0.184 (18.4%)            | 92                                                  |
+| **250 frames/second**     | 1 ms                                      | \( G = 250 * 0.001 = 0.25 \)    | \( S = 0.25 * e^{-2 \times 0.25} \)             | 0.152 (15.2%)            | 38                                                  |
+
+### Detailed Calculations:
+
+1. ![1721841751501](image/CN/1721841751501.png)
+2. ![1721841772403](image/CN/1721841772403.png)
+
 
 ### Slotted ALOHA
 
@@ -373,6 +486,7 @@ A simplified, four-layer model.
   - Time divided into slots of \( Tfr \).
   - Stations send only at the beginning of a time slot.
   - Reduces vulnerable time to \( Tfr \).
+  - ![1721841860920](image/CN/1721841860920.png)
 - **Efficiency**:
 
   - Pure ALOHA: ~18.4%
@@ -399,7 +513,7 @@ A simplified, four-layer model.
 
 ### Vulnerable Time
 
-- **Definition**: The vulnerable time for CSMA is the propagation time \( T_p \).
+- **Definition**: The vulnerable time for CSMA is the propagation time \( Tp \).
 - **Scenario**: If a station sends a frame and another station sends a frame during this time, a collision occurs.
 - **Resolution**: If the first bit of the frame reaches the end of the medium, all stations will refrain from sending.
 
@@ -423,7 +537,7 @@ A simplified, four-layer model.
      - If a collision occurs, it uses the backoff procedure.
    - **Advantage**: Balances collision reduction and network efficiency.
 
-## Carrier Sense Multiple Access with Collision Detection (CSMA/CD)
+## (CSMA/CD) - Carrier Sense Multiple Access with Collision Detection
 
 ### Mechanism
 
@@ -440,7 +554,7 @@ A simplified, four-layer model.
 - **Normal Level**: A station is successfully sending a frame.
 - **Abnormal Level**: Indicates a collision, with energy level twice the normal.
 
-## Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA)
+## (CSMA/CA) - Carrier Sense Multiple Access with Collision Avoidance
 
 ### Overview
 
@@ -937,7 +1051,6 @@ A simplified, four-layer model.
 
 - **Issue**: In distance-vector routing, broken links are not immediately recognized as infinity, leading to slow convergence.
 
-
 ## Transport Layer Services
 
 ### Overview
@@ -1013,8 +1126,6 @@ A simplified, four-layer model.
   2. **Server SYN+ACK**: Acknowledges and responds.
   3. **Client ACK**: Confirms the connection.
 - **Data Transfer**: After the handshake, bidirectional data transfer occurs.
-
-
 
 Here’s a more organized version of the content with tables where necessary:
 
@@ -1142,13 +1253,11 @@ Here’s a more organized version of the content with tables where necessary:
 
 ### **Data Compression**
 
-- **Types**:
-  | Type                 | Description                                  | Compression Ratio |
+- **Types**:| Type                 | Description                                  | Compression Ratio |
   | -------------------- | -------------------------------------------- | ----------------- |
   | Lossless Compression | No loss of information, lower ratio          | Lower             |
   | Lossy Compression    | Controlled loss of information, higher ratio | Higher            |
-- **Components**:
-  | Component | Description                            |
+- **Components**:| Component | Description                            |
   | --------- | -------------------------------------- |
   | Encoder   | Compresses the data                    |
   | Decoder   | Decompresses and reconstructs the data |
