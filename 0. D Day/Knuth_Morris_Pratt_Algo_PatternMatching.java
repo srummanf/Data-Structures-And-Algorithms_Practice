@@ -1,3 +1,15 @@
+/**
+ * str --> N
+ * pat --> M
+ * for( i : 0 to N-M){
+ *    int j;
+ *    for(j : 0 to M-1){
+ *        if(str[i+j]!=pat[j]) break;
+ *  }
+ *   if(j==M) return i; // pattern found at i
+ * }
+ */
+
 class Knuth_Morris_Pratt_Algo_PatternMatching {
 
   public static void Patternsearch(String str, String pat) {

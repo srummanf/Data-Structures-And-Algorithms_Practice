@@ -31,4 +31,9 @@ class Solution {
         return f(n - 1, n - 1, s, r, dp);
 
     }
+
+        // Total Length - Palindromic Length
+      public int minInsertions(String s) {
+        return s.length() - longestPalindromeSubseq(s);
+    }
 }

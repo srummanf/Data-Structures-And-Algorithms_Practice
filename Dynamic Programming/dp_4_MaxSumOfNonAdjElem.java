@@ -5,16 +5,15 @@ import java.util.*;
 class dp_4_MaxSumOfNonAdjElem {
 
   // RECURSIVE SOL
-  // f(ind, DP){
+  // f(ind){
   //     if(ind ==0) return a[0];
   //     if( ind < 0) return 0;
-  //     if(DP[ind] != -1) return DP[ind];
   //
   //     else
-  //     pick = a[ind] + f(ind-2, DP);
-  //     nonpick = 0 + f(ind-1, DP);
+  //     pick = a[ind] + f(ind-2);
+  //     nonpick = 0 + f(ind-1);
 
-  //     return DP[ind] = max(pick, nonpick);
+  //     return max(pick, nonpick);
   // }
 
   int topDownMemo(int ind, int a[], int DP[]) {

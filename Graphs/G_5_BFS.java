@@ -26,11 +26,9 @@ class G_5_BFS {
         vis[src] = true;
         // dist[src] = 0;
         
-
         while (!q.isEmpty()) {
             int node = q.poll();
             bfs.add(node);
-
             // Get all adjacent vertices of the dequeued vertex; if an adjacent has not been visited, mark it visited and enqueue it
             for (int it : adj.get(node)) {
                 if (!vis[it]) {

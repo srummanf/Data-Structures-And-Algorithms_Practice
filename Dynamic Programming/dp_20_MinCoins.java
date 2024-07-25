@@ -12,6 +12,8 @@
  * else return 9999999////1e9;}
  */
 
+// *** In DP , whenever you return SUM --> for Base Case : if Minimum is asked , return Integer.MAX and vice versa (Similar problem is seen in dp_19_KnapSack)
+
 public class dp_20_MinCoins {
 
   static int recursion(int ind, int t, int[] arr) {

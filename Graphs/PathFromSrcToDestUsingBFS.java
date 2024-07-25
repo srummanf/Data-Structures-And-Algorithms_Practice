@@ -2,7 +2,8 @@ import java.util.*;
 class PathFromSrcToDestUsingBFS {
     // Function to return Breadth First Traversal of given graph.
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj, int src) {
-        ArrayList<Integer> distance = new ArrayList<>(Collections.nCopies(V, -1)); // Initialize distance with -1
+        // Initialize distance with -1
+        ArrayList<Integer> distance = new ArrayList<>(Collections.nCopies(V, -1)); 
         boolean[] vis = new boolean[V];
         Queue<Integer> q = new LinkedList<>();
         q.add(src);

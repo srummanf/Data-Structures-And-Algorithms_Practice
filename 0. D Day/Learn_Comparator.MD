@@ -1,56 +1,17 @@
 
-Certainly! Here's a table summarizing the different sorting methods using lambda expressions:
+Here's a table summarizing the different sorting methods using lambda expressions:
 
-| **Use Case**                                              | **Sorting Criterion**                                                      | **Code**                                                                                                 |
-| --------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Ascending Order by Integer Field**                      | Integer field in ascending order                                                 | `people.sort((p1, p2) -> Integer.compare(p1.getAge(), p2.getAge()));`                                        |
-| **Ascending Order by String Field**                       | String field in ascending order                                                  | `people.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));`                                             |
-| **2D Array Ascending by First Element**                   | First element of 2D array in ascending order                                     | `Arrays.sort(array, (a, b) -> Integer.compare(a[0], b[0]));`                                                 |
-| **Descending Order by Integer Field**                     | Integer field in descending order                                                | `people.sort((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge()));`                                        |
-| **Descending Order by String Field**                      | String field in descending order                                                 | `people.sort((p1, p2) -> p2.getName().compareTo(p1.getName()));`                                             |
-| **2D Array Descending by First Element**                  | First element of 2D array in descending order                                    | `Arrays.sort(array, (a, b) -> Integer.compare(b[0], a[0]));`                                                 |
-| **PriorityQueue (Frequency Ascending, Value Descending)** | Frequency in ascending order, value in descending order if frequencies are equal | `pq = new PriorityQueue<>((a, b) -> a.get(0).equals(b.get(0)) ? b.get(1) - a.get(1) : a.get(0) - b.get(0));` |
+| **Use Case**                                         | **Sorting Crit**                                                                                      | **Lambda Expression**                                                                                    |
+| :--------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Ascending Order by<br /> Integer<br /> Field**    | Integer field<br /> in ascending<br /> order                                                                | `people.sort((p1, p2) -> Integer.compare(p1.getAge(), p2.getAge()));`                                        |
+| **Ascending Order <br />by String<br /> Field**      | String field<br />in ascending<br /> order                                                                  | `people.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));`                                             |
+| **2D Array <br />Ascending <br />by First Element**  | First element<br /> of 2D array <br />in ascending<br /> order                                              | `Arrays.sort(array, (a, b) -> Integer.compare(a[0], b[0]));`                                                 |
+| **Descending <br />Order <br />by Integer Field**    | Integer field<br />in descending<br /> order                                                                | `people.sort((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge()));`                                        |
+| **Descending <br />Order<br /> by String Field**     | String field<br /> in descending <br />order                                                                | `people.sort((p1, p2) -> p2.getName().compareTo(p1.getName()));`                                             |
+| **2D Array<br /> Descending <br />by First Element** | First element<br />of 2D array in <br />descending order                                                    | `Arrays.sort(array, (a, b) -> Integer.compare(b[0], a[0]));`                                                 |
+| **PriorityQueue<br /> with Custom <br />Comparator** | Sort by frequency<br /> (ascending) <br />and value<br /> (descending)<br /> if frequencies <br />are equal | `pq = new PriorityQueue<>((a, b) -> a.get(0).equals(b.get(0)) ? b.get(1) - a.get(1) : a.get(0) - b.get(0));` |
+|                                                            |                                                                                                             |                                                                                                                |
 
-### Ascending Order
+This table provides a concise overview of sorting criteria and their corresponding lambda expressions in Java.
 
-1. **Sort by an Integer Field:**
-
-   ```java
-   people.sort((p1, p2) -> Integer.compare(p1.getAge(), p2.getAge()));
-   ```
-2. **Sort by a String Field:**
-
-   ```java
-   people.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
-   ```
-3. **Sort 2D Array by First Element (Ascending):**
-
-   ```java
-   Arrays.sort(array, (a, b) -> Integer.compare(a[0], b[0]));
-   ```
-
-### Descending Order
-
-1. **Sort by an Integer Field:**
-
-   ```java
-   people.sort((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge()));
-   ```
-2. **Sort by a String Field:**
-
-   ```java
-   people.sort((p1, p2) -> p2.getName().compareTo(p1.getName()));
-   ```
-3. **Sort 2D Array by First Element (Descending):**
-
-   ```java
-   Arrays.sort(array, (a, b) -> Integer.compare(b[0], a[0]));
-   ```
-
-### PriorityQueue with Custom Comparator
-
-1. **Sort by Frequency (Ascending) and Value (Descending) if Frequencies are Equal:**
-
-   ```java
-   pq = new PriorityQueue<>((a, b) -> a.get(0).equals(b.get(0)) ? b.get(1) - a.get(1) : a.get(0) - b.get(0));
-   ```
+1.

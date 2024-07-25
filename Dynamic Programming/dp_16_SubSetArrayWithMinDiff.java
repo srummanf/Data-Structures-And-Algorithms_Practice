@@ -10,7 +10,6 @@ public class dp_16_SubSetArrayWithMinDiff {
     if (arr[idx] <= target) {
       take = bruteDPsum(idx - 1, target - arr[idx], arr);
     }
-
     return take || nottake;
   }
 

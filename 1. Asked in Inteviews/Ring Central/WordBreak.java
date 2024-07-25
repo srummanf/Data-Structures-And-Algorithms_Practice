@@ -95,6 +95,7 @@ class Solution {
     String s = sc.nextLine().trim();
     int n = Integer.parseInt(sc.nextLine().trim());
     List<String> wordDict = new ArrayList<>();
+    
     for (int i = 0; i < n; i++) {
       String w = sc.next().trim();
       wordDict.add(w);

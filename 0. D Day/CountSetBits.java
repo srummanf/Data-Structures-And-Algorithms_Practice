@@ -1,4 +1,11 @@
 // brian kernighan's algorithm
+/**
+ * while(n>0){
+ *    ctr += n&1;
+ *    n >>= 1;
+ * }
+ * ctr ---> counts the number of 1s in a binary representation of n
+ */
 import java.io.*;
 
 class countSetBits {

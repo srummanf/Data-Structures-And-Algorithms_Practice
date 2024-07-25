@@ -57,6 +57,7 @@ class G_54_KosarajuAlgo {
   public int kosaraju(int V, ArrayList<ArrayList<Integer>> adj) {
     int[] vis = new int[V];
     Stack<Integer> st = new Stack<Integer>();
+    
     // Step 1. Sort all nodes in order of their finishing time -- TOPO SORT using DFS --> O(N)
     for (int i = 0; i < V; i++) {
       if (vis[i] == 0) {

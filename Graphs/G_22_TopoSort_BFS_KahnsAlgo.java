@@ -1,3 +1,11 @@
+/** Kahn Algo : 
+ * 1. Find Indegree Array
+ * 2. Make a Queue 
+ * 3. Add those elements in the Queue whose Indegree == 0 using a loop ---> O(N)
+ * 4. Unless Q is empty , Pop the element and save it in a var, push it in topo array
+ * 5. For all the neighbours of Node, indegree[ngh]-- , if indegree[ngh]==0 push ngh in Q
+ */
+
 import java.io.*;
 import java.util.*;
 

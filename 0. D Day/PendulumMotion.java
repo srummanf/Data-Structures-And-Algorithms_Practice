@@ -1,21 +1,10 @@
 /**
-### Explanation:
+ f(n, k){
+        k = k % 2(n-1);
+        if(k<=(n-1)) return k;
+        return 2(n-1) - k;
+ }
 
-1. **Modulo Operation:**
-   ```java
-   k = k % (2 * (n - 1));
-   ```
-   This line ensures that `k` is within the range `[0, 2 * (n - 1) - 1]`. This is important for the oscillation effect, similar to how a pendulum repeats its motion periodically.
-
-2. **Determining the Position:**
-   ```java
-   if (k <= n - 1)
-       return k;
-   else
-       return 2 * (n - 1) - k;
-   ```
-   - If `k` is within the first half of the range (`0` to `n - 1`), it returns `k` directly.
-   - If `k` is in the second half of the range (`n` to `2 * (n - 1) - 1`), it returns `2 * (n - 1) - k`.
 
 ### Visualization:
 
