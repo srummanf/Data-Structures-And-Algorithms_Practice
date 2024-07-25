@@ -14,6 +14,7 @@
 // Build Segment Tree , Update Segment Tree, Query Segment Tree
 class Learn {
 
+    // 1. Insertion
   void buildSegmentTree(int i, int l, int r, int[] segmentTree, int[] arr) {
     if (l == r) {
       segmentTree[i] = arr[l];
@@ -25,6 +26,8 @@ class Learn {
     segmentTree[i] = segmentTree[2 * i + 1] + segmentTree[2 * i + 2];
   }
 
+
+  // 2. Updation
   void updateSegmentTree(
     int idx,
     int val,
@@ -35,21 +38,27 @@ class Learn {
     int[] arr
   ) {
     if (l == r) {
-      segmentTree[i] = arr[l];
+      segmentTree[i] = val;
+      arr[idx] = val;
       return;
     }
 
     int mid = l + (r - l) / 2;
+
+    // start
     if (idx <= mid) {
       updateSegmentTree(idx, val, 2 * i + 1, l, mid, segmentTree, arr);
     } else {
       updateSegmentTree(idx, val, 2 * i + 2, mid + 1, r, segmentTree, arr);
     }
+    // end
+
     buildSegmentTree(2 * i + 1, l, mid, segmentTree, arr);
     buildSegmentTree(2 * i + 2, mid + 1, r, segmentTree, arr);
     segmentTree[i] = segmentTree[2 * i + 1] + segmentTree[2 * i + 2];
   }
 
+  // 3. Query
   int querySegmentTree(
     int start,
     int end,
