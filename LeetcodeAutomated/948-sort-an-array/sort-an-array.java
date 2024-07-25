@@ -5,7 +5,7 @@ class Solution {
         return nums;
     }
 
-    private void mergeSort(int[] nums, int left, int right) {
+    public void mergeSort(int[] nums, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
             mergeSort(nums, left, mid);
@@ -14,7 +14,7 @@ class Solution {
         }
     }
 
-    private void merge(int[] nums, int left, int mid, int right) {
+    public void merge(int[] nums, int left, int mid, int right) {
         int[] temp = new int[right - left + 1];
         int i = left, j = mid + 1, k = 0;
         while (i <= mid && j <= right) {
