@@ -2,7 +2,8 @@ import java.util.*;
 
 class G_32_DijkstraAlgo {
     public int[] dijkstra(int n, int[][] edges, int start) {
-        // Create the adjacency list for the graph
+
+        // 1. Create the adjacency list for the graph
         List<List<int[]>> adjList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             adjList.add(new ArrayList<>());
@@ -15,7 +16,7 @@ class G_32_DijkstraAlgo {
             adjList.get(v).add(new int[]{u, weight}); // For undirected graph
         }
 
-        // Distance and parent arrays
+        // 2. Distance and parent arrays
         int[] dist = new int[n];
         int[] parent = new int[n];
         Arrays.fill(dist, Integer.MAX_VALUE);
@@ -38,6 +39,7 @@ class G_32_DijkstraAlgo {
                 int v = neighbor[0];
                 int weight = neighbor[1];
 
+                // distance of node + weight < distance to neighbour
                 if (dist[u] + weight < dist[v]) {
                     dist[v] = dist[u] + weight;
                     parent[v] = u;

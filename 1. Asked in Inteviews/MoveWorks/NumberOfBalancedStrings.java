@@ -1,3 +1,19 @@
+/** Write a Java program with a function named numberOfBalancedStrings(int n, int d) that counts the number of ways we can make a balanced string of size n and difference d.
+
+A Balanced string is a string where the difference between adjacent characters does not exceed d.
+
+Input:
+n = 3, d = 3
+
+Output:
+224
+
+Input:
+n = 2, d = 2
+
+Output:
+124 */
+
 import java.util.Arrays;
 
 class NumberOfBalancedStrings {

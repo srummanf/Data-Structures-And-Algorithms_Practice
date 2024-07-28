@@ -8,6 +8,7 @@
 6. Subset
 7. Whenever you are trying to delete a value from any DS, instead of deleting the value -- just ignore the position
 8. returnnewArrayList<>(ans); pass ans as any DS
+9. Whenever you see a min path in 2d matrix --> Either DP or Dijsktra Algo (Leetcode 1631)
 
 ## SLIDING WINDOW, TWO POINTERS
 
