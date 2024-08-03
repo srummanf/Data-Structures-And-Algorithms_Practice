@@ -35,6 +35,7 @@ class Solution {
 
         while (!q.isEmpty()) {
             int node = q.poll();
+            // this node is very important -- for any other questions, use this node only
             topo[idx] = node;
             idx++;
 
@@ -44,7 +45,7 @@ class Solution {
                 if (indegree[it] == 0) {
                     q.add(it);
                 }
-            }
+            }   
         }
 
         return topo;
