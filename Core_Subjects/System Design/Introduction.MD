@@ -1,3 +1,6 @@
+### HLD - https://www.youtube.com/playlist?list=PLJN9ydlFnJsiEH_U9guHTNs6H2tH00h9S
+
+### LLD - https://www.youtube.com/playlist?list=PLPtUyMfD0mNIQ9rSXdX5LprFvbIJ0KrIQ
 
 ### Introduction to System Design
 
