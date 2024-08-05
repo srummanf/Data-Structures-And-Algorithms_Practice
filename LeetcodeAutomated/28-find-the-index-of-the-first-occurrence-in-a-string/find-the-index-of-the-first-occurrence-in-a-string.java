@@ -1,3 +1,5 @@
+// KMP Algorithm
+
 class Solution {
     public int strStr(String str, String pat) {
         int M = pat.length();
