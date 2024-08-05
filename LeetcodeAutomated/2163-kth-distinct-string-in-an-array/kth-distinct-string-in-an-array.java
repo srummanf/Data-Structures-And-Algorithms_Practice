@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
     public String kthDistinct(String[] arr, int k) {
         Map<String, Integer> hm = new HashMap<>();
