@@ -12,19 +12,6 @@ class Solution {
             hm.put(ch, r);
             maxi = Math.max(maxi, r-l+1);
         }
-        // while (r < n) {
-        //     char currentChar = s.charAt(r);
-        
-        //     if (hm.containsKey(currentChar)) {
-        //         l = Math.max(hm.get(currentChar) + 1, l);
-        //     }
-            
-        //     hm.put(currentChar, r);
-            
-        //     maxi = Math.max(maxi, r - l + 1);
-            
-        //     r++;
-        // }
 
         return maxi;
 
