@@ -13,13 +13,17 @@ class Solution {
             }
         }
 
-        Integer previousCount = null;
+        int previousCount = 0;
         for (int count : hm.values()) {
-            
-            if (previousCount != null) {
+            System.out.println("Count == "+count);
+            System.out.println("previousCount == "+previousCount);
+            if (previousCount != 0) {
                 ans += previousCount * count;
+                System.out.println("ans == "+ans);
             }
             previousCount = count;
+            System.out.println("updated previousCount == "+previousCount);
+            System.out.println();
         }
 
         return ans;
