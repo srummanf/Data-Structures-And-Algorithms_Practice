@@ -1,7 +1,7 @@
 class Solution {
     public int numberOfBeams(String[] bank) {
         int ans = 0;
-        TreeMap<Integer, Integer> hm = new TreeMap<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
         int r  = bank.length;
         int c  = bank[0].length();
 
