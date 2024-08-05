@@ -1,20 +1,42 @@
 class Solution {
+    public String sort(String s){
+        char ch[] = s.toCharArray();
+        Arrays.sort(ch);
+        return new String(ch);
+    }
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<String, List<String>> map = new HashMap<>();
-        for (String s : strs) {
-            char[] ch = new char[26];
-            for (char c : s.toCharArray()) {
-                ch[c - 'a']++;
+        HashMap<String, List<String>> hm = new HashMap<>();
+        for(String s: strs){
+            String key = sort(s);
+            if(!hm.containsKey(key)){
+                hm.put(key, new ArrayList<>());
             }
-            String key = new String(ch);
-            if (!map.containsKey(key)) {
-                map.put(key, new ArrayList<>());
-            }
-            map.get(key).add(s);
+            hm.get(key).add(s);
         }
-        return new ArrayList<>(map.values());
+
+        return new ArrayList<>(hm.values());
     }
 }
+
+
+
+// class Solution {
+//     public List<List<String>> groupAnagrams(String[] strs) {
+//         Map<String, List<String>> map = new HashMap<>();
+//         for (String s : strs) {
+//             char[] ch = new char[26];
+//             for (char c : s.toCharArray()) {
+//                 ch[c - 'a']++;
+//             }
+//             String key = new String(ch);
+//             if (!map.containsKey(key)) {
+//                 map.put(key, new ArrayList<>());
+//             }
+//             map.get(key).add(s);
+//         }
+//         return (new ArrayList<>(map.values()));
+//     }
+// }
 
 
 
