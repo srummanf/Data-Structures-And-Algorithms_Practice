@@ -6,6 +6,26 @@
  * for each neighbours, if not visited dfs(ngh, vis, adj)
  */
 
+private void dfs(char[][] grid, boolean[][] vis, int i, int j) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+
+        if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] == '0' || vis[i][j]) {
+            return;
+        }
+
+        vis[i][j] = true;
+
+        dfs(grid, vis, i + 1, j);
+        dfs(grid, vis, i - 1, j);
+        dfs(grid, vis, i, j + 1);
+        dfs(grid, vis, i, j - 1);
+    }
+
+
+    =============================  x x x x x x x x x x  ===============================
+
+
 import java.util.*;
 
 class G_6_DFS_Recursive {

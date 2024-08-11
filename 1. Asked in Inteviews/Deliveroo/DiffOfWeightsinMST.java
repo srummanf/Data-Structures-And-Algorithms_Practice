@@ -1,10 +1,9 @@
-/** Spanning Tree - Graph which has N nodes and N-1 edges and we can reach all the nodes from any src node  -- Bi/Un Directional graph*
- *  MST - Spanning Tree with min sum of weights
+/** Given a weighted undirected graph. Find the minimum possible difference between the maximum and minimum weights in a spanning tree.
  */
 
 import java.util.*;
 
-class G_45_PrimAlgo {
+class DiffOfWeightsinMST {
 
   static ArrayList<Integer> wtss = new ArrayList<Integer>();
 
@@ -73,16 +72,20 @@ class G_45_PrimAlgo {
       adj.get(v).add(tmp2);
     }
 
-    G_45_PrimAlgo obj = new G_45_PrimAlgo();
+    DiffOfWeightsinMST obj = new DiffOfWeightsinMST();
     int sum = obj.spanningTree(V, adj);
     System.out.println("The sum of all the edge weights: " + sum);
 
-    Collections.sort(wtss);
-    System.out.println(
-      "The diff of max and min weights in MST: " +
-      (wtss.get(wtss.size() - 1) - wtss.get(1))
-    );
+    if (wtss.size() > 1) {
+      Collections.sort(wtss);
+      System.out.println(
+        "The diff of max and min weights in MST: " +
+        (wtss.get(wtss.size() - 1) - wtss.get(0))
+      );
+    } else {
+      System.out.println("Insufficient edge weights to calculate the difference.");
+    }
 
-    System.out.println(wtss);
+    // System.out.println(wtss);
   }
 }

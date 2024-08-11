@@ -1,3 +1,6 @@
+### Types of DP Problem : *https://leetcode.com/discuss/general-discussion/1050391/Must-do-Dynamic-programming-Problems-Category-wise*
+
+
 Understanding when to use Dynamic Programming (DP) and whether to use 1D, 2D, or 3D DP depends on the nature of the problem you are trying to solve. Here are some guidelines to help you decide:
 
 ### When to Use Dynamic Programming (DP):
