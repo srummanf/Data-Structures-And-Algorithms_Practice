@@ -1,21 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
-    void f(int i, int end, List<List<Integer>> ans, int[] candidates, int target, List<Integer> temp, int remain) {
-        if (remain < 0)
-            return;
-        if (remain == 0) {
+    void f(int idx, int target, List<List<Integer>> ans, int[] candidates, List<Integer> temp) {
+        if (target == 0) {
             ans.add(new ArrayList<>(temp));
             return;
         }
-        for (int j = i; j < end; j++) {
-            temp.add(candidates[j]);
-            f(j, end, ans, candidates, target, temp, remain - candidates[j]);
-            temp.remove(temp.size() - 1);  // Backtrack
+
+        if (idx == candidates.length || target < 0) {
+            return;
         }
+
+        if (candidates[idx] <= target) {
+            temp.add(candidates[idx]);
+            f(idx, target - candidates[idx], ans, candidates, temp);
+            temp.remove(temp.size() - 1); // Backtrack
+        }
+        
+        f(idx + 1, target, ans, candidates, temp);
     }
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();
-        f(0, candidates.length, ans, candidates, target, new ArrayList<>(), target);
+        f(0, target, ans, candidates, new ArrayList<>());
         return ans;
     }
 }
