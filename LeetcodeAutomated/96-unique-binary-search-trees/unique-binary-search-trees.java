@@ -1,4 +1,4 @@
-// i-1 * n-i
+// Catalan Numbers
 
 class Solution {
     public int f(int[] dp, int n) {
