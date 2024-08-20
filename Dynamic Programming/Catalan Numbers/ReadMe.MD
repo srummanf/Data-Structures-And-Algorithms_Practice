@@ -35,29 +35,41 @@ Catalan numbers appear in various counting problems, including:
 Here’s a simple dynamic programming approach to compute the nth Catalan number:
 
 ```java
-// Catalan Numbers ==> Sum of f(i-1)*f(n-i)
+// Catalan Numbers
 
 class Solution {
-    public int f(int[] dp, int n) {
+    public int f(int n) {
         if (n <= 1)
             return 1;
-        if (dp[n] != -1)
-            return dp[n];
         int ans = 0;
         for (int i = 1; i <= n; i++) {
-            ans += f(dp, i - 1) * f(dp, n - i);
+            ans += f(i - 1) * f(n - i);
         }
         return ans;
     }
 
-    public int nthCatalanNumber(int n) {
-        int[] dp = new int[n + 1];
-        Arrays.fill(dp, -1);
-        return f(dp, n);
+    public int numTrees(int n) {
+
+        return f(n);
 
     }
 }
 ```
+
+### **Applications**
+
+- **Number of binary trees with \( n \) vertices**
+- **Number of full binary trees with \( n \) vertices**
+- **Number of  n  multisets \{a_1, a_2,  . . . , a_n\}\) of elements \( a_i \) such that \( a_1 + a_2 + . . . . + a_n = 0 \)**
+- **Number of ways \( n \) semicircles can be arranged such that no two intersect**
+- **Number of permutations for the set \(\{1, 2, \dots, 2n\}\) where \( f \) is an involution that has no fixed points and satisfies the noncrossing condition**
+- **Number of ways to arrange \( 2n \) soldiers in two rows in ascending height order**
+- **Number of tilings of the staircase shape that can be made with \( n \) rectangles**
+- **Number of paths a rook can take from the upper left-hand corner to the lower right-hand corner on an \( n \times n \) chessboard without crossing the main diagonal**
+- **Number of ideals in a ring is \( C_{n+1} \)**
+- **Number of nilpotent ideals in a ring**
+
+These bullets highlight various combinatorial problems, many of which are related to Catalan numbers or other advanced combinatorial structures.
 
 ### **Applications on LeetCode**
 
@@ -78,6 +90,11 @@ Here are some LeetCode problems that involve Catalan numbers:
 5. **[Number of Valid Parentheses Combinations](https://leetcode.com/problems/number-of-valid-parentheses-combinations/)** (Custom problem):
 
    - A more direct problem would involve finding the number of valid parentheses combinations, which directly correlates with the nth Catalan number.
+
+### Article
+
+1. https://medium.com/@DeepakMalviya7/what-is-catalan-number-and-its-applications-c9c8eda5f3bf
+2. 
 
 ### **Summary**
 
