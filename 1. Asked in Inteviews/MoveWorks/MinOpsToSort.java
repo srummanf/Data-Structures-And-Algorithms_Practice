@@ -1,6 +1,8 @@
 // Asked in OA
 // https://www.geeksforgeeks.org/minimize-moves-to-sort-array-in-non-decreasing-order-by-breaking-elements-in-two-parts/
 
+// https://www.youtube.com/watch?v=kFe_LRWuZjE
+
 // Java code to implement the approach
 
 import java.lang.*;

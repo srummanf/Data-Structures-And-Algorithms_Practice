@@ -55,7 +55,7 @@
 
 ### 10. **Deadlocks**
 
-- **Conditions**: Mutual exclusion, hold and wait, no preemption, circular wait.
+- **Conditi**reemption**ons**: Mutual exclusion, hold and wait, no p, circular wait.
 - **Handling**: Deadlock prevention, avoidance (Banker's algorithm), detection, recovery.
 
 Do you have specific topics or concepts you want to dive deeper into or need help with specific questions or coding examples related to OS?

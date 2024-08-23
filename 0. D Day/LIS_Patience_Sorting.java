@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
 
     public static int patienceSorting(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums.length == 0) {
             return 0;
         }
         

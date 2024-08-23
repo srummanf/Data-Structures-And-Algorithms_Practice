@@ -18,6 +18,25 @@ public int MinKadanesAlgo(int[] nums) {
         return maxSum;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Return the sum along with the array and its length
 public class Main {
 
