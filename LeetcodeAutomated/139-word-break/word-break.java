@@ -18,7 +18,7 @@ class Solution {
             String prefix = s.substring(0, i);
             String suffix = s.substring(i);
             // Check if the prefix is in the dictionary and if the suffix can be segmented
-            if (hash.contains(prefix) && dfs(suffix, hash, dp)) {
+            if ((hash.contains(prefix) && hash.contains(suffix)) || (hash.contains(prefix) && dfs(suffix, hash, dp))) {
                 dp.put(s, true);
                 return true;
             }
