@@ -1,4 +1,4 @@
-### Complete Binary Tree: Definition and Properties
+# Complete Binary Tree: Definition and Properties
 
 A **Complete Binary Tree** is a type of binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible. It's different from a **Perfect Binary Tree**, where all levels are fully filled.
 

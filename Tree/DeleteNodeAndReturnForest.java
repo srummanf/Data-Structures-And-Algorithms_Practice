@@ -20,51 +20,53 @@ Output: [[1,2,4]]
 // Company Tags - Google, Meta, Amazon
 
 class Solution {
-    ArrayList<TreeNode> ans = new ArrayList<>();
 
-    public void dfs(TreeNode root, boolean isRoot, HashSet<Integer> hash) {
-        if (root == null) return;
+  ArrayList<TreeNode> ans = new ArrayList<>();
 
-        boolean toDelete = hash.contains(root.val);
-        if (isRoot && !toDelete) {
-            ans.add(root);
-        }
+  // Hashset contains the values to be deleted
+  public void dfs(TreeNode root, boolean isRoot, HashSet<Integer> hash) {
+    if (root == null) return;
 
-        if (root.left != null) {
-            if (hash.contains(root.left.val)) {
-                dfs(root.left, true, hash);
-                root.left = null;
-            } else {
-                dfs(root.left, false, hash);
-            }
-        }
-
-        if (root.right != null) {
-            if (hash.contains(root.right.val)) {
-                dfs(root.right, true, hash);
-                root.right = null;
-            } else {
-                dfs(root.right, false, hash);
-            }
-        }
-
-        if (toDelete) {
-            dfs(root.left, true, hash);
-            dfs(root.right, true, hash);
-        }
+    boolean toDelete = hash.contains(root.val);
+    if (isRoot && !toDelete) {
+      ans.add(root);
     }
 
-    public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
-        HashSet<Integer> hash = new HashSet<>();
-        for (int value : to_delete) {
-            hash.add(value);
-        }
-        dfs(root, true, hash);
-        return ans;
+    if (root.left != null) {
+      if (hash.contains(root.left.val)) {
+        // Breaking the tree by making the node as root
+        dfs(root.left, true, hash);
+        // Making the root.left as null , so broken
+        root.left = null;
+      } else {
+        dfs(root.left, false, hash);
+      }
     }
+
+    if (root.right != null) {
+      if (hash.contains(root.right.val)) {
+        dfs(root.right, true, hash);
+        root.right = null;
+      } else {
+        dfs(root.right, false, hash);
+      }
+    }
+
+    if (toDelete) {
+      dfs(root.left, true, hash);
+      dfs(root.right, true, hash);
+    }
+  }
+
+  public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
+    HashSet<Integer> hash = new HashSet<>();
+    for (int value : to_delete) {
+      hash.add(value);
+    }
+    dfs(root, true, hash);
+    return ans;
+  }
 }
-
-
 /** A simple explanation of the code:
 
 TreeNode Class:

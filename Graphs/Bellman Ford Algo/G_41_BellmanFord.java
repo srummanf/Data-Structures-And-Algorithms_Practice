@@ -1,6 +1,5 @@
-// Can detect negative cycles unlike dijkstra
-
-// It is a DP based Algorithm
+// Can detect negative cycles unlike dijkstra 
+//            
 
 import java.util.*;
 
@@ -13,7 +12,6 @@ class G_41_BellmanFord {
 
         // Relax all edges (n-1) times
         for (int i = 0; i < n - 1; i++) {
-            // Copy code from here for cyc
             for (int[] edge : edges) {
                 int u = edge[0];
                 int v = edge[1];

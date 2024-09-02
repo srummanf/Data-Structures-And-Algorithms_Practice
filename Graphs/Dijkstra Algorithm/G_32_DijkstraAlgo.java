@@ -13,7 +13,7 @@ class G_32_DijkstraAlgo {
             int v = edge[1];
             int weight = edge[2];
             adjList.get(u).add(new int[]{v, weight});
-            adjList.get(v).add(new int[]{u, weight}); // For undirected graph
+            adjList.get(v).add(new int[]{u, weight}); // For undirected graph            edges   only            (  directe
         }
 
         // 2. Distance and parent arrays
