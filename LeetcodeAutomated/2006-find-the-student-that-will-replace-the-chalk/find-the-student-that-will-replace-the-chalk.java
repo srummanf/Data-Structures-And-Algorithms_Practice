@@ -1,6 +1,7 @@
 class Solution {
     public int chalkReplacer(int[] chalk, int k) {
         int n = chalk.length;
+        // The best part of this question was to take long for the sum. Had you taken int, it would have yielded wrong answer due overflow
         long sum = 0;
 
         for (int i : chalk) {
