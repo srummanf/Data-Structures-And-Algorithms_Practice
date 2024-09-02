@@ -1,21 +1,26 @@
-
 class Solution {
-    public int chalkReplacer(int[] chalk, int initialChalkPieces) {
-        long totalChalkNeeded = 0;
-        for (int studentChalkUse : chalk) {
-            totalChalkNeeded += studentChalkUse;
+    public int chalkReplacer(int[] chalk, int k) {
+        int n = chalk.length;
+        long sum = 0;
+
+        for (int i : chalk) {
+            sum += i;
         }
-        
-        int remainingChalk = (int)(initialChalkPieces % totalChalkNeeded);
-        
-        for (int studentIndex = 0; studentIndex < chalk.length; studentIndex++) {
-            if (remainingChalk < chalk[studentIndex]) {
-                return studentIndex;
+
+        // Subtract the sum of chalk from k until k is less than the sum of chalk.
+        int rem = (int)(k % sum);
+
+        // Iterate through each student to find who cannot use the required chalk
+        for (int i = 0; i < n; i++) {
+            if (rem < chalk[i]) {
+                return i;
+            } else {
+                rem -= chalk[i];
             }
-            remainingChalk -= chalk[studentIndex];
         }
-        
-        return 0;  
+
+        // Fallback return statement (though this won't be reached)
+        return 0;
     }
 }
 
