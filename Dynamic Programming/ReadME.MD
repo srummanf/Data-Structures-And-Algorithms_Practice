@@ -43,9 +43,90 @@ Understanding when to use Dynamic Programming (DP) and whether to use 1D, 2D, or
 
 Choosing the right type of Dynamic Programming approach (1D, 2D, or 3D) depends on understanding the problem structure, identifying overlapping subproblems, and defining states and transitions appropriately. Practice and familiarity with different types of DP problems will improve your ability to recognize when and how to apply DP effectively.
 
-
 # Advanced DP
 
-https://www.youtube.com/playlist?list=PL-Jc9J83PIiEZvXCn-c5UIBvfT8dA-8EG 
+https://www.youtube.com/playlist?list=PL-Jc9J83PIiEZvXCn-c5UIBvfT8dA-8EG
 
 https://leetcode.com/discuss/feedback/5733990/dynamic-programming-dp-problems-list
+
+
+# Building Intuition for DP
+
+Practicing dynamic programming (DP) questions effectively requires a structured approach to build intuition and problem-solving skills. Here's a step-by-step guide to help you practice and improve:
+
+### 1. **Understand the Problem**:
+
+   Before jumping into a solution, **spend time understanding the problem** and its constraints. Carefully think about:
+
+- What are you trying to compute?
+- How is the result related to smaller subproblems?
+- Can you recognize any overlapping subproblems or repeated calculations?
+
+### 2. **Start with Classic DP Problems**:
+
+   Begin by practicing classical and foundational DP problems to grasp different categories of DP:
+
+- **0/1 Knapsack**: Learn about using DP in knapsack-type problems.
+- **Fibonacci Numbers**: A simple DP problem to understand memoization or tabulation.
+- **Longest Common Subsequence (LCS)** and **Longest Increasing Subsequence (LIS)**: Good for learning multi-dimensional DP.
+- **Coin Change Problem**: Helps with the "combinations" style of problems.
+
+   These problems build the foundation for advanced DP techniques.
+
+### 3. **Identify Problem Patterns**:
+
+- **Optimization Problems**: Problems where you're asked to find the minimum or maximum value (e.g., shortest path, maximum profit, etc.).
+- **Count-Based Problems**: Where you need to count the number of ways to achieve a particular outcome (e.g., number of ways to make change).
+- **Subsequence/Substring Problems**: Where you're finding a particular subsequence or substring in a given string (e.g., LCS, LIS, etc.).
+
+   Recognizing these patterns helps you apply the right DP technique.
+
+### 4. **Master Common DP Techniques**:
+
+- **Memoization (Top-Down)**: This is a recursive approach where you solve a problem by breaking it into smaller subproblems and store the results to avoid recomputation.
+- **Tabulation (Bottom-Up)**: Here, you iteratively build a table starting from the smallest subproblem up to the final solution.
+- **Space Optimization**: Once you're comfortable with DP tables, try optimizing space by using only the necessary rows or columns.
+
+### 5. **Solve Problems with Increasing Difficulty**:
+
+   Gradually move on to problems with increasing difficulty to strengthen your understanding. Some great platforms with categorized DP problems are:
+
+- **LeetCode**: Start with "Easy" DP problems and work your way up to "Medium" and "Hard."
+- **Codeforces**: Many contests have good DP problems. Practice problems from past contests.
+- **GeeksforGeeks**: Has a great collection of DP tutorials and problems.
+
+   You can also filter problems by tags, such as "Dynamic Programming," to focus your practice.
+
+### 6. **Develop a Framework for Solving DP Problems**:
+
+   Follow a systematic approach when solving DP questions:
+
+- **Define the State**: Identify what your DP array or table represents (e.g., `dp[i]` might represent the maximum sum up to index `i`).
+- **Formulate the Recurrence Relation**: Think about how the solution to a subproblem is related to smaller subproblems. Write the relation mathematically.
+- **Base Case**: Determine the simplest cases (e.g., `dp[0] = 1` or `dp[0][0] = 0`) and initialize your DP table/array accordingly.
+- **Optimize Space/Time if Possible**: Once you get the basic DP approach, think of space or time optimizations. Can you reduce the DP table size or eliminate redundant calculations?
+
+### 7. **Revisit Mistakes and Learn**:
+
+   Whenever you get stuck or make mistakes, take the time to understand why. Don't just move on—revisit the solution and fully understand the logic. Over time, you'll develop a better intuition for how to approach different problems.
+
+### 8. **Track Progress**:
+
+   Keep a log of problems you've solved, the techniques used, and the difficulties faced. This will help you identify areas where you need more practice.
+
+### 9. **Consistent Practice**:
+
+- **Solve Daily**: Practice DP problems regularly. This helps reinforce your understanding.
+- **Focus on Weak Areas**: If you're struggling with certain patterns (e.g., multi-dimensional DP), spend more time on problems in that category.
+
+### 10. **Learn from Others**:
+
+   Participate in forums like **LeetCode Discuss** or **Codeforces**. When you're stuck, reading others' solutions can give new perspectives on how to approach problems.
+
+### Resources:
+
+- **LeetCode** Dynamic Programming Problems: [LeetCode DP Problems](https://leetcode.com/problemset/all/?topicSlugs=dynamic-programming)
+- **Codeforces** Contests and Problems: [Codeforces](https://codeforces.com/)
+- **GeeksforGeeks** Dynamic Programming Tutorial: [GeeksforGeeks DP](https://www.geeksforgeeks.org/dynamic-programming/)
+
+By practicing consistently, understanding different patterns, and revisiting your mistakes, you'll gradually improve your ability to solve DP problems effectively!
