@@ -1,4 +1,3 @@
-
 # Chapter 1
 
 ### Data
@@ -115,7 +114,6 @@
 
 This summary and tabular representation condenses the key points of the content effectively for easy reference.
 
-
 ---
 
 # **ER Diagram Overview**
@@ -202,7 +200,6 @@ This summary and tabular representation condenses the key points of the content 
 
 ---
 
-
 Sure! Here are some additional points about ER Diagrams, including the types of ellipses used and other important aspects:
 
 ### 1. **Ellipses in ER Diagrams:**
@@ -263,36 +260,276 @@ These are some additional key points that enhance the understanding of the ER di
 
 # MCQ mistakes I learnt from
 
-https://www.interviewbit.com/dbms-mcq/ 
-
-1.
+https://www.interviewbit.com/dbms-mcq/
 
 ![1724001571536](image/DBMS/1724001571536.png)2. ![1724001609956](image/DBMS/1724001609956.png)
 
 3. ![1724001725096](image/DBMS/1724001725096.png)
-
-4.
+4. 
 
 ![1724001770974](image/DBMS/1724001770974.png)
 
-5. 
-
 ![1724001825783](image/DBMS/1724001825783.png)
-
-6.
 
 ![1724002070960](image/DBMS/1724002070960.png)
 
-7.
-
 ![1724002166491](image/DBMS/1724002166491.png)
-
-8.
 
 ![1724002400266](image/DBMS/1724002400266.png)
 
-9.
-
 ![1724002445574](image/DBMS/1724002445574.png)
 
-10.
+
+# **Normalization in RDBMS**
+
+Normalization is a process in relational database design that organizes data to reduce redundancy and improve data integrity. The goal is to decompose a table into smaller, well-structured tables without losing any data.
+
+Normalization typically involves dividing large tables into smaller ones and defining relationships between them. This process is guided by the application of **normal forms**, which are rules that govern the structure of the tables.
+
+#### **Why Normalize?**
+
+- **Minimizes Redundancy**: Reduces duplication of data, which saves storage space and reduces inconsistencies.
+- **Improves Data Integrity**: Ensures that data dependencies are logically sound, minimizing anomalies during data operations (like insertion, deletion, and update).
+- **Facilitates Maintenance**: Makes the database easier to maintain by enforcing clear relationships between tables.
+
+#### **Normal Forms**
+
+Each normal form has specific requirements that a table must satisfy. The most commonly used normal forms are:
+
+1. **First Normal Form (1NF)**
+
+   - **Definition**: A table is in 1NF if it contains only atomic (indivisible) values; each column contains unique values and each record has a unique identifier (primary key).
+   - **Requirements**:
+     - Eliminate repeating groups.
+     - Each cell should contain a single value.
+   - **Example**:
+     - A table with customer data where multiple phone numbers are stored in a single cell would not be in 1NF. This would be corrected by creating a separate row for each phone number.
+2. **Second Normal Form (2NF)**
+
+   - **Definition**: A table is in 2NF if it is in 1NF and all non-key attributes are fully functionally dependent on the entire primary key.
+   - **Requirements**:
+     - Eliminate partial dependency: Ensure that non-key attributes depend on the whole primary key, not just part of it.
+   - **Example**:
+     - In a table where a composite key is used, if some attributes depend only on part of the composite key, those attributes should be moved to another table.
+3. **Third Normal Form (3NF)**
+
+   - **Definition**: A table is in 3NF if it is in 2NF and all attributes are functionally dependent only on the primary key.
+   - **Requirements**:
+     - Eliminate transitive dependency: Ensure that non-key attributes do not depend on other non-key attributes.
+   - **Example**:
+     - If a table contains a non-key attribute that is dependent on another non-key attribute, that relationship should be separated into its own table.
+4. **Boyce-Codd Normal Form (BCNF)**
+
+   - **Definition**: A table is in BCNF if it is in 3NF and every determinant is a candidate key.
+   - **Requirements**:
+     - The table must not have more than one candidate key; otherwise, each non-trivial functional dependency must have a superkey as its determinant.
+   - **Example**:
+     - If a table has two candidate keys, and one of them determines a non-key attribute, the table should be decomposed.
+5. **Fourth Normal Form (4NF)**
+
+   - **Definition**: A table is in 4NF if it is in BCNF and does not have any multi-valued dependencies.
+   - **Requirements**:
+     - A multi-valued dependency occurs when one attribute in a table uniquely determines another attribute, independent of all other attributes.
+   - **Example**:
+     - If a table contains two or more independent multi-valued attributes, it should be decomposed into separate tables for each attribute.
+6. **Fifth Normal Form (5NF)**
+
+   - **Definition**: A table is in 5NF if it is in 4NF and every join dependency in the table is implied by the candidate keys.
+   - **Requirements**:
+     - No table should be decomposable into smaller tables without loss of data.
+   - **Example**:
+     - In rare cases, a table may need to be decomposed further to ensure that the relationships among the data are properly maintained.
+
+# **Functional Dependency in RDBMS**
+
+Functional dependency is a relationship that exists when one attribute uniquely determines another attribute in a relational database.
+
+#### **Key Concepts**
+
+1. **Definition**:
+
+   - A functional dependency is denoted as `X → Y`, where `X` and `Y` are attributes of a relation. The functional dependency means that if two tuples (rows) have the same value for `X`, they must have the same value for `Y`.
+   - For example, if `A` and `B` are attributes of a relation, `A → B` means that for any two rows, if they have the same value for `A`, they must have the same value for `B`.
+2. **Types of Functional Dependencies**:
+
+   - **Trivial Functional Dependency**: A functional dependency is trivial if `Y` is a subset of `X`. For example, `X → X` or `{A, B} → A`.
+   - **Non-Trivial Functional Dependency**: A functional dependency is non-trivial if `Y` is not a subset of `X`. For example, `A → B` where `B` is not a subset of `A`.
+   - **Full Functional Dependency**: A functional dependency `X → Y` is full if it is non-trivial and the removal of any attribute from `X` means that the dependency no longer holds.
+   - **Partial Functional Dependency**: Occurs when a non-key attribute is functionally dependent on part of a composite key.
+   - **Transitive Dependency**: Occurs when one non-key attribute is dependent on another non-key attribute, which is dependent on the primary key.
+3. **Armstrong's Axioms**:
+
+   - A set of rules used to infer all functional dependencies on a relational database.
+   - **Reflexivity**: If `Y` is a subset of `X`, then `X → Y`.
+   - **Augmentation**: If `X → Y`, then `XZ → YZ` for any `Z`.
+   - **Transitivity**: If `X → Y` and `Y → Z`, then `X → Z`.
+
+#### **Importance of Functional Dependencies**:
+
+- **Normalization**: Functional dependencies are the backbone of normalization, as they help in identifying the correct structure of a relational schema.
+- **Data Integrity**: Ensuring that functional dependencies are respected in a database prevents anomalies and ensures data consistency.
+- **Schema Design**: Understanding and applying functional dependencies is crucial for effective schema design, leading to a well-structured, efficient, and reliable database.
+
+### **Summary**
+
+- **Normalization** is crucial for minimizing redundancy and improving data integrity in a database. It involves applying a series of normal forms, from 1NF to 5NF.
+- **Functional Dependency** is a relationship where one attribute uniquely determines another, playing a key role in database design and normalization.
+
+
+### **Normalization in RDBMS**
+
+Normalization is a database design technique used to minimize redundancy and dependency by organizing fields and table relationships in a database. The goal of normalization is to divide larger tables into smaller, manageable tables without losing data integrity and to ensure data dependencies make sense.
+
+#### **Why Normalize?**
+
+- **Eliminate Redundant Data:** To ensure that each piece of data is stored only once, reducing data redundancy.
+- **Ensure Data Integrity:** To prevent anomalies like update, insertion, and deletion anomalies.
+- **Simplify Queries:** Well-structured tables make querying easier and more efficient.
+
+#### **Normalization Process:**
+
+Normalization is achieved through a series of steps called **Normal Forms (NFs)**, each with specific requirements. Below are the most common normal forms:
+
+---
+
+#### **1. First Normal Form (1NF):**
+
+A table is in 1NF if:
+
+- All column values are atomic (indivisible).
+- Each column contains only one value.
+- Each record is unique, i.e., there is a unique key.
+
+**Example:**
+
+- A table with a column for phone numbers that allows multiple numbers (e.g., `123, 456`) violates 1NF because the column is not atomic. Splitting these into separate rows would bring it to 1NF.
+
+**Anomalies Resolved:** Repeating groups are removed, and the table becomes a true relation.
+
+---
+
+#### **2. Second Normal Form (2NF):**
+
+A table is in 2NF if:
+
+- It is already in 1NF.
+- All non-key attributes are fully functionally dependent on the primary key.
+
+**Example:**
+
+- Consider a table where a composite key is used, and a non-key attribute depends only on part of the composite key. Such partial dependencies should be removed by splitting the table.
+
+**Anomalies Resolved:** Partial dependencies are removed, thus reducing redundancy.
+
+---
+
+#### **3. Third Normal Form (3NF):**
+
+A table is in 3NF if:
+
+- It is already in 2NF.
+- There is no transitive dependency, i.e., non-key attributes do not depend on other non-key attributes.
+
+**Example:**
+
+- If `A → B` and `B → C`, then `A → C` is a transitive dependency. To achieve 3NF, `C` should be moved to a separate table where `B` is the primary key.
+
+**Anomalies Resolved:** Transitive dependencies are removed, making the data structure more robust.
+
+---
+
+#### **4. Boyce-Codd Normal Form (BCNF):**
+
+A table is in BCNF if:
+
+- It is in 3NF.
+- For every functional dependency `X → Y`, `X` is a superkey.
+
+**Example:**
+
+- In some cases, even if a table is in 3NF, it may have dependencies where a candidate key is not a superkey. BCNF addresses this issue.
+
+**Anomalies Resolved:** More strict than 3NF, BCNF ensures no anomalies remain related to candidate keys.
+
+---
+
+#### **5. Fourth Normal Form (4NF):**
+
+A table is in 4NF if:
+
+- It is in BCNF.
+- It has no multi-valued dependencies.
+
+**Example:**
+
+- If a table has columns like `Student`, `Course`, and `Hobby`, where a student can have multiple courses and hobbies, the table should be decomposed to eliminate multi-valued dependencies.
+
+**Anomalies Resolved:** Removes multi-valued dependencies.
+
+---
+
+#### **6. Fifth Normal Form (5NF):**
+
+A table is in 5NF if:
+
+- It is in 4NF.
+- It cannot be decomposed into smaller tables without losing data.
+
+**Example:**
+
+- A complex table with multiple candidate keys and relations may need to be split into smaller tables, ensuring no loss of information or dependencies.
+
+**Anomalies Resolved:** Ensures that no join dependencies remain.
+
+---
+
+### **Functional Dependency (FD) in RDBMS**
+
+Functional Dependency is a fundamental concept that underpins the theory of database normalization. It describes the relationship between attributes in a table.
+
+#### **Definition:**
+
+A functional dependency, denoted by `X → Y`, between two sets of attributes `X` and `Y` in a relation (table) means that if two tuples (rows) have the same values for `X`, they must have the same values for `Y`. In other words, `Y` is functionally dependent on `X`.
+
+#### **Key Points about Functional Dependency:**
+
+1. **Trivial Functional Dependency:**
+
+   - A dependency is trivial if `Y` is a subset of `X`.
+   - Example: `{StudentID, Name} → {StudentID}` is trivial.
+2. **Non-Trivial Functional Dependency:**
+
+   - A dependency is non-trivial if `Y` is not a subset of `X`.
+   - Example: `StudentID → Name` is non-trivial if `Name` is not part of `StudentID`.
+3. **Full Functional Dependency:**
+
+   - A functional dependency is full if removal of any attribute from `X` means the dependency no longer holds.
+   - Example: `{StudentID, CourseID} → Grade` is full if `Grade` is dependent on both `StudentID` and `CourseID`.
+4. **Partial Functional Dependency:**
+
+   - Occurs when a non-key attribute is functionally dependent on part of a composite key.
+   - Example: `{StudentID, CourseID} → CourseName` is partial if `CourseName` is dependent only on `CourseID`.
+5. **Transitive Dependency:**
+
+   - Occurs when a non-key attribute depends on another non-key attribute.
+   - Example: `StudentID → AdvisorID` and `AdvisorID → AdvisorName` imply `StudentID → AdvisorName`, which is a transitive dependency.
+
+#### **Role in Normalization:**
+
+- Functional dependencies are used to identify how attributes relate to each other and to determine which normal form a table satisfies.
+- By analyzing FDs, one can decide how to decompose tables to achieve a higher normal form.
+
+---
+
+### **Normalization vs. Denormalization:**
+
+- **Normalization** ensures data integrity and reduces redundancy, but it might lead to complex queries and potentially slower performance.
+- **Denormalization** involves combining tables to reduce joins and increase performance, but it can introduce redundancy and anomalies.
+
+### **Interview Tips:**
+
+- **Be prepared to explain:** The reasons for each step in normalization, especially how FDs affect the process.
+- **Be ready to demonstrate:** How you would normalize a given set of tables to a particular normal form.
+- **Understand trade-offs:** Between normalization and denormalization in real-world database design.
+
+These notes should give you a solid understanding of normalization and functional dependencies in RDBMS, which are key topics often covered in technical interviews.

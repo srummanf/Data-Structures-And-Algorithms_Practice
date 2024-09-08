@@ -52,6 +52,442 @@
    **Answer:**
    If I had to start this project again, I would consider implementing a microservices architecture to better handle scalability and maintenance. This approach would allow for more modular development and make it easier to update or replace individual services without affecting the entire system.
 
+Let's correct the Mermaid chart syntax for the ER diagram. The issue might be due to Mermaid's specific syntax requirements. Here's the correct code:
+
+```mermaid
+erDiagram
+    STUDENT {
+        int student_id PK
+        string name
+        string email
+        string phone
+        int year
+        string department
+    }
+
+    EVENT {
+        int event_id PK
+        string event_name
+        string event_date
+        string event_type
+        string location
+    }
+
+    REGISTRATION {
+        int registration_id PK
+        int student_id FK
+        int event_id FK
+        string registration_date
+        string status
+    }
+
+    ORGANIZER {
+        int organizer_id PK
+        int student_id FK
+        int event_id FK
+        string role
+    }
+
+    EVENT_COORDINATOR {
+        int coordinator_id PK
+        string name
+        string contact_info
+    }
+
+    SPONSOR {
+        int sponsor_id PK
+        string sponsor_name
+        string sponsor_type
+        string contact_info
+    }
+
+    EVENT_COORDINATOR ||--o{ EVENT : "manages"
+    EVENT ||--o{ REGISTRATION : "has"
+    STUDENT ||--o{ REGISTRATION : "registers"
+    STUDENT ||--o{ ORGANIZER : "organizes"
+    EVENT ||--o{ ORGANIZER : "is organized by"
+    EVENT ||--o{ SPONSOR : "sponsored by"
+```
+
+### The above is a sample ER Diagram
+
+Here are some basic code snippets and concepts that an interviewer might ask about based on the full-stack technologies you've listed:
+
+### 1. **Next.js - Server-Side Rendering (SSR)**
+
+Next.js allows you to render React components on the server side.
+
+```javascript
+// pages/index.js
+import React from 'react';
+
+export async function getServerSideProps() {
+    const data = await fetch('https://api.example.com/data').then(res => res.json());
+
+    return {
+        props: { data }, // will be passed to the page component as props
+    };
+}
+
+const HomePage = ({ data }) => {
+    return (
+        <div>
+            <h1>Data from Server-Side Rendering</h1>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+    );
+};
+
+export default HomePage;
+```
+
+### 2. **React.js - State Management with Hooks**
+
+Using `useState` and `useEffect` hooks to manage state and side effects.
+
+```javascript
+import React, { useState, useEffect } from 'react';
+
+const Counter = () => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `You clicked ${count} times`;
+    }, [count]); // Only re-run the effect if count changes
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+};
+
+export default Counter;
+```
+
+### 3. **Tailwind CSS - Responsive Design**
+
+Using Tailwind CSS to create a responsive button.
+
+```html
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Click Me
+</button>
+```
+
+```html
+<!-- Responsive design -->
+<div class="md:flex">
+  <div class="md:flex-shrink-0">
+    <img class="md:w-48" src="image.jpg" alt="An image">
+  </div>
+  <div class="mt-4 md:mt-0 md:ml-6">
+    <h2 class="text-xl font-semibold text-gray-900">Responsive Card</h2>
+    <p class="mt-2 text-gray-600">This card adjusts layout based on screen size.</p>
+  </div>
+</div>
+```
+
+### 4. **Flask - Basic API Endpoint**
+
+Creating a simple REST API endpoint in Flask.
+
+```python
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/api/greet', methods=['GET'])
+def greet():
+    name = request.args.get('name', 'World')
+    return jsonify(message=f'Hello, {name}!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+### 5. **Express.js - Basic API Endpoint**
+
+Creating a simple REST API endpoint in Express.js.
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/api/greet', (req, res) => {
+    const name = req.query.name || 'World';
+    res.json({ message: `Hello, ${name}!` });
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+```
+
+### 6. **MongoDB - Basic CRUD Operations**
+
+Example of inserting and querying documents in MongoDB using the MongoDB Node.js driver.
+
+```javascript
+const { MongoClient } = require('mongodb');
+
+async function main() {
+    const uri = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+        const database = client.db('testdb');
+        const collection = database.collection('users');
+
+        // Insert a document
+        await collection.insertOne({ name: 'Alice', age: 25 });
+
+        // Query documents
+        const users = await collection.find({}).toArray();
+        console.log(users);
+    } finally {
+        await client.close();
+    }
+}
+
+main().catch(console.error);
+```
+
+### 7. **MySQL - Basic SQL Query**
+
+Creating a table and inserting data in MySQL.
+
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT
+);
+
+INSERT INTO users (name, age) VALUES ('John Doe', 30);
+
+SELECT * FROM users;
+```
+
+### 8. **Git - Basic Commands**
+
+Common Git commands for version control.
+
+```bash
+# Initialize a new Git repository
+git init
+
+# Add files to the staging area
+git add .
+
+# Commit changes to the repository
+git commit -m "Initial commit"
+
+# Create a new branch
+git branch feature-branch
+
+# Switch to the new branch
+git checkout feature-branch
+
+# Merge changes from feature branch to main branch
+git checkout main
+git merge feature-branch
+
+# Push changes to a remote repository
+git push origin main
+```
+
+### 9. **GitHub - Working with Repositories**
+
+Using GitHub to collaborate on a repository.
+
+```bash
+# Clone a repository from GitHub
+git clone https://github.com/username/repository.git
+
+# Forking a repository (done on GitHub UI)
+
+# Pull the latest changes from the original repository (after forking)
+git remote add upstream https://github.com/original-owner/repository.git
+git pull upstream main
+
+# Push changes to your forked repository
+git push origin main
+```
+
+### 10. **Postman - Testing API Endpoints**
+
+Using Postman to test API endpoints.
+
+- **GET Request**: Test the `/api/greet` endpoint you created in Flask or Express.js.
+
+  - Open Postman and enter `http://localhost:5000/api/greet?name=John` (for Flask) or `http://localhost:3000/api/greet?name=John` (for Express.js).
+  - Click `Send` to see the response `{ "message": "Hello, John!" }`.
+- **POST Request**: Send data to an API.
+
+  - Set the method to `POST`, and in the body, select `raw` and `JSON`.
+  - Send `{"name": "Alice"}` to an endpoint that accepts POST data.
+
+These snippets cover various aspects of full-stack development and could be part of interview questions to assess your practical knowledge.
+
+## Sample SQL Queries
+
+Here are 10 moderate to tough SQL questions based on the College Event Fest Management Portal schema, along with their answers:
+
+### 1. **List all students who have registered for at least one event.**
+
+**Question:**
+
+```sql
+SELECT DISTINCT s.name, s.student_id
+FROM STUDENT s
+JOIN REGISTRATION r ON s.student_id = r.student_id;
+```
+
+**Answer:**
+This query retrieves the names and IDs of students who have registered for any event.
+
+### 2. **Find the number of students registered for each event.**
+
+**Question:**
+
+```sql
+SELECT e.event_name, COUNT(r.student_id) AS num_of_students
+FROM EVENT e
+LEFT JOIN REGISTRATION r ON e.event_id = r.event_id
+GROUP BY e.event_name;
+```
+
+**Answer:**
+This query counts the number of students registered for each event.
+
+### 3. **List events managed by each event coordinator along with their contact information.**
+
+**Question:**
+
+```sql
+SELECT ec.name AS coordinator_name, ec.contact_info, e.event_name
+FROM EVENT_COORDINATOR ec
+JOIN EVENT e ON ec.coordinator_id = e.event_id;
+```
+
+**Answer:**
+This query lists each event coordinator along with the events they manage and their contact details.
+
+### 4. **Retrieve the total number of events each student has registered for.**
+
+**Question:**
+
+```sql
+SELECT s.name, COUNT(r.event_id) AS total_events
+FROM STUDENT s
+JOIN REGISTRATION r ON s.student_id = r.student_id
+GROUP BY s.name;
+```
+
+**Answer:**
+This query returns the total number of events each student has registered for.
+
+### 5. **Find the students who have registered for all events.**
+
+**Question:**
+
+```sql
+SELECT s.name, s.student_id
+FROM STUDENT s
+JOIN REGISTRATION r ON s.student_id = r.student_id
+GROUP BY s.student_id, s.name
+HAVING COUNT(r.event_id) = (SELECT COUNT(*) FROM EVENT);
+```
+
+**Answer:**
+This query retrieves the students who have registered for all the events.
+
+### 6. **List all events that have no registrations yet.**
+
+**Question:**
+
+```sql
+SELECT e.event_name
+FROM EVENT e
+LEFT JOIN REGISTRATION r ON e.event_id = r.event_id
+WHERE r.event_id IS NULL;
+```
+
+**Answer:**
+This query lists events that currently have no registrations.
+
+### 7. **Find students who are both organizers and registrants of the same event.**
+
+**Question:**
+
+```sql
+SELECT s.name, e.event_name
+FROM STUDENT s
+JOIN ORGANIZER o ON s.student_id = o.student_id
+JOIN REGISTRATION r ON s.student_id = r.student_id AND o.event_id = r.event_id
+JOIN EVENT e ON o.event_id = e.event_id;
+```
+
+**Answer:**
+This query returns students who organized and registered for the same event.
+
+### 8. **List events along with their sponsors' names and types, and the number of students registered for each event.**
+
+**Question:**
+
+```sql
+SELECT e.event_name, sp.sponsor_name, sp.sponsor_type, COUNT(r.student_id) AS num_of_students
+FROM EVENT e
+LEFT JOIN SPONSOR sp ON e.event_id = sp.sponsor_id
+LEFT JOIN REGISTRATION r ON e.event_id = r.event_id
+GROUP BY e.event_name, sp.sponsor_name, sp.sponsor_type;
+```
+
+**Answer:**
+This query lists events along with sponsor details and the number of students registered for each event.
+
+### 9. **Retrieve the list of students who are organizers but have not registered for any events.**
+
+**Question:**
+
+```sql
+SELECT s.name
+FROM STUDENT s
+JOIN ORGANIZER o ON s.student_id = o.student_id
+LEFT JOIN REGISTRATION r ON s.student_id = r.student_id
+WHERE r.registration_id IS NULL;
+```
+
+**Answer:**
+This query finds students who are organizers but haven't registered for any events.
+
+### 10. **Find the event(s) with the highest number of registrations.**
+
+**Question:**
+
+```sql
+SELECT e.event_name
+FROM EVENT e
+JOIN REGISTRATION r ON e.event_id = r.event_id
+GROUP BY e.event_name
+HAVING COUNT(r.student_id) = (
+    SELECT MAX(num_of_students)
+    FROM (
+        SELECT COUNT(student_id) AS num_of_students
+        FROM REGISTRATION
+        GROUP BY event_id
+    ) AS subquery
+);
+```
+
+**Answer:**
+This query identifies the event(s) with the highest number of student registrations.
+
 ## Intelligent Recommendation System for Dyslexia Assessment
 
 ### 1. **What motivated you to develop a recommendation system for dyslexia assessment?**
@@ -316,7 +752,7 @@ The code in the Chaos Map Data Encryption notebook implements image encryption u
 #### 4. **What role does the Logistic Map play in your encryption process?**
 
    **Answer:**
-   The Logistic Map generat step ensures that even if the image is partially decrypted, the content remains obscured.
+   The Logistic Map generate step ensures that even if the image is partially decrypted, the content remains obscured.
 
 #### 5. **How do you determine the number of iterations for the Arnold Map?**
 
@@ -400,6 +836,7 @@ The code in the Chaos Map Data Encryption notebook implements image encryption u
 
 -plaintext attacks by ensuring that even with partial knowledge of the plaintext, the encryption remains secure.
 
+![1725768960605](image/InterviewQuestions/1725768960605.png)
 
 Below is the Mermaid syntax for creating a flowchart that represents the architecture diagram for the encryption and decryption technique using the Arnold Map, Henon Map, and Logistic Map.
 
@@ -443,7 +880,6 @@ For decryption:
 9. **Decrypted Image:** The original image is restored.
 
 This flowchart visually represents the sequence of operations in both the encryption and decryption processes.
-
 
 Certainly! I'll expand the details for each map (Arnold Map, Henon Map, and Logistic Map) to show the operations involved in the encryption and decryption process.
 
@@ -608,6 +1044,116 @@ These questions and answers provide a comprehensive understanding of your Chaos 
 
 **Answer:** Fine-tuning involves adjusting the weights of a pre-trained model on a new dataset. This is done by continuing training the model on the ROP dataset with a lower learning rate, allowing the model to adapt its learned features to the specific characteristics of ROP images.
 
+### Overview of YOLOv8, ResNet50, and VGG16
+
+#### 1. **YOLOv8 (You Only Look Once, version 8)**
+
+YOLO is a family of deep learning models designed for real-time object detection. YOLOv8, an evolution of the original YOLO architecture, introduces further optimizations in speed, accuracy, and efficiency. YOLO models are known for their ability to process an entire image in a single pass, dividing it into a grid and predicting bounding boxes and class probabilities for each grid cell.
+
+##### Key Features:
+
+- Real-time object detection.
+- Unified model for both object detection and segmentation tasks.
+- Combines high accuracy with fast inference speed.
+
+##### Basic Code Example (using `ultralytics` library):
+
+```python
+# Install the ultralytics package (YOLOv8)
+# pip install ultralytics
+
+from ultralytics import YOLO
+
+# Load a pre-trained YOLOv8 model
+model = YOLO('yolov8n.pt')  # Use 'yolov8s.pt', 'yolov8m.pt', etc. for other sizes
+
+# Perform object detection on an image
+results = model('image.jpg')
+
+# Display the results
+results.show()
+```
+
+#### 2. **ResNet50 (Residual Network)**
+
+ResNet, introduced by He et al., is a type of convolutional neural network (CNN) that uses skip connections or shortcuts to jump over some layers. ResNet50 is a 50-layer deep version of ResNet, and it's particularly famous for addressing the vanishing gradient problem in deep networks by allowing gradients to flow directly through the identity connections.
+
+##### Key Features:
+
+- Deep architecture with 50 layers.
+- Utilizes residual blocks to improve training of deep networks.
+- Known for its high performance on image classification tasks.
+
+##### Basic Code Example (using `TensorFlow`):
+
+```python
+import tensorflow as tf
+from tensorflow.keras.applications import ResNet50
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+import numpy as np
+
+# Load the pre-trained ResNet50 model
+model = ResNet50(weights='imagenet')
+
+# Load and preprocess an image
+img_path = 'elephant.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+# Perform prediction
+preds = model.predict(x)
+
+# Decode the results into a list of tuples (class, description, probability)
+print('Predicted:', decode_predictions(preds, top=3)[0])
+```
+
+#### 3. **VGG16**
+
+VGG16 is a convolutional neural network architecture proposed by the Visual Graphics Group from Oxford University. It's known for its simplicity and depth, with 16 layers consisting mostly of 3x3 convolutional layers. VGG16 is widely used in image classification tasks and is known for its high performance, though it requires significant computational resources.
+
+##### Key Features:
+
+- 16 layers deep with a consistent architecture.
+- Primarily uses 3x3 convolutional layers.
+- High accuracy on image classification benchmarks like ImageNet.
+
+##### Basic Code Example (using `TensorFlow`):
+
+```python
+import tensorflow as tf
+from tensorflow.keras.applications import VGG16
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.vgg16 import preprocess_input, decode_predictions
+import numpy as np
+
+# Load the pre-trained VGG16 model
+model = VGG16(weights='imagenet')
+
+# Load and preprocess an image
+img_path = 'cat.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+# Perform prediction
+preds = model.predict(x)
+
+# Decode the results into a list of tuples (class, description, probability)
+print('Predicted:', decode_predictions(preds, top=3)[0])
+```
+
+### Summary
+
+- **YOLOv8** is ideal for real-time object detection, balancing speed and accuracy.
+- **ResNet50** excels in image classification tasks with its deep architecture and residual connections.
+- **VGG16** offers a deep, straightforward architecture that is powerful but computationally heavy, mainly used for image classification.
+
+These models have been pivotal in various computer vision tasks and continue to be widely used in both research and practical applications.
+
 ### 14. **How did you ensure the accuracy of the ROP detection system?**
 
 **Answer:** Accuracy was ensured by validating the models on a separate validation set, performing cross-validation, and comparing results with ground truth annotations. Rigorous testing and performance evaluation metrics were used to validate the model's reliability.
@@ -644,7 +1190,7 @@ These questions and answers should provide a comprehensive overview of your proj
 
 ---
 
-# HR 
+# HR
 
 ### 1. **How would you approach your first 30 days to ensure a smooth integration into Verizon?**
 
@@ -667,7 +1213,6 @@ These questions and answers should provide a comprehensive overview of your proj
 **Answer:** To address challenges or setbacks at Verizon, I will maintain open and proactive communication with my manager and team members to quickly identify and resolve issues. I will approach setbacks as learning opportunities, seeking feedback and collaborating with colleagues to find effective solutions. Staying adaptable and resilient, I will adjust my strategies as needed to overcome obstacles and ensure successful integration and contribution to Verizon’s projects. Regular check ocus on continuous improvement will help me navigate challenges and remain aligned with Verizon's objectives.
 
 These answers are tailored to reflect a strategic approach to your role as an SDE 1 at Verizon and demonstrate how you plan to integrate, contribute, and advance within the company.
-
 
 Certainly! Here are some additional questions and answers tailored for an SDE 1 position at Verizon:
 
@@ -701,8 +1246,44 @@ Certainly! Here are some additional questions and answers tailored for an SDE 1 
 4. What is the team’s approach to collaboration and communication, especially in a remote or hybrid work environment?
 5. Can you provide more details about the onboarding process and how new team members are integrated?
 
-These questions and answers should help you articulate your aspirations, demonstrate your suitability for the role, and engage thoughtfully with the interviewers.
 
+### About Verizon
+
+**Overview:**
+Verizon Communications Inc., commonly known as Verizon, is one of the largest telecommunications companies in the world. Founded in 1983 as Bell Atlantic, it was renamed Verizon after merging with GTE in 2000. Verizon provides a wide range of communication services, including wireless, broadband, and cable.
+
+**Products and Services:**
+
+- **Wireless Services:** Verizon Wireless is one of the leading wireless carriers in the U.S., offering voice, data, and messaging services to millions of customers.
+- **Fios:** Verizon Fios provides high-speed internet, TV, and phone services over a fiber-optic network.
+- **Enterprise Solutions:** Verizon provides a variety of services to businesses, including cloud computing, cybersecurity, and Internet of Things (IoT) solutions.
+- **Media:** Through Verizon Media (formerly Oath Inc.), the company offers digital content, advertising, and online streaming services.
+
+**Operations:**
+Verizon operates primarily in the United States but has a global presence through its enterprise solutions. It serves consumers, businesses, and government entities.
+
+**Latest Achievement:**
+Verizon has been actively expanding its 5G network across the U.S., aiming to provide the fastest and most reliable 5G service. As of 2024, Verizon has achieved significant milestones in 5G deployment, enhancing its service coverage and capacity.
+
+**Fortune 500:**
+Yes, Verizon is a Fortune 500 company. It consistently ranks among the top companies on the list, showcasing its strong market position and financial performance.
+
+### Why Work at Verizon?
+
+- **Innovation:** Verizon is at the forefront of technological innovation, especially in the areas of 5G, IoT, and digital transformation. Working at Verizon offers the opportunity to be part of cutting-edge projects that shape the future of communication.
+- **Global Impact:** Verizon's services touch millions of lives globally. Being part of such a large-scale operation allows you to contribute to solutions that have a widespread impact.
+- **Professional Growth:** Verizon offers numerous opportunities for career development, including learning and leadership programs, which can help you grow professionally and personally.
+- **Inclusive Culture:** Verizon values diversity and inclusion, fostering an environment where all employees are encouraged to bring their unique perspectives to the table.
+
+### Why Should We Hire You?
+
+- **Relevant Skills:** Highlight your skills that align with the job description, such as strong analytical abilities, proficiency in relevant technologies, or experience in project management.
+- **Adaptability:** Emphasize your ability to work collaboratively in a fast-paced environment, which is crucial in a company that constantly evolves like Verizon.
+- **Passion for Innovation:** Showcase your passion for working on innovative projects, particularly in areas like 5G and digital transformation, which are core to Verizon's business strategy.
+- **Cultural Fit:** Mention how your values align with Verizon's commitment to customer satisfaction, diversity, and technological advancement.
+
+
+These questions and answers should help you articulate your aspirations, demonstrate your suitability for the role, and engage thoughtfully with the interviewers.
 
 Follow @thatsalariedguy for more such content!
 
@@ -754,7 +1335,6 @@ This concise plan will help you integrate quickly, build credibility, and establ
 
 Use Prompt: Go through this job description and understand that I am aiming for a promotion in this role in next 18months, share a 30-60-90 day plan for me for faster ramp up.
 
-
 Here are three coachable skills that can be effectively shared as weaknesses during an interview, along with how you are working to improve them:
 
 1. Public Speaking:
@@ -768,3 +1348,9 @@ Here are three coachable skills that can be effectively shared as weaknesses dur
    • Why It Works: This shows that you are learning to trust your team more and are focused on leadership development, which is valuable in many roles.
 
 These answers not only address the weakness question but also emphasize your commitment to personal and professional growth.
+
+https://www.michaelpage.co.in/salary-guide/2024/job-seekers-form
+
+https://www.michaelpage.co.in/salary-guide/2024/job-seekers-form
+
+https://www.michaelpage.co.in/salary-comparison-tool/software-development-410-years-salaries?profession=Information%20Technology&sector=IT%20Architecture&salary=7
