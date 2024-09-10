@@ -25,18 +25,17 @@ class Solution {
         ListNode curr = head;
         ListNode ans = null;
 
-        while (curr != null && curr.next != null) {
+        while (curr.next != null) {
             int a = curr.val;
             int b = curr.next.val;
             int gcd_val = gcd(a, b);
 
-            ans = insert(a, ans);        // Insert first value
-            ans = insert(gcd_val, ans);  // Insert GCD value
+            ans = insert(a, ans);        
+            ans = insert(gcd_val, ans);  
 
-            curr = curr.next;            // Move to the next node
+            curr = curr.next;            
         }
 
-        // The loop only inserts the value before the last value is processed
         ans = insert(curr.val, ans);     // Insert the last node value
 
         return ans;
