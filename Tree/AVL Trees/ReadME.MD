@@ -363,3 +363,98 @@ public class Main {
 3. **Traversal**: In-order traversal prints the tree nodes in sorted order.
 4. **Max/Min**: Functions to find the maximum and minimum values in the tree.
 5. **IsEmpty**: Checks if the tree is empty.
+
+
+### Difference Between Height-Balanced BST and AVL Trees
+
+While both **height-balanced binary search trees (BST)** and **AVL trees** focus on balancing the tree structure to ensure efficient search, insertion, and deletion operations, there are some important distinctions between the two.
+
+---
+
+### 1. **Definition**:
+
+- **Height-Balanced BST**:
+
+  - A **height-balanced BST** ensures that the height difference (balance factor) between the left and right subtrees of any node is no more than one, but it does **not actively enforce** this balance during insertions or deletions through rotations.
+  - Example: You can construct a height-balanced BST from sorted data, like a sorted array or a sorted linked list, by choosing the middle element as the root.
+- **AVL Tree**:
+
+  - An **AVL tree** is a special kind of height-balanced BST where the balance is actively maintained after every insertion or deletion via **rotations**. In an AVL tree, the **balance factor** of every node is explicitly monitored and adjusted to ensure it remains between `-1` and `1`.
+  - AVL trees perform **rotations** to restore the balance if an imbalance is detected during insertion or deletion.
+
+---
+
+### 2. **Balance Factor**:
+
+- **Height-Balanced BST**:
+
+  - A height-balanced BST **does not explicitly maintain** or monitor the balance factor of each node. It is balanced only during its creation, such as when building a tree from sorted data.
+  - It ensures that the tree is reasonably balanced at construction time but may become unbalanced with future insertions or deletions.
+- **AVL Tree**:
+
+  - In an AVL tree, the **balance factor** is the difference between the height of the left and right subtrees of every node, and it is actively monitored.
+  - The balance factor of any node is always maintained in the range `[-1, 0, 1]`.
+  - If the balance factor goes outside this range, **rotations** are performed to rebalance the tree.
+
+---
+
+### 3. **Rotations**:
+
+- **Height-Balanced BST**:
+
+  - No rotations are performed during the creation or modification of a height-balanced BST. Once built, the tree remains static unless explicitly rebalanced.
+  - Therefore, subsequent insertions or deletions can cause the tree to become unbalanced over time.
+- **AVL Tree**:
+
+  - **Rotations** are a key feature of AVL trees. Whenever an insertion or deletion violates the AVL property, rotations (single or double) are performed to restore the balance.
+  - There are four types of rotations: **Left Rotation (LL)**, **Right Rotation (RR)**, **Left-Right Rotation (LR)**, and **Right-Left Rotation (RL)**.
+
+---
+
+### 4. **Self-Balancing**:
+
+- **Height-Balanced BST**:
+
+  - A height-balanced BST does not automatically rebalance itself after insertions or deletions. Once constructed, it stays balanced only if no new elements are added or removed.
+  - Over time, the tree can become unbalanced as more operations are performed on it.
+- **AVL Tree**:
+
+  - An AVL tree is **self-balancing**, meaning it automatically adjusts the tree structure after every insertion or deletion to ensure the balance factor remains within the acceptable range.
+
+---
+
+### 5. **Performance**:
+
+- **Height-Balanced BST**:
+
+  - A height-balanced BST is generally efficient for searching immediately after it is built. However, as the tree becomes unbalanced over time (due to operations), its search, insertion, and deletion performance can degrade to O(n) in the worst case.
+- **AVL Tree**:
+
+  - The self-balancing nature of AVL trees ensures that the height remains O(log n) after every operation, resulting in efficient search, insertion, and deletion operations. The time complexity for all basic operations remains O(log n) consistently.
+
+---
+
+### 6. **Use Case**:
+
+- **Height-Balanced BST**:
+
+  - Suitable when you want a balanced tree structure immediately after construction but don't need strict balance maintenance after every operation.
+  - Common in scenarios where you are dealing with a fixed sorted input, like converting a sorted array or list into a tree.
+- **AVL Tree**:
+
+  - Ideal when you need strict, **ongoing balance maintenance** to ensure optimal search, insert, and delete times at all points, especially in scenarios where insertions and deletions are frequent.
+
+---
+
+### Summary:
+
+| **Feature**               | **Height-Balanced BST**                         | **AVL Tree**                                     |
+| ------------------------------- | ----------------------------------------------------- | ------------------------------------------------------ |
+| **Balance Maintenance**   | Balanced at creation, may become unbalanced over time | Actively maintained with rotations                     |
+| **Rotations**             | No rotations                                          | Rotations (single or double) to maintain balance       |
+| **Balance Factor**        | Not explicitly monitored                              | Explicitly monitored and kept between `-1` and `1` |
+| **Self-Balancing**        | No                                                    | Yes                                                    |
+| **Performance Over Time** | Can degrade to O(n) after insertions or deletions     | O(log n) for all operations due to rebalancing         |
+| **Use Case**              | Good for static sorted data                           | Ideal for dynamic data with frequent updates           |
+
+In essence, a **height-balanced BST** ensures that a tree is balanced at the time of construction, whereas an **AVL tree** maintains the balance dynamically through rotations, ensuring logarithmic time complexity for all operations.

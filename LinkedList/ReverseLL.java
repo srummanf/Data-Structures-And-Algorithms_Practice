@@ -25,8 +25,8 @@ public class ReverseLL {
     }
 
     public static Node reverse(Node head){
-        Node prev = null;
         Node current = head;
+        Node prev = null;
         Node next = null;
         while(current!=null){
             next = current.next;

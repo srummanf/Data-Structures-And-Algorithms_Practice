@@ -12,9 +12,9 @@ class Solution {
         int dir  = 0; // which direction
 
         result[0] = new int[]{rStart, cStart};
-        int count = 1;
+        int idx = 1;
 
-        while (count < rows * cols) {
+        while (idx < rows * cols) {
             // When we move EAST or WEST, we need to increase our steps by 1
             if (dir == 0 || dir == 2) step++;
 
@@ -23,7 +23,7 @@ class Solution {
                 cStart += directions[dir][1];
 
                 if (rStart >= 0 && rStart < rows && cStart >= 0 && cStart < cols) { 
-                    result[count++] = new int[]{rStart, cStart};
+                    result[idx++] = new int[]{rStart, cStart};
                 }
             }
 

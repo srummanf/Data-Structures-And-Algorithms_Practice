@@ -1,3 +1,9 @@
+### GFG Links
+
+[https://www.geeksforgeeks.org/puzzle-1-how-to-measure-45-minutes-using-two-identical-wires/?ref=lbp](https://www.geeksforgeeks.org/puzzle-1-how-to-measure-45-minutes-using-two-identical-wires/?ref=lbp)
+
+
+
 ##### Defective Balls in box
 
 ![1725720205966](image/InterviewPuzzles/1725720205966.png)

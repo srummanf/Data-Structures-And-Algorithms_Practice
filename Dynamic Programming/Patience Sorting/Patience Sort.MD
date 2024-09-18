@@ -10,9 +10,9 @@ private static int patienceSorting(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-      
+    
         List<Integer> piles = new ArrayList<>();
-      
+    
         for (int num : nums) {
             int position = Collections.binarySearch(piles, num);
             if (position < 0) {
@@ -24,7 +24,7 @@ private static int patienceSorting(int[] nums) {
                 piles.set(position, num);
             }
         }
-      
+    
         return piles.size();
     }
 ```
@@ -55,3 +55,57 @@ The algorithm is useful for finding the Longest Increasing Subsequence (LIS) in 
 20. [#354 Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
 
 These problems often utilize the principles of patience sorting, especially for finding subsequences or dealing with interval-based problems.
+
+
+# What does ` Collections.binarySearch` return
+
+The `Collections.binarySearch` method in Java searches for a target element (`num`) within a sorted list (`piles`) and returns the index of the target if it exists. Here's what happens in both scenarios:
+
+### 1. **When `num` is present in the list**:
+
+- **Return Value**: If the target element (`num`) is found in the list, the method returns the **index** of the target element. If there are multiple occurrences of the element, it may return the index of any one of them (not guaranteed which).
+
+### 2. **When `num` is **not** present in the list**:
+
+- **Return Value**: If the target element is not found, `Collections.binarySearch` returns a **negative value**. This negative value is computed as `-(insertionPoint) - 1`, where the `insertionPoint` is the index where the target element could be inserted to maintain the list's sorted order.
+  - The insertion point is the index where the element would be inserted if it were added to the list.
+  - The formula `-(insertionPoint) - 1` helps distinguish between a valid index (non-negative) and an insertion point (negative).
+
+### Example:
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> piles = new ArrayList<>();
+        piles.add(1);
+        piles.add(3);
+        piles.add(5);
+        piles.add(7);
+
+        int num1 = 5;
+        int num2 = 6;
+
+        // Case 1: num1 is present
+        int position1 = Collections.binarySearch(piles, num1);
+        System.out.println("Position of " + num1 + " : " + position1);
+
+        // Case 2: num2 is not present
+        int position2 = Collections.binarySearch(piles, num2);
+        System.out.println("Position of " + num2 + " : " + position2);
+    }
+}
+```
+
+### Output:
+
+```
+Position of 5 : 2
+Position of 6 : -4
+```
+
+- For `num1 = 5`, the output is `2`, which is the index where `5` is found.
+- For `num2 = 6`, the output is `-4`, which means that `6` is not present in the list, and the insertion point would be index `3` (before `7`). The result is `-(3) - 1 = -4`.
