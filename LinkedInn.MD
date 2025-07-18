@@ -1,7 +1,5 @@
-.
 
-
-Leetcode takes TIME.
+# Leetcode takes TIME.
 
 25 questions to cover the most important patterns:
 
