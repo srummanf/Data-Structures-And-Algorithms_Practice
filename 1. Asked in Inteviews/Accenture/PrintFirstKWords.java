@@ -1,1 +1,0 @@
-/** You have a long sentence and an input integer k. Print the first k words in the input string*/

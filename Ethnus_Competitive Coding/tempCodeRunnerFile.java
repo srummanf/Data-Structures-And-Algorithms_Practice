@@ -1,2 +1,0 @@
-
-         while(sc.hasNext()) { 
