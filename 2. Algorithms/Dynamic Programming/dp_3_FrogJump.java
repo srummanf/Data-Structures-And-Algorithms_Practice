@@ -1,7 +1,5 @@
 // Striver DP 3 : https://www.youtube.com/watch?v=EgG3jsGoPvQ&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=4&pp=iAQB
 
-import java.util.*;
-
 class dp_3_FrogJump {
 
   float left, right;
@@ -50,7 +48,7 @@ class dp_3_FrogJump {
       dp[i] = -1.0f;
       dp2[i] = -1.0f;
     }
-    FrogJump f = new FrogJump();
+    dp_3_FrogJump f = new dp_3_FrogJump();
     System.out.println(f.jump_memoization_topdown(arr, arr.length - 1, dp));
     System.out.println(f.jump_tabulation_bottomup(arr, arr.length - 1));
   }
