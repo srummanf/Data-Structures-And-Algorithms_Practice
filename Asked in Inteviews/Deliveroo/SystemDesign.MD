@@ -1,6 +1,6 @@
+# Sample System Design Question asked in Deliveroo
 
-
-# Designing a system to allow users to claim 6 million burgers in 10 minutes is a significant challenge that requires careful consideration of scalability, load balancing, request handling, caching, and rate limiting. Below is a high-level system design to handle this scenario.
+## Designing a system to allow users to claim 6 million burgers in 10 minutes is a significant challenge that requires careful consideration of scalability, load balancing, request handling, caching, and rate limiting. Below is a high-level system design to handle this scenario.
 
 ### 1. System Requirements
 
@@ -111,10 +111,7 @@
 
 This high-level design provides a scalable and efficient system to handle 6 million burger claims in 10 minutes. By using load balancing, a queue system, caching, and rate limiting, the system can manage high volumes of requests while maintaining performance and preventing abuse.
 
-
-
 # How would you find the root cause of a slow API?
-
 
 To diagnose and find the root cause of a slow API, you need to take a structured and systematic approach. Here’s a detailed guide on how to do it:
 
@@ -224,9 +221,7 @@ To diagnose and find the root cause of a slow API, you need to take a structured
 
 By following these steps, you can systematically diagnose and resolve the root cause of slow API performance, ensuring a scalable and responsive system.
 
-
 # What are overloaded methods and overwritten methods?
-
 
 Overloaded methods and overridden methods are two important concepts in object-oriented programming (OOP) that relate to polymorphism and how methods can be defined in classes. Let's break down each concept with definitions, key points, and examples.
 
@@ -266,7 +261,7 @@ class MathUtils {
 public class Main {
     public static void main(String[] args) {
         MathUtils mathUtils = new MathUtils();
-      
+    
         System.out.println(mathUtils.add(2, 3));       // Calls add(int, int)
         System.out.println(mathUtils.add(2, 3, 4));    // Calls add(int, int, int)
         System.out.println(mathUtils.add(2.5, 3.5));   // Calls add(double, double)
@@ -321,7 +316,6 @@ public class Main {
 Understanding these concepts helps in designing flexible and reusable code by leveraging polymorphism in OOP.
 
 # System Design -- Design a service which allows user to use voucher in capacity
-
 
 Designing a service that allows users to use vouchers within a defined capacity involves several components to ensure scalability, consistency, and efficiency. Here’s a high-level system design for such a service:
 
@@ -468,7 +462,6 @@ Designing a service that allows users to use vouchers within a defined capacity 
 - **Documentation**: Provide clear documentation for API endpoints and usage guidelines.
 
 By following this design, you can build a robust, scalable, and efficient voucher redemption system that meets the outlined requirements.
-
 
 # design a system that would be able to handle millions of requests in a short time (and keep track of results per user)
 
@@ -646,9 +639,7 @@ Designing a system that can handle millions of requests in a short time while ke
 
 By following this design, you can build a robust, scalable, and efficient system capable of handling millions of requests in a short time while tracking results per user effectively.
 
-
 # How would you verify that service has a memory leak, - Composition vs Inheritence, - Coding part : parsing logs according to get information required in the task (and computational complexity),
-
 
 ### How to Verify a Service Has a Memory Leak
 

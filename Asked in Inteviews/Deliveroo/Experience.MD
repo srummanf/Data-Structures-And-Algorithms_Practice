@@ -1,57 +1,76 @@
-**About The Company**
+# Deliveroo Interview Experience - Software Engineer (FTE)
+
+## About the Company
+
 Deliveroo is a prominent food delivery company that operates as an intermediary between customers and local restaurants. Founded in 2013 in London, Deliveroo has grown into a global platform, providing on-demand food delivery services.
 
-**Job Description
-*Job Profile*** : Software Engineer(FTE)
-***Eligibility*** : B.E with Specialization in CSE/IT with no active backlogs in any semester.
- ***CGPA*** : 8 and above
+---
 
-**Online Assessment
-**The Test duration was 90 minutes and was conducted on HackerRank platform. It consisted of 3 coding problems (1 easy,1 medium and 1 hard problem).
--easy and medium problems were based on Arrays
--hard problem was based on Graphs
-I solved two of the problems completely and made partial progress on the third one.
+## Job Description
 
-**Interviews
-*Round 1: Technical
-***The Interviewer moved directly into DSA related coding questions.
-1.** First Coding Question** (LeetCode Medium)-Based on Arrays-
-→Was asked to code using the Brute force approach
-→Later had to optimize the code using a suitable data structure.
-2.  **Second Coding Question ** (LeetCode Medium)- Based on Arrays, Sorting-
-→ Given an optimized approach to the problem
-3. Question on the data structure to be used for implementing LRU or LFU cache and its approach was discussed.
+* **Job Profile** : Software Engineer (Full-Time Employee)
+* **Eligibility** : B.E with specialization in CSE/IT with no active backlogs in any semester
+* **CGPA Requirement** : 8 and above
 
-***Round 2: System Design
-***1. The question asked was related to designing a “Book Management System.”
-2. Next moved on to questions related to various API calls that could be used.
-3. To design a Database and solve a few SQL queries on it.
-4. Questions were asked on technical concepts.
+---
 
-***Round 3: Technical + HR
-***The questions covered in this round were mainly upon
+## Online Assessment
 
-1. About the projects I worked on, and challenges faced.
-2. The internships that I was part of and my learnings.
-3. Followed by managerial questions.
+* **Platform** : HackerRank
+* **Duration** : 90 minutes
+* **Questions** : 3 coding problems
+* 1 Easy (based on Arrays)
+* 1 Medium (based on Arrays)
+* 1 Hard (based on Graphs)
+* **Performance** : Solved two problems completely and made partial progress on the third one.
 
-**Resources and Tips
-**1. Practice problems from [Striver SDE Sheet ](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/)and complete Trees, Graphs and DP Questions from this [site](https://takeuforward.org/data-structure/strivers-tree-series-tree-data-structure/).
-2. Think out loud in Technical Interviews. Vocalize your thoughts this keeps interviewer engaged and helps them to understand your thinking process
-3. Before solving the problem in the Interview, carefully understand and clarify any doubts about the problem statement provided by the interviewer.
-4. Revise Computer Fundamentals([OS](https://youtu.be/3obEP8eLsCw?si=V7CNhjSHmQBrI4AG),[DBMS](https://youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y&si=FOcd_dMRY9TrNfyj),[CN](https://www.geeksforgeeks.org/last-minute-notes-computer-network/),OOPS) frequently.
-5. Read company specific interview experiences of others before the interview.
-6. Managerial questions should be answered using the [STAR](https://in.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique) method. For further insights, please refer to this [site](https://www.simplilearn.com/hr-interview-questions-answers-article).
+---
 
-I hope this helps :)
-Feel free to reach out to me: [LinkedIn](https://www.linkedin.com/in/varsha-a-52b0b5226/)
+## Interviews
 
-[Interview](https://medium.com/tag/interview?source=post_page-----17eba72651b2---------------interview-----------------)
+### Round 1: Technical Interview
 
-[Experience](https://medium.com/tag/experience?source=post_page-----17eba72651b2---------------experience-----------------)
+The interviewer directly jumped into Data Structures and Algorithms (DSA) coding questions.
 
-[Programming](https://medium.com/tag/programming?source=post_page-----17eba72651b2---------------programming-----------------)
+1. **Coding Question 1** (LeetCode Medium) - Arrays
+   * Initially asked to solve using a brute-force approach
+   * Then optimized using a suitable data structure
+2. **Coding Question 2** (LeetCode Medium) - Arrays + Sorting
+   * Asked to provide an optimized approach
+3. **Design-Based Question**
+   * Discussed which data structures are suitable for implementing an **LRU or LFU Cache**
+   * Talked about the time complexities and usage scenarios
 
-[Job Hunting](https://medium.com/tag/job-hunting?source=post_page-----17eba72651b2---------------job_hunting-----------------)
+---
 
-[Tech](https://medium.com/tag/tech?source=post_page-----17eba72651b2---------------tech-----------------)
+### Round 2: System Design
+
+1. **Design a Book Management System**
+2. Discussed different **API calls** required
+3. Designed the **Database Schema** and solved a few **SQL queries**
+4. Asked follow-up questions on various **technical concepts**
+
+---
+
+### Round 3: Technical + HR Interview
+
+Topics covered:
+
+* Detailed discussion about **projects** and **challenges faced**
+* Insights about **internships** and **learnings gained**
+* Asked a few **managerial questions**
+
+---
+
+## Resources and Tips
+
+1. Practice DSA from the [Striver SDE Sheet](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/), and thoroughly cover Trees, Graphs, and DP from this [Tree Series](https://takeuforward.org/data-structure/strivers-tree-series-tree-data-structure/)
+2. **Think out loud** during interviews — vocalize your thoughts so the interviewer can follow your logic.
+3. Before starting any problem, ensure the  **problem statement is crystal clear** . Don’t hesitate to ask clarifying questions.
+4. Revise core CS subjects:
+   * [Operating Systems](https://youtu.be/3obEP8eLsCw?si=V7CNhjSHmQBrI4AG)
+   * [DBMS](https://youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y&si=FOcd_dMRY9TrNfyj)
+   * [Computer Networks](https://www.geeksforgeeks.org/last-minute-notes-computer-network/)
+   * OOPS Concepts
+5. Before your interview, go through  **company-specific interview experiences** .
+6. For HR and managerial rounds, answer using the [STAR Method](https://in.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique). Also refer to this [guide](https://www.simplilearn.com/hr-interview-questions-answers-article).
