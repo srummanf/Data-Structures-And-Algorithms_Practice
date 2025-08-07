@@ -1,6 +1,4 @@
-### https://leetcode.com/discuss/interview-question/4258631/Top-100-DSA-Interview-Questions
-
-https://leetcode.com/discuss/study-guide/4255692/top-100-dsa-interview-questions
+# Top 100 DSA interview questions.
 
 ### Array
 
@@ -134,3 +132,7 @@ https://leetcode.com/discuss/study-guide/4255692/top-100-dsa-interview-questions
 | Missing Number                                            | [Link](https://leetcode.com/problems/missing-number/)                       | Easy                       |
 | Reverse Bits                                              | [Link](https://leetcode.com/problems/reverse-bits/)                         | Easy                       |
 | Find XOR of all subsets of a set                          | [Link](https://leetcode.com/problems/subsets/)                              | Medium                     |
+
+#### Source
+
+[Leetcode - Top 100 DSA Interview Questions](https://leetcode.com/discuss/post/4258631/top-100-dsa-interview-questions-by-anony-jlgg/)

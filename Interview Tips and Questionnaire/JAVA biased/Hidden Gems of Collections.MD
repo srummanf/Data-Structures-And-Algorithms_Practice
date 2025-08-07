@@ -1,3 +1,5 @@
+# Hidden Gems of Collections
+
 The Java Collections Framework has many hidden gems that are highly useful for competitive programming. These utilities can help optimize code, reduce complexity, and improve readability. Here are some of the most valuable ones:
 
 ### 1. **`Collections.binarySearch()`**
@@ -170,7 +172,6 @@ The Java Collections Framework has many hidden gems that are highly useful for c
 ```
 
 These utilities from Java's `Collections` framework can help you write more concise, efficient, and readable code in competitive programming. By leveraging them, you can avoid reinventing common algorithms and focus on solving the problem at hand!
-
 
 Sure! Here are **more hidden gems** from the Java Collections Framework and beyond that can help you in **competitive programming**:
 
@@ -386,7 +387,6 @@ Sure! Here are **more hidden gems** from the Java Collections Framework and beyo
 ```
 
 These additional tools from the Java Collections Framework can be incredibly helpful in competitive programming for reducing boilerplate code, improving performance, and writing more concise solutions!
-
 
 Here are **more hidden gems** focusing on **string manipulation** and other useful functions for competitive programming:
 
@@ -617,7 +617,6 @@ Here are **more hidden gems** focusing on **string manipulation** and other usef
 - **Use**: Removes all leading and trailing whitespaces, even those not recognized by `trim()`.
 - **Why Useful
 
-
 Here are **more hidden gems** from the **Java Collections Framework** that can be very useful for **trees, graphs**, and related algorithms in **competitive programming**:
 
 ### 59. **`PriorityQueue` (Min/Max Heap)**
@@ -816,7 +815,6 @@ Here are **more hidden gems** from the **Java Collections Framework** that can b
 ```
 
 These tools can help you optimize your graph and tree-related algorithms, improving performance and reducing the complexity of your code!
-
 
 Here are **hidden gems** from the **Java Collections Framework** and Java standard libraries that can help you when implementing or working with **Trie (Prefix Tree)** data structures:
 

@@ -40,5 +40,5 @@ public class LCSII {
     return j == t.length();
   }
 
-  public static void main(String[] args) {}
+
 }

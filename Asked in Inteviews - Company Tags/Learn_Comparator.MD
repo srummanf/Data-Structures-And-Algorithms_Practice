@@ -1,4 +1,3 @@
-
 Here's a table summarizing the different sorting methods using lambda expressions:
 
 | **Use Case**                                         | **Sorting Crit**                                                                                      | **Lambda Expression**                                                                                    |
@@ -13,5 +12,3 @@ Here's a table summarizing the different sorting methods using lambda expression
 |                                                            |                                                                                                             |                                                                                                                |
 
 This table provides a concise overview of sorting criteria and their corresponding lambda expressions in Java.
-
-1.
