@@ -1,6 +1,4 @@
 // https://leetcode.com/problems/is-subsequence/
-
-import java.util.*;
 class isSubsequence
 {
     public boolean ss(String s, String t) {
@@ -18,12 +16,6 @@ class isSubsequence
             }
             return false;
         }
-
-
-
-
-
-
 
 
 

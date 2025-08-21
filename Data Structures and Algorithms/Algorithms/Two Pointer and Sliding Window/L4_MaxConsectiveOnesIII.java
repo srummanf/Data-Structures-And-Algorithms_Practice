@@ -1,4 +1,4 @@
-// Same as Subarray with atmost k zeroes
+// Same as Longest Subarray with atmost k zeroes
 
 class Solution {
     public int longestOnes(int[] nums, int k) {

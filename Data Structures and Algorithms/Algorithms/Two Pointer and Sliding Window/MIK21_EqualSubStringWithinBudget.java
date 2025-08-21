@@ -3,7 +3,7 @@
 Given two strings s and t of the same length and an integer maxCost, you want to find the maximum length of a substring that you can convert from s to t with a total cost less than or equal to maxCost. The cost of converting a character s[i] to t[i] is abs(s[i] - t[i]).
  */
 
-public class EqualSubStringWithinBudget {
+public class MIK21_EqualSubStringWithinBudget {
 
   /**
    * This method finds the maximum length of a substring in s that can be converted to t
@@ -40,7 +40,7 @@ public class EqualSubStringWithinBudget {
   }
 
   public static void main(String[] args) {
-    EqualSubStringWithinBudget eswb = new EqualSubStringWithinBudget();
+    MIK21_EqualSubStringWithinBudget eswb = new MIK21_EqualSubStringWithinBudget();
     String s = "abcd";
     String t = "bcdf";
     int maxCost = 3;
