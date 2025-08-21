@@ -1,34 +1,19 @@
-// Same as Subarray with atmost k zeroes
-
 class Solution {
     public int longestOnes(int[] nums, int k) {
-        int maxi = 0;
-        int c = 0;
-        int n = nums.length;
+        int maxLen = 0;
         int l = 0;
-        for(int r = 0; r<n; r++){
-            if(nums[r]==0) c++;
-            while(c>k){
-                if(nums[l] == 0){
-                    c--;
-                }
+        int count = 0;
+        for(int r = 0; r<nums.length; r++){
+            if(nums[r] == 0) count++;
+            while(count>k){
+                if(nums[l]==0) count--;
                 l++;
             }
-            maxi = Math.max(maxi, r-l+1);
+            maxLen = Math.max(maxLen, (r-l+1));
         }
-        // while (r < n) {
-        //     if (nums[r] == 0) {
-        //         c++;
-        //     }
-        //     while (c > k) {
-        //         if (nums[l] == 0)
-        //             c--;
-        //         l++;
-        //     }
 
-        //     maxi = Math.max(maxi, r - l + 1);
-        //     r++;
-        // }
-        return maxi;
+
+        return maxLen;
+        
     }
 }
