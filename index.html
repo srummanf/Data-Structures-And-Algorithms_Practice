@@ -1,91 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LeetCode Company Tags</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="dashboard">
-        <!-- Header Section -->
-        <div class="profile">
-            <h1>LeetCode Company Tags</h1>
-            <p>Master coding interviews with company-specific problems</p>
-            <hr>
-        </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              space: ["Space Grotesk", "sans-serif"],
+              work: ["Work Sans", "sans-serif"],
+            },
+            colors: {
+              "custom-bg": "#eff7f1",
+              "custom-green": "#d5f9e5",
+              "custom-purple": "#6c62ff",
+              "custom-orange": "#ff5400",
+            },
+            animation: {
+              heartbeat: "heartbeat 2s ease-in-out infinite",
+              spin: "spin 1s linear infinite",
+            },
+            keyframes: {
+              heartbeat: {
+                "0%": { transform: "scale(1)" },
+                "14%": { transform: "scale(1.3)" },
+                "28%": { transform: "scale(1)" },
+                "42%": { transform: "scale(1.3)" },
+                "70%": { transform: "scale(1)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(1.25rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .slide-in {
+        animation: slideIn 0.3s ease;
+      }
 
-        <!-- Search Section -->
-        <div class="search-section">
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="companySearch" placeholder="Search companies (e.g., Amazon, Google, Microsoft...)" autocomplete="off">
-                <div class="search-results" id="searchResults"></div>
-            </div>
-        </div>
+      /* Custom scrollbar for table */
+      .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #6c62ff;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #5a52e8;
+      }
 
-        <!-- Company Selection -->
-        <div class="company-selector">
-            <h2 class="table-heading">
-                <i class="fas fa-building"></i>
-                Select Company
-            </h2>
-            <div class="company-grid" id="companyGrid">
-                <!-- Companies will be populated by JavaScript -->
-            </div>
-        </div>
+      /* Ensure selected state maintains proper styling */
+      .company-card.selected {
+        background-color: #6c62ff !important;
+        color: white !important;
+        transform: translate(-0.15rem, -0.15rem) !important;
+        box-shadow: 0.4rem 0.4rem 0px #ff5400 !important;
+      }
 
-        <!-- Problems Table -->
-        <div class="problems-section" id="problemsSection" style="display: none;">
-            <h2 class="table-heading" id="selectedCompany">
-                <i class="fas fa-code"></i>
-                Problems
-            </h2>
-            <div class="table-container">
-                <table id="problemsTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Problem Name</th>
-                            <th>LeetCode Link</th>
-                            <th>Solution Video</th>
-                            <th>Intuition</th>
-                            <th>Key Steps</th>
-                        </tr>
-                    </thead>
-                    <tbody id="problemsBody">
-                        <!-- Problems will be populated by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
+      .company-card.selected .opacity-80 {
+        opacity: 1 !important;
+      }
+
+      /* Squiggle underline animation with inline SVG */
+      .squiggle-underline {
+        position: relative;
+        display: inline-block;
+        text-decoration: underline; /* normal underline by default */
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px; /* spacing below text */
+      }
+
+      .squiggle-underline::after {
+        content: "";
+        position: absolute;
+        bottom: -4px; /* adjust to align with text */
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0,3 Q2.5,0 5,3 T10,3 T15,3 T20,3' stroke='%236c62ff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        background-size: 20px 6px;
+        opacity: 0;
+        transform: translateY(3px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+      }
+
+      .squiggle-underline:hover {
+        text-decoration: none; /* remove normal underline on hover */
+      }
+
+      .squiggle-underline:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+        animation: squiggle-wave 1.5s linear infinite;
+      }
+
+      @keyframes squiggle-wave {
+        from {
+          background-position-x: 0;
+        }
+        to {
+          background-position-x: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen font-work text-base bg-gray-50">
+    <div
+      class="w-full max-w-[95%] mx-auto my-4 bg-custom-bg rounded-3xl border-[0.6rem] border-black"
+    >
+      <!-- Header Section -->
+      <div class="p-4 md:p-8">
+        <div class="text-center">
+          <h1 class="font-space text-4xl md:text-6xl font-bold mb-4">
+            LeetCode Company Tags
+          </h1>
+          <p class="text-xl md:text-2xl mb-6">
+            Master coding interviews with company-specific problems
+          </p>
+          <hr class="border-2 border-custom-orange w-[95%] mx-auto mb-6" />
         </div>
+      </div>
+
+      <!-- Search Section -->
+      <div class="px-4 md:px-8 pb-4">
+        <div class="relative max-w-[37.5rem] mx-auto">
+          <i
+            class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-custom-purple text-xl z-10"
+          ></i>
+          <input
+            type="text"
+            id="companySearch"
+            placeholder="Search companies (e.g., Amazon, Google, Microsoft...)"
+            autocomplete="off"
+            class="w-full pl-12 pr-4 py-4 text-lg font-medium border-[0.3rem] border-black rounded-2xl bg-white shadow-[0.4rem_0.4rem_0px_#ff5400] outline-none transition-all duration-200 focus:shadow-[0.5rem_0.5rem_0px_#ff5400] focus:-translate-x-[0.15rem] focus:-translate-y-[0.15rem] placeholder-gray-500"
+          />
+          <div
+            class="search-results absolute top-full left-0 right-0 bg-white border-[0.3rem] border-black border-t-0 rounded-b-2xl shadow-[0.4rem_0.4rem_0px_#ff5400] hidden z-[1000] max-h-[18.75rem] overflow-y-auto custom-scrollbar"
+            id="searchResults"
+          >
+            <!-- Search results will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Selection -->
+      <div class="px-4 md:px-8 pb-8">
+        <h2
+          class="relative text-white text-center bg-custom-purple p-5 text-2xl md:text-3xl font-bold border-[0.3rem] border-black border-b-0 shadow-[0.25rem_0.25rem_0px_#222] font-space"
+        >
+          <i
+            class="fas fa-building absolute -top-3 -left-3 bg-custom-orange text-2xl md:text-3xl h-14 w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
+          ></i>
+          Select Company
+        </h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4"
+          id="companyGrid"
+        >
+          <!-- Companies will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Problems Table -->
+      <div class="px-4 md:px-8 pb-8 slide-in hidden" id="problemsSection">
+        <h2
+          class="relative text-white text-center bg-custom-purple p-5 text-2xl md:text-3xl font-bold border-[0.3rem] border-black border-b-0 shadow-[0.25rem_0.25rem_0px_#222] font-space"
+          id="selectedCompany"
+        >
+          <i
+            class="fas fa-code absolute -top-3 -left-3 bg-custom-orange text-2xl md:text-2xl h-14 w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
+          ></i>
+          Problems
+        </h2>
+        <div
+          class="overflow-x-auto border-[0.3rem] border-black rounded-lg shadow-[0.4rem_0.4rem_0px_#222] custom-scrollbar"
+        >
+          <table
+            id="problemsTable"
+            class="w-full min-w-[62.5rem] border-collapse bg-custom-green text-lg"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  #
+                </th>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  Problem Name
+                </th>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  LeetCode Link
+                </th>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  Solution Video
+                </th>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  Intuition
+                </th>
+                <th
+                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
+                >
+                  Key Steps
+                </th>
+              </tr>
+            </thead>
+            <tbody id="problemsBody">
+              <!-- Problems will be populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-text">
-                Made with <i class="fas fa-heart footer-heart"></i> by 
-                <a href="https://srummanf.is-a.dev" 
-                   class="creator-name" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Visit SRF's portfolio website">Rumman</a>
-            </div>
-            <a href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/" 
-               class="footer-link" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               aria-label="Visit SRF's GitHub repository">
-                <i class="fab fa-github"></i>
-                View on GitHub
-            </a>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <footer
+      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-8 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] lg:max-w-[75rem] overflow-hidden"
+    >
+      <!-- Decorative elements -->
+      <div
+        class="absolute -top-2 -left-2 w-8 h-8 bg-custom-orange rounded-full border-[0.2rem] border-black z-10"
+      ></div>
+      <div
+        class="absolute -bottom-2 -right-2 w-8 h-8 bg-custom-purple rounded-full border-[0.2rem] border-black z-10"
+      ></div>
 
-    <script src="script.js"></script>
-</body>
+      <div
+        class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
+      >
+        <div
+          class="text-lg md:text-xl font-semibold text-gray-800 flex flex-wrap justify-center lg:justify-start items-center gap-2"
+        >
+          <span>Made with</span>
+          <i
+            class="fas fa-heart text-custom-orange text-xl animate-heartbeat"
+          ></i>
+          <span>by</span>
+          <a
+            href="https://srummanf.is-a.dev"
+            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors "
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit SRF's portfolio website"
+            >Rumman</a
+          >
+        </div>
+        <a
+          href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white no-underline rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] transition-all duration-200 hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem] hover:shadow-[0.35rem_0.35rem_0px_#222] hover:bg-[#5a52e8]"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit SRF's GitHub repository"
+        >
+          <i class="fab fa-github text-xl"></i>
+          View on GitHub
+        </a>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
