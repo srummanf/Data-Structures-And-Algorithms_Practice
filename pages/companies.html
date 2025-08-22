@@ -14,9 +14,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
-    <link rel="stylesheet" href="../css/squiggle-anim.css"/>
-    <link rel="stylesheet" href="/css/customcursor.css">
+
+    <link rel="stylesheet" href="../css/squiggle-anim.css" />
+    <link rel="stylesheet" href="/css/customcursor.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -97,7 +97,7 @@
           <!-- Active/Current page - pushed down with darker tone -->
           <a
             href="./companies.html"
-            class="neo-brutalist-active bg-pink-600 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist-active bg-pink-600 text-black font-bold py-2 px-4 block"
           >
             Companies
           </a>
@@ -105,7 +105,7 @@
         <li>
           <a
             href="./ds-algo.html"
-            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block"
           >
             DS & Algo
           </a>
@@ -113,7 +113,7 @@
         <li>
           <a
             href="./resources.html"
-            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 block"
           >
             Resources
           </a>
@@ -121,7 +121,7 @@
         <li>
           <a
             href="./sheet.html"
-            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 block"
           >
             DSA Sheet
           </a>
@@ -129,7 +129,7 @@
         <li>
           <a
             href="./blogs.html"
-            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block"
           >
             Blogs
           </a>
@@ -250,41 +250,145 @@
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer
-      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] overflow-hidden"
+    <!-- Dynamic Content Notice -->
+    <header
+      class="max-w-[95%] h-[75vh] mx-auto mt-8 bg-custom-bg border-[0.6rem] border-black rounded-3xl p-12 shadow-[0.6rem_0.6rem_0px_#ff5400] flex flex-col justify-center items-center text-center"
     >
-      <div
-        class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
+      <h2 class="font-space text-4xl md:text-6xl font-bold mb-6">
+        More <span class="text-custom-purple">Companies</span> & Problems
+      </h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+        We're continuously adding new
+        <span class="font-bold">company tags</span> and
+        <span class="font-bold">DSA problems</span> to help you prepare better.
+        Check back regularly for fresh updates.
+      </p>
+      <a
+        href="./pages/companies.html"
+        class="inline-block px-8 py-4 bg-custom-purple text-white rounded-xl font-semibold text-lg border-[0.3rem] border-black shadow-[0.4rem_0.4rem_0px_#222] brutal-card"
       >
-        <div
-          class="text-lg md:text-xl font-semibold text-gray-800 flex flex-wrap justify-center lg:justify-start items-center gap-2"
-        >
-          <span>Made with</span>
-          <i
-            class="fas fa-heart text-custom-orange text-xl animate-heartbeat"
-          ></i>
-          <span>by</span>
-          <a
-            href="https://srummanf.is-a.dev"
-            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit SRF's portfolio website"
-            >Rumman</a
-          >
+        Explore Companies & Problems
+      </a>
+    </header>
+
+    <!-- Footer -->
+   <!-- Footer -->
+    <footer
+      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-10 text-center shadow-[0.5rem_0.5rem_0px_#222] max-w-[95%] overflow-hidden"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <!-- Branding -->
+        <div class="space-y-3">
+          <h3 class="font-space text-2xl font-bold text-black">
+            SRF Resources
+          </h3>
+          <p class="text-lg font-semibold text-gray-800">
+            Made with
+            <i class="fas fa-heart text-custom-orange animate-heartbeat"></i> by
+            <a
+              href="https://srummanf.is-a.dev"
+              class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit SRF's portfolio website"
+              >Rumman</a
+            >
+          </p>
         </div>
-        <a
-          href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.35rem_0.35rem_0px_#222] hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem]"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github text-xl"></i>
-          View on GitHub
-        </a>
+
+        <!-- Resource Links -->
+        <div class="space-y-3">
+          <h3 class="font-space text-xl font-bold text-black">Resources</h3>
+          <ul class="space-y-2 text-lg font-medium">
+            <li>
+              <a
+                href="#"
+                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+                >Aptitude</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+                >Machine Learning</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+                >SQL</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="space-y-3">
+          <h3 class="font-space text-xl font-bold text-black">Contact</h3>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <a
+              href="mailto:rummanfardeen4567@gmail.com"
+              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+            >
+              <i class="fas fa-envelope"></i> Mail
+            </a>
+            <a
+              href="https://instagram.com/"
+              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a
+              href="https://linkedin.com/"
+              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a
+              href="https://twitter.com/"
+              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
+          </div>
+        </div>
       </div>
-    </footer>
+
+      <!-- Bottom Bar -->
+      <div
+        class="mt-10 border-t-[0.2rem] border-black pt-4 flex flex-col md:flex-row justify-between items-center text-sm font-semibold px-6"
+      >
+        <!-- Left -->
+        <p class="mb-2 md:mb-0">© 2025 Rumman Fardeen. All rights reserved.</p>
+
+        <!-- Right -->
+        <div class="flex gap-6">
+          <a href="./pages/legal/terms.html" class="hover:text-custom-purple transition-colors">
+            Terms of Service
+          </a>
+          <a href="./pages/legal/mit.html" class="hover:text-custom-purple transition-colors">
+            License
+          </a>
+          <a href="./pages/legal/privacy.html" class="hover:text-custom-purple transition-colors">
+            Privacy Policy
+          </a>
+          <a
+            href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
+            target="_blank"
+            class="hover:text-custom-purple transition-colors"
+          >
+            Source Code
+          </a>
+          <a href="#" class="hover:text-custom-purple transition-colors">
+            Contribution
+          </a>
+        </div>
+      </div>
 
     <script src="script.js"></script>
   </body>
