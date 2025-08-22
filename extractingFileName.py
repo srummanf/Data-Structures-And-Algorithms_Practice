@@ -55,7 +55,7 @@ def save_filenames_to_json(folder_path, output_filename):
 
 def main():
     # Example usage
-    folder_to_scan = "./Data Structures and Algorithms/Algorithms/DFS BFS"
+    folder_to_scan = "./Data Structures and Algorithms/Algorithms/Two Pointer and Sliding Window"
     output_name = "fileName"
     
     if not output_name:
