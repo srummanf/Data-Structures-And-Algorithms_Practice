@@ -1,0 +1,9 @@
+/* Apply the custom cursor globally */
+body, html {
+  cursor: url("../assets/cursor.svg") 10 10, auto;
+}
+
+/* Optional: Different cursor for clickable items */
+a, button {
+  cursor: url("../assets/cursor.svg") 5 5, pointer;
+}
