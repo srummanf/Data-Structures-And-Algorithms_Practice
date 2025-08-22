@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSA Hub — Terms of Service</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Icons + Tailwind -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { space:["Space Grotesk","sans-serif"], work:["Work Sans","sans-serif"] },
+          colors: {
+            "custom-bg": "#eff7f1",
+            "custom-green": "#d5f9e5",
+            "custom-purple": "#6c62ff",
+            "custom-orange": "#ff5400",
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .neo-brutal { border:.5rem solid #000; box-shadow:.6rem .6rem 0 #ff5400; }
+    .brutal-card { transition:transform .18s ease, box-shadow .18s ease; }
+    .brutal-card:hover { transform:translate(-.25rem,-.25rem); box-shadow:.6rem .6rem 0 #000 !important; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 font-work">
+
+  <!-- Nav -->
+  <nav class="max-w-[95%] mx-auto mt-4 flex justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]">
+    <h1 class="font-space text-2xl md:text-3xl font-bold text-custom-purple">DSA Hub</h1>
+    <ul class="flex flex-wrap gap-4 md:gap-6 font-semibold text-base md:text-lg">
+      <li><a href="../index.html" class="hover:underline">Home</a></li>
+      <li><a href="../pages/companies.html" class="hover:underline">Companies</a></li>
+      <li><a href="../pages/ds-algo.html" class="hover:underline">DS & Algo</a></li>
+      <li><a href="../pages/resources.html" class="hover:underline">Resources</a></li>
+      <li><a href="../pages/sheet.html" class="hover:underline">DSA Sheet</a></li>
+      <li><a href="../blogs/index.html" class="hover:underline">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="max-w-[95%] mx-auto mt-8 text-center bg-custom-bg border-[0.6rem] border-black rounded-3xl p-10 shadow-[0.6rem_0.6rem_0px_#ff5400]">
+    <h2 class="font-space text-4xl md:text-6xl font-bold mb-4">Terms of Service</h2>
+    <p class="text-lg md:text-xl">Effective Date: August 22, 2025</p>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-[95%] mx-auto mt-8">
+    <div class="neo-brutal bg-white rounded-2xl p-6 md:p-8 brutal-card">
+      <section class="space-y-6 leading-relaxed">
+        <p class="text-gray-800">
+          Welcome to <strong>DSA Hub</strong>. By accessing or using the site, you agree to these Terms of Service (“Terms”).
+          If you do not agree, please do not use the site.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">1. Use of the Site</h3>
+        <p>
+          You may use the site for personal, non-commercial learning and interview preparation. Do not misuse the site
+          (e.g., interfere with its operation, attempt unauthorized access, or use automated scraping where prohibited).
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">2. Accounts & Local Data</h3>
+        <p>
+          The MVP may use <strong>localStorage</strong> in your browser to save progress (e.g., completed items, starred items).
+          You are responsible for safeguarding your device and browser data.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">3. Content & Links</h3>
+        <p>
+          The site may link to third-party resources (e.g., GitHub, external blogs, YouTube). We do not control and are
+          not responsible for third-party content or practices. Review their terms and policies when visiting.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">4. Intellectual Property</h3>
+        <p>
+          Unless noted otherwise, site content (branding, layout, UI elements) is licensed under the <strong>MIT License</strong>.
+          External resources linked from the site remain the property of their respective owners and may have different licenses.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">5. Disclaimer</h3>
+        <p>
+          The site is provided “<strong>as is</strong>” without warranties of any kind. We do not guarantee accuracy, completeness,
+          or fitness for a particular purpose. Use your judgment and verify information before relying on it.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">6. Limitation of Liability</h3>
+        <p>
+          To the fullest extent permitted by law, DSA Hub and its contributors shall not be liable for any indirect, incidental,
+          special, consequential, or punitive damages, or any loss of data or profits arising from your use of the site.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">7. Changes to the Terms</h3>
+        <p>
+          We may update these Terms from time to time. Changes take effect upon posting. Your continued use of the site
+          means you accept the revised Terms.
+        </p>
+
+        <h3 class="font-space text-2xl font-bold text-custom-purple">8. Contact</h3>
+        <p>
+          Questions? Reach us at <a href="mailto:contact@example.com" class="text-custom-purple underline">contact@example.com</a>.
+          (Replace with your email.)
+        </p>
+
+        <div class="mt-8 p-4 bg-custom-green border-[0.35rem] border-black rounded-xl">
+          <p class="font-semibold">
+            License: <a href="./mit.html" class="text-custom-purple underline">MIT License</a> — You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies under the terms of the MIT license. Include the copyright and permission notice.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-[95%] mx-auto my-10 text-center">
+    <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.3rem] border-black shadow-[0.35rem_0.35rem_0px_#222] brutal-card">
+      ← Back to Home
+    </a>
+  </footer>
+</body>
+</html>

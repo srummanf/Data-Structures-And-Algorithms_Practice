@@ -207,7 +207,7 @@ def main():
     """Main function to run the extractor"""
     # You can customize these paths as needed
     extractor = DSADataExtractor(
-        readme_path="./Revision/README.md",
+        readme_path="./docs/DSA-Sheet-by-SRF.md",
         output_path="data/extractedJSON.json"
     )
     
