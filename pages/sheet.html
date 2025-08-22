@@ -91,10 +91,26 @@
         transform: translate(4px, 4px);
         border-radius: 4px;
       }
+
+      /* Tab styles */
+      .tab-btn {
+        border-width: 0.4rem;
+        transition: all 0.2s ease;
+      }
+      .tab-btn.active {
+        background: #6c62ff;
+        color: #fff;
+        transform: translate(-0.2rem, -0.2rem);
+        box-shadow: 0.4rem 0.4rem 0 #000;
+      }
+      .tab-btn:not(.active):hover {
+        background: #d5f9e5;
+        transform: translate(-0.1rem, -0.1rem);
+        box-shadow: 0.3rem 0.3rem 0 #000;
+      }
     </style>
   </head>
   <body class="min-h-screen bg-gray-50 font-work">
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav
       class="max-w-[95%] mx-auto mt-4 flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]"
@@ -172,17 +188,38 @@
       </p>
     </header>
 
+    <!-- TABS -->
+    <section class="max-w-[95%] mx-auto mt-6">
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <button
+          class="tab-btn px-6 py-3 bg-white border-black rounded-2xl font-space font-bold text-lg md:text-xl active"
+          data-tab="ds"
+        >
+          <i class="fa-solid fa-sitemap mr-2 text-custom-orange"></i>
+          Data Structures
+        </button>
+        <button
+          class="tab-btn px-6 py-3 bg-white border-black rounded-2xl font-space font-bold text-lg md:text-xl"
+          data-tab="algo"
+        >
+          <i class="fa-solid fa-code-branch mr-2 text-custom-orange"></i>
+          Algorithms
+        </button>
+      </div>
+    </section>
+
     <!-- CONTROLS -->
     <section
       class="max-w-[95%] mx-auto mt-6 grid gap-4 md:grid-cols-[1fr_auto] items-center"
     >
       <!-- Stats -->
-      <!-- Stats -->
       <div
         class="brutal-card bg-white border-[0.4rem] border-black rounded-2xl p-4 md:p-5 shadow-brutalSm flex flex-col gap-4"
       >
         <div class="flex justify-between items-center flex-wrap gap-4">
-          <div class="font-space text-lg md:text-xl font-bold">Progress</div>
+          <div class="font-space text-lg md:text-xl font-bold">
+            <span id="currentTabName">Data Structures</span> Progress
+          </div>
           <div class="flex gap-3 md:gap-6 text-sm md:text-base">
             <div
               class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
@@ -339,31 +376,107 @@
 
     <script>
       // Data & state
-      let SHEET = {};
+      let SHEET_DS = {};
+      let SHEET_ALGO = {};
+      let currentTab = "ds";
       let progress = JSON.parse(localStorage.getItem("dsaProgress") || "{}");
       let starred = JSON.parse(localStorage.getItem("dsaStarred") || "{}");
 
       // Active filters
       const filters = { star: "all", done: "all" };
 
-      // Load JSON
+      // Load JSON files
       document.addEventListener("DOMContentLoaded", async () => {
         try {
-          const res = await fetch("../data/sheet.json");
-          SHEET = await res.json();
-          renderAll(SHEET);
+          // Load both data sources
+          const [dsRes, algoRes] = await Promise.all([
+            fetch("../data/sheet_DS.json").catch(() => ({ json: () => ({}) })),
+            fetch("../data/sheet_A.json").catch(() => ({ json: () => ({}) }))
+          ]);
+          
+          SHEET_DS = await dsRes.json();
+          SHEET_ALGO = await algoRes.json();
+          
+          renderCurrentTab();
+          initTabs();
           initFilters();
           updateStats();
         } catch (e) {
-          console.error("Failed to load sheet.json", e);
+          console.error("Failed to load sheet data", e);
+          // Fallback to empty data
+          SHEET_DS = {};
+          SHEET_ALGO = {};
+          renderCurrentTab();
+          initTabs();
+          initFilters();
+          updateStats();
         }
         setupPdf();
       });
+
+      // Get current sheet data based on active tab
+      function getCurrentSheet() {
+        return currentTab === "ds" ? SHEET_DS : SHEET_ALGO;
+      }
+
+      // Tab switching
+      function initTabs() {
+        document.querySelectorAll("[data-tab]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const tab = btn.dataset.tab;
+            if (tab === currentTab) return;
+
+            currentTab = tab;
+
+            // Update tab button states
+            document.querySelectorAll("[data-tab]").forEach((b) => 
+              b.classList.remove("active")
+            );
+            btn.classList.add("active");
+
+            // Update tab name in stats
+            document.getElementById("currentTabName").textContent = 
+              tab === "ds" ? "Data Structures" : "Algorithms";
+
+            // Reset filters to default
+            filters.star = "all";
+            filters.done = "all";
+            document.querySelectorAll("[data-seg]").forEach((b) => 
+              b.classList.remove("active")
+            );
+            document.querySelectorAll("[data-val='all']").forEach((b) => 
+              b.classList.add("active")
+            );
+
+            renderCurrentTab();
+            updateStats();
+          });
+        });
+      }
+
+      // Render current tab
+      function renderCurrentTab() {
+        const data = getCurrentSheet();
+        renderAll(data);
+      }
 
       // Rendering
       function renderAll(data) {
         const wrap = document.getElementById("sheetContainer");
         wrap.innerHTML = "";
+
+        if (!data || Object.keys(data).length === 0) {
+          wrap.innerHTML = `
+            <div class="text-center py-12">
+              <div class="bg-yellow-100 border-[0.4rem] border-black rounded-2xl p-6 shadow-brutalSm inline-block">
+                <i class="fa-solid fa-exclamation-triangle text-4xl text-custom-orange mb-4"></i>
+                <p class="font-space text-xl font-bold mb-2">No Data Available</p>
+                <p class="text-gray-700">The ${currentTab === "ds" ? "Data Structures" : "Algorithms"} data file could not be loaded.</p>
+              </div>
+            </div>
+          `;
+          return;
+        }
 
         Object.keys(data).forEach((category) => {
           const list = data[category] || [];
@@ -497,14 +610,15 @@
               .forEach((b) => b.classList.remove("active"));
             btn.classList.add("active");
 
-            renderAll(SHEET);
+            renderCurrentTab();
           });
         });
       }
 
       // Stats
       function updateStats() {
-        const flat = Object.values(SHEET).flat();
+        const data = getCurrentSheet();
+        const flat = Object.values(data).flat();
         const total = flat.length;
         const done = flat.filter((q) => progress[q.id]).length;
         const star = flat.filter((q) => starred[q.id]).length;
@@ -516,6 +630,12 @@
           0
         );
         document.getElementById("statStar").textContent = star;
+
+        // Progress bar
+        const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+        const bar = document.getElementById("progressBar");
+        bar.style.width = percent + "%";
+        bar.textContent = percent + "%";
       }
 
       // PDF (multi-page, with uniform margins)
@@ -559,29 +679,9 @@
               heightLeft -= usableH;
             }
 
-            pdf.save("DSA-Sheet.pdf");
+            const tabName = currentTab === "ds" ? "Data-Structures" : "Algorithms";
+            pdf.save(`DSA-Sheet-${tabName}.pdf`);
           });
-      }
-
-      function updateStats() {
-        const flat = Object.values(SHEET).flat();
-        const total = flat.length;
-        const done = flat.filter((q) => progress[q.id]).length;
-        const star = flat.filter((q) => starred[q.id]).length;
-
-        document.getElementById("statTotal").textContent = total;
-        document.getElementById("statDone").textContent = done;
-        document.getElementById("statRemain").textContent = Math.max(
-          total - done,
-          0
-        );
-        document.getElementById("statStar").textContent = star;
-
-        // Progress bar
-        const percent = total > 0 ? Math.round((done / total) * 100) : 0;
-        const bar = document.getElementById("progressBar");
-        bar.style.width = percent + "%";
-        bar.textContent = percent + "%";
       }
     </script>
   </body>

@@ -1,0 +1,864 @@
+{
+  "Sorting Algorithms": [
+    {
+      "id": 101,
+      "name": "Bubble Sort Implementation",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 102,
+      "name": "Selection Sort",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 103,
+      "name": "Insertion Sort",
+      "link": "https://leetcode.com/problems/insertion-sort-list/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 104,
+      "name": "Merge Sort",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 105,
+      "name": "Quick Sort",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 106,
+      "name": "Heap Sort",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 107,
+      "name": "Counting Sort",
+      "link": "https://leetcode.com/problems/sort-colors/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 108,
+      "name": "Radix Sort",
+      "link": "https://leetcode.com/problems/maximum-gap/",
+      "difficulty": "Hard"
+    }
+  ],
+  "Searching Algorithms": [
+    {
+      "id": 201,
+      "name": "Binary Search",
+      "link": "https://leetcode.com/problems/binary-search/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 202,
+      "name": "Search in Rotated Sorted Array",
+      "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 203,
+      "name": "Find First and Last Position",
+      "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 204,
+      "name": "Search Insert Position",
+      "link": "https://leetcode.com/problems/search-insert-position/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 205,
+      "name": "Peak Index in Mountain Array",
+      "link": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 206,
+      "name": "Find Peak Element",
+      "link": "https://leetcode.com/problems/find-peak-element/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 207,
+      "name": "Median of Two Sorted Arrays",
+      "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+      "difficulty": "Hard"
+    }
+  ],
+  "Binary Search": [
+    {
+      "id": 1,
+      "name": "Find K-th Smallest Pair Distance",
+      "link": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 2,
+      "name": "Aggressive Cows",
+      "link": "https://www.codingninjas.com/studio/problems/aggressive-cows_1082559",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Find First and Last Position of Element in Sorted Array",
+      "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "Nth Magical Number",
+      "link": "https://leetcode.com/problems/nth-magical-number/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 5,
+      "name": "Random Pick with Weight",
+      "link": "https://leetcode.com/problems/random-pick-with-weight/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Bitwise Operations": [
+    {
+      "id": 1,
+      "name": "Count Bits",
+      "link": "https://leetcode.com/problems/counting-bits/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2,
+      "name": "Count Set Bits (Brian Kernighan’s Algorithm)",
+      "link": "https://www.geeksforgeeks.org/count-set-bits-in-an-integer/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "name": "Single Number III",
+      "link": "https://leetcode.com/problems/single-number-iii/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "K-th Bit Set or Not",
+      "link": "https://www.geeksforgeeks.org/check-whether-k-th-bit-set-not/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "name": "Power Set (Using Bitwise Operators)",
+      "link": "https://www.geeksforgeeks.org/power-set/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "name": "Generate All Subsets (Bitmasking)",
+      "link": "https://leetcode.com/problems/subsets/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "name": "Divide by Power of 2 using Bitwise",
+      "link": "https://www.geeksforgeeks.org/divide-and-multiply-by-power-of-2-using-bitwise-operators/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 8,
+      "name": "Check if a Number is Divisible by m close to n (Bit Manipulation)",
+      "link": "https://codeforces.com/problemset/problem/1038/B",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "name": "Longest Palindromic Binary Representation",
+      "link": "https://codeforces.com/problemset/problem/1287/B",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "name": "Bitwise Expression Evaluation",
+      "link": "https://www.interviewbit.com/problems/bitwise-operators/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Bitmasking": [
+    {
+      "id": 1,
+      "name": "Maximum AND Sum of Array",
+      "link": "https://leetcode.com/problems/maximum-and-sum-of-array/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 2,
+      "name": "Partition to K Equal Sum Subsets",
+      "link": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Count Number of Teams",
+      "link": "https://leetcode.com/problems/count-number-of-teams/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+      "link": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 5,
+      "name": "Maximum Students Taking Exam",
+      "link": "https://leetcode.com/problems/maximum-students-taking-exam/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 6,
+      "name": "Power Set (All Subsequences)",
+      "link": "https://www.geeksforgeeks.org/power-set/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "name": "Travelling Salesman Problem",
+      "link": "https://www.geeksforgeeks.org/travelling-salesman-problem-using-dynamic-programming/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 8,
+      "name": "Maximum Subset XOR",
+      "link": "https://www.geeksforgeeks.org/find-maximum-subset-xor-given-set/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "name": "Assignment Problem (Hungarian Algorithm via Bitmask DP)",
+      "link": "https://www.geeksforgeeks.org/bitmasking-dp-assignments-problem/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "name": "Count Subsets with Given Sum",
+      "link": "https://www.codingninjas.com/studio/problems/count-subsets-with-sum-k_3952532",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 11,
+      "name": "Good Subsequence",
+      "link": "https://www.interviewbit.com/problems/good-subsequence/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 12,
+      "name": "Maximum Length of a Concatenated String with Unique Characters",
+      "link": "https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Dynamic Programming": [
+    {
+      "id": 301,
+      "name": "Fibonacci Number",
+      "link": "https://leetcode.com/problems/fibonacci-number/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 302,
+      "name": "Climbing Stairs",
+      "link": "https://leetcode.com/problems/climbing-stairs/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 303,
+      "name": "House Robber",
+      "link": "https://leetcode.com/problems/house-robber/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 304,
+      "name": "Coin Change",
+      "link": "https://leetcode.com/problems/coin-change/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 305,
+      "name": "Longest Increasing Subsequence",
+      "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 306,
+      "name": "0/1 Knapsack Problem",
+      "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 307,
+      "name": "Edit Distance",
+      "link": "https://leetcode.com/problems/edit-distance/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 308,
+      "name": "Longest Common Subsequence",
+      "link": "https://leetcode.com/problems/longest-common-subsequence/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 309,
+      "name": "Maximum Product Subarray",
+      "link": "https://leetcode.com/problems/maximum-product-subarray/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 310,
+      "name": "Palindromic Substrings",
+      "link": "https://leetcode.com/problems/palindromic-substrings/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Greedy Algorithms": [
+    {
+      "id": 401,
+      "name": "Activity Selection Problem",
+      "link": "https://leetcode.com/problems/non-overlapping-intervals/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 402,
+      "name": "Fractional Knapsack",
+      "link": "https://leetcode.com/problems/maximum-units-on-a-truck/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 403,
+      "name": "Job Scheduling",
+      "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 404,
+      "name": "Huffman Coding",
+      "link": "https://leetcode.com/problems/minimum-time-to-build-blocks/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 405,
+      "name": "Minimum Spanning Tree (Kruskal)",
+      "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 406,
+      "name": "Minimum Spanning Tree (Prim)",
+      "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 407,
+      "name": "Gas Station",
+      "link": "https://leetcode.com/problems/gas-station/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 408,
+      "name": "Jump Game",
+      "link": "https://leetcode.com/problems/jump-game/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Graph Algorithms": [
+    {
+      "id": 501,
+      "name": "Depth-First Search (DFS)",
+      "link": "https://leetcode.com/problems/number-of-islands/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 502,
+      "name": "Breadth-First Search (BFS)",
+      "link": "https://leetcode.com/problems/rotting-oranges/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 503,
+      "name": "Dijkstra's Algorithm",
+      "link": "https://leetcode.com/problems/network-delay-time/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 504,
+      "name": "Bellman-Ford Algorithm",
+      "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 505,
+      "name": "Floyd-Warshall Algorithm",
+      "link": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 506,
+      "name": "Topological Sort",
+      "link": "https://leetcode.com/problems/course-schedule/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 507,
+      "name": "Cycle Detection in Directed Graph",
+      "link": "https://leetcode.com/problems/course-schedule/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 508,
+      "name": "Cycle Detection in Undirected Graph",
+      "link": "https://leetcode.com/problems/graph-valid-tree/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 509,
+      "name": "Strongly Connected Components",
+      "link": "https://leetcode.com/problems/critical-connections-in-a-network/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 510,
+      "name": "A* Search Algorithm",
+      "link": "https://leetcode.com/problems/sliding-puzzle/",
+      "difficulty": "Hard"
+    }
+  ],
+  "DFS": [
+    {
+      "id": 1,
+      "name": "Subsets",
+      "link": "https://leetcode.com/problems/subsets/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "name": "Subsets II",
+      "link": "https://leetcode.com/problems/subsets-ii/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Combination Sum",
+      "link": "https://leetcode.com/problems/combination-sum/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "Combination Sum II",
+      "link": "https://leetcode.com/problems/combination-sum-ii/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "name": "Palindrome Partitioning",
+      "link": "https://leetcode.com/problems/palindrome-partitioning/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "name": "Word Search",
+      "link": "https://leetcode.com/problems/word-search/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "name": "Letter Case Permutation",
+      "link": "https://leetcode.com/problems/letter-case-permutation/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "name": "Restore IP Addresses",
+      "link": "https://leetcode.com/problems/restore-ip-addresses/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "name": "Generate Parentheses",
+      "link": "https://leetcode.com/problems/generate-parentheses/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 10,
+      "name": "N-Queens",
+      "link": "https://leetcode.com/problems/n-queens/",
+      "difficulty": "Hard"
+    }
+  ],
+  "BFS": [
+    {
+      "id": 1,
+      "name": "Jump Game",
+      "link": "https://leetcode.com/problems/jump-game/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "name": "Jump Game II",
+      "link": "https://leetcode.com/problems/jump-game-ii/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 3,
+      "name": "Minimum Moves to Reach Target",
+      "link": "https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 4,
+      "name": "01 Matrix",
+      "link": "https://leetcode.com/problems/01-matrix/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "name": "Rotting Oranges",
+      "link": "https://leetcode.com/problems/rotting-oranges/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "name": "Walls and Gates",
+      "link": "https://leetcode.com/problems/walls-and-gates/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "name": "Shortest Path in Binary Matrix",
+      "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "name": "Sliding Puzzle",
+      "link": "https://leetcode.com/problems/sliding-puzzle/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 9,
+      "name": "The Maze",
+      "link": "https://leetcode.com/problems/the-maze/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 10,
+      "name": "The Maze II",
+      "link": "https://leetcode.com/problems/the-maze-ii/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Divide and Conquer": [
+    {
+      "id": 601,
+      "name": "Maximum Subarray (Kadane's)",
+      "link": "https://leetcode.com/problems/maximum-subarray/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 602,
+      "name": "Merge Sort Implementation",
+      "link": "https://leetcode.com/problems/sort-an-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 603,
+      "name": "Quick Sort Implementation",
+      "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 604,
+      "name": "Closest Pair of Points",
+      "link": "https://leetcode.com/problems/closest-pair-of-points-in-a-plane/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 605,
+      "name": "Strassen's Matrix Multiplication",
+      "link": "https://leetcode.com/problems/sparse-matrix-multiplication/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 606,
+      "name": "Binary Search Tree Construction",
+      "link": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/",
+      "difficulty": "Easy"
+    }
+  ],
+  "Backtracking": [
+    {
+      "id": 701,
+      "name": "N-Queens Problem",
+      "link": "https://leetcode.com/problems/n-queens/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 702,
+      "name": "Sudoku Solver",
+      "link": "https://leetcode.com/problems/sudoku-solver/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 703,
+      "name": "Generate Parentheses",
+      "link": "https://leetcode.com/problems/generate-parentheses/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 704,
+      "name": "Permutations",
+      "link": "https://leetcode.com/problems/permutations/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 705,
+      "name": "Combinations",
+      "link": "https://leetcode.com/problems/combinations/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 706,
+      "name": "Letter Combinations",
+      "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 707,
+      "name": "Word Search",
+      "link": "https://leetcode.com/problems/word-search/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 708,
+      "name": "Palindrome Partitioning",
+      "link": "https://leetcode.com/problems/palindrome-partitioning/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 709,
+      "name": "Subset Sum Problem",
+      "link": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Combinatorics": [
+    {
+      "id": 1,
+      "name": "Permutation Sequence",
+      "link": "https://leetcode.com/problems/permutation-sequence/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 2,
+      "name": "Pascal's Triangle",
+      "link": "https://leetcode.com/problems/pascals-triangle/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "name": "Combinations",
+      "link": "https://leetcode.com/problems/combinations/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "Combination Sum",
+      "link": "https://leetcode.com/problems/combination-sum/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "name": "Letter Case Permutation",
+      "link": "https://leetcode.com/problems/letter-case-permutation/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "name": "Generate Parentheses",
+      "link": "https://leetcode.com/problems/generate-parentheses/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "name": "Count Derangements (Permutation Problem)",
+      "link": "https://www.geeksforgeeks.org/count-derangements-permutation-such-that-no-element-appears-in-its-original-position/",
+      "difficulty": "Medium"
+    }
+  ],
+  "String Algorithms": [
+    {
+      "id": 801,
+      "name": "KMP Pattern Matching",
+      "link": "https://leetcode.com/problems/implement-strstr/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 802,
+      "name": "Rabin-Karp Algorithm",
+      "link": "https://leetcode.com/problems/repeated-string-match/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 803,
+      "name": "Boyer-Moore Algorithm",
+      "link": "https://leetcode.com/problems/implement-strstr/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 804,
+      "name": "Longest Palindromic Substring",
+      "link": "https://leetcode.com/problems/longest-palindromic-substring/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 805,
+      "name": "Manacher's Algorithm",
+      "link": "https://leetcode.com/problems/longest-palindromic-substring/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 806,
+      "name": "Z Algorithm",
+      "link": "https://leetcode.com/problems/shortest-palindrome/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 807,
+      "name": "Suffix Array Construction",
+      "link": "https://leetcode.com/problems/longest-duplicate-substring/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 808,
+      "name": "Trie Implementation",
+      "link": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Mathematical Algorithms": [
+    {
+      "id": 901,
+      "name": "Euclidean Algorithm (GCD)",
+      "link": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 902,
+      "name": "Extended Euclidean Algorithm",
+      "link": "https://leetcode.com/problems/water-and-jug-problem/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 903,
+      "name": "Sieve of Eratosthenes",
+      "link": "https://leetcode.com/problems/count-primes/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 904,
+      "name": "Fast Exponentiation",
+      "link": "https://leetcode.com/problems/powx-n/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 905,
+      "name": "Modular Arithmetic",
+      "link": "https://leetcode.com/problems/super-pow/",
+      "difficulty": "Medium"
+    }
+  ],
+  "Allocation Algorithms": [
+    {
+      "id": 1,
+      "name": "Meeting Rooms II",
+      "link": "https://leetcode.com/problems/meeting-rooms-ii/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "name": "Book Allocation Problem",
+      "link": "https://www.geeksforgeeks.org/allocate-minimum-number-pages/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Merge Intervals",
+      "link": "https://leetcode.com/problems/merge-intervals/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "N Meetings in One Room",
+      "link": "https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "name": "Minimum Number of Platforms",
+      "link": "https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "name": "Task Scheduler",
+      "link": "https://leetcode.com/problems/task-scheduler/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "name": "Car Pooling",
+      "link": "https://leetcode.com/problems/car-pooling/",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "name": "Meeting Rooms",
+      "link": "https://leetcode.com/problems/meeting-rooms/",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 9,
+      "name": "Job Scheduling to Maximize Profit",
+      "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "name": "Interval List Intersections",
+      "link": "https://leetcode.com/problems/interval-list-intersections/",
+      "difficulty": "Medium"
+    }
+  ],
+  "A* Algorithm": [
+    {
+      "id": 1,
+      "name": "A* Search Algorithm (Shortest Path in Weighted Grid)",
+      "link": "https://www.geeksforgeeks.org/a-search-algorithm/",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 2,
+      "name": "Pathfinding Visualizer with A* Algorithm",
+      "link": "https://practice.geeksforgeeks.org/problems/a-star-algorithm/1",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Minimum Cost Path",
+      "link": "https://leetcode.com/problems/path-with-minimum-effort/",
+      "difficulty": "Medium"
+    }
+  ]
+}

@@ -13,6 +13,8 @@
   <!-- Icons + Tailwind -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="../../css/style.css"/>
   <script>
     tailwind.config = {
       theme: {
@@ -36,18 +38,70 @@
 </head>
 <body class="min-h-screen bg-gray-50 font-work">
 
-  <!-- Nav -->
-  <nav class="max-w-[95%] mx-auto mt-4 flex justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]">
-    <h1 class="font-space text-2xl md:text-3xl font-bold text-custom-purple">DSA Hub</h1>
-    <ul class="flex flex-wrap gap-4 md:gap-6 font-semibold text-base md:text-lg">
-      <li><a href="../index.html" class="hover:underline">Home</a></li>
-      <li><a href="../pages/companies.html" class="hover:underline">Companies</a></li>
-      <li><a href="../pages/ds-algo.html" class="hover:underline">DS & Algo</a></li>
-      <li><a href="../pages/resources.html" class="hover:underline">Resources</a></li>
-      <li><a href="../pages/sheet.html" class="hover:underline">DSA Sheet</a></li>
-      <li><a href="../blogs/index.html" class="hover:underline">Blogs</a></li>
-    </ul>
-  </nav>
+  <!-- Navbar -->
+    <nav
+      class="max-w-[95%] mx-auto mt-4 flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]"
+    >
+      <h1
+        class="font-space text-2xl md:text-3xl font-bold text-custom-purple mb-4 md:mb-0"
+      >
+        DSA Hub
+      </h1>
+
+      <ul
+        class="flex flex-wrap gap-3 md:gap-4 font-bold text-sm md:text-base justify-center md:justify-end"
+      >
+        <li>
+          <a
+            href="../index.html"
+            class="neo-brutalist bg-yellow-400 text-black font-bold py-2 px-4 hover:bg-yellow-600 block"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <!-- Active/Current page - pushed down with darker tone -->
+          <a
+            href="./companies.html"
+            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block "
+          >
+            Companies
+          </a>
+        </li>
+        <li>
+          <a
+            href="./ds-algo.html"
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block "
+          >
+            DS & Algo
+          </a>
+        </li>
+        <li>
+          <a
+            href="./resources.html"
+            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 block "
+          >
+            Resources
+          </a>
+        </li>
+        <li>
+          <a
+            href="./sheet.html"
+            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 block "
+          >
+            DSA Sheet
+          </a>
+        </li>
+        <li>
+          <a
+            href="./blogs/index.html"
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block "
+          >
+            Blogs
+          </a>
+        </li>
+      </ul>
+    </nav>
 
   <!-- Header -->
   <header class="max-w-[95%] mx-auto mt-8 text-center bg-custom-bg border-[0.6rem] border-black rounded-3xl p-10 shadow-[0.6rem_0.6rem_0px_#ff5400]">
@@ -123,7 +177,7 @@
 
   <!-- Footer -->
   <footer class="max-w-[95%] mx-auto my-10 text-center">
-    <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.3rem] border-black shadow-[0.35rem_0.35rem_0px_#222] brutal-card">
+    <a href="../../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.3rem] border-black shadow-[0.35rem_0.35rem_0px_#222] brutal-card">
       ← Back to Home
     </a>
   </footer>
