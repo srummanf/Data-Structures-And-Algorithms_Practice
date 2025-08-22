@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LeetCode Company Tags</title>
+    <title>DSA Website - Neo Brutalist MVP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,66 +29,19 @@
               "custom-purple": "#6c62ff",
               "custom-orange": "#ff5400",
             },
-            animation: {
-              heartbeat: "heartbeat 2s ease-in-out infinite",
-              spin: "spin 1s linear infinite",
-            },
-            keyframes: {
-              heartbeat: {
-                "0%": { transform: "scale(1)" },
-                "14%": { transform: "scale(1.3)" },
-                "28%": { transform: "scale(1)" },
-                "42%": { transform: "scale(1.3)" },
-                "70%": { transform: "scale(1)" },
-              },
-            },
           },
         },
       };
     </script>
     <style>
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(1.25rem);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      /* Brutalist hover push effect */
+      .brutal-card {
+        transition: all 0.2s ease;
       }
-      .slide-in {
-        animation: slideIn 0.3s ease;
+      .brutal-card:hover {
+        transform: translate(-0.25rem, -0.25rem);
+        box-shadow: 0.5rem 0.5rem 0px #000 !important;
       }
-
-      /* Custom scrollbar for table */
-      .custom-scrollbar::-webkit-scrollbar {
-        height: 8px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #6c62ff;
-        border-radius: 10px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #5a52e8;
-      }
-
-      /* Ensure selected state maintains proper styling */
-      .company-card.selected {
-        background-color: #6c62ff !important;
-        color: white !important;
-        transform: translate(-0.15rem, -0.15rem) !important;
-        box-shadow: 0.4rem 0.4rem 0px #ff5400 !important;
-      }
-
-      .company-card.selected .opacity-80 {
-        opacity: 1 !important;
-      }
-
       /* Squiggle underline animation with inline SVG */
       .squiggle-underline {
         position: relative;
@@ -132,137 +85,160 @@
           background-position-x: 20px;
         }
       }
+
+      .neo-brutalist {
+        border: 4px solid #000;
+        box-shadow: 8px 8px 0 #000;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+      }
+      .neo-brutalist:hover {
+        box-shadow: 6px 6px 0 #000;
+        transform: translate(2px, 2px);
+      }
     </style>
   </head>
   <body class="min-h-screen font-work text-base bg-gray-50">
-    <div
-      class="w-full max-w-[95%] mx-auto my-4 bg-custom-bg rounded-3xl border-[0.6rem] border-black"
+    <!-- Navbar -->
+    <nav
+      class="max-w-[95%] mx-auto mt-4 flex justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]"
     >
-      <!-- Header Section -->
-      <div class="p-4 md:p-8">
-        <div class="text-center">
-          <h1 class="font-space text-4xl md:text-6xl font-bold mb-4">
-            LeetCode Company Tags
-          </h1>
-          <p class="text-xl md:text-2xl mb-6">
-            Master coding interviews with company-specific problems
-          </p>
-          <hr class="border-2 border-custom-orange w-[95%] mx-auto mb-6" />
-        </div>
-      </div>
+      <h1 class="font-space text-2xl md:text-3xl font-bold text-custom-purple">
+        DSA Hub
+      </h1>
 
-      <!-- Search Section -->
-      <div class="px-4 md:px-8 pb-4">
-        <div class="relative max-w-[37.5rem] mx-auto">
-          <i
-            class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-custom-purple text-xl z-10"
-          ></i>
-          <input
-            type="text"
-            id="companySearch"
-            placeholder="Search companies (e.g., Amazon, Google, Microsoft...)"
-            autocomplete="off"
-            class="w-full pl-12 pr-4 py-4 text-lg font-medium border-[0.3rem] border-black rounded-2xl bg-white shadow-[0.4rem_0.4rem_0px_#ff5400] outline-none transition-all duration-200 focus:shadow-[0.5rem_0.5rem_0px_#ff5400] focus:-translate-x-[0.15rem] focus:-translate-y-[0.15rem] placeholder-gray-500"
-          />
-          <div
-            class="search-results absolute top-full left-0 right-0 bg-white border-[0.3rem] border-black border-t-0 rounded-b-2xl shadow-[0.4rem_0.4rem_0px_#ff5400] hidden z-[1000] max-h-[18.75rem] overflow-y-auto custom-scrollbar"
-            id="searchResults"
+      <ul class="flex gap-4 font-bold text-lg">
+        <li>
+          <a
+            href="./pages/companies.html"
+            class="neo-brutalist bg-pink-600 text-black text-lg font-bold py-3 px-6 hover:bg-pink-800 transition-none block"
           >
-            <!-- Search results will be populated by JavaScript -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Company Selection -->
-      <div class="px-4 md:px-8 pb-8">
-        <h2
-          class="relative text-white text-center bg-custom-purple p-5 text-2xl md:text-3xl font-bold border-[0.3rem] border-black border-b-0 shadow-[0.25rem_0.25rem_0px_#222] font-space"
-        >
-          <i
-            class="fas fa-building absolute -top-3 -left-3 bg-custom-orange text-2xl md:text-3xl h-14 w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
-          ></i>
-          Select Company
-        </h2>
-        <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4"
-          id="companyGrid"
-        >
-          <!-- Companies will be populated by JavaScript -->
-        </div>
-      </div>
-
-      <!-- Problems Table -->
-      <div class="px-4 md:px-8 pb-8 slide-in hidden" id="problemsSection">
-        <h2
-          class="relative text-white text-center bg-custom-purple p-5 text-2xl md:text-3xl font-bold border-[0.3rem] border-black border-b-0 shadow-[0.25rem_0.25rem_0px_#222] font-space"
-          id="selectedCompany"
-        >
-          <i
-            class="fas fa-code absolute -top-3 -left-3 bg-custom-orange text-2xl md:text-2xl h-14 w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
-          ></i>
-          Problems
-        </h2>
-        <div
-          class="overflow-x-auto border-[0.3rem] border-black rounded-lg shadow-[0.4rem_0.4rem_0px_#222] custom-scrollbar"
-        >
-          <table
-            id="problemsTable"
-            class="w-full min-w-[62.5rem] border-collapse bg-custom-green text-lg"
+            Companies
+          </a>
+        </li>
+        <li>
+          <a
+            href="./pages/ds-algo.html"
+            class="neo-brutalist bg-cyan-400 text-black text-lg font-bold py-3 px-6 hover:bg-cyan-600 transition-none block"
           >
-            <thead>
-              <tr>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  #
-                </th>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  Problem Name
-                </th>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  LeetCode Link
-                </th>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  Solution Video
-                </th>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  Intuition
-                </th>
-                <th
-                  class="bg-custom-purple text-white font-semibold text-base p-4 text-left sticky top-0 z-10"
-                >
-                  Key Steps
-                </th>
-              </tr>
-            </thead>
-            <tbody id="problemsBody">
-              <!-- Problems will be populated by JavaScript -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+            DS & Algo
+          </a>
+        </li>
+        <li>
+          <a
+            href="./pages/resources.html"
+            class="neo-brutalist bg-lime-400 text-black text-lg font-bold py-3 px-6 hover:bg-lime-600 transition-none block"
+          >
+            Resources
+          </a>
+        </li>
+        <li>
+          <a
+            href="./pages/sheet.html"
+            class="neo-brutalist bg-orange-400 text-black text-lg font-bold py-3 px-6 hover:bg-orange-600 transition-none block"
+          >
+            DSA Sheet
+          </a>
+        </li>
+        <li>
+          <a
+            href="./pages/blogs/index.html"
+            class="neo-brutalist bg-purple-400 text-black text-lg font-bold py-3 px-6 hover:bg-purple-600 transition-none block"
+          >
+            Blogs
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- WEBSITE UNDER CONSTRUCTION -->
+    <header
+      class="max-w-[95%] h-[75vh] mx-auto mt-8 bg-custom-bg border-[0.6rem] border-black rounded-3xl p-12 shadow-[0.6rem_0.6rem_0px_#ff5400] flex flex-col justify-center items-center text-center"
+    >
+      <h2 class="font-space text-4xl md:text-6xl font-bold mb-6">
+        Website <span class="text-custom-purple">Under</span> Construction
+      </h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+        Will be live soon! Meanwhile, explore other sections.
+      </p>
+      <a
+        href="./pages/companies.html"
+        class="inline-block px-8 py-4 bg-custom-purple text-white rounded-xl font-semibold text-lg border-[0.3rem] border-black shadow-[0.4rem_0.4rem_0px_#222] brutal-card"
+      >
+        Just Follow Hither and Dither
+      </a>
+    </header>
+
+    <!-- Hero Section -->
+    <header
+      class="max-w-[95%] mx-auto mt-8 text-center bg-custom-bg border-[0.6rem] border-black rounded-3xl p-12 shadow-[0.6rem_0.6rem_0px_#ff5400]"
+    >
+      <h2 class="font-space text-4xl md:text-6xl font-bold mb-6">
+        Master <span class="text-custom-purple">DSA</span> for Interviews
+      </h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+        Practice Data Structures and Algorithms, revise concepts, and crack
+        coding interviews with a Neo-Brutalist edge.
+      </p>
+      <a
+        href="./pages/companies.html"
+        class="inline-block px-8 py-4 bg-custom-purple text-white rounded-xl font-semibold text-lg border-[0.3rem] border-black shadow-[0.4rem_0.4rem_0px_#222] brutal-card"
+      >
+        Start Now →
+      </a>
+    </header>
+
+    <!-- Quick Navigation Grid -->
+    <section
+      class="max-w-[95%] mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      <a
+        href="./pages/companies.html"
+        class="brutal-card bg-custom-green border-[0.4rem] border-black rounded-2xl p-8 shadow-[0.4rem_0.4rem_0px_#222] flex flex-col justify-between"
+      >
+        <h3 class="text-2xl font-space font-bold mb-4">Company Problems</h3>
+        <p>
+          Filter problems by top tech companies like Google, Amazon, Microsoft.
+        </p>
+      </a>
+
+      <a
+        href="./pages/ds-algo.html"
+        class="brutal-card bg-white border-[0.4rem] border-black rounded-2xl p-8 shadow-[0.4rem_0.4rem_0px_#ff5400] flex flex-col justify-between"
+      >
+        <h3 class="text-2xl font-space font-bold mb-4">DS & Algo List</h3>
+        <p>Structured list of Data Structures and Algorithms with tutorials.</p>
+      </a>
+
+      <a
+        href="./blogs/AlgoBlog1.html"
+        class="brutal-card bg-custom-orange border-[0.4rem] border-black rounded-2xl p-8 shadow-[0.4rem_0.4rem_0px_#222] flex flex-col justify-between text-white"
+      >
+        <h3 class="text-2xl font-space font-bold mb-4">Blogs</h3>
+        <p>Guides, revision notes, and interview preparation tips.</p>
+      </a>
+
+      <a
+        href="./pages/resources.html"
+        class="brutal-card bg-custom-purple border-[0.4rem] border-black rounded-2xl p-8 shadow-[0.4rem_0.4rem_0px_#222] flex flex-col justify-between text-white"
+      >
+        <h3 class="text-2xl font-space font-bold mb-4">Resources</h3>
+        <p>Bento grid of resources and study materials for DSA prep.</p>
+      </a>
+
+      <a
+        href="./pages/sheet.html"
+        class="brutal-card bg-white border-[0.4rem] border-black rounded-2xl p-8 shadow-[0.4rem_0.4rem_0px_#ff5400] flex flex-col justify-between"
+      >
+        <h3 class="text-2xl font-space font-bold mb-4">My DSA Sheet</h3>
+        <p>Track progress with Yes/No tick boxes and save your sheet as PDF.</p>
+      </a>
+    </section>
 
     <!-- Footer -->
     <footer
-      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-8 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] lg:max-w-[75rem] overflow-hidden"
+      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] overflow-hidden"
     >
-      <!-- Decorative elements -->
-      <div
-        class="absolute -top-2 -left-2 w-8 h-8 bg-custom-orange rounded-full border-[0.2rem] border-black z-10"
-      ></div>
-      <div
-        class="absolute -bottom-2 -right-2 w-8 h-8 bg-custom-purple rounded-full border-[0.2rem] border-black z-10"
-      ></div>
-
       <div
         class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
       >
@@ -276,7 +252,7 @@
           <span>by</span>
           <a
             href="https://srummanf.is-a.dev"
-            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors "
+            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit SRF's portfolio website"
@@ -285,16 +261,14 @@
         </div>
         <a
           href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white no-underline rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] transition-all duration-200 hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem] hover:shadow-[0.35rem_0.35rem_0px_#222] hover:bg-[#5a52e8]"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.35rem_0.35rem_0px_#222] hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem]"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit SRF's GitHub repository"
         >
           <i class="fab fa-github text-xl"></i>
           View on GitHub
         </a>
       </div>
     </footer>
-    <script src="./script.js"></script>
   </body>
 </html>

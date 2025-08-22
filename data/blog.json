@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Understanding Two Pointers",
+    "description": "Learn how the Two Pointer technique simplifies array problems...",
+    "link": "./blog1.html"
+  },
+  {
+    "title": "Graphs Simplified",
+    "description": "DFS, BFS and shortest path explained in a simple and intuitive way...",
+    "link": "./blog2.html"
+  },
+  {
+    "title": "Mastering Dynamic Programming",
+    "description": "Breaking down DP into subproblems with memoization and tabulation.",
+    "link": "./blog3.html"
+  }
+]

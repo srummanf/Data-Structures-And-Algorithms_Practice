@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Hub - Company Problems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/squiggle-anim.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              space: ["Space Grotesk", "sans-serif"],
+              work: ["Work Sans", "sans-serif"],
+            },
+            colors: {
+              "custom-bg": "#eff7f1",
+              "custom-green": "#d5f9e5",
+              "custom-purple": "#6c62ff",
+              "custom-orange": "#ff5400",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Responsive table scrollbar */
+      .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #6c62ff;
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #5a52e8;
+      }
+      .neo-brutalist {
+        border: 4px solid #000;
+        box-shadow: 8px 8px 0 #000;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+      }
+      .neo-brutalist:hover {
+        box-shadow: 6px 6px 0 #000;
+        transform: translate(2px, 2px);
+      }
+
+      .neo-brutalist-active {
+        border: 4px solid #000;
+        box-shadow: 2px 2px 0 #000;
+        transform: translate(4px, 4px);
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen font-work bg-gray-50">
+    <!-- Navbar -->
+    <nav
+      class="max-w-[95%] mx-auto mt-4 flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]"
+    >
+      <h1
+        class="font-space text-2xl md:text-3xl font-bold text-custom-purple mb-4 md:mb-0"
+      >
+        DSA Hub
+      </h1>
+
+      <ul
+        class="flex flex-wrap gap-3 md:gap-4 font-bold text-sm md:text-base justify-center md:justify-end"
+      >
+        <li>
+          <a
+            href="../index.html"
+            class="neo-brutalist bg-yellow-400 text-black font-bold py-2 px-4 hover:bg-yellow-600 transition-none block"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <!-- Active/Current page - pushed down with darker tone -->
+          <a
+            href="./companies.html"
+            class="neo-brutalist-active bg-pink-600 text-black font-bold py-2 px-4 block cursor-default"
+          >
+            Companies
+          </a>
+        </li>
+        <li>
+          <a
+            href="./ds-algo.html"
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 hover:bg-cyan-600 transition-none block"
+          >
+            DS & Algo
+          </a>
+        </li>
+        <li>
+          <a
+            href="./resources.html"
+            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 hover:bg-lime-600 transition-none block"
+          >
+            Resources
+          </a>
+        </li>
+        <li>
+          <a
+            href="./sheet.html"
+            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 hover:bg-orange-600 transition-none block"
+          >
+            DSA Sheet
+          </a>
+        </li>
+        <li>
+          <a
+            href="./blogs/index.html"
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 hover:bg-purple-600 transition-none block"
+          >
+            Blogs
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Container -->
+    <main
+      class="w-full max-w-[95%] mx-auto my-6 bg-custom-bg rounded-3xl border-[0.6rem] border-black"
+    >
+      <!-- Header Section -->
+      <div class="p-4 md:p-8 text-center">
+        <h2 class="font-space text-3xl md:text-5xl font-bold mb-4">
+          Company-wise Problems
+        </h2>
+        <p class="text-lg md:text-xl mb-6">
+          Select a company to view curated coding interview questions
+        </p>
+        <hr class="border-2 border-custom-orange w-[95%] mx-auto mb-6" />
+      </div>
+
+      <!-- Search Section -->
+      <div class="px-4 md:px-8 pb-4">
+        <div class="relative max-w-[37.5rem] mx-auto">
+          <i
+            class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-custom-purple text-xl z-10"
+          ></i>
+          <input
+            type="text"
+            id="companySearch"
+            placeholder="Search companies (e.g., Amazon, Google, Microsoft...)"
+            autocomplete="off"
+            class="w-full pl-12 pr-4 py-3 md:py-4 text-base md:text-lg font-medium border-[0.3rem] border-black rounded-2xl bg-white shadow-[0.4rem_0.4rem_0px_#ff5400] outline-none focus:-translate-x-[0.15rem] focus:-translate-y-[0.15rem] focus:shadow-[0.5rem_0.5rem_0px_#ff5400]"
+          />
+          <div
+            class="search-results absolute top-full left-0 right-0 bg-white border-[0.3rem] border-black border-t-0 rounded-b-2xl shadow-[0.4rem_0.4rem_0px_#ff5400] hidden z-[1000] max-h-[18.75rem] overflow-y-auto custom-scrollbar"
+            id="searchResults"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Company Selection -->
+      <div class="px-4 md:px-8 pb-8">
+        <h3
+          class="relative text-white text-center bg-custom-purple p-4 md:p-5 text-xl md:text-2xl font-bold border-[0.3rem] border-black border-b-0 font-space"
+        >
+          <i
+            class="fas fa-building absolute -top-3 -left-3 bg-custom-orange text-xl md:text-2xl h-12 md:h-14 w-12 md:w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
+          ></i>
+          Select Company
+        </h3>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mt-4"
+          id="companyGrid"
+        >
+          <!-- Populated by script.js -->
+        </div>
+      </div>
+
+      <!-- Problems Table -->
+      <div class="px-4 md:px-8 pb-8 hidden" id="problemsSection">
+        <h3
+          class="relative text-white text-center bg-custom-purple p-4 md:p-5 text-xl md:text-2xl font-bold border-[0.3rem] border-black border-b-0 font-space"
+          id="selectedCompany"
+        >
+          <i
+            class="fas fa-code absolute -top-3 -left-3 bg-custom-orange text-xl md:text-2xl h-12 md:h-14 w-12 md:w-14 border-4 border-black flex justify-center items-center rounded-md shadow-lg"
+          ></i>
+          Problems
+        </h3>
+        <div
+          class="overflow-x-auto border-[0.3rem] border-black rounded-lg shadow-[0.4rem_0.4rem_0px_#222] custom-scrollbar"
+        >
+          <table
+            id="problemsTable"
+            class="w-full min-w-[62.5rem] border-collapse bg-custom-green text-sm md:text-base"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  #
+                </th>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  Problem Name
+                </th>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  LeetCode Link
+                </th>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  Solution Video
+                </th>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  Intuition
+                </th>
+                <th
+                  class="bg-custom-purple text-white p-3 md:p-4 text-left sticky top-0 z-10"
+                >
+                  Key Steps
+                </th>
+              </tr>
+            </thead>
+            <tbody id="problemsBody">
+              <!-- Populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] overflow-hidden"
+    >
+      <div
+        class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
+      >
+        <div
+          class="text-lg md:text-xl font-semibold text-gray-800 flex flex-wrap justify-center lg:justify-start items-center gap-2"
+        >
+          <span>Made with</span>
+          <i
+            class="fas fa-heart text-custom-orange text-xl animate-heartbeat"
+          ></i>
+          <span>by</span>
+          <a
+            href="https://srummanf.is-a.dev"
+            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit SRF's portfolio website"
+            >Rumman</a
+          >
+        </div>
+        <a
+          href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.35rem_0.35rem_0px_#222] hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github text-xl"></i>
+          View on GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Hub - My Sheet</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/squiggle-anim.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              space: ["Space Grotesk", "sans-serif"],
+              work: ["Work Sans", "sans-serif"],
+            },
+            colors: {
+              "custom-bg": "#eff7f1",
+              "custom-green": "#d5f9e5",
+              "custom-purple": "#6c62ff",
+              "custom-orange": "#ff5400",
+            },
+            boxShadow: {
+              brutal: "0.4rem 0.4rem 0 #000",
+              brutalSm: "0.3rem 0.3rem 0 #000",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- html2canvas + jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+      .starred {
+        color: gold !important;
+      }
+      .seg-btn {
+        border-width: 0.3rem;
+      }
+      .seg-btn.active {
+        background: #6c62ff;
+        color: #fff;
+        transform: translate(-0.12rem, -0.12rem);
+        box-shadow: 0.3rem 0.3rem 0 #000;
+      }
+      .seg-btn:not(.active):hover {
+        background: #d5f9e5;
+      }
+      .brutal-card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .brutal-card:hover {
+        transform: translate(-0.25rem, -0.25rem);
+        box-shadow: 0.5rem 0.5rem 0 #000 !important;
+      }
+      /* Make PDF snapshot spacing crisp */
+      #pdfArea {
+        background: #fff;
+      }
+      .neo-brutalist {
+        border: 4px solid #000;
+        box-shadow: 8px 8px 0 #000;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+      }
+      .neo-brutalist:hover {
+        box-shadow: 6px 6px 0 #000;
+        transform: translate(2px, 2px);
+      }
+
+      .neo-brutalist-active {
+        border: 4px solid #000;
+        box-shadow: 2px 2px 0 #000;
+        transform: translate(4px, 4px);
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gray-50 font-work">
+    <!-- Navbar -->
+    <nav
+      class="max-w-[95%] mx-auto mt-4 flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-[0.4rem_0.4rem_0px_#ff5400]"
+    >
+      <h1
+        class="font-space text-2xl md:text-3xl font-bold text-custom-purple mb-4 md:mb-0"
+      >
+        DSA Hub
+      </h1>
+
+      <ul
+        class="flex flex-wrap gap-3 md:gap-4 font-bold text-sm md:text-base justify-center md:justify-end"
+      >
+        <li>
+          <a
+            href="../index.html"
+            class="neo-brutalist bg-yellow-400 text-black font-bold py-2 px-4 hover:bg-yellow-600 transition-none block"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <!-- Active/Current page - pushed down with darker tone -->
+          <a
+            href="./companies.html"
+            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block cursor-default"
+          >
+            Companies
+          </a>
+        </li>
+        <li>
+          <a
+            href="./ds-algo.html"
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 hover:bg-cyan-600 transition-none block"
+          >
+            DS & Algo
+          </a>
+        </li>
+        <li>
+          <a
+            href="./resources.html"
+            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 hover:bg-lime-600 transition-none block"
+          >
+            Resources
+          </a>
+        </li>
+        <li>
+          <a
+            href="./sheet.html"
+            class="neo-brutalist-active bg-orange-400 text-black font-bold py-2 px-4 hover:bg-orange-600 transition-none block"
+          >
+            DSA Sheet
+          </a>
+        </li>
+        <li>
+          <a
+            href="./blogs/index.html"
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 hover:bg-purple-600 transition-none block"
+          >
+            Blogs
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header
+      class="max-w-[95%] mx-auto mt-6 text-center bg-custom-bg border-[0.5rem] border-black rounded-3xl p-8 shadow-[0.5rem_0.5rem_0px_#ff5400]"
+    >
+      <h2 class="font-space text-3xl md:text-5xl font-bold mb-4">
+        My DSA Sheet
+      </h2>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto">
+        Check off progress, star for revision, and export to PDF.
+      </p>
+    </header>
+
+    <!-- CONTROLS -->
+    <section
+      class="max-w-[95%] mx-auto mt-6 grid gap-4 md:grid-cols-[1fr_auto] items-center"
+    >
+      <!-- Stats -->
+      <!-- Stats -->
+      <div
+        class="brutal-card bg-white border-[0.4rem] border-black rounded-2xl p-4 md:p-5 shadow-brutalSm flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center flex-wrap gap-4">
+          <div class="font-space text-lg md:text-xl font-bold">Progress</div>
+          <div class="flex gap-3 md:gap-6 text-sm md:text-base">
+            <div
+              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+            >
+              <span id="statTotal">0</span> Total
+            </div>
+            <div
+              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+            >
+              <span id="statDone">0</span> Completed
+            </div>
+            <div
+              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+            >
+              <span id="statRemain">0</span> Remaining
+            </div>
+            <div
+              class="px-3 py-1 bg-custom-orange text-white border-[0.3rem] border-black rounded-xl font-semibold"
+            >
+              <span id="statStar">0</span> Starred
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div
+          class="w-full bg-gray-200 border-[0.3rem] border-black rounded-xl h-6 overflow-hidden"
+        >
+          <div
+            id="progressBar"
+            class="h-full bg-custom-purple text-white font-bold text-xs flex items-center justify-center"
+            style="width: 0%"
+          >
+            0%
+          </div>
+        </div>
+      </div>
+
+      <!-- Export -->
+      <button
+        id="downloadBtn"
+        class="justify-self-end px-5 py-3 bg-custom-purple text-white font-semibold border-[0.4rem] border-black rounded-2xl shadow-brutal hover:-translate-x-[.12rem] hover:-translate-y-[.12rem] transition"
+      >
+        <i class="fa-solid fa-file-arrow-down mr-2"></i> Export PDF
+      </button>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="max-w-[95%] mx-auto mt-4 grid gap-4 md:grid-cols-2">
+      <!-- Star filter -->
+      <div
+        class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm"
+      >
+        <div class="font-space font-bold mb-2">Star Filter</div>
+        <div class="inline-flex rounded-xl overflow-hidden">
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold active"
+            data-seg="star"
+            data-val="all"
+          >
+            All
+          </button>
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            data-seg="star"
+            data-val="starred"
+          >
+            <i class="fa-solid fa-star mr-1 text-yellow-400"></i>Starred
+          </button>
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            data-seg="star"
+            data-val="not-starred"
+          >
+            Not Starred
+          </button>
+        </div>
+      </div>
+
+      <!-- Completion filter -->
+      <div
+        class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm"
+      >
+        <div class="font-space font-bold mb-2">Completion Filter</div>
+        <div class="inline-flex rounded-xl overflow-hidden">
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold active"
+            data-seg="done"
+            data-val="all"
+          >
+            All
+          </button>
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            data-seg="done"
+            data-val="completed"
+          >
+            <i class="fa-solid fa-check mr-1"></i>Completed
+          </button>
+          <button
+            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            data-seg="done"
+            data-val="not-completed"
+          >
+            Not Completed
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHEET (PDF area) -->
+    <main
+      id="pdfArea"
+      class="max-w-[95%] mx-auto mt-6 space-y-8 bg-white border-[0.4rem] border-black rounded-2xl p-5 md:p-8 shadow-brutal"
+    >
+      <div id="sheetContainer" class="space-y-10"><!-- populated by JS --></div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-8 text-center shadow-[0.4rem_0.4rem_0px_#222] max-w-[95%] overflow-hidden"
+    >
+      <div
+        class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
+      >
+        <div
+          class="text-lg md:text-xl font-semibold text-gray-800 flex flex-wrap justify-center lg:justify-start items-center gap-2"
+        >
+          <span>Made with</span>
+          <i
+            class="fas fa-heart text-custom-orange text-xl animate-heartbeat"
+          ></i>
+          <span>by</span>
+          <a
+            href="https://srummanf.is-a.dev"
+            class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit SRF's portfolio website"
+            >Rumman</a
+          >
+        </div>
+        <a
+          href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-custom-purple text-white rounded-xl font-semibold text-base border-[0.2rem] border-black shadow-[0.35rem_0.35rem_0px_#222] hover:-translate-x-[0.1rem] hover:-translate-y-[0.1rem]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github text-xl"></i>
+          View on GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Data & state
+      let SHEET = {};
+      let progress = JSON.parse(localStorage.getItem("dsaProgress") || "{}");
+      let starred = JSON.parse(localStorage.getItem("dsaStarred") || "{}");
+
+      // Active filters
+      const filters = { star: "all", done: "all" };
+
+      // Load JSON
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const res = await fetch("../data/sheet.json");
+          SHEET = await res.json();
+          renderAll(SHEET);
+          initFilters();
+          updateStats();
+        } catch (e) {
+          console.error("Failed to load sheet.json", e);
+        }
+        setupPdf();
+      });
+
+      // Rendering
+      function renderAll(data) {
+        const wrap = document.getElementById("sheetContainer");
+        wrap.innerHTML = "";
+
+        Object.keys(data).forEach((category) => {
+          const list = data[category] || [];
+          const filteredList = list.filter((q) => {
+            const isStar = !!starred[q.id];
+            const isDone = !!progress[q.id];
+
+            const starOk =
+              filters.star === "all" ||
+              (filters.star === "starred" && isStar) ||
+              (filters.star === "not-starred" && !isStar);
+
+            const doneOk =
+              filters.done === "all" ||
+              (filters.done === "completed" && isDone) ||
+              (filters.done === "not-completed" && !isDone);
+
+            return starOk && doneOk;
+          });
+
+          if (filteredList.length === 0) return;
+
+          const section = document.createElement("section");
+          section.className = "space-y-3";
+
+          section.innerHTML = `
+          <h3 class="font-space text-2xl font-bold">${category}</h3>
+          <div class="overflow-x-auto bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-brutalSm">
+            <table class="w-full border-collapse text-sm md:text-base">
+              <thead class="sticky top-0">
+                <tr>
+                  <th class="bg-custom-purple text-white p-3 text-left border-black">#</th>
+                  <th class="bg-custom-purple text-white p-3 text-left">Problem</th>
+                  <th class="bg-custom-purple text-white p-3">Difficulty</th>
+                  <th class="bg-custom-purple text-white p-3">Done</th>
+                  <th class="bg-custom-purple text-white p-3">Star</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        `;
+
+          const tbody = section.querySelector("tbody");
+          filteredList.forEach((q, idx) => {
+            const isDone = !!progress[q.id];
+            const isStar = !!starred[q.id];
+            const diffClass =
+              q.difficulty?.toLowerCase() === "easy"
+                ? "text-green-700"
+                : q.difficulty?.toLowerCase() === "medium"
+                ? "text-custom-orange"
+                : "text-red-600";
+
+            const tr = document.createElement("tr");
+            tr.className = "border-b border-black bg-white/60 hover:bg-white";
+            tr.innerHTML = `
+            <td class="p-3 font-semibold">${idx + 1}</td>
+            <td class="p-3">
+              <a href="${q.link}" target="_blank"
+                 class="text-custom-purple font-semibold hover:underline">${
+                   q.name
+                 }</a>
+            </td>
+            <td class="p-3 text-center font-bold ${diffClass}">${
+              q.difficulty || "-"
+            }</td>
+            <td class="p-3 text-center">
+              <input type="checkbox" data-id="${q.id}" ${
+              isDone ? "checked" : ""
+            }
+                     class="w-5 h-5 rounded" style="accent-color:#6c62ff">
+            </td>
+            <td class="p-3 text-center">
+              <i class="fa-star ${
+                isStar ? "fas starred" : "far"
+              } cursor-pointer text-xl" data-star="${q.id}"></i>
+            </td>
+          `;
+            tbody.appendChild(tr);
+          });
+
+          wrap.appendChild(section);
+        });
+
+        attachRowHandlers();
+      }
+
+      function attachRowHandlers() {
+        // Done
+        document
+          .querySelectorAll("input[type='checkbox'][data-id]")
+          .forEach((cb) => {
+            cb.addEventListener("change", (e) => {
+              const id = e.target.dataset.id;
+              progress[id] = e.target.checked;
+              localStorage.setItem("dsaProgress", JSON.stringify(progress));
+              updateStats();
+            });
+          });
+        // Star
+        document.querySelectorAll("i[data-star]").forEach((icon) => {
+          icon.addEventListener("click", (e) => {
+            const id = e.target.dataset.star;
+            if (starred[id]) {
+              delete starred[id];
+              e.target.classList.remove("fas", "starred");
+              e.target.classList.add("far");
+            } else {
+              starred[id] = true;
+              e.target.classList.remove("far");
+              e.target.classList.add("fas", "starred");
+            }
+            localStorage.setItem("dsaStarred", JSON.stringify(starred));
+            updateStats();
+          });
+        });
+      }
+
+      // Filters UI
+      function initFilters() {
+        document.querySelectorAll("[data-seg]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const group = btn.dataset.seg;
+            const val = btn.dataset.val;
+            filters[group] = val;
+
+            // toggle active styles
+            document
+              .querySelectorAll(`[data-seg="${group}"]`)
+              .forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            renderAll(SHEET);
+          });
+        });
+      }
+
+      // Stats
+      function updateStats() {
+        const flat = Object.values(SHEET).flat();
+        const total = flat.length;
+        const done = flat.filter((q) => progress[q.id]).length;
+        const star = flat.filter((q) => starred[q.id]).length;
+
+        document.getElementById("statTotal").textContent = total;
+        document.getElementById("statDone").textContent = done;
+        document.getElementById("statRemain").textContent = Math.max(
+          total - done,
+          0
+        );
+        document.getElementById("statStar").textContent = star;
+      }
+
+      // PDF (multi-page, with uniform margins)
+      function setupPdf() {
+        document
+          .getElementById("downloadBtn")
+          .addEventListener("click", async () => {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF("p", "pt", "a4");
+
+            const pageW = pdf.internal.pageSize.getWidth();
+            const pageH = pdf.internal.pageSize.getHeight();
+            const margin = 36; // 0.5in margin on all sides
+            const usableW = pageW - margin * 2;
+            const usableH = pageH - margin * 2;
+
+            const node = document.getElementById("pdfArea");
+
+            const canvas = await html2canvas(node, {
+              scale: 2,
+              backgroundColor: "#ffffff",
+              useCORS: true,
+            });
+            const imgData = canvas.toDataURL("image/png");
+
+            const imgW = usableW; // fit width
+            const imgH = (canvas.height * imgW) / canvas.width; // scaled height
+
+            let heightLeft = imgH;
+            let position = margin;
+
+            // first page
+            pdf.addImage(imgData, "PNG", margin, position, imgW, imgH);
+            heightLeft -= usableH;
+
+            // overflow pages
+            while (heightLeft > 0) {
+              pdf.addPage();
+              position = margin - (imgH - heightLeft);
+              pdf.addImage(imgData, "PNG", margin, position, imgW, imgH);
+              heightLeft -= usableH;
+            }
+
+            pdf.save("DSA-Sheet.pdf");
+          });
+      }
+
+      function updateStats() {
+        const flat = Object.values(SHEET).flat();
+        const total = flat.length;
+        const done = flat.filter((q) => progress[q.id]).length;
+        const star = flat.filter((q) => starred[q.id]).length;
+
+        document.getElementById("statTotal").textContent = total;
+        document.getElementById("statDone").textContent = done;
+        document.getElementById("statRemain").textContent = Math.max(
+          total - done,
+          0
+        );
+        document.getElementById("statStar").textContent = star;
+
+        // Progress bar
+        const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+        const bar = document.getElementById("progressBar");
+        bar.style.width = percent + "%";
+        bar.textContent = percent + "%";
+      }
+    </script>
+  </body>
+</html>
