@@ -1,20 +1,25 @@
 {
   "YouTube Channels": [
-    { "name": "Take U Forward", "link": "https://www.youtube.com/@takeUforward" },
-    { "name": "Errichto", "link": "https://www.youtube.com/@Errichto" },
-    { "name": "freeCodeCamp DSA", "link": "https://www.youtube.com/watch?v=bum_19loj9A" }
+    { "name": "Take U Forward - Striver", "link": "https://www.youtube.com/@takeUforward" },
+    { "name": "CodeStory With MIK", "link": "https://www.youtube.com/@codestorywithMIK" },
+    { "name": "Abdul Bari", "link": "https://www.youtube.com/@abdulbari" }  
   ],
   "GitHub Repositories": [
-    { "name": "awesome-dsa-resources", "link": "https://github.com/kunal-kushwaha/DSA-Bootcamp-Java" },
-    { "name": "Striver Sheet Solutions", "link": "https://github.com/striver79/StriversSheet" }
+    { "name": "Rumi's Repo", "link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice" },
+    { "name": "Company Wise Problems - Repo 1", "link": "https://github.com/liquidslr/leetcode-company-wise-problems" },
+    { "name": "Company Wise Problems - Repo 2", "link": "https://github.com/xizhang20181005/Leetcode_company_frequency/" },
+    { "name": "Company Wise Problems - Repo 3", "link": "https://github.com/hxu296/leetcode-company-wise-problems-2022" },
+    { "name": "Awesome Algorithms", "link": "https://github.com/tayllan/awesome-algorithms" },
+    { "name": "Amazon SDE Prep", "link": "https://github.com/FazeelUsmani/Amazon-SDE-Preparation" }
   ],
   "Online Blogs": [
     { "name": "GeeksforGeeks", "link": "https://www.geeksforgeeks.org" },
-    { "name": "CP-Algorithms", "link": "https://cp-algorithms.com" }
+    { "name": "CP-Algorithms", "link": "https://cp-algorithms.com/index.html" }
   ],
   "Websites": [
     { "name": "LeetCode", "link": "https://leetcode.com" },
     { "name": "Codeforces", "link": "https://codeforces.com" },
-    { "name": "InterviewBit", "link": "https://www.interviewbit.com" }
+    { "name": "InterviewBit", "link": "https://www.interviewbit.com" },
+    { "name": "Algo Monster", "link": "https://algo.monster/problems/roadmap" }
   ]
 }
