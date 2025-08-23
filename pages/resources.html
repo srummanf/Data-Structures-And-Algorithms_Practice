@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css/squiggle-anim.css"/>
-    <link rel="stylesheet" href="/css/customcursor.css">
+    <link rel="stylesheet" href="../css/squiggle-anim.css" />
+    <link rel="stylesheet" href="/css/customcursor.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -43,7 +43,7 @@
         transform: translate(-0.5rem, -0.5rem);
         box-shadow: 0.8rem 0.8rem 0px #000 !important;
       }
-      
+
       .neo-brutalist {
         border: 4px solid #000;
         box-shadow: 8px 8px 0 #000;
@@ -73,13 +73,18 @@
       }
 
       .resource-link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
         transition: left 0.5s;
       }
 
@@ -100,8 +105,13 @@
       }
 
       @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
       }
 
       .gradient-text {
@@ -143,7 +153,7 @@
           <!-- Active/Current page - pushed down with darker tone -->
           <a
             href="./companies.html"
-            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block"
           >
             Companies
           </a>
@@ -151,7 +161,7 @@
         <li>
           <a
             href="./ds-algo.html"
-            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block"
           >
             DS & Algo
           </a>
@@ -159,7 +169,7 @@
         <li>
           <a
             href="./resources.html"
-            class="neo-brutalist-active bg-lime-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist-active bg-lime-400 text-black font-bold py-2 px-4 block"
           >
             Resources
           </a>
@@ -167,7 +177,7 @@
         <li>
           <a
             href="./sheet.html"
-            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-orange-400 text-black font-bold py-2 px-4 block"
           >
             DSA Sheet
           </a>
@@ -175,7 +185,7 @@
         <li>
           <a
             href="./blogs.html"
-            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block"
           >
             Blogs
           </a>
@@ -301,13 +311,22 @@
 
         <!-- Right -->
         <div class="flex gap-6">
-          <a href="./pages/legal/terms.html" class="hover:text-custom-purple transition-colors">
+          <a
+            href="./pages/legal/terms.html"
+            class="hover:text-custom-purple transition-colors"
+          >
             Terms of Service
           </a>
-          <a href="./pages/legal/mit.html" class="hover:text-custom-purple transition-colors">
+          <a
+            href="./pages/legal/mit.html"
+            class="hover:text-custom-purple transition-colors"
+          >
             License
           </a>
-          <a href="./pages/legal/privacy.html" class="hover:text-custom-purple transition-colors">
+          <a
+            href="./pages/legal/privacy.html"
+            class="hover:text-custom-purple transition-colors"
+          >
             Privacy Policy
           </a>
           <a
@@ -322,6 +341,7 @@
           </a>
         </div>
       </div>
+    </footer>
 
     <script>
       const categoryIcons = {
@@ -330,18 +350,18 @@
         "Practice Platforms": "fas fa-code",
         "Learning Websites": "fas fa-graduation-cap",
         "Books & PDFs": "fas fa-book",
-        "Interactive Learning": "fas fa-laptop-code"
+        "Interactive Learning": "fas fa-laptop-code",
       };
 
       const categoryColors = [
         "bg-red-400",
-        "bg-blue-400", 
+        "bg-blue-400",
         "bg-green-400",
         "bg-yellow-400",
         "bg-purple-400",
         "bg-pink-400",
         "bg-indigo-400",
-        "bg-cyan-400"
+        "bg-cyan-400",
       ];
 
       async function loadResources() {
@@ -369,7 +389,7 @@
         Object.keys(data).forEach((category, index) => {
           const block = document.createElement("div");
           const colorClass = categoryColors[index % categoryColors.length];
-          
+
           block.className = `brutal-card ${colorClass} border-[0.4rem] border-black rounded-2xl p-6 shadow-[0.4rem_0.4rem_0px_#222] flex flex-col justify-between overflow-hidden relative ${
             spans[i % spans.length]
           }`;
@@ -377,21 +397,25 @@
           // Header with icon and count
           const headerDiv = document.createElement("div");
           headerDiv.className = "flex items-start justify-between mb-6";
-          
+
           const titleDiv = document.createElement("div");
           titleDiv.className = "flex items-center gap-3";
-          
+
           const icon = document.createElement("i");
-          icon.className = `${categoryIcons[category] || 'fas fa-star'} text-2xl category-icon`;
-          
+          icon.className = `${
+            categoryIcons[category] || "fas fa-star"
+          } text-2xl category-icon`;
+
           const title = document.createElement("h3");
-          title.className = "font-space text-xl lg:text-2xl font-black leading-tight";
+          title.className =
+            "font-space text-xl lg:text-2xl font-black leading-tight";
           title.innerText = category;
-          
+
           const countBadge = document.createElement("span");
-          countBadge.className = "count-badge text-white text-xs font-bold px-3 py-1 rounded-full border-2 border-black shadow-sm";
+          countBadge.className =
+            "count-badge text-white text-xs font-bold px-3 py-1 rounded-full border-2 border-black shadow-sm";
           countBadge.innerText = data[category].length;
-          
+
           titleDiv.appendChild(icon);
           titleDiv.appendChild(title);
           headerDiv.appendChild(titleDiv);
@@ -401,33 +425,38 @@
           // Links container with better spacing
           const linksContainer = document.createElement("div");
           linksContainer.className = "flex-1 space-y-3";
-          
+
           data[category].forEach((item, linkIndex) => {
             const linkElement = document.createElement("a");
             linkElement.href = item.link;
             linkElement.target = "_blank";
             linkElement.className = `resource-link block bg-white/90 backdrop-blur border-2 border-black rounded-lg px-4 py-3 font-semibold text-gray-900 shadow-[0.2rem_0.2rem_0px_#222] hover:shadow-[0.3rem_0.3rem_0px_#222] hover-lift group`;
-            
+
             linkElement.innerHTML = `
               <div class="flex items-center justify-between">
                 <span class="group-hover:text-black transition-colors">${item.name}</span>
                 <i class="fas fa-external-link-alt text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
               </div>
             `;
-            
+
             // Add stagger animation
-            linkElement.style.animationDelay = `${(index * 0.1) + (linkIndex * 0.05)}s`;
-            
+            linkElement.style.animationDelay = `${
+              index * 0.1 + linkIndex * 0.05
+            }s`;
+
             linksContainer.appendChild(linkElement);
           });
-          
+
           block.appendChild(linksContainer);
 
           // Add decorative elements for larger cards
-          if (spans[i % spans.length].includes('col-span-2') || spans[i % spans.length].includes('row-span-2')) {
+          if (
+            spans[i % spans.length].includes("col-span-2") ||
+            spans[i % spans.length].includes("row-span-2")
+          ) {
             const decoration = document.createElement("div");
             decoration.className = "absolute top-4 right-4 opacity-10 text-6xl";
-            
+
             block.appendChild(decoration);
           }
 
@@ -441,20 +470,20 @@
       // Add scroll-triggered animations
       const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
       };
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
+            entry.target.style.animationPlayState = "running";
           }
         });
       }, observerOptions);
 
       // Observe cards when they're added to the DOM
       setTimeout(() => {
-        document.querySelectorAll('.brutal-card').forEach(card => {
+        document.querySelectorAll(".brutal-card").forEach((card) => {
           observer.observe(card);
         });
       }, 100);
