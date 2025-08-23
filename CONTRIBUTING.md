@@ -1,84 +1,147 @@
 # Contributing Guidelines
 
-Thank you for your interest in contributing to our Data Structures and Algorithms, SQL, Data Analysis & Data Science Interview Practice repository! 🚀
+Thank you for your interest in contributing to **DSA Atlas**. This project brings together resources for Data Structures and Algorithms, Aptitude, SQL, Data Analytics, Machine Learning, and Interview Preparation. Contributions from the community play a vital role in keeping the repository accurate, useful, and up to date.
 
-## 📋 Table of Contents
+This document outlines how you can contribute, the types of contributions we welcome, and the standards we ask contributors to follow.
 
-* [Getting Started](#getting-started)
-* [Types of Contributions](#types-of-contributions)
-* [Adding Companies and Problems](#adding-companies-and-problems)
-* [Bug Fixes and Page Improvements](#bug-fixes-and-page-improvements)
-* [Submission Guidelines](#submission-guidelines)
-* [Code Style Guidelines](#code-style-guidelines)
+---
 
-## 🚀 Getting Started
+## Table of Contents
 
-### Fork and Clone the Repository
+- [Contributing Guidelines](#contributing-guidelines)
+  - [Table of Contents](#table-of-contents)
+  - [Ways You Can Contribute](#ways-you-can-contribute)
+  - [Contribution Workflow](#contribution-workflow)
+  - [Standards and Best Practices](#standards-and-best-practices)
+  - [JSON Style Guidelines](#json-style-guidelines)
+    - [General Rules](#general-rules)
+    - [Example: Adding a Problem to an Existing Company](#example-adding-a-problem-to-an-existing-company)
+    - [Example: Adding a New Company](#example-adding-a-new-company)
+    - [Required Fields Checklist](#required-fields-checklist)
+  - [Contribution Workflow](#contribution-workflow-1)
+  - [Pull Request Checklist](#pull-request-checklist)
+  - [Getting Help](#getting-help)
+  - [License](#license)
 
-```bash
-# Fork the repository on GitHub first, then clone your fork
-git clone https://github.com/YOUR_USERNAME/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice.git
+---
 
-# Navigate to the project directory
-cd Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice
+## Ways You Can Contribute
 
-# Add the original repository as upstream
-git remote add upstream https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice.git
+We welcome contributions in several forms, including but not limited to:
 
-# Verify remotes
-git remote -v
-```
+* **Adding New Study Materials and Resources**
+  Upload structured notes, curated PDFs, or links to reputable study content.
 
-## 📝 Types of Contributions
+* **Improving Existing Content and Documentation**
+  Refine explanations, fix formatting issues, enhance examples, or expand coverage where details are missing.
 
-| Contribution Type           | Description                          | File Location             |
-| --------------------------- | ------------------------------------ | ------------------------- |
-| **Adding Companies**  | Add new company with problems        | `data/companyTags.json` |
-| **Adding Problems**   | Add problems to existing companies   | `data/companyTags.json` |
-| **Bug Fixes**         | Fix issues in existing code/content  | Various files             |
-| **Documentation**     | Improve README, guides, explanations | Markdown files            |
-| **Page Improvements** | Enhance UI/UX, formatting            | HTML/CSS files            |
+* **Submitting Bug Fixes and Enhancements**
+  Address broken links, correct malformed data, remove duplicates, and suggest improvements to scripts or the website.
 
-## 🏢 Adding Companies and Problems
+* **Following Code and Content Standards**
+  Ensure new material follows consistent naming, formatting, and structural guidelines to maintain clarity across the repository.
 
-### Step 1: Check if Company Exists
+---
 
-Before adding a new problem, search for the company in [`data/companyTags.json`](https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/data/companyTags.json)
+## Contribution Workflow
 
-```bash
-# Search for company in the JSON file
-grep -i "company_name" data/companyTags.json
-```
+1. **Fork the Repository**
+   Begin by forking the repository to your own GitHub account.
 
-### Step 2a: Adding Problem to Existing Company
+2. **Clone Your Fork**
 
-If the company exists, add your problem in this exact format:
+   ```bash
+   git clone https://github.com/<your-username>/dsahub.git
+   cd dsahub
+   ```
+
+3. **Create a Branch**
+   Use descriptive branch names to clearly indicate the purpose of your changes.
+
+   ```bash
+   git checkout -b add-resource-dynamic-programming
+   git checkout -b fix-broken-link-sql-notes
+   ```
+
+4. **Make Your Changes**
+
+   * Add new content or update existing files.
+   * Test locally where applicable (scripts, JSON validation, etc.).
+
+5. **Commit Your Work**
+   Write meaningful commit messages:
+
+   ```bash
+   git commit -m "Add new dynamic programming problems to DSA section"
+   git commit -m "Fix broken YouTube link in company-wise questions"
+   ```
+
+6. **Push to Your Fork and Submit a Pull Request**
+
+   ```bash
+   git push origin your-branch-name
+   ```
+
+   Then open a Pull Request (PR) against the main repository’s `main` branch.
+
+---
+
+## Standards and Best Practices
+
+* **File Organization**
+  Place new files in the correct directory (`Aptitude/`, `SQL/`, `Data Structures and Algorithms/`, etc.).
+
+* **Content Consistency**
+
+  * Use consistent formatting for markdown, JSON, and code.
+  * For problem sets, include all required fields (e.g., problem name, link, intuition, key steps).
+
+* **Code Style**
+
+  * Keep JSON properly formatted and validated.
+  * Use descriptive variable and file names.
+  * Ensure scripts are well-commented.
+
+* **Documentation Quality**
+  All additions should be clear, concise, and helpful to learners. Avoid redundancy where possible.
+
+---
+## JSON Style Guidelines
+
+Since many sections of this repository (such as **company-wise problem sets**) are stored in JSON, contributors must follow these rules for consistency and validation:
+
+### General Rules
+
+* Use **valid JSON syntax** (commas, quotes, and braces properly placed).
+* Maintain **consistent indentation** of two spaces.
+* Use **double quotes** for all keys and values.
+* Do not leave trailing commas at the end of objects or arrays.
+
+### Example: Adding a Problem to an Existing Company
 
 ```json
 {
   "problem_name": "Time Based Key-Value Store",
-  "leetcode_number": "1023",
+  "leetcode_number": "981",
   "leetcode_link": "https://leetcode.com/problems/time-based-key-value-store",
-  "solution_yt_link": "https://algo.monster/liteproblems/1023",
-  "intuition": "",
-  "key_steps": ""
+  "solution_yt_link": "https://www.youtube.com/example",
+  "intuition": "Use a hashmap with timestamps to store values efficiently.",
+  "key_steps": "1. Maintain a map of key -> [(timestamp, value)]\n2. Use binary search to retrieve value <= timestamp."
 }
 ```
 
-### Step 2b: Adding New Company with Problem
-
-If the company doesn't exist, add a new company entry:
+### Example: Adding a New Company
 
 ```json
 {
-  "company_name": [
+  "New Company": [
     {
-      "problem_name": "Problem Name",
-      "leetcode_number": "XXXX",
-      "leetcode_link": "https://leetcode.com/problems/problem-name",
-      "solution_yt_link": "YouTube or solution link",
-      "intuition": "Brief explanation of the approach",
-      "key_steps": "Key steps to solve the problem"
+      "problem_name": "Example Problem",
+      "leetcode_number": "123",
+      "leetcode_link": "https://leetcode.com/problems/example-problem",
+      "solution_yt_link": "https://www.youtube.com/example",
+      "intuition": "Brief explanation of the approach.",
+      "key_steps": "Key steps listed here."
     }
   ]
 }
@@ -86,195 +149,78 @@ If the company doesn't exist, add a new company entry:
 
 ### Required Fields Checklist
 
-When adding a problem, ensure all fields are included:
+* `problem_name` – Exact name from LeetCode.
+* `leetcode_number` – The problem number (numbers only, no `#`).
+* `leetcode_link` – Direct link to the problem.
+* `solution_yt_link` – Link to a video explanation or article.
+* `intuition` – Short description of the main idea (can be empty initially).
+* `key_steps` – Steps to solve the problem (can be empty initially).
 
-* [ ] `problem_name` - Exact name from LeetCode
-* [ ] `leetcode_number` - Problem number from LeetCode
-* [ ] `leetcode_link` - Direct link to LeetCode problem
-* [ ] `solution_yt_link` - YouTube video or solution explanation link
-* [ ] `intuition` - Brief explanation (can be empty initially)
-* [ ] `key_steps` - Key solution steps (can be empty initially)
-
-### Screenshot Requirement
-
- **📸 IMPORTANT** : Attach a screenshot showing the problem exists on the company's interview platform or reliable source for authenticity verification.
-
-**Acceptable Screenshot Sources:**
-
-* LeetCode company tag
-* GeeksforGeeks company problems
-* InterviewBit company section
-* Glassdoor interview experiences
-* Official company coding challenge pages
-
-## 🐛 Bug Fixes and Page Improvements
-
-### Common Areas for Improvement
-
-| Area                          | Description                     | Files Involved            |
-| ----------------------------- | ------------------------------- | ------------------------- |
-| **JSON Formatting**     | Fix malformed JSON syntax       | `data/companyTags.json` |
-| **Broken Links**        | Update dead or incorrect links  | Various JSON/MD files     |
-| **Typos**               | Fix spelling and grammar errors | All text files            |
-| **Duplicate Entries**   | Remove duplicate problems       | `data/companyTags.json` |
-| **Missing Information** | Add missing intuition/key_steps | `data/companyTags.json` |
-
-### Bug Fix Process
-
-1. **Identify the Issue**
-   * [ ] Create an issue describing the bug
-   * [ ] Include steps to reproduce
-   * [ ] Add screenshots if applicable
-2. **Fix the Bug**
-   * [ ] Create a new branch for the fix
-   * [ ] Make necessary changes
-   * [ ] Test your changes locally
-   * [ ] Commit with descriptive message
-
-## 📋 Submission Guidelines
-
-### Branch Naming Convention
+Always validate your JSON before submitting:
 
 ```bash
-# For adding companies/problems
-git checkout -b add-company-[company-name]
-git checkout -b add-problem-[problem-name]
-
-# For bug fixes
-git checkout -b fix-[issue-description]
-
-# For improvements
-git checkout -b improve-[feature-name]
-```
-
-### Commit Message Format
-
-```bash
-# Adding new company
-git commit -m "Add [Company Name] with [X] problems"
-
-# Adding problem to existing company
-git commit -m "Add [Problem Name] to [Company Name]"
-
-# Bug fixes
-git commit -m "Fix [brief description of bug]"
-
-# Improvements
-git commit -m "Improve [what was improved]"
-```
-
-### Pull Request Process
-
-1. **Update Your Fork**
-
-```bash
-# Fetch latest changes from upstream
-git fetch upstream
-git checkout main
-git merge upstream/main
-git push origin main
-```
-
-2. **Create Feature Branch**
-
-```bash
-git checkout -b your-feature-branch
-# Make your changes
-git add .
-git commit -m "Your descriptive commit message"
-git push origin your-feature-branch
-```
-
-3. **Create Pull Request**
-   * [ ] Go to your fork on GitHub
-   * [ ] Click "New Pull Request"
-   * [ ] Fill out the PR template
-   * [ ] Include screenshots for authenticity
-   * [ ] Link any related issues
-
-### Pull Request Checklist
-
-Before submitting your PR, ensure:
-
-* [ ] JSON syntax is valid (use JSON validator)
-* [ ] All required fields are present
-* [ ] Links are working and accessible
-* [ ] No duplicate entries
-* [ ] Screenshot attached for new companies/problems
-* [ ] Commit messages are descriptive
-* [ ] PR description explains the changes clearly
-
-## 📏 Code Style Guidelines
-
-### JSON Formatting Rules
-
-```json
-{
-  "company_name": "Consistent Title Case",
-  "problems": [
-    {
-      "problem_name": "Exact LeetCode Title",
-      "leetcode_number": "Numbers only, no #",
-      "leetcode_link": "https://leetcode.com/problems/exact-url",
-      "solution_yt_link": "Valid URL",
-      "intuition": "Brief, clear explanation",
-      "key_steps": "Numbered or bulleted steps"
-    }
-  ]
-}
-```
-
-### Validation Commands
-
-```bash
-# Validate JSON syntax
 python -m json.tool data/companyTags.json > /dev/null && echo "Valid JSON" || echo "Invalid JSON"
-
-# Check for duplicate problem numbers
-grep -o '"leetcode_number": "[^"]*"' data/companyTags.json | sort | uniq -d
 ```
 
+---
 
-## 🆘 Getting Help
+## Contribution Workflow
 
-### Communication Channels
+1. **Fork and Clone**
 
-| Platform                     | Purpose                       | Link                                                                                                            |
-| ---------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **GitHub Issues**      | Bug reports, feature requests | [Create Issue](https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/issues)     |
-| **GitHub Discussions** | Questions, general discussion | [Discussions](https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/discussions) |
+   ```bash
+   git clone https://github.com/<your-username>/dsahub.git
+   cd dsahub
+   ```
 
-### Common Git Commands Reference
+2. **Create a Branch**
 
-```bash
-# Check status
-git status
+   ```bash
+   git checkout -b add-problem-two-sum
+   ```
 
-# View changes
-git diff
+3. **Make Changes**
 
-# Stage specific files
-git add filename.json
+   * Add or update JSON entries.
+   * Validate your JSON.
 
-# Stage all changes
-git add .
+4. **Commit and Push**
 
-# Commit changes
-git commit -m "Descriptive message"
+   ```bash
+   git commit -m "Add Two Sum problem to Amazon company list"
+   git push origin add-problem-two-sum
+   ```
 
-# Push to your fork
-git push origin branch-name
+5. **Submit a Pull Request**
+   Open a PR against the main branch and explain your changes.
 
-# Update from upstream
-git fetch upstream
-git rebase upstream/main
+---
 
-# Squash commits (interactive rebase)
-git rebase -i HEAD~3
-```
 
-## 📄 License
+## Pull Request Checklist
 
-By contributing to this repository, you agree that your contributions will be licensed under the same license as the project.
+Before submitting a PR, please ensure:
+
+* [ ] JSON and scripts validate without errors.
+* [ ] Links are active and point to reliable sources.
+* [ ] No duplicate problems or resources have been added.
+* [ ] Commit messages are descriptive.
+* [ ] The PR description explains the purpose and scope of changes.
+
+---
+
+## Getting Help
+
+If you encounter issues or have questions about contributing:
+
+* Open an [Issue](../../issues) for bug reports or feature requests.
+* Use [Discussions](../../discussions) for general queries or collaboration.
+
+---
+
+## License
+
+By contributing, you agree that your submissions will be licensed under the same license as this repository. Please review the [LICENSE.md](./LICENSE.md) file for details.
+
 
 
