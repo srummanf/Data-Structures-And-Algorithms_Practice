@@ -11,32 +11,32 @@
     {
       "problem_name": "Max Consecutive Ones III",
       "leetcode_number": "1004",
-      "leetcode_link": "[LeetCode 1004](https://leetcode.com/problems/max-consecutive-ones-iii/)",
-      "solution_yt_link": "[Striver](https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB)",
+      "leetcode_link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB",
       "intuition": "Use sliding window to maximize subarray length by flipping at most `k` zeros. Maintain left pointer when zero count exceeds `k`.",
       "key_steps": "- Expand right pointer- Count zeros- Shrink from left when count > k- Track max window size"
     },
     {
       "problem_name": "Get Equal Substrings Within Budget",
       "leetcode_number": "1208",
-      "leetcode_link": "[LeetCode 1208](https://leetcode.com/problems/get-equal-substrings-within-budget/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D)",
+      "leetcode_link": "https://leetcode.com/problems/get-equal-substrings-within-budget/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D",
       "intuition": "Use sliding window to maximize substring length where cost ≤ maxCost. Expand the window with right pointer, shrink from left when cost exceeds budget. Keep track of longest valid substring.",
       "key_steps": "Expand right pointer and add diff to cost. Shrink left if cost > maxCost. Track max window length"
     },
     {
       "problem_name": "Remove Duplicates from Sorted Array",
       "leetcode_number": "26",
-      "leetcode_link": "[LeetCode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP)",
+      "leetcode_link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+      "solution_yt_link": "https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP",
       "intuition": "Use two pointers to overwrite duplicates in-place. One pointer scans the array while the other keeps track of the position for unique elements. Final index gives count of unique numbers.",
       "key_steps": "Initialize two pointers (i, j). Move j forward. If nums[i] != nums[j], increment i and copy nums[j]. Return i+1 as new length."
     },
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -55,32 +55,32 @@
     {
       "problem_name": "Maximum Points You Can Obtain from Cards",
       "leetcode_number": "1423",
-      "leetcode_link": "[LeetCode 1423](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)",
-      "solution_yt_link": "[Striver](https://www.youtube.com/watch?v=pBWCOCS636U&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=2)",
+      "leetcode_link": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=pBWCOCS636U&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=2",
       "intuition": "Pick cards from either left or right. Precompute sum of first `k` cards, then slide window by removing one from left and adding from right. Keep max of `leftSum + rightSum`.",
       "key_steps": "Precompute `leftSum`, use two pointers `(l = k-1, r = n-1)`, update max each step"
     },
     {
       "problem_name": "Reverse Vowels of a String",
       "leetcode_number": "345",
-      "leetcode_link": "[LeetCode 345](https://leetcode.com/problems/reverse-vowels-of-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
+      "solution_yt_link": "https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj",
       "intuition": "Use two pointers from both ends of the string. Skip non-vowels, and when both pointers are at vowels, swap them. Continue until pointers meet to get the reversed vowels string.",
       "key_steps": "Convert to char array - Use two pointers (l, r) - Skip non-vowels - Swap vowels - Return new string"
     },
     {
       "problem_name": "Max Consecutive Ones III",
       "leetcode_number": "1004",
-      "leetcode_link": "[LeetCode 1004](https://leetcode.com/problems/max-consecutive-ones-iii/)",
-      "solution_yt_link": "[Striver](https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB)",
+      "leetcode_link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB",
       "intuition": "Use sliding window to maximize subarray length by flipping at most `k` zeros. Maintain left pointer when zero count exceeds `k`.",
       "key_steps": "- Expand right pointer- Count zeros- Shrink from left when count > k- Track max window size"
     },
     {
       "problem_name": "Remove Duplicates from Sorted Array",
       "leetcode_number": "26",
-      "leetcode_link": "[LeetCode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP)",
+      "leetcode_link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+      "solution_yt_link": "https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP",
       "intuition": "Use two pointers to overwrite duplicates in-place. One pointer scans the array while the other keeps track of the position for unique elements. Final index gives count of unique numbers.",
       "key_steps": "Initialize two pointers (i, j). Move j forward. If nums[i] != nums[j], increment i and copy nums[j]. Return i+1 as new length."
     }
@@ -89,40 +89,40 @@
     {
       "problem_name": "Longest Substring Without Repeating Characters",
       "leetcode_number": "3",
-      "leetcode_link": "[LeetCode 3](https://leetcode.com/problems/longest-substring-without-repeating-characters/)",
-      "solution_yt_link": "[Striver](https://youtu.be/-zSxTJkcdAo?si=tHnN2i8U9vnm9F7h)",
+      "leetcode_link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "solution_yt_link": "https://youtu.be/-zSxTJkcdAo?si=tHnN2i8U9vnm9F7h",
       "intuition": "Use window `[l, r]` with hashmap storing last seen index. If `s[r]` repeats, move `l` past its last index. Window always has unique chars, update max length.",
       "key_steps": "HashMap for last index, expand `r`, adjust `l` on duplicate, track max length"
     },
     {
       "problem_name": "Max Consecutive Ones III",
       "leetcode_number": "1004",
-      "leetcode_link": "[LeetCode 1004](https://leetcode.com/problems/max-consecutive-ones-iii/)",
-      "solution_yt_link": "[Striver](https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB)",
+      "leetcode_link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB",
       "intuition": "Use sliding window to maximize subarray length by flipping at most `k` zeros. Maintain left pointer when zero count exceeds `k`.",
       "key_steps": "- Expand right pointer- Count zeros- Shrink from left when count > k- Track max window size"
     },
     {
       "problem_name": "Get Equal Substrings Within Budget",
       "leetcode_number": "1208",
-      "leetcode_link": "[LeetCode 1208](https://leetcode.com/problems/get-equal-substrings-within-budget/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D)",
+      "leetcode_link": "https://leetcode.com/problems/get-equal-substrings-within-budget/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D",
       "intuition": "Use sliding window to maximize substring length where cost ≤ maxCost. Expand the window with right pointer, shrink from left when cost exceeds budget. Keep track of longest valid substring.",
       "key_steps": "Expand right pointer and add diff to cost. Shrink left if cost > maxCost. Track max window length"
     },
     {
       "problem_name": "Remove Duplicates from Sorted Array",
       "leetcode_number": "26",
-      "leetcode_link": "[LeetCode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP)",
+      "leetcode_link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+      "solution_yt_link": "https://youtu.be/06ALbFrgIoQ?si=_Y3SjM6wjA0BsysP",
       "intuition": "Use two pointers to overwrite duplicates in-place. One pointer scans the array while the other keeps track of the position for unique elements. Final index gives count of unique numbers.",
       "key_steps": "Initialize two pointers (i, j). Move j forward. If nums[i] != nums[j], increment i and copy nums[j]. Return i+1 as new length."
     },
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -131,8 +131,8 @@
     {
       "problem_name": "Reverse Vowels of a String",
       "leetcode_number": "345",
-      "leetcode_link": "[LeetCode 345](https://leetcode.com/problems/reverse-vowels-of-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
+      "solution_yt_link": "https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj",
       "intuition": "Use two pointers from both ends of the string. Skip non-vowels, and when both pointers are at vowels, swap them. Continue until pointers meet to get the reversed vowels string.",
       "key_steps": "Convert to char array - Use two pointers (l, r) - Skip non-vowels - Swap vowels - Return new string"
     }
@@ -141,8 +141,8 @@
     {
       "problem_name": "Reverse Vowels of a String",
       "leetcode_number": "345",
-      "leetcode_link": "[LeetCode 345](https://leetcode.com/problems/reverse-vowels-of-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
+      "solution_yt_link": "https://youtu.be/pqzvpK8zTHU?si=YcEs1Uh80bE0YYlj",
       "intuition": "Use two pointers from both ends of the string. Skip non-vowels, and when both pointers are at vowels, swap them. Continue until pointers meet to get the reversed vowels string.",
       "key_steps": "Convert to char array - Use two pointers (l, r) - Skip non-vowels - Swap vowels - Return new string"
     }
@@ -151,8 +151,8 @@
     {
       "problem_name": "Max Consecutive Ones III",
       "leetcode_number": "1004",
-      "leetcode_link": "[LeetCode 1004](https://leetcode.com/problems/max-consecutive-ones-iii/)",
-      "solution_yt_link": "[Striver](https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB)",
+      "leetcode_link": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=3E4JBHSLpYk&list=PLgUwDviBIf0q7vrFA_HEWcqRqMpCXzYAL&index=4&pp=iAQB",
       "intuition": "Use sliding window to maximize subarray length by flipping at most `k` zeros. Maintain left pointer when zero count exceeds `k`.",
       "key_steps": "- Expand right pointer- Count zeros- Shrink from left when count > k- Track max window size"
     }
@@ -161,8 +161,8 @@
     {
       "problem_name": "Get Equal Substrings Within Budget",
       "leetcode_number": "1208",
-      "leetcode_link": "[LeetCode 1208](https://leetcode.com/problems/get-equal-substrings-within-budget/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D)",
+      "leetcode_link": "https://leetcode.com/problems/get-equal-substrings-within-budget/",
+      "solution_yt_link": "https://www.youtube.com/watch?v=MF2MgJQuFhA&pp=ygUiZ2V0IGVxdWFsIHN1YnN0cmluZ3Mgd2l0aGluIGJ1ZGdldA%3D%3D",
       "intuition": "Use sliding window to maximize substring length where cost ≤ maxCost. Expand the window with right pointer, shrink from left when cost exceeds budget. Keep track of longest valid substring.",
       "key_steps": "Expand right pointer and add diff to cost. Shrink left if cost > maxCost. Track max window length"
     }
@@ -171,8 +171,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -181,8 +181,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -191,8 +191,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -201,8 +201,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -211,8 +211,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -221,8 +221,8 @@
     {
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
-      "leetcode_link": "[LeetCode 151](https://leetcode.com/problems/reverse-words-in-a-string/)",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
@@ -232,7 +232,7 @@
       "problem_name": "Reverse Words in a String",
       "leetcode_number": "151",
       "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
-      "solution_yt_link": "[CodeStoryWithMIK](https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj)",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }

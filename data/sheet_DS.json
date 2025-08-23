@@ -38,7 +38,7 @@
     },
     {
       "id": 7,
-      "name": "Longest Subarray of 1’s After Deleting One Element",
+      "name": "Longest Subarray of 1's After Deleting One Element",
       "link": "https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/",
       "difficulty": "Medium"
     },

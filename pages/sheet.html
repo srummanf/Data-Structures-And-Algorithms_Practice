@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../css/squiggle-anim.css" />
-    <link rel="stylesheet" href="/css/customcursor.css">
+    <link rel="stylesheet" href="/css/customcursor.css" />
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -96,6 +96,8 @@
       .tab-btn {
         border-width: 0.4rem;
         transition: all 0.2s ease;
+        min-width: 120px;
+        text-align: center;
       }
       .tab-btn.active {
         background: #6c62ff;
@@ -107,6 +109,37 @@
         background: #d5f9e5;
         transform: translate(-0.1rem, -0.1rem);
         box-shadow: 0.3rem 0.3rem 0 #000;
+      }
+
+      /* Responsive tab container */
+      .tabs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      @media (max-width: 768px) {
+        .tab-btn {
+          font-size: 0.875rem;
+          padding: 0.5rem 0.75rem;
+          min-width: auto;
+        }
+        .tabs-container {
+          gap: 0.5rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .tab-btn {
+          font-size: 0.75rem;
+          padding: 0.5rem;
+          flex: 1 1 calc(50% - 0.25rem);
+          max-width: calc(50% - 0.25rem);
+        }
+        .tabs-container {
+          gap: 0.5rem;
+        }
       }
     </style>
   </head>
@@ -127,16 +160,15 @@
         <li>
           <a
             href="../index.html"
-            class="neo-brutalist bg-yellow-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-yellow-400 text-black font-bold py-2 px-4 block"
           >
             Home
           </a>
         </li>
         <li>
-          <!-- Active/Current page - pushed down with darker tone -->
           <a
             href="./companies.html"
-            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-pink-600 text-black font-bold py-2 px-4 block"
           >
             Companies
           </a>
@@ -144,7 +176,7 @@
         <li>
           <a
             href="./ds-algo.html"
-            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-cyan-400 text-black font-bold py-2 px-4 block"
           >
             DS & Algo
           </a>
@@ -152,7 +184,7 @@
         <li>
           <a
             href="./resources.html"
-            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-lime-400 text-black font-bold py-2 px-4 block"
           >
             Resources
           </a>
@@ -160,7 +192,7 @@
         <li>
           <a
             href="./sheet.html"
-            class="neo-brutalist-active bg-orange-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist-active bg-orange-400 text-black font-bold py-2 px-4 block"
           >
             DSA Sheet
           </a>
@@ -168,7 +200,7 @@
         <li>
           <a
             href="./blogs.html"
-            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block "
+            class="neo-brutalist bg-purple-400 text-black font-bold py-2 px-4 block"
           >
             Blogs
           </a>
@@ -190,20 +222,38 @@
 
     <!-- TABS -->
     <section class="max-w-[95%] mx-auto mt-6">
-      <div class="flex flex-wrap justify-center gap-4 mb-6">
+      <div class="tabs-container mb-6">
         <button
-          class="tab-btn px-6 py-3 bg-white border-black rounded-2xl font-space font-bold text-lg md:text-xl active"
+          class="tab-btn px-4 py-3 bg-white border-black rounded-2xl font-space font-bold text-sm md:text-lg active"
           data-tab="ds"
         >
-          <i class="fa-solid fa-sitemap mr-2 text-custom-orange"></i>
-          Data Structures
+          <i class="fa-solid fa-sitemap mr-1 md:mr-2 text-custom-orange"></i>
+          <span class="hidden sm:inline">Data Structures</span>
+          <span class="sm:hidden">DS</span>
         </button>
         <button
-          class="tab-btn px-6 py-3 bg-white border-black rounded-2xl font-space font-bold text-lg md:text-xl"
+          class="tab-btn px-4 py-3 bg-white border-black rounded-2xl font-space font-bold text-sm md:text-lg"
           data-tab="algo"
         >
-          <i class="fa-solid fa-code-branch mr-2 text-custom-orange"></i>
-          Algorithms
+          <i class="fa-solid fa-code-branch mr-1 md:mr-2 text-custom-orange"></i>
+          <span class="hidden sm:inline">Algorithms</span>
+          <span class="sm:hidden">Algo</span>
+        </button>
+        <button
+          class="tab-btn px-4 py-3 bg-white border-black rounded-2xl font-space font-bold text-sm md:text-lg"
+          data-tab="striver"
+        >
+          <i class="fa-solid fa-list-check mr-1 md:mr-2 text-custom-orange"></i>
+          <span class="hidden sm:inline">Striver SDE</span>
+          <span class="sm:hidden">SDE</span>
+        </button>
+        <button
+          class="tab-btn px-4 py-3 bg-white border-black rounded-2xl font-space font-bold text-sm md:text-lg"
+          data-tab="neetcode"
+        >
+          <i class="fa-solid fa-code mr-1 md:mr-2 text-custom-orange"></i>
+          <span class="hidden sm:inline">NeetCode 75</span>
+          <span class="sm:hidden">NC75</span>
         </button>
       </div>
     </section>
@@ -220,26 +270,26 @@
           <div class="font-space text-lg md:text-xl font-bold">
             <span id="currentTabName">Data Structures</span> Progress
           </div>
-          <div class="flex gap-3 md:gap-6 text-sm md:text-base">
+          <div class="flex gap-2 md:gap-6 text-xs md:text-base flex-wrap">
             <div
-              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+              class="px-2 md:px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
             >
               <span id="statTotal">0</span> Total
             </div>
             <div
-              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+              class="px-2 md:px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
             >
-              <span id="statDone">0</span> Completed
+              <span id="statDone">0</span> Done
             </div>
             <div
-              class="px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
+              class="px-2 md:px-3 py-1 bg-custom-green border-[0.3rem] border-black rounded-xl font-semibold"
             >
-              <span id="statRemain">0</span> Remaining
+              <span id="statRemain">0</span> Left
             </div>
             <div
-              class="px-3 py-1 bg-custom-orange text-white border-[0.3rem] border-black rounded-xl font-semibold"
+              class="px-2 md:px-3 py-1 bg-custom-orange text-white border-[0.3rem] border-black rounded-xl font-semibold"
             >
-              <span id="statStar">0</span> Starred
+              <span id="statStar">0</span> Star
             </div>
           </div>
         </div>
@@ -261,9 +311,11 @@
       <!-- Export -->
       <button
         id="downloadBtn"
-        class="justify-self-end px-5 py-3 bg-custom-purple text-white font-semibold border-[0.4rem] border-black rounded-2xl shadow-brutal hover:-translate-x-[.12rem] hover:-translate-y-[.12rem] transition"
+        class="justify-self-end px-4 md:px-5 py-3 bg-custom-purple text-white font-semibold border-[0.4rem] border-black rounded-2xl shadow-brutal hover:-translate-x-[.12rem] hover:-translate-y-[.12rem] transition text-sm md:text-base"
       >
-        <i class="fa-solid fa-file-arrow-down mr-2"></i> Export PDF
+        <i class="fa-solid fa-file-arrow-down mr-1 md:mr-2"></i>
+        <span class="hidden sm:inline">Export PDF</span>
+        <span class="sm:hidden">PDF</span>
       </button>
     </section>
 
@@ -273,28 +325,31 @@
       <div
         class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm"
       >
-        <div class="font-space font-bold mb-2">Star Filter</div>
-        <div class="inline-flex rounded-xl overflow-hidden">
+        <div class="font-space font-bold mb-2 text-sm md:text-base">Star Filter</div>
+        <div class="inline-flex rounded-xl overflow-hidden w-full md:w-auto">
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold active"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold active flex-1 md:flex-none text-xs md:text-sm"
             data-seg="star"
             data-val="all"
           >
             All
           </button>
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm"
             data-seg="star"
             data-val="starred"
           >
-            <i class="fa-solid fa-star mr-1 text-yellow-400"></i>Starred
+            <i class="fa-solid fa-star mr-1 text-yellow-400"></i>
+            <span class="hidden sm:inline">Starred</span>
+            <span class="sm:hidden">Star</span>
           </button>
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm"
             data-seg="star"
             data-val="not-starred"
           >
-            Not Starred
+            <span class="hidden sm:inline">Not Starred</span>
+            <span class="sm:hidden">None</span>
           </button>
         </div>
       </div>
@@ -303,28 +358,31 @@
       <div
         class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm"
       >
-        <div class="font-space font-bold mb-2">Completion Filter</div>
-        <div class="inline-flex rounded-xl overflow-hidden">
+        <div class="font-space font-bold mb-2 text-sm md:text-base">Completion Filter</div>
+        <div class="inline-flex rounded-xl overflow-hidden w-full md:w-auto">
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold active"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold active flex-1 md:flex-none text-xs md:text-sm"
             data-seg="done"
             data-val="all"
           >
             All
           </button>
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm"
             data-seg="done"
             data-val="completed"
           >
-            <i class="fa-solid fa-check mr-1"></i>Completed
+            <i class="fa-solid fa-check mr-1"></i>
+            <span class="hidden sm:inline">Completed</span>
+            <span class="sm:hidden">Done</span>
           </button>
           <button
-            class="seg-btn px-4 py-2 border-black bg-white font-semibold"
+            class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm"
             data-seg="done"
             data-val="not-completed"
           >
-            Not Completed
+            <span class="hidden sm:inline">Not Completed</span>
+            <span class="sm:hidden">Todo</span>
           </button>
         </div>
       </div>
@@ -333,439 +391,11 @@
     <!-- SHEET (PDF area) -->
     <main
       id="pdfArea"
-      class="max-w-[95%] mx-auto mt-6 space-y-8 bg-white border-[0.4rem] border-black rounded-2xl p-5 md:p-8 shadow-brutal"
+      class="max-w-[95%] mx-auto mt-6 space-y-8 bg-white border-[0.4rem] border-black rounded-2xl p-3 md:p-8 shadow-brutal"
     >
-      <div id="sheetContainer" class="space-y-10"><!-- populated by JS --></div>
+      <div id="sheetContainer" class="space-y-6 md:space-y-10"><!-- populated by JS --></div>
     </main>
 
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer
-      class="relative bg-custom-green border-[0.3rem] border-black rounded-2xl mx-auto my-12 p-10 text-center shadow-[0.5rem_0.5rem_0px_#222] max-w-[95%] overflow-hidden"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-        <!-- Branding -->
-        <div class="space-y-3">
-          <h3 class="font-space text-2xl font-bold text-black">
-            SRF Resources
-          </h3>
-          <p class="text-lg font-semibold text-gray-800">
-            Made with
-            <i class="fas fa-heart text-custom-orange animate-heartbeat"></i> by
-            <a
-              href="https://srummanf.is-a.dev"
-              class="squiggle-underline font-bold transition-all duration-200 px-2 py-1 rounded bg-custom-purple text-white hover:bg-transparent hover:text-custom-purple hover:-translate-y-[0.1rem] no-underline transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit SRF's portfolio website"
-              >Rumman</a
-            >
-          </p>
-        </div>
-
-        <!-- Resource Links -->
-        <div class="space-y-3">
-          <h3 class="font-space text-xl font-bold text-black">Resources</h3>
-          <ul class="space-y-2 text-lg font-medium">
-            <li>
-              <a
-                href="#"
-                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-                >Aptitude</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-                >Machine Learning</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="inline-block px-3 py-1 bg-white rounded-md border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-                >SQL</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="space-y-3">
-          <h3 class="font-space text-xl font-bold text-black">Contact</h3>
-          <div class="flex flex-wrap gap-3 mt-3">
-            <a
-              href="mailto:rummanfardeen4567@gmail.com"
-              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-            >
-              <i class="fas fa-envelope"></i> Mail
-            </a>
-            <a
-              href="https://instagram.com/"
-              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-              target="_blank"
-            >
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a
-              href="https://linkedin.com/"
-              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a
-              href="https://twitter.com/"
-              class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border-[0.2rem] border-black shadow-[0.25rem_0.25rem_0px_#222] hover:bg-custom-purple hover:text-white transition-transform hover:-translate-y-[0.1rem]"
-              target="_blank"
-            >
-              <i class="fab fa-twitter"></i> Twitter
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div
-        class="mt-10 border-t-[0.2rem] border-black pt-4 flex flex-col md:flex-row justify-between items-center text-sm font-semibold px-6"
-      >
-        <!-- Left -->
-        <p class="mb-2 md:mb-0">© 2025 Rumman Fardeen. All rights reserved.</p>
-
-        <!-- Right -->
-        <div class="flex gap-6">
-          <a href="./pages/legal/terms.html" class="hover:text-custom-purple transition-colors">
-            Terms of Service
-          </a>
-          <a href="./pages/legal/mit.html" class="hover:text-custom-purple transition-colors">
-            License
-          </a>
-          <a href="./pages/legal/privacy.html" class="hover:text-custom-purple transition-colors">
-            Privacy Policy
-          </a>
-          <a
-            href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/"
-            target="_blank"
-            class="hover:text-custom-purple transition-colors"
-          >
-            Source Code
-          </a>
-          <a href="#" class="hover:text-custom-purple transition-colors">
-            Contribution
-          </a>
-        </div>
-      </div>
-
-    <script>
-      // Data & state
-      let SHEET_DS = {};
-      let SHEET_ALGO = {};
-      let currentTab = "ds";
-      let progress = JSON.parse(localStorage.getItem("dsaProgress") || "{}");
-      let starred = JSON.parse(localStorage.getItem("dsaStarred") || "{}");
-
-      // Active filters
-      const filters = { star: "all", done: "all" };
-
-      // Load JSON files
-      document.addEventListener("DOMContentLoaded", async () => {
-        try {
-          // Load both data sources
-          const [dsRes, algoRes] = await Promise.all([
-            fetch("../data/sheet_DS.json").catch(() => ({ json: () => ({}) })),
-            fetch("../data/sheet_A.json").catch(() => ({ json: () => ({}) }))
-          ]);
-          
-          SHEET_DS = await dsRes.json();
-          SHEET_ALGO = await algoRes.json();
-          
-          renderCurrentTab();
-          initTabs();
-          initFilters();
-          updateStats();
-        } catch (e) {
-          console.error("Failed to load sheet data", e);
-          // Fallback to empty data
-          SHEET_DS = {};
-          SHEET_ALGO = {};
-          renderCurrentTab();
-          initTabs();
-          initFilters();
-          updateStats();
-        }
-        setupPdf();
-      });
-
-      // Get current sheet data based on active tab
-      function getCurrentSheet() {
-        return currentTab === "ds" ? SHEET_DS : SHEET_ALGO;
-      }
-
-      // Tab switching
-      function initTabs() {
-        document.querySelectorAll("[data-tab]").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const tab = btn.dataset.tab;
-            if (tab === currentTab) return;
-
-            currentTab = tab;
-
-            // Update tab button states
-            document.querySelectorAll("[data-tab]").forEach((b) => 
-              b.classList.remove("active")
-            );
-            btn.classList.add("active");
-
-            // Update tab name in stats
-            document.getElementById("currentTabName").textContent = 
-              tab === "ds" ? "Data Structures" : "Algorithms";
-
-            // Reset filters to default
-            filters.star = "all";
-            filters.done = "all";
-            document.querySelectorAll("[data-seg]").forEach((b) => 
-              b.classList.remove("active")
-            );
-            document.querySelectorAll("[data-val='all']").forEach((b) => 
-              b.classList.add("active")
-            );
-
-            renderCurrentTab();
-            updateStats();
-          });
-        });
-      }
-
-      // Render current tab
-      function renderCurrentTab() {
-        const data = getCurrentSheet();
-        renderAll(data);
-      }
-
-      // Rendering
-      function renderAll(data) {
-        const wrap = document.getElementById("sheetContainer");
-        wrap.innerHTML = "";
-
-        if (!data || Object.keys(data).length === 0) {
-          wrap.innerHTML = `
-            <div class="text-center py-12">
-              <div class="bg-yellow-100 border-[0.4rem] border-black rounded-2xl p-6 shadow-brutalSm inline-block">
-                <i class="fa-solid fa-exclamation-triangle text-4xl text-custom-orange mb-4"></i>
-                <p class="font-space text-xl font-bold mb-2">No Data Available</p>
-                <p class="text-gray-700">The ${currentTab === "ds" ? "Data Structures" : "Algorithms"} data file could not be loaded.</p>
-              </div>
-            </div>
-          `;
-          return;
-        }
-
-        Object.keys(data).forEach((category) => {
-          const list = data[category] || [];
-          const filteredList = list.filter((q) => {
-            const isStar = !!starred[q.id];
-            const isDone = !!progress[q.id];
-
-            const starOk =
-              filters.star === "all" ||
-              (filters.star === "starred" && isStar) ||
-              (filters.star === "not-starred" && !isStar);
-
-            const doneOk =
-              filters.done === "all" ||
-              (filters.done === "completed" && isDone) ||
-              (filters.done === "not-completed" && !isDone);
-
-            return starOk && doneOk;
-          });
-
-          if (filteredList.length === 0) return;
-
-          const section = document.createElement("section");
-          section.className = "space-y-3";
-
-          section.innerHTML = `
-          <h3 class="font-space text-2xl font-bold">${category}</h3>
-          <div class="overflow-x-auto bg-custom-green border-[0.4rem] border-black rounded-2xl shadow-brutalSm">
-            <table class="w-full border-collapse text-sm md:text-base">
-              <thead class="sticky top-0">
-                <tr>
-                  <th class="bg-custom-purple text-white p-3 text-left border-black">#</th>
-                  <th class="bg-custom-purple text-white p-3 text-left">Problem</th>
-                  <th class="bg-custom-purple text-white p-3">Difficulty</th>
-                  <th class="bg-custom-purple text-white p-3">Done</th>
-                  <th class="bg-custom-purple text-white p-3">Star</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        `;
-
-          const tbody = section.querySelector("tbody");
-          filteredList.forEach((q, idx) => {
-            const isDone = !!progress[q.id];
-            const isStar = !!starred[q.id];
-            const diffClass =
-              q.difficulty?.toLowerCase() === "easy"
-                ? "text-green-700"
-                : q.difficulty?.toLowerCase() === "medium"
-                ? "text-custom-orange"
-                : "text-red-600";
-
-            const tr = document.createElement("tr");
-            tr.className = "border-b border-black bg-white/60 hover:bg-white";
-            tr.innerHTML = `
-            <td class="p-3 font-semibold">${idx + 1}</td>
-            <td class="p-3">
-              <a href="${q.link}" target="_blank"
-                 class="text-custom-purple font-semibold hover:underline">${
-                   q.name
-                 }</a>
-            </td>
-            <td class="p-3 text-center font-bold ${diffClass}">${
-              q.difficulty || "-"
-            }</td>
-            <td class="p-3 text-center">
-              <input type="checkbox" data-id="${q.id}" ${
-              isDone ? "checked" : ""
-            }
-                     class="w-5 h-5 rounded" style="accent-color:#6c62ff">
-            </td>
-            <td class="p-3 text-center">
-              <i class="fa-star ${
-                isStar ? "fas starred" : "far"
-              } cursor-pointer text-xl" data-star="${q.id}"></i>
-            </td>
-          `;
-            tbody.appendChild(tr);
-          });
-
-          wrap.appendChild(section);
-        });
-
-        attachRowHandlers();
-      }
-
-      function attachRowHandlers() {
-        // Done
-        document
-          .querySelectorAll("input[type='checkbox'][data-id]")
-          .forEach((cb) => {
-            cb.addEventListener("change", (e) => {
-              const id = e.target.dataset.id;
-              progress[id] = e.target.checked;
-              localStorage.setItem("dsaProgress", JSON.stringify(progress));
-              updateStats();
-            });
-          });
-        // Star
-        document.querySelectorAll("i[data-star]").forEach((icon) => {
-          icon.addEventListener("click", (e) => {
-            const id = e.target.dataset.star;
-            if (starred[id]) {
-              delete starred[id];
-              e.target.classList.remove("fas", "starred");
-              e.target.classList.add("far");
-            } else {
-              starred[id] = true;
-              e.target.classList.remove("far");
-              e.target.classList.add("fas", "starred");
-            }
-            localStorage.setItem("dsaStarred", JSON.stringify(starred));
-            updateStats();
-          });
-        });
-      }
-
-      // Filters UI
-      function initFilters() {
-        document.querySelectorAll("[data-seg]").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const group = btn.dataset.seg;
-            const val = btn.dataset.val;
-            filters[group] = val;
-
-            // toggle active styles
-            document
-              .querySelectorAll(`[data-seg="${group}"]`)
-              .forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            renderCurrentTab();
-          });
-        });
-      }
-
-      // Stats
-      function updateStats() {
-        const data = getCurrentSheet();
-        const flat = Object.values(data).flat();
-        const total = flat.length;
-        const done = flat.filter((q) => progress[q.id]).length;
-        const star = flat.filter((q) => starred[q.id]).length;
-
-        document.getElementById("statTotal").textContent = total;
-        document.getElementById("statDone").textContent = done;
-        document.getElementById("statRemain").textContent = Math.max(
-          total - done,
-          0
-        );
-        document.getElementById("statStar").textContent = star;
-
-        // Progress bar
-        const percent = total > 0 ? Math.round((done / total) * 100) : 0;
-        const bar = document.getElementById("progressBar");
-        bar.style.width = percent + "%";
-        bar.textContent = percent + "%";
-      }
-
-      // PDF (multi-page, with uniform margins)
-      function setupPdf() {
-        document
-          .getElementById("downloadBtn")
-          .addEventListener("click", async () => {
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF("p", "pt", "a4");
-
-            const pageW = pdf.internal.pageSize.getWidth();
-            const pageH = pdf.internal.pageSize.getHeight();
-            const margin = 36; // 0.5in margin on all sides
-            const usableW = pageW - margin * 2;
-            const usableH = pageH - margin * 2;
-
-            const node = document.getElementById("pdfArea");
-
-            const canvas = await html2canvas(node, {
-              scale: 2,
-              backgroundColor: "#ffffff",
-              useCORS: true,
-            });
-            const imgData = canvas.toDataURL("image/png");
-
-            const imgW = usableW; // fit width
-            const imgH = (canvas.height * imgW) / canvas.width; // scaled height
-
-            let heightLeft = imgH;
-            let position = margin;
-
-            // first page
-            pdf.addImage(imgData, "PNG", margin, position, imgW, imgH);
-            heightLeft -= usableH;
-
-            // overflow pages
-            while (heightLeft > 0) {
-              pdf.addPage();
-              position = margin - (imgH - heightLeft);
-              pdf.addImage(imgData, "PNG", margin, position, imgW, imgH);
-              heightLeft -= usableH;
-            }
-
-            const tabName = currentTab === "ds" ? "Data-Structures" : "Algorithms";
-            pdf.save(`DSA-Sheet-${tabName}.pdf`);
-          });
-      }
-    </script>
+    <script src="../scripts/DSASheet.js"></script>
   </body>
 </html>

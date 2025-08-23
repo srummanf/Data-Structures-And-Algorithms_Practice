@@ -51,10 +51,19 @@ class DSADataExtractor:
         return number_match.group(1) if number_match else "N/A"
     
     def clean_link(self, link: str) -> str:
-        """Clean and validate links"""
+        """Clean and validate links, extract URL from markdown format"""
         if not link or link.strip() in ["---", "*---*", ""]:
             return "N/A"
-        return link.strip()
+        
+        link = link.strip()
+        
+        # Extract URL from markdown link format: [text](URL)
+        markdown_url_match = re.search(r'\[([^\]]*)\]\(([^)]+)\)', link)
+        if markdown_url_match:
+            return markdown_url_match.group(2)  # Return the URL part
+        
+        # If it's already a plain URL, return as is
+        return link
     
     def parse_companies(self, company_str: str) -> List[str]:
         """Parse company string and return list of companies"""
@@ -119,8 +128,10 @@ class DSADataExtractor:
                     continue
                 
                 # Extract leetcode number
-                leetcode_number = self.extract_leetcode_number(leetcode_link)
+                leetcode_number = self.extract_leetcode_number(cells[1].strip())  # Use original link for number extraction
                 print(f"   LeetCode Number: {leetcode_number}")
+                print(f"   LeetCode Link: {leetcode_link}")
+                print(f"   Video Link: {video_link}")
                 
                 # Parse companies
                 companies = self.parse_companies(company_str)
@@ -220,7 +231,7 @@ def main():
     # You can customize these paths as needed
     extractor = DSADataExtractor(
         readme_path="../docs/DSA-Sheet-by-SRF.md",
-        output_path="../data/extractedJSON.json"
+        output_path="../data/parsedCompanyTagsFromMyPractice.json"
     )
     
     extractor.extract_and_save()
