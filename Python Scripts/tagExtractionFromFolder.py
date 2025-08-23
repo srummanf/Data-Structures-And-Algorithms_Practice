@@ -1,5 +1,48 @@
-# Script to extract tags from CSV files in company folders and generate a JSON file 
+"""
+LeetCode Company-wise Problems CSV to JSON Converter
 
+This script processes CSV files containing LeetCode problems organized by company
+and converts them into a structured JSON format for easy consumption.
+
+Features:
+- Automatically detects CSV directory structure
+- Fetches LeetCode question IDs from external API
+- Generates structured JSON with problem metadata
+- Includes error handling and progress tracking
+- Creates solution links for algo.monster
+
+Input Structure:
+CompanyCSV/
+├── Company1/
+│   └── 5. All.csv
+├── Company2/
+│   └── 5. All.csv
+└── ...
+
+CSV Format:
+Difficulty | Title | Frequency | Acceptance Rate | Link | Topics
+
+Output: retrievedTags.json
+{
+  "CompanyName": [
+    {
+      "problem_name": "Problem Title",
+      "leetcode_number": "123",
+      "leetcode_link": "https://leetcode.com/problems/problem-title/",
+      "solution_yt_link": "https://algo.monster/liteproblems/123",
+      "intuition": "",
+      "key_steps": ""
+    }
+  ]
+}
+
+Data Source:
+Based on the repository: https://github.com/liquidslr/leetcode-company-wise-problems
+API Endpoint: https://leetcode-api-pied.vercel.app/problem/{problem_name}
+
+Author: Generated for LeetCode problem organization
+Usage: python script.py
+"""
 
 import os
 import csv
@@ -126,7 +169,7 @@ def save_json_file(data, output_file):
 
 def main():
     # Hardcode your filepath here
-    filepath = "CompanyCSV"  # Add your CompanyCSV folder path here
+    filepath = "../Parsed Data/Leetcode Companywise CSV by liquidslr" 
     
     if not filepath:
         print("Please set the 'filepath' variable to your CompanyCSV folder path")

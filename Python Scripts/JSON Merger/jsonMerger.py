@@ -1,6 +1,11 @@
 """
 JSON Merger Script
 Merges two JSON files without duplicates and saves the result as mergedJSON.json
+
+Usage:
+1. Place this script in the same directory. Ensure to add the names of the two JSON files to be merged in the script.
+2. Run the script 
+3. The merged output will be saved as mergedJSON.json
 """
 
 import json
@@ -115,8 +120,7 @@ def main():
     
     # Fixed the filename typo here and use full paths
     jsonPath1 = script_dir / "companyTags.json"
-    jsonPath2 = script_dir / "retrievedTags.json"  # Fixed: was "retreievedTags.json"
-    
+    jsonPath2 = script_dir / "retrievedTags.json"  
     if not jsonPath1 or not jsonPath2:
         print("Error: Please set the jsonPath1 and jsonPath2 variables with your file paths")
         sys.exit(1)
