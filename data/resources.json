@@ -44,6 +44,7 @@
     { "name": "LeetCode", "link": "https://leetcode.com" },
     { "name": "Codeforces", "link": "https://codeforces.com" },
     { "name": "InterviewBit", "link": "https://www.interviewbit.com" },
-    { "name": "Algo Monster", "link": "https://algo.monster/problems/roadmap" }
+    { "name": "Algo Monster", "link": "https://algo.monster/problems/roadmap" },
+    { "name": "Algo USACO", "link": "https://usaco.guide/" }
   ]
 }

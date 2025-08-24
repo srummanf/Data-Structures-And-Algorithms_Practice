@@ -41,3 +41,39 @@
           background-position-x: 20px;
         }
       }
+
+
+/* === Neo-brutalist custom scrollbar === */
+
+/* Firefox */
+* {
+  scrollbar-width: auto;                  /* thick and bold */
+  scrollbar-color: #1570ef #fff;          /* thumb | track */
+}
+
+/* WebKit (Chrome/Edge/Safari/Opera) */
+*::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 3px solid #000;                 /* strong brutalist outline */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #1570ef;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;             /* harsh offset shadow */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #0f63d6;                    /* vivid hover */
+  box-shadow: 6px 6px 0 #000;             /* exaggerated hover shadow */
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: #0a55bd;
+  box-shadow: 2px 2px 0 #000;             /* pressed look */
+}

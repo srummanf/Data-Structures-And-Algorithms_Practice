@@ -20088,47 +20088,72 @@
     }
   ],
   "Honeywell": [
-    {
-      "problem_name": "Minimum Distance to the Target Element",
-      "leetcode_number": "1848",
-      "leetcode_link": "https://leetcode.com/problems/minimum-distance-to-the-target-element/",
-      "solution_yt_link": "https://github.com/fishercoder1534/Leetcode/blob/master/src/main/java/com/fishercoder/solutions/_1848.java",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Minimum Distance to the Target Element",
-      "leetcode_number": "1975",
-      "leetcode_link": "https://leetcode.com/problems/minimum-distance-to-the-target-element",
-      "solution_yt_link": "https://algo.monster/liteproblems/1975",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Count Zero Request Servers",
-      "leetcode_number": "2833",
-      "leetcode_link": "https://leetcode.com/problems/count-zero-request-servers",
-      "solution_yt_link": "https://algo.monster/liteproblems/2833",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Maximum Matrix Sum",
-      "leetcode_number": "2089",
-      "leetcode_link": "https://leetcode.com/problems/maximum-matrix-sum",
-      "solution_yt_link": "https://algo.monster/liteproblems/2089",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Two Sum",
-      "leetcode_number": "1",
-      "leetcode_link": "https://leetcode.com/problems/two-sum",
-      "solution_yt_link": "https://algo.monster/liteproblems/1",
-      "intuition": "",
-      "key_steps": ""
-    }
-  ],
+  {
+    "problem_name": "Minimum Distance to the Target Element",
+    "leetcode_number": "1848",
+    "leetcode_link": "https://leetcode.com/problems/minimum-distance-to-the-target-element/",
+    "solution_yt_link": "https://github.com/fishercoder1534/Leetcode/blob/master/src/main/java/com/fishercoder/solutions/_1848.java",
+    "intuition": "We need to find the index closest to a given start index where the array element equals the target.",
+    "key_steps": "1. Traverse array, check if element equals target. 2. For every match, compute absolute difference with start index. 3. Keep track of minimum difference. 4. Return that minimum."
+  },
+  {
+    "problem_name": "Maximum Matrix Sum",
+    "leetcode_number": "1975",
+    "leetcode_link": "https://leetcode.com/problems/maximum-matrix-sum",
+    "solution_yt_link": "https://algo.monster/liteproblems/1975",
+    "intuition": "We want to maximize the sum of all matrix elements where we can flip signs of elements any number of times. The trick is to make all values positive except possibly one if there are odd negatives.",
+    "key_steps": "1. Track total absolute sum of all elements. 2. Count number of negative elements. 3. Find minimum absolute value in matrix. 4. If negatives count is even, answer = total sum. 5. If odd, subtract twice the smallest absolute element."
+  },
+  {
+    "problem_name": "Count Zero Request Servers",
+    "leetcode_number": "2833",
+    "leetcode_link": "https://leetcode.com/problems/count-zero-request-servers",
+    "solution_yt_link": "https://algo.monster/liteproblems/2833",
+    "intuition": "We must count servers that did not receive any request during the given time window.",
+    "key_steps": "1. Track request timestamps for each server. 2. Use sliding window or binary search to check if requests fall in given window. 3. Count servers with zero valid requests."
+  },
+  {
+    "problem_name": "Maximum Matrix Sum",
+    "leetcode_number": "2089",
+    "leetcode_link": "https://leetcode.com/problems/maximum-matrix-sum",
+    "solution_yt_link": "https://algo.monster/liteproblems/2089",
+    "intuition": "Same as earlier: maximize matrix sum by flipping signs. This problem is essentially a variant of minimizing loss due to odd negatives.",
+    "key_steps": "1. Compute abs sum of all values. 2. Count negatives and track smallest absolute value. 3. Adjust result if negatives count is odd."
+  },
+  {
+    "problem_name": "Two Sum",
+    "leetcode_number": "1",
+    "leetcode_link": "https://leetcode.com/problems/two-sum",
+    "solution_yt_link": "https://algo.monster/liteproblems/1",
+    "intuition": "We need two numbers that sum to target. Hashing avoids O(n²).",
+    "key_steps": "1. Initialize hashmap to store seen numbers and indices. 2. For each number, check if target − num exists in map. 3. If yes, return stored index and current index. 4. Else, insert num into map."
+  },
+  {
+    "problem_name": "Sum of Ceil of Square Roots of Connected Components",
+    "leetcode_number": "-",
+    "leetcode_link": "https://www.geeksforgeeks.org/problems/sum-of-ceil-of-sqrt-of-component-sizes",
+    "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/Honeywell/ConnectedSum.java",
+    "intuition": "Graph connectivity problem: each component size contributes ceil(sqrt(size)) to the result.",
+    "key_steps": "1. Build adjacency list from pairs. 2. Use DFS/BFS to compute sizes of connected components. 3. For each size, compute ceil(sqrt(size)). 4. Sum all contributions."
+  },
+  {
+    "problem_name": "Maximum Subsequence of Ticket Prices with Consecutive Differences",
+    "leetcode_number": "-",
+    "leetcode_link": "https://www.geeksforgeeks.org/problems/longest-consecutive-subsequence/",
+    "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/Honeywell/maxTickets.java",
+    "intuition": "We need the longest subsequence where sorted values form consecutive numbers (difference 0 or 1). This is a longest consecutive subsequence problem.",
+    "key_steps": "1. Insert all ticket values into a hash set. 2. For each number that starts a sequence (num−1 not in set), count consecutive sequence length. 3. Track max length across all sequences. 4. Return max."
+  },
+  {
+    "problem_name": "Final Order of Photos in Album",
+    "leetcode_number": "-",
+    "leetcode_link": "https://www.geeksforgeeks.org/problems/insert-elements-at-given-positions/",
+    "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/Honeywell/photoAlbum.java",
+    "intuition": "We simulate photo insertions by shifting elements when inserting at given positions.",
+    "key_steps": "1. Initialize empty list. 2. Iterate through photos with given positions. 3. Insert photo id at the position (list insertion shifts later elements). 4. After all insertions, return final album list."
+  }
+]
+,
   "Fastenal": [
     {
       "problem_name": "Minimum Window Substring",
@@ -61099,32 +61124,40 @@
       "leetcode_number": "1310",
       "leetcode_link": "https://leetcode.com/problems/watering-plants",
       "solution_yt_link": "https://algo.monster/liteproblems/1310",
-      "intuition": "",
-      "key_steps": ""
+      "intuition": "We simulate the watering process. Each time the can doesn’t have enough water for the next plant, we return to the river to refill.",
+      "key_steps": "1. Iterate through plants. 2. If current water < needed, add the cost of going back and refilling. 3. Otherwise water directly. 4. Track total steps."
     },
     {
       "problem_name": "Two Sum",
       "leetcode_number": "1",
       "leetcode_link": "https://leetcode.com/problems/two-sum",
       "solution_yt_link": "https://algo.monster/liteproblems/1",
-      "intuition": "",
-      "key_steps": ""
+      "intuition": "We need two numbers that sum to target. Use a hashmap to remember numbers we've seen and their indices.",
+      "key_steps": "1. Traverse the array. 2. For each number, check if (target - number) is in hashmap. 3. If yes, return indices. 4. Otherwise store number → index in hashmap."
     },
     {
       "problem_name": "Water Bottles",
       "leetcode_number": "1642",
       "leetcode_link": "https://leetcode.com/problems/water-bottles",
       "solution_yt_link": "https://algo.monster/liteproblems/1642",
-      "intuition": "",
-      "key_steps": ""
+      "intuition": "Drink bottles one by one, exchange empty bottles for new ones as long as possible.",
+      "key_steps": "1. Initialize result with numBottles. 2. While emptyBottles ≥ exchangeRate, exchange them for new bottles. 3. Add new bottles to result. 4. Update emptyBottles count."
     },
     {
       "problem_name": "Minimum Time to Complete Trips",
       "leetcode_number": "2294",
       "leetcode_link": "https://leetcode.com/problems/minimum-time-to-complete-trips",
       "solution_yt_link": "https://algo.monster/liteproblems/2294",
-      "intuition": "",
-      "key_steps": ""
+      "intuition": "Each bus trip time contributes trips proportional to total_time / bus_time. We binary search the minimum total time where sum of trips ≥ required.",
+      "key_steps": "1. Define a function trips(time) that computes total trips possible in given time. 2. Binary search between 1 and max(time)*totalTrips. 3. Find the smallest time with trips ≥ totalTrips."
+    },
+    {
+      "problem_name": "Aggresive Cow",
+      "leetcode_number": "22941",
+      "leetcode_link": "https://www.geeksforgeeks.org/problems/aggressive-cows/1",
+      "solution_yt_link": "https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/",
+      "intuition": "We want to maximize minimum distance between cows. This is a binary search on answer: check if cows can be placed with at least distance D apart.",
+      "key_steps": "1. Sort stall positions. 2. Binary search on possible minimum distance (low=1, high=max-min). 3. For mid distance, greedily place cows and check feasibility. 4. Return largest valid distance."
     }
   ],
   "Visa": [
@@ -70182,47 +70215,88 @@
     }
   ],
   "Deliveroo": [
-    {
-      "problem_name": "Find Words Containing Character",
-      "leetcode_number": "3194",
-      "leetcode_link": "https://leetcode.com/problems/find-words-containing-character",
-      "solution_yt_link": "https://algo.monster/liteproblems/3194",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Search Suggestions System",
-      "leetcode_number": "1397",
-      "leetcode_link": "https://leetcode.com/problems/search-suggestions-system",
-      "solution_yt_link": "https://algo.monster/liteproblems/1397",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Vertical Order Traversal of a Binary Tree",
-      "leetcode_number": "1029",
-      "leetcode_link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree",
-      "solution_yt_link": "https://algo.monster/liteproblems/1029",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Count Number of Nice Subarrays",
-      "leetcode_number": "1370",
-      "leetcode_link": "https://leetcode.com/problems/count-number-of-nice-subarrays",
-      "solution_yt_link": "https://algo.monster/liteproblems/1370",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Remove Invalid Parentheses",
-      "leetcode_number": "301",
-      "leetcode_link": "https://leetcode.com/problems/remove-invalid-parentheses",
-      "solution_yt_link": "https://algo.monster/liteproblems/301",
-      "intuition": "",
-      "key_steps": ""
-    }
-  ],
+  {
+    "problem_name": "Find Words Containing Character",
+    "leetcode_number": "3194",
+    "leetcode_link": "https://leetcode.com/problems/find-words-containing-character",
+    "solution_yt_link": "https://algo.monster/liteproblems/3194",
+    "intuition": "We need to filter words that contain a target character. Straightforward search problem.",
+    "key_steps": "1. Iterate through each word. 2. Check if the target character exists in the word. 3. If yes, add word index to the result."
+  },
+  {
+    "problem_name": "Search Suggestions System",
+    "leetcode_number": "1397",
+    "leetcode_link": "https://leetcode.com/problems/search-suggestions-system",
+    "solution_yt_link": "https://algo.monster/liteproblems/1397",
+    "intuition": "We want to return top lexicographically smallest product suggestions for each prefix of the search word.",
+    "key_steps": "1. Sort product list lexicographically. 2. For each prefix of search word, binary search to find starting index of matching products. 3. Take at most 3 matches and add to result."
+  },
+  {
+    "problem_name": "Vertical Order Traversal of a Binary Tree",
+    "leetcode_number": "1029",
+    "leetcode_link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree",
+    "solution_yt_link": "https://algo.monster/liteproblems/1029",
+    "intuition": "We need to group tree nodes by vertical column index, then sort by row and value.",
+    "key_steps": "1. Perform DFS/BFS traversal storing (col, row, value) for each node. 2. Group values by column index. 3. Sort nodes first by row, then value. 4. Output grouped values in increasing column order."
+  },
+  {
+    "problem_name": "Count Number of Nice Subarrays",
+    "leetcode_number": "1370",
+    "leetcode_link": "https://leetcode.com/problems/count-number-of-nice-subarrays",
+    "solution_yt_link": "https://algo.monster/liteproblems/1370",
+    "intuition": "A nice subarray is one with exactly k odd numbers. Use prefix sum of odd counts with hashmap.",
+    "key_steps": "1. Traverse array, count odd numbers seen so far. 2. For each index, check how many earlier prefixes had count = currentCount − k. 3. Sum up these counts. 4. Use hashmap to store prefix frequencies."
+  },
+  {
+    "problem_name": "Remove Invalid Parentheses",
+    "leetcode_number": "301",
+    "leetcode_link": "https://leetcode.com/problems/remove-invalid-parentheses",
+    "solution_yt_link": "https://algo.monster/liteproblems/301",
+    "intuition": "We need to remove the minimum number of parentheses to make the string valid. This is a BFS/DFS search problem.",
+    "key_steps": "1. Compute min removals of '(' and ')'. 2. Use DFS/Backtracking to generate candidates while skipping extra parentheses. 3. Validate each candidate string. 4. Store only valid strings in result set."
+  },
+  {
+    "problem_name": "Minimum Difference in Spanning Tree",
+    "leetcode_number": "-",
+    "leetcode_link": "https://www.geeksforgeeks.org/problems/minimum-difference-in-spanning-tree/",
+    "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/Deliveroo/DiffOfWeightsinMST.java",
+    "intuition": "We want an MST where the spread between max and min edge weight is minimized. Similar to Kruskal but on weight ranges.",
+    "key_steps": "1. Sort edges by weight. 2. Use sliding window over sorted edges. 3. For each window, try forming MST using only edges inside. 4. If MST spans all nodes, update min(max − min)."
+  },
+  {
+    "problem_name": "Invert Binary Tree",
+    "leetcode_number": "226",
+    "leetcode_link": "https://leetcode.com/problems/invert-binary-tree",
+    "solution_yt_link": "https://algo.monster/liteproblems/226",
+    "intuition": "Classic recursion: swap left and right children at every node.",
+    "key_steps": "1. Base case: if root is null, return null. 2. Swap left and right children. 3. Recursively invert left and right subtrees. 4. Return root."
+  },
+  {
+    "problem_name": "LFU Cache",
+    "leetcode_number": "460",
+    "leetcode_link": "https://leetcode.com/problems/lfu-cache",
+    "solution_yt_link": "https://algo.monster/liteproblems/460",
+    "intuition": "Least Frequently Used cache requires tracking usage count and recency in O(1).",
+    "key_steps": "1. Use hashmap (key→value, freq). 2. Maintain freq→list of keys (ordered by recency). 3. On get/put, increment frequency and update structures. 4. On eviction, remove least freq + least recently used key."
+  },
+  {
+    "problem_name": "LRU Cache",
+    "leetcode_number": "146",
+    "leetcode_link": "https://leetcode.com/problems/lru-cache",
+    "solution_yt_link": "https://algo.monster/liteproblems/146",
+    "intuition": "Evict least recently used element when capacity exceeds. Needs O(1) for get and put.",
+    "key_steps": "1. Use hashmap for key→node. 2. Maintain doubly linked list for recency. 3. On get, move node to head. 4. On put, insert/update at head, and evict tail if capacity full."
+  },
+  {
+    "problem_name": "Reverse Alternate K Nodes in Linked List",
+    "leetcode_number": "-",
+    "leetcode_link": "https://www.geeksforgeeks.org/reverse-alternate-k-nodes-in-a-singly-linked-list/",
+    "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/Deliveroo/RotateNAlternateNodesinLL.java",
+    "intuition": "We reverse nodes in groups of K, but skip every alternate group.",
+    "key_steps": "1. Traverse list in chunks of K. 2. Reverse the first group of K nodes. 3. Skip the next group. 4. Repeat alternately. 5. If last group has < K nodes, reverse remaining nodes."
+  }
+]
+,
   "Rakuten": [
     {
       "problem_name": "Sum of Floored Pairs",
@@ -77837,6 +77911,24 @@
       "solution_yt_link": "https://algo.monster/liteproblems/1666",
       "intuition": "",
       "key_steps": ""
+    }
+  ],
+  "British Telecom": [
+    {
+      "problem_name": "Islands",
+      "leetcode_number": "-",
+      "leetcode_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/British%20Telecom/Islands.py",
+      "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/British%20Telecom/Islands.py",
+      "intuition": "We need to count the number of ways to reach Island N from Island 1, where movement is allowed only from island i to j if i divides j. This naturally forms a DAG where paths can be counted using dynamic programming.",
+      "key_steps": "1. Initialize dp[1] = 1 (only one way to be at Island 1). 2. For each island i from 1 to N, add dp[i] to all multiples of i (j = 2i, 3i, … ≤ N). 3. Final answer is dp[N], the total ways to reach Island N."
+    },
+    {
+      "problem_name": "Tram Ride",
+      "leetcode_number": "-",
+      "leetcode_link": "https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/tram-ride-d7ff3a92/",
+      "solution_yt_link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/My%20Practice%20-%20CompanyWise/British%20Telecom/Tram.java",
+      "intuition": "The tram system is circular, so the cost between two stations can be computed in two ways: clockwise and anti-clockwise. The minimum of the two is the answer.",
+      "key_steps": "1. Compute clockwise cost by summing ticket_cost along the path from start to finish. 2. Compute anti-clockwise cost as total_sum - clockwise_cost. 3. Return min(clockwise_cost, anti_clockwise_cost)."
     }
   ]
 }
