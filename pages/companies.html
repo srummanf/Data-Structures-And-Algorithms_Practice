@@ -77,7 +77,9 @@
   <body class="min-h-screen font-work bg-gray-50">
     <!-- Command+K Search Modal -->
     <div id="commandKModal" class="fixed inset-0 z-[9999] hidden">
-      <div class="fixed inset-0 bg-[rgb(32,32,32)]/70 backdrop-blur-[20px]"></div>
+      <div
+        class="fixed inset-0 bg-[rgb(32,32,32)]/70 backdrop-blur-[20px]"
+      ></div>
       <div class="fixed inset-0 flex items-start justify-center pt-20 px-4">
         <div
           class="search-modal-content w-full max-w-2xl bg-white rounded-2xl border-4 border-black shadow-[0.6rem_0.6rem_0px_#222] overflow-hidden"
@@ -225,7 +227,26 @@
         <p class="text-lg md:text-xl mb-6">
           Select a company to view curated coding interview questions
         </p>
-        <hr class="border-2 border-custom-orange w-[95%] mx-auto mb-6" />
+        <!-- Last commit pill -->
+        <div
+          class="last-commit-pill mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl border-[0.3rem] border-black bg-white shadow-[0.4rem_0.4rem_0px_#222]"
+          aria-live="polite"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 3"></path>
+          </svg>
+          <span class="font-semibold">Last updated on :</span>
+          <span class="last-commit font-bold">Loading…</span>
+        </div>
+        <hr class="border-2 border-custom-orange w-[95%] mx-auto my-4" />
       </div>
 
       <!-- Search Section -->
@@ -330,6 +351,26 @@
     <header
       class="max-w-[95%] h-[75vh] mx-auto mt-8 bg-custom-bg border-[0.6rem] border-black rounded-3xl p-12 shadow-[0.6rem_0.6rem_0px_#ff5400] flex flex-col justify-center items-center text-center"
     >
+      <!-- Last commit pill -->
+      <div
+        class="last-commit-pill mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl border-[0.3rem] border-black bg-white shadow-[0.4rem_0.4rem_0px_#222]"
+        aria-live="polite"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3 3"></path>
+        </svg>
+        <span class="font-semibold">Last updated on :</span>
+        <span class="last-commit font-bold">Loading…</span>
+      </div>
+
       <h2 class="font-space text-4xl md:text-6xl font-bold mb-6">
         More <span class="text-custom-purple">Companies</span> & Problems
       </h2>
@@ -502,7 +543,11 @@
           >
             Source Code
           </a>
-          <a href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/CONTRIBUTING.md" target="_blank" class="hover:text-custom-purple transition-colors">
+          <a
+            href="https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            class="hover:text-custom-purple transition-colors"
+          >
             Contribution
           </a>
         </div>
@@ -683,5 +728,47 @@
       }
     </script>
     <script src="../scripts/smoothscroll.js"></script>
+    <script>
+      const GH_OWNER = "srummanf";
+      const GH_REPO =
+        "Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice";
+
+      async function setLastCommit() {
+        try {
+          const repoResp = await fetch(
+            `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`
+          );
+          const repo = await repoResp.json();
+          const branch = repo.default_branch || "main";
+
+          const resp = await fetch(
+            `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/commits?sha=${branch}&per_page=1`
+          );
+          const [latest] = await resp.json();
+          const iso = latest?.commit?.author?.date;
+          const dt = new Date(iso);
+
+          // Format date + time (example: "24 Aug 2025, 8:35 PM")
+          const formatted = dt.toLocaleString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          document.querySelectorAll(".last-commit").forEach((el) => {
+            el.textContent = formatted;
+            el.title = `Last commit on ${branch}`;
+          });
+        } catch (e) {
+          document.querySelectorAll(".last-commit").forEach((el) => {
+            el.textContent = "Unable to fetch";
+          });
+        }
+      }
+
+      setLastCommit();
+    </script>
   </body>
 </html>
