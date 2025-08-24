@@ -5,6 +5,36 @@
 
 // Java code to implement the approach
 
+/** Minimum Splits to Make Array Non-Decreasing
+
+Problem Statement:
+You are given an array of integers. You can split any element into multiple smaller integers whose sum equals the original element. Find the minimum number of splits needed to make the entire array sorted in non-decreasing order.
+
+Example:
+
+Input: [3, 2, 4]  
+Output: 1  
+
+Explanation:  
+- Split 3 into [1, 2].  
+- Now the array becomes [1, 2, 2, 4], which is non-decreasing.  
+
+
+Intuition:
+To avoid decreasing order, we must ensure each element from right to left is ≤ the next. If not, split it into groups that fit within the next element.
+
+Key Steps:
+
+Start from the last element, move backwards.
+
+If the current element > next, split it into groups small enough so that its largest group ≤ next.
+
+Count splits as (value - 1) / next.
+
+Update next = largest group after split.
+
+Return total splits. */
+
 import java.lang.*;
 import java.util.*;
 

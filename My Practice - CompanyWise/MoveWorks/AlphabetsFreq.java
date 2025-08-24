@@ -1,3 +1,48 @@
+/** 1. Decode Encoded String & Count Frequency
+
+Problem Statement:
+You are given a string that encodes alphabets using the following rules:
+
+Numbers 1–9 represent letters a–i.
+
+Numbers followed by # (e.g., 10# to 26#) represent letters j–z.
+
+A pattern like X(Y) means the letter corresponding to digit X is repeated Y times.
+
+After decoding the string, return the frequency of each character present in the decoded result.
+
+Example:
+
+Input: "12(3)420#2"  
+Output:  
+Decoded String: lllbd  
+Character Frequency:  
+l: 3  
+b: 1  
+d: 1
+
+
+Intuition:
+Work backwards from the string since patterns like 2(40) need look-ahead for repetition. Handle three cases:
+
+Single digit → single character.
+
+Two digits + # → alphabet 10–26.
+
+(count) → expand repetition.
+
+Finally, traverse decoded string to count frequencies.
+
+Key Steps:
+
+Parse from right to left to simplify handling # and () patterns.
+
+Decode digits into letters accordingly.
+
+Build the decoded string.
+
+Traverse decoded string and count character frequencies using a map. */
+
 import java.util.HashMap;
 import java.util.Map;
 

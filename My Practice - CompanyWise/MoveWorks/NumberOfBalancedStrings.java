@@ -14,6 +14,40 @@ n = 2, d = 2
 Output:
 124 */
 
+/** Problem Statement:
+A Balanced String of length n is defined such that the absolute difference between ASCII positions of adjacent characters does not exceed d.
+
+Return the number of distinct balanced strings of length n. Since the answer can be large, return it modulo 1e9+7.
+
+Example 1:
+
+Input: n = 3, d = 3  
+Output: 224
+
+
+Example 2:
+
+Input: n = 2, d = 2  
+Output: 124
+
+
+Intuition:
+Dynamic Programming can be used:
+
+For each position i, try all characters a–z.
+
+From dp[i-1][prev_char], transition to dp[i][curr_char] if |curr_char - prev_char| ≤ d.
+
+Key Steps:
+
+Initialize dp[0][j] = 1 for all letters.
+
+For each position, compute transitions within d range.
+
+Sum all ways at final position.
+
+Apply modulo 1e9+7. */
+
 import java.util.Arrays;
 
 class NumberOfBalancedStrings {
