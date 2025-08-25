@@ -1,11 +1,26 @@
 """
-JSON Merger Script
-Merges two JSON files without duplicates and saves the result as mergedJSON.json
+JSON Merger Script for Company-Grouped LeetCode Problems
+
+This script intelligently merges two JSON files containing company-grouped LeetCode problems without creating duplicates.
+
+Input Format:
+- Two JSON files with structure: {"CompanyName": [{"leetcode_number": "1", "problem_name": "Problem", ...}]}
+
+Merge Logic:
+- Combines arrays from both files for each company
+- Prevents duplicate problems using leetcode_number as unique identifier  
+- When duplicates found, merges item properties preferring non-empty values from first file
+- Maintains order: first file items first, then new items from second file
+
+Key Features:
+- Smart property merging (prefers non-empty values)
+- Duplicate prevention based on leetcode_number
+- Handles missing companies in either file
+- Preserves data integrity during merge process
 
 Usage:
-1. Place this script in the same directory. Ensure to add the names of the two JSON files to be merged in the script.
-2. Run the script 
-3. The merged output will be saved as mergedJSON.json
+Set jsonPath1 and jsonPath2 variables to your file paths.
+Output saved as mergedJSON.json with merge statistics.
 """
 
 import json

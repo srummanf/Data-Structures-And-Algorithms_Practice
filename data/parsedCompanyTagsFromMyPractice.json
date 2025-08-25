@@ -236,5 +236,15 @@
       "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
       "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
     }
+  ],
+  "LALA": [
+    {
+      "problem_name": "Reverse Words in a String",
+      "leetcode_number": "151",
+      "leetcode_link": "https://leetcode.com/problems/reverse-words-in-a-string/",
+      "solution_yt_link": "https://youtu.be/mdej8UiRCkI?si=xm49eZvYoChULKtj",
+      "intuition": "Trim spaces, split words, and reverse their order. Ensure extra spaces are removed and only single spaces remain between words.",
+      "key_steps": "Trim leading/trailing spaces . Split by spaces and filter empty strings  . Reverse the list of words  . Join with single space"
+    }
   ]
 }

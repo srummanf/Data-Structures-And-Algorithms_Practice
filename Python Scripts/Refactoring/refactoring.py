@@ -1,3 +1,30 @@
+"""
+JSON Refactoring Script for LeetCode Problems
+
+This script transforms LeetCode problem data from a flat structure to a company-grouped structure.
+
+Input Format:
+- Reads input.json with structure: {"data": [{"id": 1, "title": "Problem", "slug": "problem", "companies": [{"name": "Google"}]}]}
+
+Output Format:
+- Creates refactoredJSON.json grouped by companies: {"Google": [{"problem_name": "Problem", "leetcode_number": "1", ...}]}
+
+Key Features:
+- Groups problems by company names
+- Removes duplicate problems per company
+- Sorts companies alphabetically and problems by LeetCode number
+- Generates LeetCode URLs from problem slugs
+- Adds placeholder fields for solution links, intuition, and key steps
+
+Usage:
+Place input.json in the same directory and run the script.
+Output will be saved as refactoredJSON.json with processing statistics.
+
+JSON Source:
+https://github.com/seanprashad/leetcode-patterns/blob/main/src/data/questions.json
+"""
+
+
 import json
 import os
 
