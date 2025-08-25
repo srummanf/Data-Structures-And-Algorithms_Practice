@@ -19,14 +19,6 @@
       "key_steps": ""
     },
     {
-      "problem_name": "Spiral Matrix",
-      "leetcode_number": "8",
-      "leetcode_link": "https://leetcode.com/problems/spiral-matrix/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
       "problem_name": "Letter Combinations of a Phone Number",
       "leetcode_number": "25",
       "leetcode_link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
@@ -295,14 +287,6 @@
       "key_steps": ""
     },
     {
-      "problem_name": "Binary Tree Level Order Traversal",
-      "leetcode_number": "122",
-      "leetcode_link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
       "problem_name": "Binary Tree Zigzag Level Order Traversal",
       "leetcode_number": "123",
       "leetcode_link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
@@ -362,6 +346,14 @@
     }
   ],
   "Agoda": [
+    {
+      "problem_name": "Climbing Stairs",
+      "leetcode_number": "29",
+      "leetcode_link": "https://leetcode.com/problems/climbing-stairs/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
     {
       "problem_name": "Best Time to Buy and Sell Stock",
       "leetcode_number": "31",
@@ -1603,6 +1595,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Maximum XOR of Two Numbers in an Array",
+      "leetcode_number": "158",
+      "leetcode_link": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Concatenated Words",
       "leetcode_number": "159",
       "leetcode_link": "https://leetcode.com/problems/concatenated-words/",
@@ -1857,14 +1857,6 @@
       "key_steps": ""
     },
     {
-      "problem_name": "First Missing Positive",
-      "leetcode_number": "11",
-      "leetcode_link": "https://leetcode.com/problems/first-missing-positive/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
       "problem_name": "Longest Consecutive Sequence",
       "leetcode_number": "12",
       "leetcode_link": "https://leetcode.com/problems/longest-consecutive-sequence/",
@@ -1932,14 +1924,6 @@
       "problem_name": "Longest Palindromic Substring",
       "leetcode_number": "38",
       "leetcode_link": "https://leetcode.com/problems/longest-palindromic-substring/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Jump Game",
-      "leetcode_number": "43",
-      "leetcode_link": "https://leetcode.com/problems/jump-game/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -2286,14 +2270,6 @@
       "problem_name": "Maximum Subarray",
       "leetcode_number": "32",
       "leetcode_link": "https://leetcode.com/problems/maximum-subarray/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Palindromic Substrings",
-      "leetcode_number": "44",
-      "leetcode_link": "https://leetcode.com/problems/palindromic-substrings/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -3031,6 +3007,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Search in Rotated Sorted Array II",
+      "leetcode_number": "90",
+      "leetcode_link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Search a 2D Matrix",
       "leetcode_number": "91",
       "leetcode_link": "https://leetcode.com/problems/search-a-2d-matrix/",
@@ -3322,6 +3306,14 @@
       "problem_name": "Design Search Autocomplete System",
       "leetcode_number": "162",
       "leetcode_link": "https://leetcode.com/problems/design-search-autocomplete-system/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Sort Items by Groups Respecting Dependencies",
+      "leetcode_number": "164",
+      "leetcode_link": "https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -3915,6 +3907,14 @@
   ],
   "Cognizant": [
     {
+      "problem_name": "First Missing Positive",
+      "leetcode_number": "11",
+      "leetcode_link": "https://leetcode.com/problems/first-missing-positive/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Maximum Subarray",
       "leetcode_number": "32",
       "leetcode_link": "https://leetcode.com/problems/maximum-subarray/",
@@ -4102,6 +4102,14 @@
       "problem_name": "Maximum Product Subarray",
       "leetcode_number": "36",
       "leetcode_link": "https://leetcode.com/problems/maximum-product-subarray/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Reorganize String",
+      "leetcode_number": "110",
+      "leetcode_link": "https://leetcode.com/problems/reorganize-string/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -4575,14 +4583,6 @@
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
-    },
-    {
-      "problem_name": "Subarray Product Less Than K",
-      "leetcode_number": "152",
-      "leetcode_link": "https://leetcode.com/problems/subarray-product-less-than-k/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
     }
   ],
   "Flipkart": [
@@ -4638,6 +4638,14 @@
       "problem_name": "Course Schedule II",
       "leetcode_number": "115",
       "leetcode_link": "https://leetcode.com/problems/course-schedule-ii/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Two Sum",
+      "leetcode_number": "147",
+      "leetcode_link": "https://leetcode.com/problems/two-sum/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -5018,14 +5026,6 @@
       "problem_name": "Search a 2D Matrix",
       "leetcode_number": "91",
       "leetcode_link": "https://leetcode.com/problems/search-a-2d-matrix/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Minimum Size Subarray Sum",
-      "leetcode_number": "95",
-      "leetcode_link": "https://leetcode.com/problems/minimum-size-subarray-sum/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -6409,6 +6409,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Binary Tree Paths",
+      "leetcode_number": "170",
+      "leetcode_link": "https://leetcode.com/problems/binary-tree-paths/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Maximum Average Subarray I",
       "leetcode_number": "173",
       "leetcode_link": "https://leetcode.com/problems/maximum-average-subarray-i/",
@@ -6923,6 +6931,14 @@
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
+    },
+    {
+      "problem_name": "Gas Station",
+      "leetcode_number": "174",
+      "leetcode_link": "https://leetcode.com/problems/gas-station/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
     }
   ],
   "Instacart": [
@@ -6955,14 +6971,6 @@
   ],
   "Intuit": [
     {
-      "problem_name": "Spiral Matrix",
-      "leetcode_number": "8",
-      "leetcode_link": "https://leetcode.com/problems/spiral-matrix/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
       "problem_name": "Sudoku Solver",
       "leetcode_number": "27",
       "leetcode_link": "https://leetcode.com/problems/sudoku-solver/",
@@ -6982,14 +6990,6 @@
       "problem_name": "Word Break",
       "leetcode_number": "39",
       "leetcode_link": "https://leetcode.com/problems/word-break/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Top K Frequent Elements",
-      "leetcode_number": "107",
-      "leetcode_link": "https://leetcode.com/problems/top-k-frequent-elements/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -7040,6 +7040,22 @@
       "problem_name": "Merge Intervals",
       "leetcode_number": "76",
       "leetcode_link": "https://leetcode.com/problems/merge-intervals/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Meeting Rooms II",
+      "leetcode_number": "79",
+      "leetcode_link": "https://leetcode.com/problems/meeting-rooms-ii/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Sliding Window Maximum",
+      "leetcode_number": "99",
+      "leetcode_link": "https://leetcode.com/problems/sliding-window-maximum/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -7269,6 +7285,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Smallest Range Covering Elements from K Lists",
+      "leetcode_number": "74",
+      "leetcode_link": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Merge Intervals",
       "leetcode_number": "76",
       "leetcode_link": "https://leetcode.com/problems/merge-intervals/",
@@ -7312,14 +7336,6 @@
       "problem_name": "Minimum Window Substring",
       "leetcode_number": "103",
       "leetcode_link": "https://leetcode.com/problems/minimum-window-substring/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Kth Smallest Element in a BST",
-      "leetcode_number": "105",
-      "leetcode_link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -9825,16 +9841,6 @@
       "key_steps": ""
     }
   ],
-  "Nagarro": [
-    {
-      "problem_name": "Longest Substring Without Repeating Characters",
-      "leetcode_number": "100",
-      "leetcode_link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    }
-  ],
   "Naver": [
     {
       "problem_name": "Two Sum",
@@ -10135,6 +10141,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Set Matrix Zeroes",
+      "leetcode_number": "7",
+      "leetcode_link": "https://leetcode.com/problems/set-matrix-zeroes/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Best Time to Buy and Sell Stock",
       "leetcode_number": "31",
       "leetcode_link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
@@ -10146,6 +10160,14 @@
       "problem_name": "Maximum Subarray",
       "leetcode_number": "32",
       "leetcode_link": "https://leetcode.com/problems/maximum-subarray/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Jump Game",
+      "leetcode_number": "43",
+      "leetcode_link": "https://leetcode.com/problems/jump-game/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -10421,6 +10443,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Letter Combinations of a Phone Number",
+      "leetcode_number": "25",
+      "leetcode_link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "N-Queens",
       "leetcode_number": "28",
       "leetcode_link": "https://leetcode.com/problems/n-queens/",
@@ -10552,14 +10582,6 @@
       "problem_name": "Merge k Sorted Lists",
       "leetcode_number": "73",
       "leetcode_link": "https://leetcode.com/problems/merge-k-sorted-lists/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Meeting Rooms",
-      "leetcode_number": "75",
-      "leetcode_link": "https://leetcode.com/problems/meeting-rooms/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -10867,6 +10889,14 @@
   ],
   "Palantir Technologies": [
     {
+      "problem_name": "Merge k Sorted Lists",
+      "leetcode_number": "73",
+      "leetcode_link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Merge Intervals",
       "leetcode_number": "76",
       "leetcode_link": "https://leetcode.com/problems/merge-intervals/",
@@ -10994,6 +11024,14 @@
       "problem_name": "Best Time to Buy and Sell Stock",
       "leetcode_number": "31",
       "leetcode_link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Maximum Subarray",
+      "leetcode_number": "32",
+      "leetcode_link": "https://leetcode.com/problems/maximum-subarray/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -11325,6 +11363,16 @@
       "key_steps": ""
     }
   ],
+  "Quora": [
+    {
+      "problem_name": "Serialize and Deserialize Binary Tree",
+      "leetcode_number": "143",
+      "leetcode_link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    }
+  ],
   "RBC": [
     {
       "problem_name": "Spiral Matrix",
@@ -11346,14 +11394,6 @@
     }
   ],
   "Remitly": [
-    {
-      "problem_name": "Best Time to Buy and Sell Stock",
-      "leetcode_number": "31",
-      "leetcode_link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
     {
       "problem_name": "Course Schedule II",
       "leetcode_number": "115",
@@ -11778,6 +11818,14 @@
       "problem_name": "Subarray Product Less Than K",
       "leetcode_number": "152",
       "leetcode_link": "https://leetcode.com/problems/subarray-product-less-than-k/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
+      "problem_name": "Sort Colors",
+      "leetcode_number": "153",
+      "leetcode_link": "https://leetcode.com/problems/sort-colors/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -13277,6 +13325,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Letter Combinations of a Phone Number",
+      "leetcode_number": "25",
+      "leetcode_link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "House Robber",
       "leetcode_number": "30",
       "leetcode_link": "https://leetcode.com/problems/house-robber/",
@@ -13673,14 +13729,6 @@
       "key_steps": ""
     },
     {
-      "problem_name": "Course Schedule",
-      "leetcode_number": "114",
-      "leetcode_link": "https://leetcode.com/problems/course-schedule/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
       "problem_name": "Diameter of Binary Tree",
       "leetcode_number": "129",
       "leetcode_link": "https://leetcode.com/problems/diameter-of-binary-tree/",
@@ -13806,14 +13854,6 @@
       "problem_name": "Decode Ways",
       "leetcode_number": "41",
       "leetcode_link": "https://leetcode.com/problems/decode-ways/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Jump Game",
-      "leetcode_number": "43",
-      "leetcode_link": "https://leetcode.com/problems/jump-game/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -13989,16 +14029,6 @@
       "key_steps": ""
     }
   ],
-  "Wayfair": [
-    {
-      "problem_name": "Backspace String Compare",
-      "leetcode_number": "149",
-      "leetcode_link": "https://leetcode.com/problems/backspace-string-compare/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    }
-  ],
   "Waymo": [
     {
       "problem_name": "Number of Islands",
@@ -14012,6 +14042,16 @@
       "problem_name": "Find Peak Element",
       "leetcode_number": "88",
       "leetcode_link": "https://leetcode.com/problems/find-peak-element/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    }
+  ],
+  "Wells Fargo": [
+    {
+      "problem_name": "Number of Islands",
+      "leetcode_number": "62",
+      "leetcode_link": "https://leetcode.com/problems/number-of-islands/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -14393,6 +14433,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Task Scheduler",
+      "leetcode_number": "80",
+      "leetcode_link": "https://leetcode.com/problems/task-scheduler/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Sliding Window Maximum",
       "leetcode_number": "99",
       "leetcode_link": "https://leetcode.com/problems/sliding-window-maximum/",
@@ -14438,14 +14486,6 @@
       "problem_name": "Generate Parentheses",
       "leetcode_number": "22",
       "leetcode_link": "https://leetcode.com/problems/generate-parentheses/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Sudoku Solver",
-      "leetcode_number": "27",
-      "leetcode_link": "https://leetcode.com/problems/sudoku-solver/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
@@ -14775,6 +14815,14 @@
       "key_steps": ""
     },
     {
+      "problem_name": "Odd Even Linked List",
+      "leetcode_number": "68",
+      "leetcode_link": "https://leetcode.com/problems/odd-even-linked-list/",
+      "solution_yt_link": "https://youtu.be/example",
+      "intuition": "",
+      "key_steps": ""
+    },
+    {
       "problem_name": "Merge Two Sorted Lists",
       "leetcode_number": "70",
       "leetcode_link": "https://leetcode.com/problems/merge-two-sorted-lists/",
@@ -15006,14 +15054,6 @@
       "problem_name": "Majority Element",
       "leetcode_number": "166",
       "leetcode_link": "https://leetcode.com/problems/majority-element/",
-      "solution_yt_link": "https://youtu.be/example",
-      "intuition": "",
-      "key_steps": ""
-    },
-    {
-      "problem_name": "Move Zeroes",
-      "leetcode_number": "168",
-      "leetcode_link": "https://leetcode.com/problems/move-zeroes/",
       "solution_yt_link": "https://youtu.be/example",
       "intuition": "",
       "key_steps": ""
