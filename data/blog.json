@@ -1,8 +1,13 @@
 [
   {
-    "title": "Master DSA: The Ultimate Pattern-Based Roadmap for Coding Interviews",
+    "title": "Ultimate DSA Roadmap: The Pattern-Based Roadmap for Coding Interviews",
     "description": "Transform your interview preparation by learning the 20% of patterns that solve 80% of coding problems...",
-    "link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/blogs/Master%20DSA.md"
+    "link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/blogs/Ultimate%20DSA%20Roadmap.md"
+  },
+  {
+    "title": "Master DSA in 30 Days: The Ultimate Day-Wise Roadmap",
+    "description": "This 30-day roadmap gives you the most important DSA problems , their intuition, and company tags—arranged day by day so you stay consistent.",
+    "link": "https://github.com/srummanf/Data-Structures-And-Algorithms_SQL-DA-DS_Interview-Practice/blob/main/blogs/30%20Days%20Plan%20to%20Master%20DSA.md"
   },
   {
     "title": "System Design Roadmap with Videos for SDEs",
