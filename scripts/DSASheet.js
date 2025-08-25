@@ -29,7 +29,7 @@ const TAB_CONFIG = {
 };
 
 // Active filters
-const filters = { star: "all", done: "all" };
+const filters = { star: "all", done: "all", difficulty: "all" };
 
 // Load all JSON files
 document.addEventListener("DOMContentLoaded", async () => {
@@ -184,6 +184,7 @@ function initTabs() {
       // Reset filters to default
       filters.star = "all";
       filters.done = "all";
+      filters.difficulty = "all";
       document
         .querySelectorAll("[data-seg]")
         .forEach((b) => b.classList.remove("active"));
@@ -227,21 +228,26 @@ function renderAll(data) {
     if (!Array.isArray(list)) return;
     
     const filteredList = list.filter((q) => {
-      const isStar = !!starred[q.uniqueId];
-      const isDone = !!progress[q.uniqueId];
+  const isStar = !!starred[q.uniqueId];
+  const isDone = !!progress[q.uniqueId];
 
-      const starOk =
-        filters.star === "all" ||
-        (filters.star === "starred" && isStar) ||
-        (filters.star === "not-starred" && !isStar);
+  const starOk =
+    filters.star === "all" ||
+    (filters.star === "starred" && isStar) ||
+    (filters.star === "not-starred" && !isStar);
 
-      const doneOk =
-        filters.done === "all" ||
-        (filters.done === "completed" && isDone) ||
-        (filters.done === "not-completed" && !isDone);
+  const doneOk =
+    filters.done === "all" ||
+    (filters.done === "completed" && isDone) ||
+    (filters.done === "not-completed" && !isDone);
 
-      return starOk && doneOk;
-    });
+  // NEW: Difficulty filter logic
+  const difficultyOk =
+    filters.difficulty === "all" ||
+    (q.difficulty && q.difficulty.toLowerCase() === filters.difficulty);
+
+  return starOk && doneOk && difficultyOk;
+});
 
     if (filteredList.length === 0) return;
 

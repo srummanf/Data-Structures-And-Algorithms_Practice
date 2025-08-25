@@ -143,6 +143,43 @@
           gap: 0.5rem;
         }
       }
+      * Custom Colors */
+        .bg-custom-green { background-color: #a7f3d0; }
+        .bg-custom-purple { background-color: #6c62ff; }
+        .bg-custom-orange { background-color: #fb923c; }
+        .text-custom-purple { color: #6c62ff; }
+        .text-custom-orange { color: #fb923c; }
+        
+        /* Brutal Design Shadow */
+        .shadow-brutalSm {
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+        }
+        
+        /* Segment Button Styles */
+        .seg-btn {
+            border-left: 2px solid black;
+            transition: all 0.2s ease;
+        }
+        .seg-btn:first-child {
+            border-left: none;
+        }
+        .seg-btn.active {
+            background-color: #6c62ff !important;
+            color: white;
+        }
+        .seg-btn:hover:not(.active) {
+            background-color: #f3f4f6;
+        }
+        
+        /* Star styling */
+        .starred {
+            color: #fbbf24;
+        }
+        
+        /* Font Family */
+        .font-space {
+            font-family: 'Courier New', monospace;
+        }
     </style>
   </head>
   <body class="min-h-screen bg-gray-50 font-work">
@@ -324,7 +361,7 @@
     </section>
 
     <!-- FILTERS -->
-    <section class="max-w-[95%] mx-auto mt-4 grid gap-4 md:grid-cols-2">
+    <section class="max-w-[95%] mx-auto mt-4 grid gap-4 md:grid-cols-3">
       <!-- Star filter -->
       <div
         class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm"
@@ -394,6 +431,27 @@
           </button>
         </div>
       </div>
+
+      <!-- Difficulty filter -->
+        <div class="bg-custom-green border-[0.4rem] border-black rounded-2xl p-3 shadow-brutalSm">
+            <div class="font-space font-bold mb-2 text-sm md:text-base">
+                Difficulty Filter
+            </div>
+            <div class="inline-flex rounded-xl overflow-hidden w-full md:w-auto">
+                <button class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold active flex-1 md:flex-none text-xs md:text-sm" data-seg="difficulty" data-val="all">
+                    All
+                </button>
+                <button class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm" data-seg="difficulty" data-val="easy">
+                    <span class="text-green-700 font-bold">Easy</span>
+                </button>
+                <button class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm" data-seg="difficulty" data-val="medium">
+                    <span class="text-custom-orange font-bold">Med</span>
+                </button>
+                <button class="seg-btn px-2 md:px-4 py-2 border-black bg-white font-semibold flex-1 md:flex-none text-xs md:text-sm" data-seg="difficulty" data-val="hard">
+                    <span class="text-red-600 font-bold">Hard</span>
+                </button>
+            </div>
+        </div>
     </section>
 
     <!-- SHEET (PDF area) -->
